@@ -1,0 +1,110 @@
+{# app/Resources/views/layout.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}RR Platform{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block stylesheets %}
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/style.min.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/style.css') }}" type="text/css" />
+    {% endblock %}
+    {% block javascript %}
+
+    {% endblock %}
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body>
+<div class="container-narrow">
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li>
+                <input type="text" class="input-small">
+            </li>
+            <li>
+                <button class="btn btn-info"><a href="#">Rechercher</a>
+                </button>
+            </li>
+            <li>
+            {% if app.user is null %}
+                <a href="{{ path('fos_user_security_login') }}">Login</a>
+            {% else %}
+                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+            {% endif %}
+            </li>
+            <li>
+                <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+            </li>
+        </ul>
+        <h3 class="muted"><a href="{{ path('rr_core_homepage') }}">Resto Regimes</a></h3>
+
+
+    </div>
+    <hr>
+    {% if app.user is not null %}
+        Bonjour {{ app.user.username }} - {{ app.user.email }}
+    {% endif %}
+    {% block fos_user %}
+    {% endblock fos_user %}
+    {% block jumbotron %}
+    {% endblock %}
+    <hr>
+    <div class="row">
+        <div id="menu" class="col-md-3">
+            <h3>Les Restaurants</h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{{ path('rr_core_homepage') }}">Accueil</a></li>
+                <li><a href="{{ path('rr_restaurant_home') }}">les restaurants</a></li>
+                <li><a href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a></li>
+            </ul>
+
+        </div>
+        <div id="content" class="col-md-9">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+    <hr>
+    <div class="footer">
+
+
+        <div class="row-fluid">
+            <div class="span9">
+                <a href="#">Contact /</a>
+                <a href="#">CGU /</a>
+                <a href="#">Mention légales /</a>
+                <a href="#">A Propos</a>
+            </div>
+            <div class="span3">
+                <p class="">© RestoRegime {{ 'now'|date('Y') }}</p>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<!-- /container -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,27 @@
+rr_user_home:
+    path:    /{page}
+    defaults: { _controller: RRUserBundle:User:index, page: 1 }
+    requirements:
+        page: \d*
+
+rr_user_view:
+    path:    /user/{id}
+    defaults: { _controller: RRUserBundle:User:view }
+    requirements:
+            id: \d+
+
+rr_user_add:
+    path:    /add
+    defaults: { _controller: RRUserBundle:User:add }
+
+rr_user_edit:
+    path:    /edit/{id}
+    defaults: { _controller: RRUserBundle:User:edit }
+    requirements:
+        id: \d+
+
+rr_user_delete:
+    path:    /delete/{id}
+    defaults: { _controller: RRUserBundle:User:delete }
+    requirements:
+        id: \d+

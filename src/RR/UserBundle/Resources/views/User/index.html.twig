@@ -1,0 +1,36 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "RRUserBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block rruser_body %}
+
+    <h2>Liste des utilisateurs</h2>
+
+    <ul>
+        {% for user in listUsers %}
+            <li>
+                <a href="{{ path('rr_user_view', {'id': user.id}) }}">
+                    {{ user.nom }}
+                </a>
+                <br/>
+                <a href="{{ path('rr_user_delete', {'id': user.id}) }}">Suprimer</a><br/>
+                <a href="{{ path('rr_user_edit', {'id': user.id}) }}">Editer</a><br/>
+            </li>
+        {% else %}
+            <li>Pas (encore !) d'utilisateurs</li>
+        {% endfor %}
+    </ul>
+    <ul class="pagination">
+        {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+        {% for p in range(1, nbPages) %}
+            <li{% if p == page %} class="active"{% endif %}>
+                <a href="{{ path('rr_user_home', {'page': p}) }}">{{ p }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    rr_core.example:
+#        class: RR\CoreBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

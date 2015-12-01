@@ -1,0 +1,29 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/delete.html.twig #}
+
+{% extends "RRUserBundle::layout.html.twig" %}
+
+{% block title %}
+    Supprimer un utilisateur - {{ parent() }}
+{% endblock %}
+
+{% block rruser_body %}
+
+    <h2>Supprimer un utilisateur</h2>
+
+    <p>
+        Etes-vous certain de vouloir supprimer l'utilisateur "{{ user.nom }}" ?
+    </p>
+
+    {# On met l'id de l'annonce dans la route de l'action du formulaire #}
+    <form action="{{ path('rr_user_delete', {'id': user.id}) }}" method="post">
+        <a href="{{ path('rr_user_view', {'id': user.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à l'utilisateur
+        </a>
+        {# Ici j'ai écrit le bouton de soumission à la main #}
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+        {# Ceci va générer le champ CSRF #}
+        {{ form_rest(form) }}
+    </form>
+
+{% endblock %}

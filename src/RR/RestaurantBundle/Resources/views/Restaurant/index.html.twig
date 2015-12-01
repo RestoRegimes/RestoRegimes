@@ -1,0 +1,42 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "RRRestaurantBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+{% block jumbotron %}
+    {{ google_map(map) }}
+
+{% endblock %}
+{% block rrrestaurant_body %}
+
+    <h2>Liste des restaurants</h2>
+
+    <ul>
+       {% for restaurant in listRestaurants %}
+            <li>
+                <a href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">
+                    {{ restaurant.nom }}
+                </a>
+                regimes: <br/>
+                {% for regime in restaurant.regimes %}
+                    {{ regime.libelle }}
+                {% endfor %} <br/>
+                <a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a><br/>
+                <a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a><br/>
+            </li>
+            {% else %}
+            <li>Pas (encore !) de restaurants</li>
+        {% endfor %}
+    </ul>
+    <ul class="pagination">
+  {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+  {% for p in range(1, nbPages) %}
+    <li{% if p == page %} class="active"{% endif %}>
+      <a href="{{ path('rr_restaurant_home', {'page': p}) }}">{{ p }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

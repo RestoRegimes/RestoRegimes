@@ -1,0 +1,3 @@
+rr_core_homepage:
+    path:     /
+    defaults: { _controller: RRCoreBundle:Default:index }

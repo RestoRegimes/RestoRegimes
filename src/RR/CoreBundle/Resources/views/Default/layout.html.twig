@@ -1,0 +1,66 @@
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+{% block javascript %}
+    <script language="javascript" type="text/javascript" src="{{ asset('bundles/rrcore/js/p5.js') }}"></script>
+    <script language="javascript" type="text/javascript" src="{{ asset('bundles/rrcore/js/sketch.js') }}"></script>
+
+{% endblock %}
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
+{% block jumbotron %}
+    <div class="jumbotron" >
+
+    <div id="jumbotron"></div>
+        <div id="jumbotron1">
+        <h1>Un Régime?&nbsp;<div class="">Un Resto!</div></h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <a class="btn btn-large btn-success" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+        </div>
+
+
+
+
+    </div>
+{% endblock %}
+{% block body %}
+
+    {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+    <h1>Restaurants</h1>
+
+    <hr>
+
+    {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+    {% block rrplatform_body %}
+    {% endblock %}
+
+{% endblock %}
+{% block content %}
+    <div class="row-fluid marketing">
+        <div class="span6">
+            <h4>Subheading</h4>
+
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+            </p>
+            <h4>Subheading</h4>
+
+            <p class="">Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            <h4>Subheading</h4>
+
+            <p class="">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+        <div class="span6">
+            <h4>Subheading</h4>
+
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+            </p>
+            <h4>Subheading</h4>
+
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            <h4>Subheading</h4>
+
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+    </div>
+{% endblock %}

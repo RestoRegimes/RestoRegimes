@@ -1,0 +1,125 @@
+<?php
+
+namespace RR\RestaurantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ImageRestaurant
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="RR\RestaurantBundle\Entity\ImageRestaurantRepository")
+ */
+class ImageRestaurant
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $restaurant;
+
+    /**
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Image",)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateAdded", type="datetime")
+     */
+    private $dateAdded;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set dateAdded
+     *
+     * @param \DateTime $dateAdded
+     *
+     * @return ImageRestaurant
+     */
+    public function setDateAdded($dateAdded)
+    {
+        $this->dateAdded = $dateAdded;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAdded
+     *
+     * @return \DateTime
+     */
+    public function getDateAdded()
+    {
+        return $this->dateAdded;
+    }
+
+    /**
+     * Set restaurant
+     *
+     * @param \RR\RestaurantBundle\Entity\Restaurant $restaurant
+     *
+     * @return ImageRestaurant
+     */
+    public function setRestaurant(\RR\RestaurantBundle\Entity\Restaurant $restaurant)
+    {
+        $this->restaurant = $restaurant;
+
+        return $this;
+    }
+
+    /**
+     * Get restaurant
+     *
+     * @return \RR\RestaurantBundle\Entity\Restaurant
+     */
+    public function getRestaurant()
+    {
+        return $this->restaurant;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \RR\RestaurantBundle\Entity\Image $image
+     *
+     * @return ImageRestaurant
+     */
+    public function setImage(\RR\RestaurantBundle\Entity\Image $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \RR\RestaurantBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+}

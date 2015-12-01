@@ -1,0 +1,14 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/menu.html.twig #}
+
+{# Ce template n'hérite de personne,
+   tout comme le template inclus avec {{ include() }}. #}
+
+<ul class="nav nav-pills nav-stacked">
+    {% for user in listUsers %}
+        <li>
+            <a href="{{ path('rr_user_view', {'id': user.id}) }}">
+                {{ user.nom }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

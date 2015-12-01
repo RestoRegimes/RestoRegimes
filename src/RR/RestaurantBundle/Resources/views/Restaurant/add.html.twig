@@ -1,0 +1,25 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/add.html.twig #}
+
+{% extends "RRRestaurantBundle::layout.html.twig" %}
+
+{% block body %}
+
+    {% if action is defined and action=="add" %}
+        <h2>Ajouter un restaurant</h2>
+    {% else %}
+        <h2>Modifier un restaurant</h2>
+    {% endif %}
+    {% if action is not defined %}
+        {{ include("RRRestaurantBundle:Restaurant:form.html.twig") }}
+    {% elseif action=="horaires" %}
+        {{ include("RRRestaurantBundle:Restaurant:formHoraires.html.twig") }}
+    {% elseif action=="images" %}
+        {{ include("RRRestaurantBundle:Restaurant:formImages.html.twig") }}
+    {% endif %}
+
+    <p>
+        Attention : ce restaurant sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

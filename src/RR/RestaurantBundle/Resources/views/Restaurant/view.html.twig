@@ -1,0 +1,148 @@
+{# src/OC/PlatformBundle/Resources/view/Advert/view.html.twig #}
+{% extends "RRRestaurantBundle::layout.html.twig" %}
+
+{% block content %}
+<h1>Affichage d'un restaurant</h1>
+<li><a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a></li>
+<li><a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a></li>
+<li><a href="{{ path('rr_restaurant_horaires', {'id': restaurant.id}) }}">Horaires</a></li>
+<li><a href="{{ path('rr_restaurant_images', {'id': restaurant.id}) }}">Images</a></li>
+<p>
+    {# On affiche tous les messages flash dont le nom est « info » #}
+    {% for message in app.session.flashbag.get('notice') %}
+        <p>Message flash : {{ message }}</p>
+    {% endfor %}
+</p>
+
+<p>
+    Ici nous pourrons lire les info du restaurant ayant comme id : {{ restaurant.id }}<br />
+    {{ restaurant.nom }}<br />
+    {{ restaurant.telephone }}<br />
+    {{ restaurant.description }}<br />
+    <table>
+    <thead><th> Horaires: </th><th> Lundi </th><th> Mardi </th><th> Mercredi </th><th> Jeudi </th><th> Vendredi </th><th> Samedi </th><th> Dimanche </th></thead>
+
+        <tr>
+            <td>
+                Ouverture:
+            </td>
+            <td>
+                {{ restaurant.lundi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mardi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mercredi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.jeudi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.vendredi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.samedi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.dimanche.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fermeture:
+            </td>
+            <td>
+                {{ restaurant.lundi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mardi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mercredi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.jeudi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.vendredi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.samedi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.dimanche.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ouverture:
+            </td>
+             <td>
+                {{ restaurant.lundi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mardi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mercredi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.jeudi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.vendredi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.samedi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.dimanche.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fermeture:
+            </td>
+            <td>
+                {{ restaurant.lundi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mardi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.mercredi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.jeudi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.vendredi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.samedi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+            <td>
+                {{ restaurant.dimanche.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
+            </td>
+        </tr>
+</table>
+<br/>
+    Adresse:
+    {{ restaurant.address|address()|raw }}<br />
+    Latitude: {{ restaurant.address.latitude }}<br />
+    Longitude: {{ restaurant.address.longitude }}<br />
+    regimes: <br/>
+    {% for regime in restaurant.regimes %}
+        {{ regime.libelle }}
+    {% endfor %} <br/>
+    images: <br/>
+    {% for image in restaurant.images %}
+        <img src="{{ asset(image.webPath) }}" alt="{{ image.alt }}">
+    {% endfor %} <br/>
+
+<br />
+{{ google_map(map) }}
+
+</p>
+{% endblock %}

@@ -1,0 +1,93 @@
+<?php
+
+namespace RR\RestaurantBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RegimeRestaurant
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="RR\RestaurantBundle\Entity\RegimeRestaurantRepository")
+ */
+class RegimeRestaurant
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $restaurant;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="RR\RestaurantBundle\Entity\Regime")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $regime;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set restaurant
+     *
+     * @param \RR\RestaurantBundle\Entity\Restaurant $restaurant
+     *
+     * @return RegimeRestaurant
+     */
+    public function setRestaurant(\RR\RestaurantBundle\Entity\Restaurant $restaurant)
+    {
+        $this->restaurant = $restaurant;
+
+        return $this;
+    }
+
+    /**
+     * Get restaurant
+     *
+     * @return \RR\RestaurantBundle\Entity\Restaurant
+     */
+    public function getRestaurant()
+    {
+        return $this->restaurant;
+    }
+
+    /**
+     * Set regime
+     *
+     * @param \RR\RestaurantBundle\Entity\Regime $regime
+     *
+     * @return RegimeRestaurant
+     */
+    public function setRegime(\RR\RestaurantBundle\Entity\Regime $regime)
+    {
+        $this->regime = $regime;
+
+        return $this;
+    }
+
+    /**
+     * Get regime
+     *
+     * @return \RR\RestaurantBundle\Entity\Regime
+     */
+    public function getRegime()
+    {
+        return $this->regime;
+    }
+}

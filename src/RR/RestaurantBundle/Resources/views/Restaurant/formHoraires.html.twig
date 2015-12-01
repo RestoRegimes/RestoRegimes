@@ -1,0 +1,197 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
+
+{# Cette vue n'hérite de personne, elle sera incluse par d'autres vues qui,
+   elles, hériteront probablement du layout. Je dis « probablement » car,
+   ici pour cette vue, on n'en sait rien et c'est une info qui ne nous concerne pas. #}
+
+<h3>Formulaire restaurant</h3>
+
+{# On laisse vide la vue pour l'instant, on la comblera plus tard
+   lorsqu'on saura afficher un formulaire. #}
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+    <table>
+        <thead><th> Horaires: </th><th> Lundi </th><th> Mardi </th><th> Mercredi </th><th> Jeudi </th><th> Vendredi </th><th> Samedi </th><th> Dimanche </th></thead>
+        <tr>
+            <td>
+                Ouverture:
+            </td>
+            <td>
+                {{ form_label(form.lundi.ouverture1," ") }}
+                {{ form_errors(form.lundi.ouverture1) }}
+                {{ form_widget(form.lundi.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mardi.ouverture1," ") }}
+                {{ form_errors(form.mardi.ouverture1) }}
+                {{ form_widget(form.mardi.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mercredi.ouverture1," ") }}
+                {{ form_errors(form.mercredi.ouverture1) }}
+                {{ form_widget(form.mercredi.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.jeudi.ouverture1," ") }}
+                {{ form_errors(form.jeudi.ouverture1) }}
+                {{ form_widget(form.jeudi.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.vendredi.ouverture1," ") }}
+                {{ form_errors(form.vendredi.ouverture1) }}
+                {{ form_widget(form.vendredi.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.samedi.ouverture1," ") }}
+                {{ form_errors(form.samedi.ouverture1) }}
+                {{ form_widget(form.samedi.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.dimanche.ouverture1," ") }}
+                {{ form_errors(form.dimanche.ouverture1) }}
+                {{ form_widget(form.dimanche.ouverture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fermeture:
+            <td>
+                {{ form_label(form.lundi.fermeture1," ") }}
+                {{ form_errors(form.lundi.fermeture1) }}
+                {{ form_widget(form.lundi.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mardi.fermeture1," ") }}
+                {{ form_errors(form.mardi.fermeture1) }}
+                {{ form_widget(form.mardi.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mercredi.fermeture1," ") }}
+                {{ form_errors(form.mercredi.fermeture1) }}
+                {{ form_widget(form.mercredi.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.jeudi.fermeture1," ") }}
+                {{ form_errors(form.jeudi.fermeture1) }}
+                {{ form_widget(form.jeudi.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.vendredi.fermeture1," ") }}
+                {{ form_errors(form.vendredi.fermeture1) }}
+                {{ form_widget(form.vendredi.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.samedi.fermeture1," ") }}
+                {{ form_errors(form.samedi.fermeture1) }}
+                {{ form_widget(form.samedi.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.dimanche.fermeture1," ") }}
+                {{ form_errors(form.dimanche.fermeture1) }}
+                {{ form_widget(form.dimanche.fermeture1, {'attr': {'class': 'form-control'}}) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ouverture:
+            <td>
+                {{ form_label(form.lundi.ouverture2," ") }}
+                {{ form_errors(form.lundi.ouverture2) }}
+                {{ form_widget(form.lundi.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mardi.ouverture2," ") }}
+                {{ form_errors(form.mardi.ouverture2) }}
+                {{ form_widget(form.mardi.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mercredi.ouverture2," ") }}
+                {{ form_errors(form.mercredi.ouverture2) }}
+                {{ form_widget(form.mercredi.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.jeudi.ouverture2," ") }}
+                {{ form_errors(form.jeudi.ouverture2) }}
+                {{ form_widget(form.jeudi.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.vendredi.ouverture2," ") }}
+                {{ form_errors(form.vendredi.ouverture2) }}
+                {{ form_widget(form.vendredi.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.samedi.ouverture2," ") }}
+                {{ form_errors(form.samedi.ouverture2) }}
+                {{ form_widget(form.samedi.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.dimanche.ouverture2," ") }}
+                {{ form_errors(form.dimanche.ouverture2) }}
+                {{ form_widget(form.dimanche.ouverture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fermeture:
+            </td>
+            <td>
+                {{ form_label(form.lundi.fermeture2," ") }}
+                {{ form_errors(form.lundi.fermeture2) }}
+                {{ form_widget(form.lundi.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mardi.fermeture2," ") }}
+                {{ form_errors(form.mardi.fermeture2) }}
+                {{ form_widget(form.mardi.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.mercredi.fermeture2," ") }}
+                {{ form_errors(form.mercredi.fermeture2) }}
+                {{ form_widget(form.mercredi.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.jeudi.fermeture2," ") }}
+                {{ form_errors(form.jeudi.fermeture2) }}
+                {{ form_widget(form.jeudi.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.vendredi.fermeture2," ") }}
+                {{ form_errors(form.vendredi.fermeture2) }}
+                {{ form_widget(form.vendredi.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.samedi.fermeture2," ") }}
+                {{ form_errors(form.samedi.fermeture2) }}
+                {{ form_widget(form.samedi.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+            <td>
+                {{ form_label(form.dimanche.fermeture2," ") }}
+                {{ form_errors(form.dimanche.fermeture2) }}
+                {{ form_widget(form.dimanche.fermeture2, {'attr': {'class': 'form-control'}}) }}
+            </td>
+        </tr>
+    </table>
+
+    {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+    {# Génération automatique des champs pas encore écrits.
+       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+       et tous les champs cachés (type « hidden »). #}
+    {{ form_rest(form) }}
+
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+{# Voici le script en question : #}
+<script type="text/javascript">
+
+</script>
+
+
