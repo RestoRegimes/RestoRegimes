@@ -9,7 +9,7 @@
     {% else %}
         <h2>Modifier un restaurant</h2>
     {% endif %}
-    {% if action is not defined %}
+    {% if action is defined and action=="add" %}
         {{ include("RRRestaurantBundle:Restaurant:form.html.twig") }}
     {% elseif action=="horaires" %}
         {{ include("RRRestaurantBundle:Restaurant:formHoraires.html.twig") }}

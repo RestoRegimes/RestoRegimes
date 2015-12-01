@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Bazinga\Bundle\GeocoderBundle\BazingaGeocoderBundle(),
             new Padam87\AddressBundle\Padam87AddressBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
