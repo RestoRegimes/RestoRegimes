@@ -15,16 +15,11 @@ class RestaurantImageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('images', 'collection', array(
-                    'required'=>false,
-                    'type' => new ImageType(),
-                    'allow_add'    => true,
-                    'allow_delete' => true,
-                    'by_reference' => true,
-                    'label' => ' ',
-                )
-            )
+            $builder->add('imageFile', 'vich_image', array(
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_link' => true, // not mandatory, default is true
+            ))
             ->add('save','submit');
 
     }
@@ -35,7 +30,7 @@ class RestaurantImageType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'RR\RestaurantBundle\Entity\Restaurant'
+            'data_class' => 'RR\RestaurantBundle\Entity\RestoImage'
         ));
     }
 

@@ -25,13 +25,14 @@ class RestaurantRepository extends EntityRepository
         $qb
             ->leftJoin('r.images','img')
             ->addSelect('img')
+            ->leftJoin('r.images','i')
             ->where('r.id = :id')
             ->setParameter('id', $id)
         ;
 
         return $qb
             ->getQuery()
-            ->getResult()
+            ->getSingleResult()
             ;
     }
 

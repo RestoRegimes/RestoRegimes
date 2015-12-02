@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class ImageType extends AbstractType
+class RestoImageType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,7 +15,11 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('file','file',array('required'=>false))
+            ->add('imageFile', 'vich_image', array(
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_link' => true, // not mandatory, default is true
+            ))
         ;
     }
 
@@ -25,7 +29,7 @@ class ImageType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'RR\RestaurantBundle\Entity\Image'
+            'data_class' => 'RR\RestaurantBundle\Entity\RestoImage'
         ));
     }
 
@@ -34,6 +38,6 @@ class ImageType extends AbstractType
      */
     public function getName()
     {
-        return 'rr_restaurantbundle_image';
+        return 'rr_restaurantbundle_resto_image';
     }
 }

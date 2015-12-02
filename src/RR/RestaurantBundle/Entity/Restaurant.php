@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 /**
@@ -88,7 +89,8 @@ class Restaurant
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="RR\RestaurantBundle\Entity\Image", mappedBy="restaurant", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="RR\RestaurantBundle\Entity\RestoImage", mappedBy="restaurant", cascade={"persist","remove"})
+     * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
     private $images;
 
@@ -393,11 +395,11 @@ class Restaurant
     /**
      * Add image
      *
-     * @param \RR\RestaurantBundle\Entity\Image $image
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image
      *
      * @return Restaurant
      */
-    public function addImage(\RR\RestaurantBundle\Entity\Image $image)
+    public function addImage(\RR\RestaurantBundle\Entity\RestoImage $image)
     {
         $this->images[] = $image;
         $image->setRestaurant($this);
@@ -407,9 +409,9 @@ class Restaurant
     /**
      * Remove image
      *
-     * @param \RR\RestaurantBundle\Entity\Image $image
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image
      */
-    public function removeImage(\RR\RestaurantBundle\Entity\Image $image)
+    public function removeImage(\RR\RestaurantBundle\Entity\RestoImage $image)
     {
         $this->images->removeElement($image);
     }
@@ -654,12 +656,6 @@ class Restaurant
                 ->addViolation() // ceci déclenche l'erreur, ne l'oubliez pas
             ;
         }
-        if(count($this->getImages())>=5){
-            $context
-                ->buildViolation('Nombre maximum d\'images atteintes.') // message
-                ->atPath('images')                                                   // attribut de l'objet qui est violé
-                ->addViolation() // ceci déclenche l'erreur, ne l'oubliez pas
-            ;
-        }
+
     }
 }

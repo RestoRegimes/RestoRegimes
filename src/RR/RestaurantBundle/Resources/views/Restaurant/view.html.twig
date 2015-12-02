@@ -6,7 +6,7 @@
 <li><a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a></li>
 <li><a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a></li>
 <li><a href="{{ path('rr_restaurant_horaires', {'id': restaurant.id}) }}">Horaires</a></li>
-<li><a href="{{ path('rr_restaurant_images', {'id': restaurant.id}) }}">Images</a></li>
+<li><a href="{{ path('rr_restaurant_images_add', {'id': restaurant.id}) }}">Images</a></li>
 <p>
     {# On affiche tous les messages flash dont le nom est « info » #}
     {% for message in app.session.flashbag.get('notice') %}
@@ -137,9 +137,11 @@
         {{ regime.libelle }}
     {% endfor %} <br/>
     images: <br/>
+
     {% for image in restaurant.images %}
-        <img src="{{ asset(image.webPath) }}" alt="{{ image.alt }}">
+       <img src="{{ asset(vich_uploader_asset(image,'imageFile')) }}" alt="{{ image.imageName }}" />
     {% endfor %} <br/>
+
 
 <br />
 {{ google_map(map) }}

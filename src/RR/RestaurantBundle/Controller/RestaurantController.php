@@ -4,6 +4,9 @@
 namespace RR\RestaurantBundle\Controller;
 
 // N'oubliez pas ce use :
+use RR\RestaurantBundle\Entity\Product;
+use RR\RestaurantBundle\Entity\RestoImage;
+use RR\RestaurantBundle\Form\ProductType;
 use RR\RestaurantBundle\Form\RestaurantType;
 use RR\RestaurantBundle\Form\RestaurantHorairesType;
 use RR\RestaurantBundle\Form\RestaurantImageType;
@@ -122,10 +125,11 @@ class RestaurantController extends Controller
         $map->addMarker($marker);
         $map->setZoomControl($zoomControl);
 
+
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte les variables :
         return $this->render('RRRestaurantBundle:Restaurant:view.html.twig', array(
             'restaurant'           => $restaurant,
-            'map'=> $map
+            'map'=> $map,
         ));
     }
 
@@ -194,37 +198,40 @@ class RestaurantController extends Controller
         ));
 
     }
-    public function imagesAction($id,Request $request)
+    public function imagesAddAction($id,Request $request)
     {
+        $image = new RestoImage();
         $em = $this->getDoctrine()->getManager();
-
-        // On récupère l'annonce $id
         $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->Find($id);
-
-        if (null === $restaurant) {
-            throw new NotFoundHttpException("Le restaurant d'id ".$id." n'existe pas.");
-        }
-
-
-        $form = $this->createForm(new RestaurantImageType(), $restaurant);
-
+        $image->setRestaurant($restaurant);
+        // J'ai raccourci cette partie, car c'est plus rapide à écrire !
+        $form = $this->get('form.factory')->create(new RestaurantImageType, $image);
         // On fait le lien Requête <-> Formulaire
         // À partir de maintenant, la variable $restaurant contient les valeurs entrées dans le formulaire par le visiteur
+        $form->handleRequest($request);
 
         // On vérifie que les valeurs entrées sont correctes
-        if ($form->handleRequest($request)->isValid()) {
-            // Inutile de persister ici, Doctrine connait déjà notre annonce
+        if ($form->isValid()) {
+
+
+            // On l'enregistre notre objet $advert dans la base de données, par exemple
+            $restaurant->addImage($image);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($restaurant);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Restaurant bien modifié.');
+            $request->getSession()->getFlashBag()->add('notice', 'Restaurant bien enregistrée.');
 
+            // On redirige vers la page de visualisation de l'annonce nouvellement créée
             return $this->redirect($this->generateUrl('rr_restaurant_view', array('id' => $restaurant->getId())));
         }
 
+        // À ce stade, le formulaire n'est pas valide car :
+        // - Soit la requête est de type GET, donc le visiteur vient d'arriver sur la page et veut voir le formulaire
+        // - Soit la requête est de type POST, mais le formulaire contient des valeurs invalides, donc on l'affiche de nouveau
         return $this->render('RRRestaurantBundle:Restaurant:add.html.twig', array(
-            'form'   => $form->createView(),
-            'restaurant' => $restaurant ,// Je passe également l'annonce à la vue si jamais elle veut l'afficher
-            'action' => 'images'
+            'form' => $form->createView(),
+            'action' => "add"
         ));
 
     }
@@ -233,7 +240,7 @@ class RestaurantController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // On récupère l'annonce $id
-        $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->Find($id);
+        $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->myFindOne($id);
 
         if (null === $restaurant) {
             throw new NotFoundHttpException("Le restaurant d'id ".$id." n'existe pas.");

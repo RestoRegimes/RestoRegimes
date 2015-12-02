@@ -27,11 +27,11 @@ rr_restaurant_horaires:
     requirements:
         id: \d+
 
-rr_restaurant_images:
-    path:    /images/{id}
-    defaults: { _controller: RRRestaurantBundle:Restaurant:images }
+rr_restaurant_images_add:
+    path:    /images/add/{id}
+    defaults: { _controller: RRRestaurantBundle:Restaurant:imagesAdd }
     requirements:
-        id: \d+
+            id: \d+
 
 rr_restaurant_edit:
     path:    /edit/{id}

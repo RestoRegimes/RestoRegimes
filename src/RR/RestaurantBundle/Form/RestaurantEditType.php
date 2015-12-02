@@ -16,8 +16,7 @@ class RestaurantEditType extends AbstractType
         ->remove('jeudi')
         ->remove('vendredi')
         ->remove('samedi')
-        ->remove('dimanche')
-        ->remove('images');
+        ->remove('dimanche');
     }
 
     public function getName()
