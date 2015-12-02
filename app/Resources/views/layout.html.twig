@@ -38,6 +38,13 @@
             </li>
             <li>
             {% if app.user is null %}
+
+            {% else %}
+                <a href="{{ path('fos_user_profile_show') }}">Profile</a>
+            {% endif %}
+            </li>
+            <li>
+            {% if app.user is null %}
                 <a href="{{ path('fos_user_security_login') }}">Login</a>
             {% else %}
                 <a href="{{ path('fos_user_security_logout') }}">Logout</a>
