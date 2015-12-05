@@ -150,6 +150,7 @@ ivory_google_map:
         # google map Api language, default en
         language: fr
 
+
 bazinga_faker:
     entities:
         RR\RestaurantBundle\Entity\Restaurant:

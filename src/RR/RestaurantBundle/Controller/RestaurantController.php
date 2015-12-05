@@ -25,6 +25,7 @@ use RR\RestaurantBundle\Entity\RegimeRestaurant;
 use Ivory\GoogleMap\Controls\ControlPosition;
 use Ivory\GoogleMap\Controls\ZoomControl;
 use Ivory\GoogleMap\Controls\ZoomControlStyle;
+use Ivory\GoogleMap\Overlays\MarkerImage;
 
 
 class RestaurantController extends Controller
@@ -49,6 +50,15 @@ class RestaurantController extends Controller
         }
         $map = $this->get('ivory_google_map.map');
         $bounds = new Bound();
+        $markerImage = new MarkerImage();
+
+        // Configure your marker image options
+        $markerImage->setPrefixJavascriptVariable('marker_image_');
+        $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker1.png';
+        $markerImage->setUrl($link);
+        $markerImage->setSize(34, 34, "px", "px");
+        $markerImage->setScaledSize(34, 34, "px", "px");
+
         foreach($listRestaurants as $restaurant) {
             $marker = new Marker();
 
@@ -64,6 +74,8 @@ class RestaurantController extends Controller
                 'clickable' => false,
                 'flat' => true,
             ));
+            $marker->setIcon($markerImage);
+
             $bounds->extend($marker);
             $map->addMarker($marker);
         }
@@ -80,7 +92,8 @@ class RestaurantController extends Controller
             'listRestaurants' => $listRestaurants,
             'nbPages'=>$nbPage,
             'page'=>$page,
-            'map'=>$map
+            'map'=>$map,
+            'link'=>$link
         ));
 
     }
