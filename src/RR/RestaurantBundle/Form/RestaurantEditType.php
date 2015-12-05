@@ -9,14 +9,7 @@ class RestaurantEditType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->remove('siret')
-        ->remove('lundi')
-        ->remove('mardi')
-        ->remove('mercredi')
-        ->remove('jeudi')
-        ->remove('vendredi')
-        ->remove('samedi')
-        ->remove('dimanche');
+        $builder->remove('siret');
     }
 
     public function getName()

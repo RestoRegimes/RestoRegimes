@@ -18,23 +18,6 @@ class RestaurantRepository extends EntityRepository
             ;
     }
 
-    public function myFindOne($id)
-    {
-        $qb = $this->createQueryBuilder('r');
-
-        $qb
-            ->leftJoin('r.images','img')
-            ->addSelect('img')
-            ->leftJoin('r.images','i')
-            ->where('r.id = :id')
-            ->setParameter('id', $id)
-        ;
-
-        return $qb
-            ->getQuery()
-            ->getSingleResult()
-            ;
-    }
 
     public function whereCurrentYear(QueryBuilder $qb)
     {
@@ -50,9 +33,7 @@ class RestaurantRepository extends EntityRepository
         $query = $this->createQueryBuilder('r')
             ->leftJoin('r.regimes','reg')
             ->addSelect('reg')
-            ->leftJoin('r.images','i')
-            ->addSelect('i')
-            ->orderBy('r.id', 'DESC')
+            ->orderBy('r.id')
             ->getQuery()
         ;
         $query

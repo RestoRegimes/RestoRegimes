@@ -6,7 +6,7 @@
 <li><a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a></li>
 <li><a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a></li>
 <li><a href="{{ path('rr_restaurant_horaires', {'id': restaurant.id}) }}">Horaires</a></li>
-<li><a href="{{ path('rr_restaurant_images_add', {'id': restaurant.id}) }}">Images</a></li>
+<li><a href="{{ path('rr_restaurant_images', {'id': restaurant.id}) }}">Images</a></li>
 <p>
     {# On affiche tous les messages flash dont le nom est « info » #}
     {% for message in app.session.flashbag.get('notice') %}
@@ -137,10 +137,21 @@
         {{ regime.libelle }}
     {% endfor %} <br/>
     images: <br/>
-
-    {% for image in restaurant.images %}
-       <img src="{{ asset(vich_uploader_asset(image,'imageFile')) }}" alt="{{ image.imageName }}" />
-    {% endfor %} <br/>
+{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+    <img src="{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}" alt="{{ restaurant.image1.imageName }}" /><br/>
+{% endif %}
+{% if restaurant.image2 is not null and restaurant.image2.imageFile is not null %}
+    <img src="{{ asset(vich_uploader_asset(restaurant.image2,'imageFile')) }}" alt="{{ restaurant.image2.imageName }}" /><br/>
+{% endif %}
+{% if restaurant.image3 is not null and restaurant.image3.imageFile is not null %}
+    <img src="{{ asset(vich_uploader_asset(restaurant.image3,'imageFile')) }}" alt="{{ restaurant.image3.imageName }}" /><br/>
+{% endif %}
+{% if restaurant.image4 is not null and restaurant.image4.imageFile is not null %}
+    <img src="{{ asset(vich_uploader_asset(restaurant.image4,'imageFile')) }}" alt="{{ restaurant.image4.imageName }}" /><br/>
+{% endif %}
+{% if restaurant.image5 is not null and restaurant.image5.imageFile is not null %}
+    <img src="{{ asset(vich_uploader_asset(restaurant.image5,'imageFile')) }}" alt="{{ restaurant.image5.imageName }}" /><br/>
+{% endif %}
 
 
 <br />

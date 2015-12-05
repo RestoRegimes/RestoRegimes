@@ -89,10 +89,34 @@ class Restaurant
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="RR\RestaurantBundle\Entity\RestoImage", mappedBy="restaurant", cascade={"persist","remove"})
+     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist","remove"})
      * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
-    private $images;
+    private $image1;
+
+    /**
+     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist","remove"})
+     * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
+     */
+    private $image2;
+
+    /**
+     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist","remove"})
+     * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
+     */
+    private $image3;
+
+    /**
+     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist","remove"})
+     * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
+     */
+    private $image4;
+
+    /**
+     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist","remove"})
+     * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
+     */
+    private $image5;
 
     /**
      * @ORM\ManyToMany(targetEntity="RR\RestaurantBundle\Entity\Regime",cascade={"persist"})
@@ -384,48 +408,6 @@ class Restaurant
         }
     }
 
-    public function setImages(ArrayCollection $images)
-    {
-        $this->images = $images;
-        foreach ($images as $image) {
-            $image->setRestaurant($this);
-        }
-        return $this;
-    }
-    /**
-     * Add image
-     *
-     * @param \RR\RestaurantBundle\Entity\RestoImage $image
-     *
-     * @return Restaurant
-     */
-    public function addImage(\RR\RestaurantBundle\Entity\RestoImage $image)
-    {
-        $this->images[] = $image;
-        $image->setRestaurant($this);
-        return $this;
-    }
-
-    /**
-     * Remove image
-     *
-     * @param \RR\RestaurantBundle\Entity\RestoImage $image
-     */
-    public function removeImage(\RR\RestaurantBundle\Entity\RestoImage $image)
-    {
-        $this->images->removeElement($image);
-    }
-
-    /**
-     * Get images
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
-
     /**
      * Set lundi
      *
@@ -657,5 +639,125 @@ class Restaurant
             ;
         }
 
+    }
+
+    /**
+     * Set image1
+     *
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image1
+     *
+     * @return Restaurant
+     */
+    public function setImage1(\RR\RestaurantBundle\Entity\RestoImage $image1 = null)
+    {
+        $this->image1 = $image1;
+
+        return $this;
+    }
+
+    /**
+     * Get image1
+     *
+     * @return \RR\RestaurantBundle\Entity\RestoImage
+     */
+    public function getImage1()
+    {
+        return $this->image1;
+    }
+
+    /**
+     * Set image2
+     *
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image2
+     *
+     * @return Restaurant
+     */
+    public function setImage2(\RR\RestaurantBundle\Entity\RestoImage $image2 = null)
+    {
+        $this->image2 = $image2;
+
+        return $this;
+    }
+
+    /**
+     * Get image2
+     *
+     * @return \RR\RestaurantBundle\Entity\RestoImage
+     */
+    public function getImage2()
+    {
+        return $this->image2;
+    }
+
+    /**
+     * Set image3
+     *
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image3
+     *
+     * @return Restaurant
+     */
+    public function setImage3(\RR\RestaurantBundle\Entity\RestoImage $image3 = null)
+    {
+        $this->image3 = $image3;
+
+        return $this;
+    }
+
+    /**
+     * Get image3
+     *
+     * @return \RR\RestaurantBundle\Entity\RestoImage
+     */
+    public function getImage3()
+    {
+        return $this->image3;
+    }
+
+    /**
+     * Set image4
+     *
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image4
+     *
+     * @return Restaurant
+     */
+    public function setImage4(\RR\RestaurantBundle\Entity\RestoImage $image4 = null)
+    {
+        $this->image4 = $image4;
+
+        return $this;
+    }
+
+    /**
+     * Get image4
+     *
+     * @return \RR\RestaurantBundle\Entity\RestoImage
+     */
+    public function getImage4()
+    {
+        return $this->image4;
+    }
+
+    /**
+     * Set image5
+     *
+     * @param \RR\RestaurantBundle\Entity\RestoImage $image5
+     *
+     * @return Restaurant
+     */
+    public function setImage5(\RR\RestaurantBundle\Entity\RestoImage $image5 = null)
+    {
+        $this->image5 = $image5;
+
+        return $this;
+    }
+
+    /**
+     * Get image5
+     *
+     * @return \RR\RestaurantBundle\Entity\RestoImage
+     */
+    public function getImage5()
+    {
+        return $this->image5;
     }
 }

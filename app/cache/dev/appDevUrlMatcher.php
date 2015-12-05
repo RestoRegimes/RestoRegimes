@@ -184,9 +184,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'rr_restaurant_horaires')), array (  '_controller' => 'RR\\RestaurantBundle\\Controller\\RestaurantController::horairesAction',));
             }
 
-            // rr_restaurant_images_add
-            if (0 === strpos($pathinfo, '/Restaurant/images/add') && preg_match('#^/Restaurant/images/add/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rr_restaurant_images_add')), array (  '_controller' => 'RR\\RestaurantBundle\\Controller\\RestaurantController::imagesAddAction',));
+            // rr_restaurant_images
+            if (0 === strpos($pathinfo, '/Restaurant/images') && preg_match('#^/Restaurant/images/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rr_restaurant_images')), array (  '_controller' => 'RR\\RestaurantBundle\\Controller\\RestaurantController::imagesAction',));
             }
 
             // rr_restaurant_edit

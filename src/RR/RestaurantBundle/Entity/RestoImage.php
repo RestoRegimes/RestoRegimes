@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Context\ExecutionContextInterface;
+
 
 /**
  * @ORM\Entity
@@ -47,11 +47,6 @@ class RestoImage
      */
     private $updatedAt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant", inversedBy="images")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $restaurant;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -97,29 +92,7 @@ class RestoImage
         return $this->imageName;
     }
 
-    /**
-     * Set restaurant
-     *
-     * @param \RR\RestaurantBundle\Entity\Restaurant $restaurant
-     *
-     * @return Image
-     */
-    public function setRestaurant(\RR\RestaurantBundle\Entity\Restaurant $restaurant)
-    {
-        $this->restaurant = $restaurant;
 
-        return $this;
-    }
-
-    /**
-     * Get restaurant
-     *
-     * @return \RR\RestaurantBundle\Entity\Restaurant
-     */
-    public function getRestaurant()
-    {
-        return $this->restaurant;
-    }
 
     /**
      * Get id
@@ -155,18 +128,4 @@ class RestoImage
         return $this->updatedAt;
     }
 
-    /**
-     * @Assert\Callback
-     */
-    public function isContentValid(ExecutionContextInterface $context)
-    {
-
-        if(count($this->getRestaurant()->getImages())>=5){
-            $context
-                ->buildViolation('Nombre maximum d\'images atteintes.') // message
-                ->atPath('imageFile')                                                   // attribut de l'objet qui est violé
-                ->addViolation() // ceci déclenche l'erreur, ne l'oubliez pas
-            ;
-        }
-    }
 }
