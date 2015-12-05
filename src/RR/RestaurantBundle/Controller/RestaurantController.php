@@ -49,15 +49,51 @@ class RestaurantController extends Controller
             return $this->redirect($this->generateUrl('rr_core_homepage'));
         }
         $map = $this->get('ivory_google_map.map');
+        $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
         $bounds = new Bound();
-        $markerImage = new MarkerImage();
+        $markerImageStandard = new MarkerImage();
+        $markerImageGluten = new MarkerImage();
+        $markerImageVegetarien = new MarkerImage();
+        $markerImageVegetalien = new MarkerImage();
+        $markerImageDiabete = new MarkerImage();
+        $markerImageCholestherol = new MarkerImage();
+        $markerImageMultiple = new MarkerImage();
 
         // Configure your marker image options
-        $markerImage->setPrefixJavascriptVariable('marker_image_');
-        $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker1.png';
-        $markerImage->setUrl($link);
-        $markerImage->setSize(34, 34, "px", "px");
-        $markerImage->setScaledSize(34, 34, "px", "px");
+        $markerImageStandard->setPrefixJavascriptVariable('marker_image_standard_');
+        $markerImageStandard->setUrl($link."S.png");
+        $markerImageStandard->setSize(34, 34, "px", "px");
+        $markerImageStandard->setScaledSize(34, 34, "px", "px");
+
+        $markerImageGluten->setPrefixJavascriptVariable('marker_image_gluten_');
+        $markerImageGluten->setUrl($link."G.png");
+        $markerImageGluten->setSize(34, 34, "px", "px");
+        $markerImageGluten->setScaledSize(34, 34, "px", "px");
+
+        $markerImageDiabete->setPrefixJavascriptVariable('marker_image_diabete_');
+        $markerImageDiabete->setUrl($link."D.png");
+        $markerImageDiabete->setSize(34, 34, "px", "px");
+        $markerImageDiabete->setScaledSize(34, 34, "px", "px");
+
+        $markerImageVegetarien->setPrefixJavascriptVariable('marker_image_vegetarien_');
+        $markerImageVegetarien->setUrl($link."V.png");
+        $markerImageVegetarien->setSize(34, 34, "px", "px");
+        $markerImageVegetarien->setScaledSize(34, 34, "px", "px");
+
+        $markerImageVegetalien->setPrefixJavascriptVariable('mamarkerImage_vegetalien_');
+        $markerImageVegetalien->setUrl($link."VL.png");
+        $markerImageVegetalien->setSize(34, 34, "px", "px");
+        $markerImageVegetalien->setScaledSize(34, 34, "px", "px");
+
+        $markerImageCholestherol->setPrefixJavascriptVariable('mamarkerImage_cholestherol_');
+        $markerImageCholestherol->setUrl($link."C.png");
+        $markerImageCholestherol->setSize(34, 34, "px", "px");
+        $markerImageCholestherol->setScaledSize(34, 34, "px", "px");
+
+        $markerImageMultiple->setPrefixJavascriptVariable('mamarkerImage_multiple_');
+        $markerImageMultiple->setUrl($link."+.png");
+        $markerImageMultiple->setSize(34, 34, "px", "px");
+        $markerImageMultiple->setScaledSize(34, 34, "px", "px");
 
         foreach($listRestaurants as $restaurant) {
             $marker = new Marker();
@@ -74,7 +110,28 @@ class RestaurantController extends Controller
                 'clickable' => false,
                 'flat' => true,
             ));
-            $marker->setIcon($markerImage);
+            $regimes = $restaurant->getRegimes();
+
+            if(empty($regimes))$marker->setIcon($markerImageStandard);
+            else if(count($regimes)>2)$marker->setIcon($markerImageMultiple);
+            else{
+                switch($regimes[0]->getId()){
+                    case 1: $marker->setIcon($markerImageVegetarien);
+                        break;
+                    case 2: $marker->setIcon($markerImageVegetalien);
+                        break;
+                    case 3: $marker->setIcon($markerImageGluten);
+                        break;
+                    case 4: $marker->setIcon($markerImageDiabete);
+                        break;
+                    case 5: $marker->setIcon($markerImageCholestherol);
+                        break;
+                    default : $marker->setIcon($markerImageStandard);
+                }
+
+            }
+
+
 
             $bounds->extend($marker);
             $map->addMarker($marker);
