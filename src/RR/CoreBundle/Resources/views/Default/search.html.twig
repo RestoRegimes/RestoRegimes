@@ -4,26 +4,25 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span2">
+                <div class="span12">
                     <form  method="post" action="{{ path('rr_core_search') }}">
-                        Recherche:  </br>
-                        Vegetarien: </br>
-                        Vegetalien: </br>
-                        Sans gluten: </br>
-                        Diabete: </br>
-                        Cholesterol: </br>
+                        Recherche:  <input type="text" name="recherche" placeholder="recherche"></br><br>
+
+                        <input type="checkbox" id="checkbox1" name="checkboxs" value="vt">
+                        <label for="checkbox1">Vegetarien</label>
+                        <input type="checkbox" id="checkbox2" name="checkboxs"value="vl">
+                        <label for="checkbox2">Vegetalien</label>
+                        <input type="checkbox" id="checkbox3" name="checkboxs" value="g">
+                        <label for="checkbox3">Sans gluten</label>
+                        <input type="checkbox" id="checkbox4" name="checkboxs"value="d">
+                        <label for="checkbox4">Diabete</label>
+                        <input type="checkbox" id="checkbox5" name="checkboxs" value="c">
+                        <label for="checkbox5">Cholesterol</label><br><br>
+                        <input type="submit" value="rechercher" name="rechercher">
 
                     </form>
                 </div>
-                <div class="span10">
-                    <input type="text" name="recherche" placeholder="recherche"></br>
-                    <input type="checkbox" name="regime" value="vegetarien"></br>
-                    <input type="checkbox" name="regime" value="vegetalien"></br>
-                    <input type="checkbox" name="regime" value="gluten"></br>
-                    <input type="checkbox" name="regime" value="diabete"></br>
-                    <input type="checkbox" name="regime" value="cholesterol"></br>
-                    <input type="submit" name="valider" value="rechercher">
-                </div>
+
             </div>
         </div>
 
