@@ -1,0 +1,31 @@
+{% extends "RRCoreBundle:Default:layout.html.twig" %}
+{% block rrplatform_body %}
+
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+                    <form  method="post" action="{{ path('rr_core_search') }}">
+                        Recherche:  </br>
+                        Vegetarien: </br>
+                        Vegetalien: </br>
+                        Sans gluten: </br>
+                        Diabete: </br>
+                        Cholesterol: </br>
+
+                    </form>
+                </div>
+                <div class="span10">
+                    <input type="text" name="recherche" placeholder="recherche"></br>
+                    <input type="checkbox" name="regime" value="vegetarien"></br>
+                    <input type="checkbox" name="regime" value="vegetalien"></br>
+                    <input type="checkbox" name="regime" value="gluten"></br>
+                    <input type="checkbox" name="regime" value="diabete"></br>
+                    <input type="checkbox" name="regime" value="cholesterol"></br>
+                    <input type="submit" name="valider" value="rechercher">
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

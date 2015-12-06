@@ -12,8 +12,6 @@
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/style.min.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/style.css') }}" type="text/css" />
-    {% endblock %}
-    {% block javascript %}
 
     {% endblock %}
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +31,7 @@
                 <input type="text" class="input-small">
             </li>
             <li>
-                <button class="btn btn-info"><a href="#">Rechercher</a>
+                <button class="btn btn-info"><a href="{{ path('rr_core_search') }}">Rechercher</a>
                 </button>
             </li>
             <li>
@@ -106,11 +104,15 @@
 
     </div>
 </div>
+{% block javascript %}
+
+{% endblock %}
 <!-- /container -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
 </script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
 </body>
 
 

@@ -10,4 +10,8 @@ class DefaultController extends Controller
     {
         return $this->render('RRCoreBundle:Default:layout.html.twig',array());
     }
+    public function rechercheAction()
+    {
+        return $this->render('RRCoreBundle:Default:search.html.twig',array());
+    }
 }
