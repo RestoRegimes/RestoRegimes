@@ -11,7 +11,7 @@
         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
         {{ form_errors(form) }}
         {{ form_row(form.recherche) }}<br>
-
+        {{ form_row(form.radius) }}<br>
 
         {{ form_errors(form.vegetarien) }}
         {{ form_widget(form.vegetarien, {'attr': {'class': 'form-control'}}) }}
@@ -39,6 +39,12 @@
 
     </div>
 </div>
-
+<div>
+    {% if listRestaurants is defined %}
+        {% for restaurant in listRestaurants %}
+            {{ restaurant.nom }}<br>
+        {% endfor %}
+    {% endif %}
+</div>
 
 {% endblock %}

@@ -5,6 +5,7 @@ namespace RR\RestaurantBundle\Entity;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 class RestaurantRepository extends EntityRepository
 {
@@ -85,5 +86,69 @@ class RestaurantRepository extends EntityRepository
             ->where('r.valide = :valide')
             ->setParameter('valide', true)
             ;
+    }
+    public function searchRestaurants($data){
+
+        $query = $this
+            ->createQueryBuilder('r')
+            ->select('r')
+            ->leftJoin('r.regimes','reg')
+            ->addSelect('reg')
+            ->leftJoin('r.address','adr')
+            ->addSelect('adr')
+            ->where(
+                '( 6380 * Acos(cos(radians(' . $data['lat'] . '))' . //haversine formula
+                '* cos( radians( adr.latitude ) )' .
+                '* cos( radians( adr.longitude )' .
+                '- radians(' . $data['lng'] . ') )' .
+                '+ sin( radians(' . $data['lat'] . ') )' .
+                '* sin( radians( adr.latitude ) ) ) ) < :distance');
+
+
+        if($data['vegetarien']==1){
+           $query->andWhere('reg.id = 1');
+                if($data['vegetalien']==1){
+                    $query->orWhere('reg.id = 2');
+                }
+                if($data['gluten']==1){
+                    $query->orWhere('reg.id = 3');
+                }
+                if($data['diabete']==1){
+                    $query->where('reg.id = 4');
+                }
+                if($data['Cholesterol']==1){
+                    $query->orWhere('reg.id = 5');
+                }
+        }else if($data['vegetalien']==1){
+            $query->andWhere('reg.id = 2');
+                if($data['gluten']==1){
+                    $query->orWhere('reg.id = 3');
+                }
+                if($data['diabete']==1){
+                    $query->where('reg.id = 4');
+                }
+                if($data['Cholesterol']==1){
+                    $query->orWhere('reg.id = 5');
+                }
+        }else if($data['gluten']==1){
+            $query->andWhere('reg.id = 3');
+                if($data['diabete']==1){
+                    $query->orWhere('reg.id = 4');
+                }
+                if($data['Cholesterol']==1){
+                    $query->orWhere('reg.id = 5');
+                }
+        }else if($data['diabete']==1){
+            $query->andWhere('reg.id = 4');
+                if($data['Cholesterol']==1){
+                    $query->orWhere('reg.id = 5');
+                }
+        }else if($data['Cholesterol']==1){
+            $query->andWhere('reg.id = 5');
+        }
+        $query->setParameter('distance', $data['radius']);
+       return $query
+           ->getQuery()
+           ->getResult();
     }
 }

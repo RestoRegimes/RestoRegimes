@@ -210,6 +210,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'RR\\CoreBundle\\Controller\\DefaultController::indexAction',  '_route' => 'rr_core_homepage',);
         }
 
+        // rr_core_search
+        if ($pathinfo === '/recherche') {
+            return array (  '_controller' => 'RR\\CoreBundle\\Controller\\DefaultController::rechercheAction',  '_route' => 'rr_core_search',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login

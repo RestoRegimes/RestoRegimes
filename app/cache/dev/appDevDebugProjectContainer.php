@@ -916,20 +916,21 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('annotation_reader');
 
-        $b = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'\\src\\RR\\RestaurantBundle\\Entity'), 1 => ($this->targetDirs[3].'\\src\\RR\\UserBundle\\Entity'), 2 => ($this->targetDirs[3].'\\vendor\\padam87\\address-bundle\\Padam87\\AddressBundle\\Entity')));
+        $b = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'\\src\\RR\\RestaurantBundle\\Entity'), 1 => ($this->targetDirs[3].'\\src\\RR\\CoreBundle\\Entity'), 2 => ($this->targetDirs[3].'\\src\\RR\\UserBundle\\Entity'), 3 => ($this->targetDirs[3].'\\vendor\\padam87\\address-bundle\\Padam87\\AddressBundle\\Entity')));
 
         $c = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'\\vendor\\egeloen\\google-map-bundle\\Resources\\config\\doctrine') => 'Ivory\\GoogleMapBundle\\Entity'));
         $c->setGlobalBasename('mapping');
 
         $d = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
         $d->addDriver($b, 'RR\\RestaurantBundle\\Entity');
+        $d->addDriver($b, 'RR\\CoreBundle\\Entity');
         $d->addDriver($b, 'RR\\UserBundle\\Entity');
         $d->addDriver($b, 'Padam87\\AddressBundle\\Entity');
         $d->addDriver($c, 'Ivory\\GoogleMapBundle\\Entity');
         $d->addDriver(new \Doctrine\ORM\Mapping\Driver\XmlDriver(new \Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator(array(($this->targetDirs[3].'\\vendor\\friendsofsymfony\\user-bundle\\Resources\\config\\doctrine-mapping') => 'FOS\\UserBundle\\Model'), '.orm.xml')), 'FOS\\UserBundle\\Model');
 
         $e = new \Doctrine\ORM\Configuration();
-        $e->setEntityNamespaces(array('RRRestaurantBundle' => 'RR\\RestaurantBundle\\Entity', 'RRUserBundle' => 'RR\\UserBundle\\Entity', 'Padam87AddressBundle' => 'Padam87\\AddressBundle\\Entity', 'IvoryGoogleMapBundle' => 'Ivory\\GoogleMapBundle\\Entity'));
+        $e->setEntityNamespaces(array('RRRestaurantBundle' => 'RR\\RestaurantBundle\\Entity', 'RRCoreBundle' => 'RR\\CoreBundle\\Entity', 'RRUserBundle' => 'RR\\UserBundle\\Entity', 'Padam87AddressBundle' => 'Padam87\\AddressBundle\\Entity', 'IvoryGoogleMapBundle' => 'Ivory\\GoogleMapBundle\\Entity'));
         $e->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
         $e->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
         $e->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
@@ -942,6 +943,24 @@ class appDevDebugProjectContainer extends Container
         $e->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
         $e->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
         $e->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+        $e->addCustomNumericFunction('acos', 'DoctrineExtensions\\Query\\Mysql\\Acos');
+        $e->addCustomNumericFunction('asin', 'DoctrineExtensions\\Query\\Mysql\\Asin');
+        $e->addCustomNumericFunction('atan2', 'DoctrineExtensions\\Query\\Mysql\\Atan2');
+        $e->addCustomNumericFunction('atan', 'DoctrineExtensions\\Query\\Mysql\\Atan');
+        $e->addCustomNumericFunction('ceil', 'DoctrineExtensions\\Query\\Mysql\\Ceil');
+        $e->addCustomNumericFunction('cos', 'DoctrineExtensions\\Query\\Mysql\\Cos');
+        $e->addCustomNumericFunction('cot', 'DoctrineExtensions\\Query\\Mysql\\Cot');
+        $e->addCustomNumericFunction('floor', 'DoctrineExtensions\\Query\\Mysql\\Floor');
+        $e->addCustomNumericFunction('hour', 'DoctrineExtensions\\Query\\Mysql\\Hour');
+        $e->addCustomNumericFunction('pi', 'DoctrineExtensions\\Query\\Mysql\\Pi');
+        $e->addCustomNumericFunction('power', 'DoctrineExtensions\\Query\\Mysql\\Power');
+        $e->addCustomNumericFunction('quarter', 'DoctrineExtensions\\Query\\Mysql\\Quarter');
+        $e->addCustomNumericFunction('radians', 'DoctrineExtensions\\Query\\Mysql\\Radians');
+        $e->addCustomNumericFunction('rand', 'DoctrineExtensions\\Query\\Mysql\\Rand');
+        $e->addCustomNumericFunction('round', 'DoctrineExtensions\\Query\\Mysql\\Round');
+        $e->addCustomNumericFunction('sin', 'DoctrineExtensions\\Query\\Mysql\\Sin');
+        $e->addCustomNumericFunction('std', 'DoctrineExtensions\\Query\\Mysql\\Std');
+        $e->addCustomNumericFunction('tan', 'DoctrineExtensions\\Query\\Mysql\\Tan');
 
         $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $e);
 
@@ -1221,7 +1240,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['faker.generator'] = $instance = \Faker\Factory::create('en_US');
 
-        $instance->seed(15800);
+        $instance->seed(10006);
 
         return $instance;
     }
@@ -3606,7 +3625,7 @@ class appDevDebugProjectContainer extends Container
         $s = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $h, $n, 'main', $q, $r, array('check_path' => 'fos_user_security_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d, NULL);
         $s->setRememberMeServices($o);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($m, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $p, 3 => $s, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $o, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '566345f0e01925.19990372', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $m, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $n, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $n, 'fos_user_security_login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($m, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $p, 3 => $s, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $o, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '566606735504e3.43255109', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $m, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $n, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $n, 'fos_user_security_login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -5166,7 +5185,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, '2b34770401aea22ced93ce7602c3a5cbe69e18fe', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('566345f0e01925.19990372')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, '2b34770401aea22ced93ce7602c3a5cbe69e18fe', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('566606735504e3.43255109')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 

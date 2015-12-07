@@ -2001,7 +2001,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>566345f0e01925.19990372</argument>
+            <argument>566606735504e3.43255109</argument>
           </service>
         </argument>
       </argument>
@@ -2360,7 +2360,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>566345f0e01925.19990372</argument>
+            <argument>566606735504e3.43255109</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3029,6 +3029,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="RRRestaurantBundle">RR\RestaurantBundle\Entity</argument>
+              <argument key="RRCoreBundle">RR\CoreBundle\Entity</argument>
               <argument key="RRUserBundle">RR\UserBundle\Entity</argument>
               <argument key="Padam87AddressBundle">Padam87\AddressBundle\Entity</argument>
               <argument key="IvoryGoogleMapBundle">Ivory\GoogleMapBundle\Entity</argument>
@@ -3052,6 +3053,7 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
+                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
                       </argument>
@@ -3065,6 +3067,21 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
+                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
+                        <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
+                        <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>RR\CoreBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
+                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
                       </argument>
@@ -3078,6 +3095,7 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
+                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
                       </argument>
@@ -3143,6 +3161,78 @@
           </call>
           <call method="setEntityListenerResolver">
             <argument type="service" id="doctrine.orm.default_entity_listener_resolver"/>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>acos</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Acos</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>asin</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Asin</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>atan2</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Atan2</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>atan</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Atan</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>ceil</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Ceil</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>cos</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Cos</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>cot</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Cot</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>floor</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Floor</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>hour</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Hour</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>pi</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Pi</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>power</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Power</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>quarter</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Quarter</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>radians</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Radians</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>rand</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Rand</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>round</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Round</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>sin</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Sin</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>std</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Std</argument>
+          </call>
+          <call method="addCustomNumericFunction">
+            <argument>tan</argument>
+            <argument>DoctrineExtensions\Query\Mysql\Tan</argument>
           </call>
         </service>
       </argument>
@@ -4018,7 +4108,7 @@
     <service id="faker.generator" class="Faker\Factory" factory-method="create" factory-class="Faker\Factory">
       <argument>en_US</argument>
       <call method="seed">
-        <argument>15800</argument>
+        <argument>10006</argument>
       </call>
     </service>
     <service id="faker.populator" class="Faker\ORM\Doctrine\Populator">
