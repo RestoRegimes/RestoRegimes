@@ -17,7 +17,7 @@ class DefaultController extends Controller
 
         $data = array();
         $form = $this->createFormBuilder($data)
-            ->add('recherche', 'text')
+            ->add('recherche', 'text',array('required'=>false))
             ->add('radius','integer')
             ->add('vegetarien', 'checkbox', array(
                 'label'    => 'Vegetarien',
@@ -48,10 +48,12 @@ class DefaultController extends Controller
         // like "query" and "category" as defined above.
         $data = $form->getData();
 
-            print_r($data);
+
             $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
             $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
-
+            $ip=$this->container->get('request_stack')->getCurrentRequest()->getClientIp();
+            #TODO recuperer l'addresse avec l'IP
+            echo $ip;
             $address=$geocoder->geocode($data['recherche']." France");
 
             $coord=$address->first()->getCoordinates();
@@ -74,7 +76,7 @@ class DefaultController extends Controller
                 "form"=>$form->createView(),
                 "listRestaurants"=>$listRestaurants
             ));
-            #TODO traiter les données du formulaire
+
     }
        return $this->render('RRCoreBundle:Default:search.html.twig',array(
             "form"=>$form->createView()

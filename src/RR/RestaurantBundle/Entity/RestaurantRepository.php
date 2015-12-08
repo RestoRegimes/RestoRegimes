@@ -95,18 +95,10 @@ class RestaurantRepository extends EntityRepository
             ->leftJoin('r.regimes','reg')
             ->addSelect('reg')
             ->leftJoin('r.address','adr')
-            ->addSelect('adr')
-            ->where(
-                '( 6380 * Acos(cos(radians(' . $data['lat'] . '))' . //haversine formula
-                '* cos( radians( adr.latitude ) )' .
-                '* cos( radians( adr.longitude )' .
-                '- radians(' . $data['lng'] . ') )' .
-                '+ sin( radians(' . $data['lat'] . ') )' .
-                '* sin( radians( adr.latitude ) ) ) ) < :distance');
-
+            ->addSelect('adr');
 
         if($data['vegetarien']==1){
-           $query->andWhere('reg.id = 1');
+           $query->where('reg.id = 1');
                 if($data['vegetalien']==1){
                     $query->orWhere('reg.id = 2');
                 }
@@ -120,7 +112,7 @@ class RestaurantRepository extends EntityRepository
                     $query->orWhere('reg.id = 5');
                 }
         }else if($data['vegetalien']==1){
-            $query->andWhere('reg.id = 2');
+            $query->where('reg.id = 2');
                 if($data['gluten']==1){
                     $query->orWhere('reg.id = 3');
                 }
@@ -131,7 +123,7 @@ class RestaurantRepository extends EntityRepository
                     $query->orWhere('reg.id = 5');
                 }
         }else if($data['gluten']==1){
-            $query->andWhere('reg.id = 3');
+            $query->where('reg.id = 3');
                 if($data['diabete']==1){
                     $query->orWhere('reg.id = 4');
                 }
@@ -139,14 +131,21 @@ class RestaurantRepository extends EntityRepository
                     $query->orWhere('reg.id = 5');
                 }
         }else if($data['diabete']==1){
-            $query->andWhere('reg.id = 4');
+            $query->where('reg.id = 4');
                 if($data['Cholesterol']==1){
                     $query->orWhere('reg.id = 5');
                 }
         }else if($data['Cholesterol']==1){
-            $query->andWhere('reg.id = 5');
+            $query->where('reg.id = 5');
         }
-        $query->setParameter('distance', $data['radius']);
+        $query->andWhere(
+            '( 6380 * Acos(cos(radians(' . $data['lat'] . '))' . //haversine formula
+            '* cos( radians( adr.latitude ) )' .
+            '* cos( radians( adr.longitude )' .
+            '- radians(' . $data['lng'] . ') )' .
+            '+ sin( radians(' . $data['lat'] . ') )' .
+            '* sin( radians( adr.latitude ) ) ) ) < :distance')
+            ->setParameter('distance', $data['radius']);
        return $query
            ->getQuery()
            ->getResult();
