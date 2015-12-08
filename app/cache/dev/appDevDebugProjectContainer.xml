@@ -283,11 +283,10 @@
     <parameter key="security.role_hierarchy.roles" type="collection">
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_PRO</parameter>
       </parameter>
-      <parameter key="ROLE_SUPER_ADMIN" type="collection">
+      <parameter key="ROLE_PRO" type="collection">
         <parameter>ROLE_USER</parameter>
-        <parameter>ROLE_ADMIN</parameter>
-        <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
       </parameter>
     </parameter>
     <parameter key="twig.class">Twig_Environment</parameter>
@@ -2001,7 +2000,11 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
             <argument>566606735504e3.43255109</argument>
+=======
+            <argument>56646d58a6f249.93101109</argument>
+>>>>>>> origin/Lyter
           </service>
         </argument>
       </argument>
@@ -2054,11 +2057,10 @@
       <argument type="collection">
         <argument key="ROLE_ADMIN" type="collection">
           <argument>ROLE_USER</argument>
+          <argument>ROLE_PRO</argument>
         </argument>
-        <argument key="ROLE_SUPER_ADMIN" type="collection">
+        <argument key="ROLE_PRO" type="collection">
           <argument>ROLE_USER</argument>
-          <argument>ROLE_ADMIN</argument>
-          <argument>ROLE_ALLOWED_TO_SWITCH</argument>
         </argument>
       </argument>
     </service>
@@ -2360,7 +2362,11 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
+<<<<<<< HEAD
             <argument>566606735504e3.43255109</argument>
+=======
+            <argument>56646d58a6f249.93101109</argument>
+>>>>>>> origin/Lyter
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -4108,7 +4114,11 @@
     <service id="faker.generator" class="Faker\Factory" factory-method="create" factory-class="Faker\Factory">
       <argument>en_US</argument>
       <call method="seed">
+<<<<<<< HEAD
         <argument>10006</argument>
+=======
+        <argument>10690</argument>
+>>>>>>> origin/Lyter
       </call>
     </service>
     <service id="faker.populator" class="Faker\ORM\Doctrine\Populator">

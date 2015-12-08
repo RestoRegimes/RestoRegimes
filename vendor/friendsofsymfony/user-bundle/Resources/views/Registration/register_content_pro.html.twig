@@ -1,0 +1,9 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_registerPro'), 'attr': {'class': 'fos_user_registration_registerPro'}}) }}
+{{ form_widget(form) }}
+<div>Registration pro</div>
+<div>
+    <input type="submit" value="{{ 'submit'|trans }}" />
+</div>
+{{ form_end(form) }}
