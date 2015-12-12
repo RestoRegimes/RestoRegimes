@@ -36,7 +36,7 @@ class RestaurantController extends Controller
         if ($page < 1) {
             throw $this->createNotFoundException("La page ".$page." n'existe pas.");
         }
-        $nbPerPage=5;//test Paris lat 48.89-48.82 lng 2.4-2.28
+        $nbPerPage=1;//test Paris lat 48.89-48.82 lng 2.4-2.28
 
         $listRestaurants = $this->getDoctrine()
             ->getManager()
@@ -303,7 +303,7 @@ class RestaurantController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // On récupère l'annonce $id
-        $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->myFindOne($id);
+        $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->Find($id);
 
         if (null === $restaurant) {
             throw new NotFoundHttpException("Le restaurant d'id ".$id." n'existe pas.");

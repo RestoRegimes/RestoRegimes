@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
     <meta charset="utf-8">
-    <title>{% block title %}RR Platform{% endblock %}</title>
+    <title>{% block title %}Resto'Regimes{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -20,30 +22,29 @@
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
             mdl-layout--fixed-header">
-    <header class="mdl-layout__header mdl-layout__header--transparent">
+    <header class="mdl-layout__header mdl-layout__header--transparent ">
         <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Resto'Regimes </span>
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
-                <label class="mdl-button mdl-js-button mdl-button--icon"
-                       for="fixed-header-drawer-exp">
-                    <a href="{{ path('rr_core_search') }}">
-                        <i class="material-icons">search</i>
-                    </a>
 
-                </label>
-                <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" name="sample"
-                           id="fixed-header-drawer-exp">
-                </div>
+                    <label class="mdl-button mdl-js-button mdl-button--icon"
+                           for="fixed-header-drawer-exp">
+                            <i class="material-icons" >search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        {{ render(controller('RRCoreBundle:Default:searchForm', {})) }}
+                    </div>
+
             </div>
         </div>
     </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title"><img src="{{ asset('bundles/rrcore/images/RRLogo.png') }}" style="width: 200px;"> </span>
+    <div class="mdl-layout__drawer mdl-layout__drawer">
+
+        <span class="mdl-layout-title"><img src="{{ asset('bundles/rrcore/images/RRLogo.png') }}" style="width: 150px;"> </span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="{{ path('rr_core_homepage') }}">Acceuil</a>
-            <a class="mdl-navigation__link"class="mdl-navigation__link" href="{{ path('rr_core_homepage') }}">Accueil</a>
             <a class="mdl-navigation__link" href="{{ path('rr_restaurant_home') }}">les restaurants</a>
             <a class="mdl-navigation__link" href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a>
 
@@ -59,7 +60,7 @@
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-            <hr>
+
             {% if app.user is not null %}
                 Bonjour {{ app.user.username }} - {{ app.user.email }}
             {% endif %}
@@ -67,27 +68,26 @@
             {% endblock fos_user %}
             {% block jumbotron %}
             {% endblock %}
-            <hr>
-            <div class="row">
-                <div id="menu" class="col-md-3">
+
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
                     <h3>Les Restaurants</h3>
-                    <ul class="nav nav-pills nav-stacked">
-
-                    </ul>
-
                 </div>
-                <div id="content" class="col-md-9">
+                <div class="mdl-cell mdl-cell--8-col">
                     {% block body %}
                     {% endblock %}
                 </div>
             </div>
-            <hr>
+
 
             {% block content %}
             {% endblock %}
         </div>
     </main>
+
 </div>
+
+
 
 
 {% block javascript %}

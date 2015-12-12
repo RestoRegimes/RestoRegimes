@@ -6,7 +6,12 @@
     Accueil - {{ parent() }}
 {% endblock %}
 {% block jumbotron %}
-    {{ google_map(map) }}
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">{{ google_map(map) }}</div>
+    </div>
+
+
+
 {% endblock %}
 {% block rrrestaurant_body %}
 
@@ -29,13 +34,17 @@
             <li>Pas (encore !) de restaurants</li>
         {% endfor %}
     </ul>
-    <ul class="pagination">
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
-  {% for p in range(1, nbPages) %}
-    <li{% if p == page %} class="active"{% endif %}>
-      <a href="{{ path('rr_restaurant_home', {'page': p}) }}">{{ p }}</a>
-    </li>
-  {% endfor %}
-</ul>
+        <div class="mdl-tabs__tab-bar">
+            {% for p in range(1, nbPages) %}
+                <a href="{{ path('rr_restaurant_home', {'page': p}) }}">
+                <button class="mdl-button mdl-js-button mdl-button{% if p == page %}--accent mdl-button--raised{% else %}--primary mdl-js-ripple-effect{% endif %}">
+                    {{ p }}
+                </button>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

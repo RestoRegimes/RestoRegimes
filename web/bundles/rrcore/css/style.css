@@ -39,12 +39,10 @@ input[type=checkbox]:checked + label {
     background-color:#d0d0d0;
 }
 
-.layout-transparent .mdl-layout__header,
-.layout-transparent .mdl-layout__drawer-button {
+.mdl-layout__header,
+.mdl-layout__drawer-button,
+.material-icons{
     /* This background is dark, so we set text to white. Use 87% black instead if
        your background is light. */
-    color: black;
-}
-.mdl-layout__drawer-button i.material-icons{
-    background-image: url("../images/RRLogo.png");
+    color: #0277bd;
 }

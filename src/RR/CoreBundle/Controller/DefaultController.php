@@ -12,8 +12,17 @@ class DefaultController extends Controller
     {
         return $this->render('RRCoreBundle:Default:layout.html.twig',array());
     }
+    public function searchFormAction()
+    {
+        $form = $this->createFormBuilder(array())
+            ->add('recherche', 'text',array('required'=>false,'label'=>" "))
+            ->getForm();
+
+        return $this->render('RRCoreBundle:Default:searchform.html.twig',array('formAccueil'=>$form->createView()));
+    }
     public function rechercheAction(Request $request)
     {
+
 
         $data = array();
         $form = $this->createFormBuilder($data)
@@ -41,26 +50,29 @@ class DefaultController extends Controller
             ->add('rechercher','submit')
             ->getForm();
 
+
+
+
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
 
         // $data is a simply array with your form fields
         // like "query" and "category" as defined above.
-        $data = $form->getData();
+            $data = $form->getData();
 
+
+            if(empty($data['radius']))$data['radius']=10;
 
             $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
             $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
             $ip=$this->container->get('request_stack')->getCurrentRequest()->getClientIp();
             #TODO recuperer l'addresse avec l'IP
-            echo $ip;
+
             $address=$geocoder->geocode($data['recherche']." France");
 
             $coord=$address->first()->getCoordinates();
             $data['lat']=$coord->getLatitude();
             $data['lng']=$coord->getLongitude();
-            echo $data['lat'];
-            echo $data['lng'];
             if($data['lat']==0 && $data['lng']==0){
                 //erreur recherche
             }
@@ -74,12 +86,14 @@ class DefaultController extends Controller
 
             return $this->render('RRCoreBundle:Default:search.html.twig',array(
                 "form"=>$form->createView(),
-                "listRestaurants"=>$listRestaurants
+                "listRestaurants"=>$listRestaurants,
             ));
 
     }
        return $this->render('RRCoreBundle:Default:search.html.twig',array(
-            "form"=>$form->createView()
+            "form"=>$form->createView(),
+
         ));
     }
+
 }
