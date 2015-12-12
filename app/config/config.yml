@@ -153,7 +153,7 @@ ivory_google_map:
         width: "500px"
 
         # Map height
-        height: "300px"
+        height: "500px"
 
         # Custom map options
         # By default, there is no map options
@@ -164,8 +164,8 @@ ivory_google_map:
         # Custom stylesheet options
         # By default, there is no stylesheet options except width & height
         stylesheet_options:
-            border: "1px solid #000"
-            background-color: "#fff"
+            border: "2px solid #dadada"
+            background-color: "#ffffff"
 
         # google map Api language, default en
         language: fr

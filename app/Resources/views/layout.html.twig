@@ -9,104 +9,87 @@
     <meta name="description" content="">
     <meta name="author" content="">
     {% block stylesheets %}
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/style.min.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/material.min.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('bundles/rrcore/css/style.css') }}" type="text/css" />
-
+        <script src="{{ asset('bundles/rrcore/js/material.min.js') }}"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {% endblock %}
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
 </head>
 
 <body>
-<div class="container-narrow">
-    <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-            <li>
-                <input type="text" class="input-small">
-            </li>
-            <li>
-                <button class="btn btn-info"><a href="{{ path('rr_core_search') }}">Rechercher</a>
-                </button>
-            </li>
-            <li>
-            {% if app.user is null %}
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+                <label class="mdl-button mdl-js-button mdl-button--icon"
+                       for="fixed-header-drawer-exp">
+                    <a href="{{ path('rr_core_search') }}">
+                        <i class="material-icons">search</i>
+                    </a>
 
-            {% else %}
-                <a href="{{ path('fos_user_profile_show') }}">Profile</a>
-            {% endif %}
-            </li>
-            <li>
-            {% if app.user is null %}
-                <a href="{{ path('fos_user_security_login') }}">Login</a>
-            {% else %}
-                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
-            {% endif %}
-            </li>
-            <li>
-                <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
-            </li>
-            <li>
-                <a href="{{ path('fos_user_registration_registerPro') }}">Professionnel ?</a>
-            </li>
-        </ul>
-        <h3 class="muted"><a href="{{ path('rr_core_homepage') }}">Resto Regimes</a></h3>
-
-
-    </div>
-    <hr>
-    {% if app.user is not null %}
-        Bonjour {{ app.user.username }} - {{ app.user.email }}
-    {% endif %}
-    {% block fos_user %}
-    {% endblock fos_user %}
-    {% block jumbotron %}
-    {% endblock %}
-    <hr>
-    <div class="row">
-        <div id="menu" class="col-md-3">
-            <h3>Les Restaurants</h3>
-            <ul class="nav nav-pills nav-stacked">
-                <li><a href="{{ path('rr_core_homepage') }}">Accueil</a></li>
-                <li><a href="{{ path('rr_restaurant_home') }}">les restaurants</a></li>
-                <li><a href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a></li>
-            </ul>
-
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" name="sample"
+                           id="fixed-header-drawer-exp">
+                </div>
+            </div>
         </div>
-        <div id="content" class="col-md-9">
-            {% block body %}
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title"><img src="{{ asset('bundles/rrcore/images/RRLogo.png') }}" style="width: 200px;"> </span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="{{ path('rr_core_homepage') }}">Acceuil</a>
+            <a class="mdl-navigation__link"class="mdl-navigation__link" href="{{ path('rr_core_homepage') }}">Accueil</a>
+            <a class="mdl-navigation__link" href="{{ path('rr_restaurant_home') }}">les restaurants</a>
+            <a class="mdl-navigation__link" href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a>
+
+            {% if app.user is not null %}
+                <a class="mdl-navigation__link" href="{{ path('fos_user_profile_show') }}">Mon Compte</a>
+                <a class="mdl-navigation__link" href="{{ path('fos_user_security_logout') }}">Logout</a>
+            {% else %}
+                <a class="mdl-navigation__link" href="{{ path('fos_user_security_login') }}">Se connecter</a>
+                <a class="mdl-navigation__link" href="{{ path('fos_user_registration_register') }}">S'enregistrer</a>
+                <a class="mdl-navigation__link" href="{{ path('fos_user_registration_registerPro') }}">Professionnel</a>
+            {% endif %}
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <hr>
+            {% if app.user is not null %}
+                Bonjour {{ app.user.username }} - {{ app.user.email }}
+            {% endif %}
+            {% block fos_user %}
+            {% endblock fos_user %}
+            {% block jumbotron %}
+            {% endblock %}
+            <hr>
+            <div class="row">
+                <div id="menu" class="col-md-3">
+                    <h3>Les Restaurants</h3>
+                    <ul class="nav nav-pills nav-stacked">
+
+                    </ul>
+
+                </div>
+                <div id="content" class="col-md-9">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+            <hr>
+
+            {% block content %}
             {% endblock %}
         </div>
-    </div>
-    <hr>
-
-    {% block content %}
-    {% endblock %}
-    <hr>
-    <div class="footer">
-
-
-        <div class="row-fluid">
-            <div class="span9">
-                <a href="#">Contact /</a>
-                <a href="#">CGU /</a>
-                <a href="#">Mention légales /</a>
-                <a href="#">A Propos</a>
-            </div>
-            <div class="span3">
-                <p class="">© RestoRegime {{ 'now'|date('Y') }}</p>
-            </div>
-
-        </div>
-
-
-    </div>
+    </main>
 </div>
+
+
 {% block javascript %}
 
 {% endblock %}

@@ -147,20 +147,105 @@ class Map extends AbstractJavascriptVariableAsset
             )
         ),
         array(
-            'featureType'=>"road",
-            'elementType'=> "geometry",
+            'featureType'=>"landscape",
             'stylers' => array(
-                array('lightness' => '100'),
-                array('visibility' => "simplified"),
+                array('saturation' => -100),
+                array('lightness' => 65),
+                array('visibility' => 'on'),
             )
         ),
         array(
-            'featureType'=>"road",
+            'featureType'=>"poi",
+            'stylers' => array(
+                array('saturation' => -100),
+                array('visibility' => 'simplified'),
+            )
+        ),
+        array(
+            'featureType'=>"road.highway",
+            'stylers' => array(
+                array('saturation' => -100),
+                array('visibility' => 'simplified'),
+            )
+        ),
+        array(
+            'featureType'=>"road.arterial",
+            'stylers' => array(
+                array('saturation' => -100),
+                array('lightness' => 30),
+                array('visibility' => 'on'),
+            )
+        ),
+        array(
+            'featureType'=>"road.local",
+            'stylers' => array(
+                array('saturation' => -100),
+                array('lightness' => 40),
+                array('visibility' => 'on'),
+            )
+        ),
+        array(
+            'featureType'=>"transit",
+            'stylers' => array(
+                array('saturation' => -100),
+                array('visibility' => 'simplified'),
+            )
+        ),
+        array(
+            'featureType'=>"administrative.province",
+            'stylers' => array(
+                array('visibility' => 'off'),
+            )
+        ),
+        array(
+            'featureType'=>"water",
+            'elementType'=>"labels",
+            'stylers' => array(
+                array('saturation' => 40),
+                array('lightness' => -25),
+                array('visibility' => 'on'),
+            )
+        ),
+        array(
+            'featureType'=>"water",
+            'elementType'=>"geometry",
+            'stylers' => array(
+                array('color' => '#a2daf2'),
+            )
+        ),
+        array(
+            'featureType'=>"poi.park",
+            'elementType'=>"geometry",
+            'stylers' => array(
+                array('saturation' => 50),
+                array('lightness' => -25),
+                array('hue' => '#bde6ab'),
+            )
+        ),
+        array(
+            'featureType'=>"poi.medical",
+            'elementType'=>"geometry",
+            'stylers' => array(
+                array('saturation' => 50),
+                array('lightness' => -25),
+                array('color' => '#fbd3da'),
+            )
+        ),
+        array(
+            'featureType'=>"poi.business",
+            'elementType'=>"all",
+            'stylers' => array(
+                array('visibility' => 'off'),
+            )
+        ),
+        array(
+            'featureType'=>"landscape.natural.terrain",
             'elementType'=> "labels",
             'stylers' => array(
-                array('visibility' => "off"),
+                array('visibility' => 'off'),
             )
-        )
+        ),
+
         )
     );
 
