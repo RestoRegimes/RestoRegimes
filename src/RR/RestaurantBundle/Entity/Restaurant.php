@@ -28,6 +28,11 @@ class Restaurant
     private $id;
 
     /**
+     * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\User",cascade={"persist"})
+     */
+    private $proprietaire;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -741,5 +746,29 @@ class Restaurant
     public function getImage5()
     {
         return $this->image5;
+    }
+
+    /**
+     * Set proprietaire
+     *
+     * @param \RR\UserBundle\Entity\User $proprietaire
+     *
+     * @return Restaurant
+     */
+    public function setProprietaire(\RR\UserBundle\Entity\User $proprietaire = null)
+    {
+        $this->proprietaire = $proprietaire;
+
+        return $this;
+    }
+
+    /**
+     * Get proprietaire
+     *
+     * @return \RR\UserBundle\Entity\User
+     */
+    public function getProprietaire()
+    {
+        return $this->proprietaire;
     }
 }

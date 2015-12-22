@@ -46,3 +46,7 @@ input[type=checkbox]:checked + label {
        your background is light. */
     color: #0277bd;
 }
+
+.mdl-layout__header{
+    background-color: transparent;
+}

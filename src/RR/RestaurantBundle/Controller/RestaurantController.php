@@ -112,7 +112,7 @@ class RestaurantController extends Controller
             ));
             $regimes = $restaurant->getRegimes();
 
-            if(empty($regimes))$marker->setIcon($markerImageStandard);
+            if(is_null($regimes[0]))$marker->setIcon($markerImageStandard);
             else if(count($regimes)>2)$marker->setIcon($markerImageMultiple);
             else{
                 switch($regimes[0]->getId()){
@@ -214,7 +214,9 @@ class RestaurantController extends Controller
         $form->handleRequest($request);
 
         // On vérifie que les valeurs entrées sont correctes
-        if ($form->isValid()) {
+        if ($form->isValid() && $this->getUser()->getRoles()[0]=="ROLE_PRO") {
+
+            $restaurant->setProprietaire($this->getUser());
 
             // On l'enregistre notre objet $advert dans la base de données, par exemple
             $em = $this->getDoctrine()->getManager();
