@@ -576,9 +576,9 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="webmaster@example.com">webmaster</parameter>
+      <parameter key="registration@example.com">Demo Registration</parameter>
     </parameter>
-    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
     <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
@@ -1946,6 +1946,10 @@
         <argument>FOS\UserBundle\EventListener\FlashListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>fos_user.listener.email_confirmation</argument>
+        <argument>FOS\UserBundle\EventListener\EmailConfirmationListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>fos_user.listener.resetting</argument>
         <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
       </call>
@@ -2000,11 +2004,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-<<<<<<< HEAD
-            <argument>566606735504e3.43255109</argument>
-=======
-            <argument>56646d58a6f249.93101109</argument>
->>>>>>> origin/Lyter
+            <argument>567a71cb480d54.44560580</argument>
           </service>
         </argument>
       </argument>
@@ -2156,6 +2156,28 @@
                   </argument>
                   <argument type="collection">
                     <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/pro/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_PRO</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/user/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2362,11 +2384,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-<<<<<<< HEAD
-            <argument>566606735504e3.43255109</argument>
-=======
-            <argument>56646d58a6f249.93101109</argument>
->>>>>>> origin/Lyter
+            <argument>567a71cb480d54.44560580</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2419,6 +2437,28 @@
                   </argument>
                   <argument type="collection">
                     <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/pro/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_PRO</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/user/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -3035,7 +3075,6 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="RRRestaurantBundle">RR\RestaurantBundle\Entity</argument>
-              <argument key="RRCoreBundle">RR\CoreBundle\Entity</argument>
               <argument key="RRUserBundle">RR\UserBundle\Entity</argument>
               <argument key="Padam87AddressBundle">Padam87\AddressBundle\Entity</argument>
               <argument key="IvoryGoogleMapBundle">Ivory\GoogleMapBundle\Entity</argument>
@@ -3059,7 +3098,6 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
-                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
                       </argument>
@@ -3073,21 +3111,6 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
-                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
-                        <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
-                        <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
-                      </argument>
-                    </service>
-                  </argument>
-                  <argument>RR\CoreBundle\Entity</argument>
-                </call>
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
-                      <argument type="service" id="annotation_reader"/>
-                      <argument type="collection">
-                        <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
-                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
                       </argument>
@@ -3101,7 +3124,6 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\RestoRegimes\src\RR\RestaurantBundle\Entity</argument>
-                        <argument>C:\wamp\www\RestoRegimes\src\RR\CoreBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\src\RR\UserBundle\Entity</argument>
                         <argument>C:\wamp\www\RestoRegimes\vendor\padam87\address-bundle\Padam87\AddressBundle\Entity</argument>
                       </argument>
@@ -3363,6 +3385,13 @@
       <tag name="form.type" alias="fos_user_registration"/>
       <argument>RR\UserBundle\Entity\User</argument>
     </service>
+    <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.mailer"/>
+      <argument type="service" id="fos_user.util.token_generator"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="session"/>
+    </service>
     <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
       <argument>fos_user_change_password_form</argument>
@@ -3592,9 +3621,9 @@
       </call>
       <call method="setStylesheetOptions">
         <argument type="collection">
-          <argument key="border">1px solid #000</argument>
-          <argument key="background_color">#fff</argument>
-          <argument key="width">500px</argument>
+          <argument key="border">2px solid #dadada</argument>
+          <argument key="background_color">#ffffff</argument>
+          <argument key="width">100%</argument>
           <argument key="height">300px</argument>
         </argument>
       </call>
@@ -4114,11 +4143,7 @@
     <service id="faker.generator" class="Faker\Factory" factory-method="create" factory-class="Faker\Factory">
       <argument>en_US</argument>
       <call method="seed">
-<<<<<<< HEAD
-        <argument>10006</argument>
-=======
-        <argument>10690</argument>
->>>>>>> origin/Lyter
+        <argument>19346</argument>
       </call>
     </service>
     <service id="faker.populator" class="Faker\ORM\Doctrine\Populator">
@@ -4559,7 +4584,7 @@
         <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="webmaster@example.com">webmaster</argument>
+            <argument key="registration@example.com">Demo Registration</argument>
           </argument>
           <argument key="resetting" type="collection">
             <argument key="webmaster@example.com">webmaster</argument>

@@ -23,20 +23,20 @@ class __TwigTemplate_502e1e667e8d3f1d73718dbfd36894bf388e594c7c7d55ac5b7e6cc4290
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2cefcb1a282a4dcff809da2a4eca607ff40edd866bd02a0baf9117167127942c = $this->env->getExtension("native_profiler");
-        $__internal_2cefcb1a282a4dcff809da2a4eca607ff40edd866bd02a0baf9117167127942c->enter($__internal_2cefcb1a282a4dcff809da2a4eca607ff40edd866bd02a0baf9117167127942c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BazingaGeocoderBundle:Collector:geocoder.html.twig"));
+        $__internal_21c0a3500450139efef0d3b5095d6d4821a3c8ecbfdafc99db48db488cad9bd8 = $this->env->getExtension("native_profiler");
+        $__internal_21c0a3500450139efef0d3b5095d6d4821a3c8ecbfdafc99db48db488cad9bd8->enter($__internal_21c0a3500450139efef0d3b5095d6d4821a3c8ecbfdafc99db48db488cad9bd8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BazingaGeocoderBundle:Collector:geocoder.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2cefcb1a282a4dcff809da2a4eca607ff40edd866bd02a0baf9117167127942c->leave($__internal_2cefcb1a282a4dcff809da2a4eca607ff40edd866bd02a0baf9117167127942c_prof);
+        $__internal_21c0a3500450139efef0d3b5095d6d4821a3c8ecbfdafc99db48db488cad9bd8->leave($__internal_21c0a3500450139efef0d3b5095d6d4821a3c8ecbfdafc99db48db488cad9bd8_prof);
 
     }
 
     // line 3
     public function block_toolbar($context, array $blocks = array())
     {
-        $__internal_5b5b85d60e512263ef63ddaf65a35985e3e8ba63c242879fc79eeadc76402246 = $this->env->getExtension("native_profiler");
-        $__internal_5b5b85d60e512263ef63ddaf65a35985e3e8ba63c242879fc79eeadc76402246->enter($__internal_5b5b85d60e512263ef63ddaf65a35985e3e8ba63c242879fc79eeadc76402246_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+        $__internal_0c3898b4686d0e29616a7bf6d3a90d75dbd424fa9682a8ab5e447c451f36f88a = $this->env->getExtension("native_profiler");
+        $__internal_0c3898b4686d0e29616a7bf6d3a90d75dbd424fa9682a8ab5e447c451f36f88a->enter($__internal_0c3898b4686d0e29616a7bf6d3a90d75dbd424fa9682a8ab5e447c451f36f88a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
 
         // line 4
         echo "    ";
@@ -73,15 +73,15 @@ class __TwigTemplate_502e1e667e8d3f1d73718dbfd36894bf388e594c7c7d55ac5b7e6cc4290
         echo "    ";
         $this->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig", "BazingaGeocoderBundle:Collector:geocoder.html.twig", 18)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
         
-        $__internal_5b5b85d60e512263ef63ddaf65a35985e3e8ba63c242879fc79eeadc76402246->leave($__internal_5b5b85d60e512263ef63ddaf65a35985e3e8ba63c242879fc79eeadc76402246_prof);
+        $__internal_0c3898b4686d0e29616a7bf6d3a90d75dbd424fa9682a8ab5e447c451f36f88a->leave($__internal_0c3898b4686d0e29616a7bf6d3a90d75dbd424fa9682a8ab5e447c451f36f88a_prof);
 
     }
 
     // line 21
     public function block_menu($context, array $blocks = array())
     {
-        $__internal_2d8a6d2dd05eb15e5bbba902a8102be406aea560459d69ee3ce29b964dcab19c = $this->env->getExtension("native_profiler");
-        $__internal_2d8a6d2dd05eb15e5bbba902a8102be406aea560459d69ee3ce29b964dcab19c->enter($__internal_2d8a6d2dd05eb15e5bbba902a8102be406aea560459d69ee3ce29b964dcab19c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+        $__internal_bfdd07a1cf1e2bc6ac9d7b787fe3be550bd964dd001385043a7039555028ebba = $this->env->getExtension("native_profiler");
+        $__internal_bfdd07a1cf1e2bc6ac9d7b787fe3be550bd964dd001385043a7039555028ebba->enter($__internal_bfdd07a1cf1e2bc6ac9d7b787fe3be550bd964dd001385043a7039555028ebba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
 
         // line 22
         echo "<span class=\"label\">
@@ -100,15 +100,15 @@ class __TwigTemplate_502e1e667e8d3f1d73718dbfd36894bf388e594c7c7d55ac5b7e6cc4290
 </span>
 ";
         
-        $__internal_2d8a6d2dd05eb15e5bbba902a8102be406aea560459d69ee3ce29b964dcab19c->leave($__internal_2d8a6d2dd05eb15e5bbba902a8102be406aea560459d69ee3ce29b964dcab19c_prof);
+        $__internal_bfdd07a1cf1e2bc6ac9d7b787fe3be550bd964dd001385043a7039555028ebba->leave($__internal_bfdd07a1cf1e2bc6ac9d7b787fe3be550bd964dd001385043a7039555028ebba_prof);
 
     }
 
     // line 32
     public function block_panel($context, array $blocks = array())
     {
-        $__internal_a6e0066f7df1b6564679495e4cad9fe79cef115d76b23e4489bc34b161130ae7 = $this->env->getExtension("native_profiler");
-        $__internal_a6e0066f7df1b6564679495e4cad9fe79cef115d76b23e4489bc34b161130ae7->enter($__internal_a6e0066f7df1b6564679495e4cad9fe79cef115d76b23e4489bc34b161130ae7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
+        $__internal_633cae789ff82d08b01b19b3466a62dd6bc4be181ae9dbbee3c22cfa557ed664 = $this->env->getExtension("native_profiler");
+        $__internal_633cae789ff82d08b01b19b3466a62dd6bc4be181ae9dbbee3c22cfa557ed664->enter($__internal_633cae789ff82d08b01b19b3466a62dd6bc4be181ae9dbbee3c22cfa557ed664_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
 
         // line 33
         echo "    <h2>Geocoder Requests</h2>
@@ -221,7 +221,7 @@ class __TwigTemplate_502e1e667e8d3f1d73718dbfd36894bf388e594c7c7d55ac5b7e6cc4290
     //]]></script>
 ";
         
-        $__internal_a6e0066f7df1b6564679495e4cad9fe79cef115d76b23e4489bc34b161130ae7->leave($__internal_a6e0066f7df1b6564679495e4cad9fe79cef115d76b23e4489bc34b161130ae7_prof);
+        $__internal_633cae789ff82d08b01b19b3466a62dd6bc4be181ae9dbbee3c22cfa557ed664->leave($__internal_633cae789ff82d08b01b19b3466a62dd6bc4be181ae9dbbee3c22cfa557ed664_prof);
 
     }
 

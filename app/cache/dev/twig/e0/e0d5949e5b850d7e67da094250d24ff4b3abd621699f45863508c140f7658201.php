@@ -21,20 +21,20 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_582e5b8b25a7d931e2588841c3732d3aca59675e18ed77f043a6849ef14dcc1b = $this->env->getExtension("native_profiler");
-        $__internal_582e5b8b25a7d931e2588841c3732d3aca59675e18ed77f043a6849ef14dcc1b->enter($__internal_582e5b8b25a7d931e2588841c3732d3aca59675e18ed77f043a6849ef14dcc1b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:search.html.twig"));
+        $__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee = $this->env->getExtension("native_profiler");
+        $__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee->enter($__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:search.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_582e5b8b25a7d931e2588841c3732d3aca59675e18ed77f043a6849ef14dcc1b->leave($__internal_582e5b8b25a7d931e2588841c3732d3aca59675e18ed77f043a6849ef14dcc1b_prof);
+        $__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee->leave($__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee_prof);
 
     }
 
     // line 2
     public function block_rrplatform_body($context, array $blocks = array())
     {
-        $__internal_22e9dc1ddb7b6484a581a9b2967fd51e5377e9921fa20b3467062268840dbca0 = $this->env->getExtension("native_profiler");
-        $__internal_22e9dc1ddb7b6484a581a9b2967fd51e5377e9921fa20b3467062268840dbca0->enter($__internal_22e9dc1ddb7b6484a581a9b2967fd51e5377e9921fa20b3467062268840dbca0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_body"));
+        $__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065 = $this->env->getExtension("native_profiler");
+        $__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065->enter($__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_body"));
 
         // line 3
         echo "
@@ -165,7 +165,7 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 
 ";
         
-        $__internal_22e9dc1ddb7b6484a581a9b2967fd51e5377e9921fa20b3467062268840dbca0->leave($__internal_22e9dc1ddb7b6484a581a9b2967fd51e5377e9921fa20b3467062268840dbca0_prof);
+        $__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065->leave($__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065_prof);
 
     }
 
