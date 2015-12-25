@@ -20,23 +20,53 @@
 </head>
 
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+
+<div class="mdl-layout mdl-js-layout
             mdl-layout--fixed-header">
-    <header class="mdl-layout__header mdl-layout__header--transparent ">
+    <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">Resto'Regimes </span>
             <div class="mdl-layout-spacer"></div>
+            {% if app.user is not null %}
+                Bonjour {{ app.user.username }} - {{ app.user.email }}
+            {% endif %}
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
 
-                    <label class="mdl-button mdl-js-button mdl-button--icon"
-                           for="fixed-header-drawer-exp">
-                            <i class="material-icons" >search</i>
+
+                <label class="mdl-button mdl-js-button mdl-button--icon"
+                       for="fixed-header-drawer-exp">
+                    <i class="material-icons" >search</i>
                     </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        {{ render(controller('RRCoreBundle:Default:searchForm', {})) }}
+                    </div>
+                </label>
 
 
             </div>
+            <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+                {% if app.user is not null %}
+
+                    <a class="mdl-menu__item" href="{{ path('fos_user_profile_show') }}">Mon Compte</a>
+
+                    <a class="mdl-menu__item" href="{{ path('fos_user_security_logout') }}">Logout</a>
+                {% else %}
+
+                    <a class="mdl-menu__item" href="{{ path('fos_user_security_login') }}">Connexion</a>
+
+                    <a class="mdl-menu__item" href="{{ path('fos_user_registration_register') }}">Inscription</a>
+
+                    <a class="mdl-menu__item" href="{{ path('fos_user_registration_registerPro') }}">Professionnel</a>
+                {% endif %}
+                <a class="mdl-menu__item" href="#">A propos</a>
+            </nav>
         </div>
+
+
     </header>
     <div class="mdl-layout__drawer mdl-layout__drawer">
 
@@ -59,22 +89,37 @@
     <main class="mdl-layout__content">
         <div class="page-content">
 
-            {% if app.user is not null %}
-                Bonjour {{ app.user.username }} - {{ app.user.email }}
-            {% endif %}
+
             {% block fos_user %}
             {% endblock fos_user %}
             {% block jumbotron %}
             {% endblock %}
 
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--4-col">
-                    <h3>Les Restaurants</h3>
+                <div class="mdl-cell mdl-cell--2-col">
+                    Nulla lorem libero, pretium quis odio eget, faucibus tempor sem. Cras lobortis egestas risus, sed scelerisque elit aliquet nec. Aliquam sit amet tempus elit. Sed vitae turpis enim. Aenean metus orci, lacinia convallis dui at, faucibus facilisis ex. In hac habitasse platea dictumst. Aliquam sodales eleifend mi, et gravida neque bibendum nec.
+
+                    Aliquam imperdiet, sapien vitae consequat suscipit, neque ex fermentum odio, vel mollis mauris lectus a neque. Nam sit amet aliquet sapien. Aenean vestibulum quam orci, in facilisis leo gravida sollicitudin. Ut ac convallis nulla, in molestie tellus. Mauris ultricies congue felis vitae pulvinar. Nulla gravida dui vel pellentesque venenatis. Morbi tincidunt tempus mi, ut luctus turpis vulputate efficitur. Mauris tempus sapien eu sollicitudin condimentum. Duis pulvinar orci nibh, nec scelerisque purus condimentum dignissim. Proin ut arcu ut urna tristique ornare vulputate dictum risus. Quisque ac libero et lectus ultricies maximus. Maecenas elementum arcu felis. Praesent tristique nibh sit amet lectus tristique, et aliquet lacus consequat. Aliquam nisl magna, finibus vel elit non, euismod bibendum sem. Donec libero ex, sagittis euismod metus facilisis, rhoncus convallis leo.
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non condimentum enim, in pellentesque ligula. Cras eu velit id urna ullamcorper tristique ut eget eros. Vivamus sed purus dui. Duis id maximus metus. Maecenas vehicula porta justo sed viverra. Mauris mattis commodo mauris in blandit. Nulla facilisi. Phasellus purus felis, aliquet quis pretium vitae, vestibulum vel lacus. Aliquam nec lectus scelerisque, vulputate ligula nec, rutrum sapien.
+
+                    Fusce condimentum risus lorem. Vivamus eget mattis tortor. Vivamus vitae porttitor neque. Sed ornare nisi at risus laoreet ultrices. Pellentesque nec purus quam. Fusce nec hendrerit risus. Cras dapibus libero ut urna vestibulum, in feugiat nunc feugiat. Sed venenatis neque ut nunc dapibus, tristique hendrerit quam gravida. Praesent tincidunt, mi efficitur sagittis tincidunt, ante diam sollicitudin enim, vitae ullamcorper nisi nisl ac nulla. Aenean vulputate sem tristique est varius, sed aliquam dolor suscipit. Proin semper eu orci id facilisis. Curabitur euismod erat sit amet felis blandit pretium. Aenean pellentesque, metus nec vulputate elementum, velit lorem efficitur urna, ac interdum felis quam sit amet lacus. Integer sollicitudin fringilla accumsan.
+
+                   <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--2-col">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non condimentum enim, in pellentesque ligula. Cras eu velit id urna ullamcorper tristique ut eget eros. Vivamus sed purus dui. Duis id maximus metus. Maecenas vehicula porta justo sed viverra. Mauris mattis commodo mauris in blandit. Nulla facilisi. Phasellus purus felis, aliquet quis pretium vitae, vestibulum vel lacus. Aliquam nec lectus scelerisque, vulputate ligula nec, rutrum sapien.
+
+                            Fusce condimentum risus lorem. Vivamus eget mattis tortor. Vivamus vitae porttitor neque. Sed ornare nisi at risus laoreet ultrices. Pellentesque nec purus quam. Fusce nec hendrerit risus. Cras dapibus libero ut urna vestibulum, in feugiat nunc feugiat. Sed venenatis neque ut nunc dapibus, tristique hendrerit quam gravida. Praesent tincidunt, mi efficitur sagittis tincidunt, ante diam sollicitudin enim, vitae ullamcorper nisi nisl ac nulla. Aenean vulputate sem tristique est varius, sed aliquam dolor suscipit. Proin semper eu orci id facilisis. Curabitur euismod erat sit amet felis blandit pretium. Aenean pellentesque, metus nec vulputate elementum, velit lorem efficitur urna, ac interdum felis quam sit amet lacus. Integer sollicitudin fringilla accumsan.
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non condimentum enim, in pellentesque ligula. Cras eu velit id urna ullamcorper tristique ut eget eros. Vivamus sed purus dui. Duis id maximus metus. Maecenas vehicula porta justo sed viverra. Mauris mattis commodo mauris in blandit. Nulla facilisi. Phasellus purus felis, aliquet quis pretium vitae, vestibulum vel lacus. Aliquam nec lectus scelerisque, vulputate ligula nec, rutrum sapien.
+                        </div>
+                        </div>
                     {% block body %}
                     {% endblock %}
                 </div>
+
             </div>
 
 
