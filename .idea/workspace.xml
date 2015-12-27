@@ -1,319 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cf76a31-0690-46d2-bae8-ff672286177c" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\09d25da162d765d1aab2e52f8558739bc3ec3562#isClicked.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\09d25da162d765d1aab2e52f8558739bc3ec3562#submit.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\09d25da162d765d1aab2e52f8558739bc3ec3562$clicked.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\09d25da162d765d1aab2e52f8558739bc3ec3562.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\14616c9c5bd1ab4bff987600546a6f1cc146d38f.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#getId.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#getImageFile.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#getImageName.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#getUpdatedAt.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#setImageFile.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#setImageName.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129#setUpdatedAt.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129$id.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129$imageFile.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129$imageName.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129$updatedAt.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\3df73206fb275effdc26aa775835d9182c5d1129.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\443855e1f8a11d3ad338a6570817c283f373047b$latitude.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\443855e1f8a11d3ad338a6570817c283f373047b$longitude.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\443855e1f8a11d3ad338a6570817c283f373047b.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\4f50a1c7d898f6949698ecbcd5e31ad2e067acdc.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\5857e61804dd78ff16196080e942037668b174cf.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\5afc36e3b826c76e915b338764680f2a03306e57#panelAction.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\5afc36e3b826c76e915b338764680f2a03306e57.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\66f6c8d58f0b6692960a3cbb61a70699ec3958b3#rechercheAction.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\68ae71bcbaeee6a65c5f623dc50560c4df3178f3$fermeture1.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\68ae71bcbaeee6a65c5f623dc50560c4df3178f3$fermeture2.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\68ae71bcbaeee6a65c5f623dc50560c4df3178f3$id.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\68ae71bcbaeee6a65c5f623dc50560c4df3178f3$ouverture1.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\68ae71bcbaeee6a65c5f623dc50560c4df3178f3$ouverture2.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\68ae71bcbaeee6a65c5f623dc50560c4df3178f3.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\7103e2519b51316ace26750bb435749aa83b3d91.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\7f094f69711dc6ef787abf73f8e98a72fadefa98.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\9142b6a192a60ec37cedf1e0b895870cdcee6b40.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#__construct.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#addRegime.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getAddress.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getDateCreation.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getDescription.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getDimanche.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getId.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getImage1.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getImage2.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getImage3.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getImage4.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getImage5.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getJeudi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getLundi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getMardi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getMercredi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getNom.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getRegimes.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getSamedi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getSiret.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getTelephone.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getUpdatedAt.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getValide.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#getVendredi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#isContentValid.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#removeRegime.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setAddress.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setDateCreation.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setDescription.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setDimanche.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setImage1.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setImage2.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setImage3.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setImage4.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setImage5.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setJeudi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setLundi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setMardi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setMercredi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setNom.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setSamedi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setSiret.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setTelephone.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setUpdatedAt.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setValide.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#setVendredi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964#updateDate.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$address.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$dateCreation.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$description.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$dimanche.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$id.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$image1.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$image2.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$image3.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$image4.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$image5.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$jeudi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$lundi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$mardi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$mercredi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$nom.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$regimes.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$samedi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$siret.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$telephone.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$updatedAt.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$valide.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964$vendredi.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\97e69f4e8d96fb701d1b8c54d8dd895bfe02a964.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\9909f3fefbb1e7ebe7dbf10612a3b68695d3148e.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\aa3b17a06c54069051111edd177f4b93a6b0ac40#panelAction.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\aa3b17a06c54069051111edd177f4b93a6b0ac40#searchBarAction.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ac1c21f8c09e2d3623a588f28e6a7b9dbf22baee#indexAction.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ac1c21f8c09e2d3623a588f28e6a7b9dbf22baee.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#__construct.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#add.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#addError.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#all.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#count.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#createView.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#get.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getConfig.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getData.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getErrors.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getExtraData.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getIterator.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getName.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getNormData.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getParent.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getPropertyPath.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getRoot.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getTransformationFailure.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#getViewData.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#handleRequest.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#has.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#initialize.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isDisabled.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isEmpty.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isRequired.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isRoot.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isSubmitted.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isSynchronized.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#isValid.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#offsetExists.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#offsetGet.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#offsetSet.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#offsetUnset.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#remove.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#setData.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#setParent.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b#submit.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b$config.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b$parent.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b$submitted.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c278ad232d084051bea5a47b5f865e566479bb4b.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\c44dc0b32db4b9bdacbccb24174cd5686b6f26ba.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\df969d1fe581297f14cca645abf60d3a63b0203b#isClicked.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\df969d1fe581297f14cca645abf60d3a63b0203b.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$city.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$country.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$county.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$district.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$id.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$state.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$street.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c$zipCode.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\ea9aacf49b1ff48d76784de13658065875aa165c.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\f48344150ef53b36ebde42031f5413efb63371d2.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\f76ce540788473c193223e95bf479e3bcc6555a9$description.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\f76ce540788473c193223e95bf479e3bcc6555a9$id.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\f76ce540788473c193223e95bf479e3bcc6555a9$libelle.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\annotations\f76ce540788473c193223e95bf479e3bcc6555a9.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\doctrine\orm\Proxies\__CG__Padam87AddressBundleEntityGeocodedAddress.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\doctrine\orm\Proxies\__CG__RRRestaurantBundleEntityRestoImage.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\01\12\1c1201" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\05\59\175905" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\10\65\676510" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\16\11\371116" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\17\c8\c2c817" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\1e\25\17251e" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\20\77\247720" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\26\1d\921d26" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\28\fa\e4fa28" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\2c\c7\fec72c" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\2f\6f\d06f2f" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\31\b8\3cb831" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\43\1c\3a1c43" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\43\ac\41ac43" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\4a\ac\ccac4a" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\4b\32\d3324b" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\4d\1a\fb1a4d" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\4d\7f\6f7f4d" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\4d\ba\c7ba4d" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\50\97\a09750" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\53\08\c90853" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\54\52\595254" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\5e\58\42585e" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\60\cb\ebcb60" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\66\e4\3ee466" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\6d\53\da536d" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\70\18\221870" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\70\d3\fed370" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\73\ce\8cce73" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\78\4d\ef4d78" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\7a\a2\7ba27a" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\7b\0b\6a0b7b" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\7f\c9\0fc97f" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\90\08\8b0890" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\91\56\265691" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\91\a3\7da391" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\9d\de\32de9d" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\9e\74\88749e" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\a0\d2\cbd2a0" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\a3\78\d478a3" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\a5\59\8759a5" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\a5\64\8264a5" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\a5\a0\2ca0a5" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\a8\df\afdfa8" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\ab\fb\17fbab" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\ac\4a\2f4aac" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\ad\60\a860ad" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\b7\bb\38bbb7" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\b8\55\7f55b8" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\bb\a2\5aa2bb" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\bb\f0\06f0bb" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\be\89\bd89be" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\c4\34\8e34c4" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\c4\3c\433cc4" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\c4\89\c889c4" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\c4\e6\c8e6c4" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\cf\ea\88eacf" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\d3\04\c604d3" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\d3\d3\7ad3d3" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\d4\ca\9fcad4" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\d8\ee\11eed8" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\df\90\3a90df" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\e0\f4\6ff4e0" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\e4\d6\c9d6e4" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\ea\fa\ebfaea" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\fb\00\7b00fb" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\fd\15\9315fd" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\fe\31\2231fe" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\fe\df\bbdffe" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\profiler\ff\a2\b9a2ff" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\0c\0cec8884e81d55ea591defde6f620e368aa59ba3c8c908bd9665469ad2dbc92c.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\73\73143abcc2050bd152b5c25907139bfde3a0bffc62754f1988214609087c266c.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\a7\a7bc1c91487ef6fa297b314f2ffddb9e63fba37105282661a9abc7787f2a67bf.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\ac\accb1db93deb230665bf8600b74ee81e2990462c13ec954842e67974a436a7d3.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\ad\ad6938f0b01d79bfc0d58a7e3e4577bd7767af4405b03623cb8648902f27b183.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\ba\ba8be30d87476e3643da18a18942dd1bc1b416a2519d1db36fc0e235a743409d.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\fc\fcbf37d185b7e794a1b8e1ad8a3351583a84454c7e16cdf91e48bdd1baa16fc7.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\vich_uploader\Padam87-AddressBundle-Entity-Address.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\vich_uploader\Padam87-AddressBundle-Entity-GeocodedAddress.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\vich_uploader\RR-RestaurantBundle-Entity-Regime.cache.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\vich_uploader\RR-RestaurantBundle-Entity-Restaurant.cache.php" afterPath="" />
+    <list default="true" id="0cf76a31-0690-46d2-bae8-ff672286177c" name="Default" comment="support svg ajouté bis">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/jlbs/admin-bundle/Jlbs/AdminBundle" afterPath="$PROJECT_DIR$/vendor/jlbs/admin-bundle/Jlbs/AdminBundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/01/018798f5e9cf8b66bce3a5e55033163ea17b1943d43e0841635b77d8a2e02f64.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/01/018798f5e9cf8b66bce3a5e55033163ea17b1943d43e0841635b77d8a2e02f64.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c54bcc1de9ddb748631f7aefbad5b910d27e1413007d5938d190cb4fa05ccbb.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c54bcc1de9ddb748631f7aefbad5b910d27e1413007d5938d190cb4fa05ccbb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/11/1177ebd2ff9b08a21f1c2f5d8a46c862db5dd6ba8cb90b98ea2a9c3f4dac9a94.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/11/1177ebd2ff9b08a21f1c2f5d8a46c862db5dd6ba8cb90b98ea2a9c3f4dac9a94.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/1e/1e91223dfaf894409c9ef959e2b5891e64d5cd1a51314d14a73f3894601e7532.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/1e/1e91223dfaf894409c9ef959e2b5891e64d5cd1a51314d14a73f3894601e7532.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/21/217ec1be10e2a0225bb42075fe3667a8d91b1309be92715310da8b4bd9f385df.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/21/217ec1be10e2a0225bb42075fe3667a8d91b1309be92715310da8b4bd9f385df.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/satooshi/php-coveralls" afterPath="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/21/21a852eb22a773cdfaa21ca1598794e76a09c971daa04515d4d76e9eb0a5cb4d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/21/21a852eb22a773cdfaa21ca1598794e76a09c971daa04515d4d76e9eb0a5cb4d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/25/253e78ab24c429b451f3266710aaf88c725995368646926a912b95219d1ecb5d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/25/253e78ab24c429b451f3266710aaf88c725995368646926a912b95219d1ecb5d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/43a80f0e087752a2d4724591f85aa0e1.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/43a80f0e087752a2d4724591f85aa0e1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/49/4926161a469804965c0d7c3900ebedb252e95ad5ca5d241744bc0616f35bf761.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/49/4926161a469804965c0d7c3900ebedb252e95ad5ca5d241744bc0616f35bf761.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/56/5672495cf3e3854a5e6181e389c5e39181c09e783d94f1e32a3229dd0dbccf3d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/56/5672495cf3e3854a5e6181e389c5e39181c09e783d94f1e32a3229dd0dbccf3d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/58/58d64d879838ff58e22f814573368f37358dabefdfacff3db9794c93e27da535.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/58/58d64d879838ff58e22f814573368f37358dabefdfacff3db9794c93e27da535.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5f/5fb115b69b879af066f692fb5072fc29a118c114bcedd6f4036474d17b4fabdb.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5f/5fb115b69b879af066f692fb5072fc29a118c114bcedd6f4036474d17b4fabdb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/65/65b550a9ceeb07b3cda3570ff060b55cdb83adaddac3b29b6044ba5aa8d444af.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/65/65b550a9ceeb07b3cda3570ff060b55cdb83adaddac3b29b6044ba5aa8d444af.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/67/67bb43f1b09209a6990a83173dc26f9f77e557aac64e41ed750a1d201e6ef577.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/67/67bb43f1b09209a6990a83173dc26f9f77e557aac64e41ed750a1d201e6ef577.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/72/726e778f25d2f92fad3187074bbafad1065e62240c9dc9f223c3f99b754c623b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/72/726e778f25d2f92fad3187074bbafad1065e62240c9dc9f223c3f99b754c623b.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/72/72bce4396e171e640f57b4bf20647ebda525d33cbe0236c1066a8c0778bc72b3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/72/72bce4396e171e640f57b4bf20647ebda525d33cbe0236c1066a8c0778bc72b3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/75/75b5fd009dc491b25e8f18e565e4c2d2fc4281d070ab0b8148f33311c743856f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/75/75b5fd009dc491b25e8f18e565e4c2d2fc4281d070ab0b8148f33311c743856f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/76/76fcfc7757095ceda032a233c28f79eacd3e171e06b1771fe6a0006958deab7c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/76/76fcfc7757095ceda032a233c28f79eacd3e171e06b1771fe6a0006958deab7c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/84/84f663b165726c17ffb7e01e391eeec3ec889f42b1a1db44b2e01e39ca64ed37.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/84/84f663b165726c17ffb7e01e391eeec3ec889f42b1a1db44b2e01e39ca64ed37.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/87/8707fc287f8ff48f55b16f96b0b82c2bf9854c1eb694ada4d85fee3d6eff7adc.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/87/8707fc287f8ff48f55b16f96b0b82c2bf9854c1eb694ada4d85fee3d6eff7adc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/8b/8bd370ce8ec4303a2df76921771b1e70d7e85d88d12d002fce4f1dc6a16838bb.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/8b/8bd370ce8ec4303a2df76921771b1e70d7e85d88d12d002fce4f1dc6a16838bb.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/91/9181c836b719b3f17d13520faacc25f3b04296ac9cd3201b14abb0183a6e5b30.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/91/9181c836b719b3f17d13520faacc25f3b04296ac9cd3201b14abb0183a6e5b30.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/94/94f1eecc9a4e7bfa82bfd707feff7b9933bbc75c8f20cbe4c71ac796e97b1bcf.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/94/94f1eecc9a4e7bfa82bfd707feff7b9933bbc75c8f20cbe4c71ac796e97b1bcf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/97/97da45b01d496a43d8d86457a6c50cd77b5fbe48c16bc78ecc328d3bf7616785.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/97/97da45b01d496a43d8d86457a6c50cd77b5fbe48c16bc78ecc328d3bf7616785.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9d/9d33d1b014ef6af9c89c644cf1cb320355464ce0fd64b158abbf8f3657cb7de8.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9d/9d33d1b014ef6af9c89c644cf1cb320355464ce0fd64b158abbf8f3657cb7de8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9e/9e7643362fd4e84ba001f4f8bfebf9824c12f15280c434161cd03e4101d9a128.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9e/9e7643362fd4e84ba001f4f8bfebf9824c12f15280c434161cd03e4101d9a128.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9f/9f1ac953ece0903b572ce9cdc98601a2253387841781da2560e0ce934d4d7f23.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9f/9f1ac953ece0903b572ce9cdc98601a2253387841781da2560e0ce934d4d7f23.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a1/a18c830193991b947b8c4287000730237ec1740fd90e5c6fd3814c2d41719e59.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a1/a18c830193991b947b8c4287000730237ec1740fd90e5c6fd3814c2d41719e59.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a3/a30280b489b3b890d1a3ca652dd4482c9d2627c157ca060e4d2310db179af480.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a3/a30280b489b3b890d1a3ca652dd4482c9d2627c157ca060e4d2310db179af480.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ad/ad00118a4996c0aeba4901cef041f1a1559238158fa82ef531da67723efd8a42.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ad/ad00118a4996c0aeba4901cef041f1a1559238158fa82ef531da67723efd8a42.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/a/ae1b290dcfca1cdecd87a85bbe4b1164.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/a/ae1b290dcfca1cdecd87a85bbe4b1164.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Resto_Regime.iml" afterPath="$PROJECT_DIR$/.idea/Resto_Regime.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b5/b55e7714a86ad4c7bc78cd209b677275acf951c9f60d066c1b6b3e56f92e8e9d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b5/b55e7714a86ad4c7bc78cd209b677275acf951c9f60d066c1b6b3e56f92e8e9d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b9/b92c94e814fd6d94351967869808db7509c097c0f860f0e2177cf91a3746a804.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b9/b92c94e814fd6d94351967869808db7509c097c0f860f0e2177cf91a3746a804.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c2/c204b7dee8878791dec596773fa09bfa4fff2e2d3bd543d057a57480e705e831.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c2/c204b7dee8878791dec596773fa09bfa4fff2e2d3bd543d057a57480e705e831.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.map" afterPath="$PROJECT_DIR$/app/cache/dev/classes.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d7/d71df438a1bf19eb010c69ab80f480de806e2f340f244b5ba304fd4941f0da13.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d7/d71df438a1bf19eb010c69ab80f480de806e2f340f244b5ba304fd4941f0da13.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d7/d79331076a855c7dcad8efe5bdb5b62126efe5bb31b468e0b7740455b110bf12.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d7/d79331076a855c7dcad8efe5bdb5b62126efe5bb31b468e0b7740455b110bf12.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d9/d9903cbfc1fb36cb7de1298c2b84d7f0b9afdbca45803511e6b2958a79b605a7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d9/d9903cbfc1fb36cb7de1298c2b84d7f0b9afdbca45803511e6b2958a79b605a7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d9/d9b19e08f01121c6a8708cd4150b6e838ea44fb8e72a47a61207830963a1a501.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d9/d9b19e08f01121c6a8708cd4150b6e838ea44fb8e72a47a61207830963a1a501.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e0/e0d5949e5b850d7e67da094250d24ff4b3abd621699f45863508c140f7658201.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e0/e0d5949e5b850d7e67da094250d24ff4b3abd621699f45863508c140f7658201.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/e3182f38d2984cd119243963ba19055d.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/e3182f38d2984cd119243963ba19055d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e3/e3e461249c46a3bda435dac2f83974036a5698620c8da96763f5dde5b6d50f16.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e3/e3e461249c46a3bda435dac2f83974036a5698620c8da96763f5dde5b6d50f16.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e8/e89bbbf06fe28d236fb1e628d8eddd2fd339a095340e4b24a1f4272035cfd9a3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e8/e89bbbf06fe28d236fb1e628d8eddd2fd339a095340e4b24a1f4272035cfd9a3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ee/eec36fbc5ce1fd7b0356a51c8f25ba1e3cd9616f2adfe9ff59e6adc75bcf3116.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ee/eec36fbc5ce1fd7b0356a51c8f25ba1e3cd9616f2adfe9ff59e6adc75bcf3116.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f7/f78bc49489df47ffe6a5e96bf89f803b68f042a7eb6ea7f79a357cd4ea0dec77.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f7/f78bc49489df47ffe6a5e96bf89f803b68f042a7eb6ea7f79a357cd4ea0dec77.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fe/fec4525a795bcdefb2db96806df3bfe249c50b5925e2620925c3c7b9c90a958b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fe/fec4525a795bcdefb2db96806df3bfe249c50b5925e2620925c3c7b9c90a958b.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/svg/iconRRShadow.svg.twig" afterPath="$PROJECT_DIR$/app/Resources/views/svg/iconRRShadow.svg.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/prod.log" afterPath="$PROJECT_DIR$/app/logs/prod.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/routing.yml" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RestoRegimes.iws" />
@@ -330,9 +32,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="RestoRegimes" />
@@ -342,48 +41,111 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075" vertical-offset="408" max-vertical-offset="1836">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="72" column="82" selection-start-line="72" selection-start-column="82" selection-end-line="72" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <file leaf-file-name="iconRRBlack.svg.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRBlack.svg.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2125" max-vertical-offset="3655">
-              <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mailer.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/Mailer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.66781414" vertical-offset="388" max-vertical-offset="1377">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <file leaf-file-name="RRtext.svg.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/RRtext.svg.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="646">
-              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            <state vertical-scroll-proportion="12.363636">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#path#0;n#g#1;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#path#1;n#g#1;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#path#2;n#g#1;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RRtextshadow.svg.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/RRtextshadow.svg.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.346153">
+              <caret line="36" column="40" selection-start-line="17" selection-start-column="2" selection-end-line="36" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <file leaf-file-name="iconRRBlackOnlyText.svg.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRBlackOnlyText.svg.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iconRRShadow.svg.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRShadow.svg.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.34157652">
+              <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+              <folding>
+                <element signature="n#style#0;n#path#0;n#g#0;n#g#2;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iconRRPinkShadow.svg.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRPinkShadow.svg.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-46.76923">
+              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iconRRBlackShadow.svg.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRBlackShadow.svg.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
+              <folding>
+                <element signature="n#style#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#g#1;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#g#2;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -400,25 +162,32 @@
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/RR/CoreBundle/Entity/Recherche.php" />
+        <option value="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/svg/iconRRPinkShadow.svg.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/svg/RRtext.svg.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/svg/iconRRBlackShadow.svg.twig" />
+        <option value="$PROJECT_DIR$/web/bundles/rrcore/css/style.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/svg/iconRRShadow.svg.twig" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1320" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -447,6 +216,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,7 +245,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,15 +259,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -511,19 +277,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="rrcore" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -537,23 +299,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
+              <option name="myItemId" value="rrcore" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -567,99 +325,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
+              <option name="myItemId" value="rrcore" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Mailer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resto_Regime" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestoRegimes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resto_Regime" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestoRegimes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resto_Regime" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestoRegimes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestaurantBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resto_Regime" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestoRegimes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestaurantBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -691,7 +369,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resto_Regime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestoRegimes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="svg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -703,8 +411,38 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\RestoRegimes\app\Resources\views\svg" />
+    </key>
+  </component>
   <component name="RunManager">
-    <list size="0" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -717,32 +455,46 @@
       <option name="number" value="Default" />
       <updated>1449581983115</updated>
     </task>
+    <task id="LOCAL-00001" summary="debut de la refonte graphique">
+      <created>1451061164569</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1451061164569</updated>
+    </task>
+    <task id="LOCAL-00002" summary="support svg ajouté">
+      <created>1451232293935</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1451232293935</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24846625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -757,9 +509,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="debut de la refonte graphique" />
+    <MESSAGE value="support svg ajouté" />
+    <option name="LAST_COMMIT_MESSAGE" value="support svg ajouté" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -768,167 +522,95 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1870">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="646">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2142">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/searchform.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="646">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2142">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2142">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/Horaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2822">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="408" max-vertical-offset="1836">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/TwigSwiftMailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3655914" vertical-offset="204" max-vertical-offset="1479">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/MailerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.08261618" vertical-offset="48" max-vertical-offset="629">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/NoopMailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/validation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1762768" vertical-offset="714" max-vertical-offset="3247">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/mailer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="884">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2125" max-vertical-offset="3655">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Controller/RestaurantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/Restaurant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/Mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
           <folding />
         </state>
@@ -936,12 +618,306 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/Mailer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.66781414" vertical-offset="388" max-vertical-offset="1377">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/Horaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/TwigSwiftMailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3655914">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/MailerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.08261618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/NoopMailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/validation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1762768">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/mailer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Mailer/Mailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Controller/RestaurantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/Restaurant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/searchform.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRBlackOnlyText.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRPinkShadow.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-46.76923">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/RRtextshadow.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.346153">
+          <caret line="36" column="40" selection-start-line="17" selection-start-column="2" selection-end-line="36" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRBlack.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/RRtext.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.363636">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#path#0;n#g#1;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#path#1;n#g#1;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#path#2;n#g#1;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRBlackShadow.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#g#1;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#g#2;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="72" column="82" selection-start-line="72" selection-start-column="82" selection-end-line="72" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/svg/iconRRShadow.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34157652">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding>
+            <element signature="n#style#0;n#path#0;n#g#0;n#g#2;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#g#0;n#svg#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
-

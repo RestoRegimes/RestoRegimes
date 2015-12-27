@@ -12,8 +12,8 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
-            'fos_user' => array($this, 'block_fos_user'),
             'jumbotron' => array($this, 'block_jumbotron'),
+            'fos_user' => array($this, 'block_fos_user'),
             'body' => array($this, 'block_body'),
             'content' => array($this, 'block_content'),
             'javascript' => array($this, 'block_javascript'),
@@ -22,8 +22,8 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3ae146dde75595a2e54223f04a4d2920551ebeca762b9f6e8c011dce6fb9bcb3 = $this->env->getExtension("native_profiler");
-        $__internal_3ae146dde75595a2e54223f04a4d2920551ebeca762b9f6e8c011dce6fb9bcb3->enter($__internal_3ae146dde75595a2e54223f04a4d2920551ebeca762b9f6e8c011dce6fb9bcb3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::layout.html.twig"));
+        $__internal_8383412073d977de277222879b47de2cf254242d37f3e1dc915006822933fa21 = $this->env->getExtension("native_profiler");
+        $__internal_8383412073d977de277222879b47de2cf254242d37f3e1dc915006822933fa21->enter($__internal_8383412073d977de277222879b47de2cf254242d37f3e1dc915006822933fa21_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::layout.html.twig"));
 
         // line 2
         echo "<!DOCTYPE html>
@@ -48,81 +48,22 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 </head>
 
 <body>
-<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+
+<div class=\"mdl-layout mdl-js-layout
             mdl-layout--fixed-header\">
-    <header class=\"mdl-layout__header mdl-layout__header--transparent \">
+    <header class=\"mdl-layout__header\">
         <div class=\"mdl-layout__header-row\">
-            <span class=\"mdl-layout-title\">Resto'Regimes </span>
-            <div class=\"mdl-layout-spacer\"></div>
-            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                  mdl-textfield--floating-label mdl-textfield--align-right\">
-
-                    <label class=\"mdl-button mdl-js-button mdl-button--icon\"
-                           for=\"fixed-header-drawer-exp\">
-                            <i class=\"material-icons\" >search</i>
-                    </label>
-
-
-            </div>
-        </div>
-    </header>
-    <div class=\"mdl-layout__drawer mdl-layout__drawer\">
-
-        <span class=\"mdl-layout-title\"><img src=\"";
-        // line 43
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/RRLogo.png"), "html", null, true);
-        echo "\" style=\"width: 150px;\"> </span>
-        <nav class=\"mdl-navigation\">
-            <a class=\"mdl-navigation__link\" href=\"";
-        // line 45
+            <span class=\"mdl-layout-title\"><a href=\"";
+        // line 28
         echo $this->env->getExtension('routing')->getPath("rr_core_homepage");
-        echo "\">Acceuil</a>
-            <a class=\"mdl-navigation__link\" href=\"";
-        // line 46
-        echo $this->env->getExtension('routing')->getPath("rr_restaurant_home");
-        echo "\">les restaurants</a>
-            <a class=\"mdl-navigation__link\" href=\"";
-        // line 47
-        echo $this->env->getExtension('routing')->getPath("rr_restaurant_add");
-        echo "\">Ajouter un restaurant</a>
-
+        echo "\">";
+        $this->loadTemplate(":svg:iconRRBlackShadow.svg.twig", "::layout.html.twig", 28)->display($context);
+        echo "</a></span>
+            <div class=\"mdl-layout-spacer\"></div>
             ";
-        // line 49
+        // line 30
         if ( !(null === $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()))) {
-            // line 50
-            echo "                <a class=\"mdl-navigation__link\" href=\"";
-            echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
-            echo "\">Mon Compte</a>
-                <a class=\"mdl-navigation__link\" href=\"";
-            // line 51
-            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
-            echo "\">Logout</a>
-            ";
-        } else {
-            // line 53
-            echo "                <a class=\"mdl-navigation__link\" href=\"";
-            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-            echo "\">Se connecter</a>
-                <a class=\"mdl-navigation__link\" href=\"";
-            // line 54
-            echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
-            echo "\">S'enregistrer</a>
-                <a class=\"mdl-navigation__link\" href=\"";
-            // line 55
-            echo $this->env->getExtension('routing')->getPath("fos_user_registration_registerPro");
-            echo "\">Professionnel</a>
-            ";
-        }
-        // line 57
-        echo "        </nav>
-    </div>
-    <main class=\"mdl-layout__content\">
-        <div class=\"page-content\">
-
-            ";
-        // line 62
-        if ( !(null === $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()))) {
-            // line 63
+            // line 31
             echo "                Bonjour ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo " - ";
@@ -130,31 +71,162 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
             echo "
             ";
         }
+        // line 33
+        echo "            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right\">
+
+
+                <label class=\"mdl-button mdl-js-button mdl-button--icon\"
+                       for=\"fixed-header-drawer-exp\">
+                    <i class=\"material-icons\" >search</i>
+                    </label>
+                    <div class=\"mdl-textfield__expandable-holder\">
+                        ";
+        // line 42
+        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("RRCoreBundle:Default:searchForm", array()));
+        echo "
+                    </div>
+                </label>
+
+
+            </div>
+            <button class=\"mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect\" id=\"more-button\">
+                <i class=\"material-icons\">more_vert</i>
+            </button>
+            <nav class=\"mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect\" for=\"more-button\">
+                ";
+        // line 52
+        if ( !(null === $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()))) {
+            // line 53
+            echo "
+                    <a class=\"mdl-menu__item\" href=\"";
+            // line 54
+            echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+            echo "\">Mon Compte</a>
+
+                    <a class=\"mdl-menu__item\" href=\"";
+            // line 56
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\">Logout</a>
+                ";
+        } else {
+            // line 58
+            echo "
+                    <a class=\"mdl-menu__item\" href=\"";
+            // line 59
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">Connexion</a>
+
+                    <a class=\"mdl-menu__item\" href=\"";
+            // line 61
+            echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+            echo "\">Inscription</a>
+
+                    <a class=\"mdl-menu__item\" href=\"";
+            // line 63
+            echo $this->env->getExtension('routing')->getPath("fos_user_registration_registerPro");
+            echo "\">Professionnel</a>
+                ";
+        }
         // line 65
-        echo "            ";
-        $this->displayBlock('fos_user', $context, $blocks);
-        // line 67
-        echo "            ";
+        echo "                <a class=\"mdl-menu__item\" href=\"#\">A propos</a>
+            </nav>
+        </div>
+
+
+    </header>
+    <div class=\"mdl-layout__drawer mdl-layout__drawer\">
+
+        <span class=\"mdl-layout-title\">";
+        // line 73
+        $this->loadTemplate(":svg:iconRRShadow.svg.twig", "::layout.html.twig", 73)->display($context);
+        echo "</span>
+        <nav class=\"mdl-navigation\">
+            <a class=\"mdl-navigation__link\" href=\"";
+        // line 75
+        echo $this->env->getExtension('routing')->getPath("rr_core_homepage");
+        echo "\">Acceuil</a>
+            <a class=\"mdl-navigation__link\" href=\"";
+        // line 76
+        echo $this->env->getExtension('routing')->getPath("rr_restaurant_home");
+        echo "\">les restaurants</a>
+            <a class=\"mdl-navigation__link\" href=\"";
+        // line 77
+        echo $this->env->getExtension('routing')->getPath("rr_restaurant_add");
+        echo "\">Ajouter un restaurant</a>
+
+            ";
+        // line 79
+        if ( !(null === $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()))) {
+            // line 80
+            echo "                <a class=\"mdl-navigation__link\" href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+            echo "\">Mon Compte</a>
+                <a class=\"mdl-navigation__link\" href=\"";
+            // line 81
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\">Logout</a>
+            ";
+        } else {
+            // line 83
+            echo "                <a class=\"mdl-navigation__link\" href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">Se connecter</a>
+                <a class=\"mdl-navigation__link\" href=\"";
+            // line 84
+            echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+            echo "\">S'enregistrer</a>
+                <a class=\"mdl-navigation__link\" href=\"";
+            // line 85
+            echo $this->env->getExtension('routing')->getPath("fos_user_registration_registerPro");
+            echo "\">Professionnel</a>
+            ";
+        }
+        // line 87
+        echo "        </nav>
+    </div>
+    <main class=\"mdl-layout__content\">
+        <div class=\"page-content\">
+
+
+
+            ";
+        // line 94
         $this->displayBlock('jumbotron', $context, $blocks);
-        // line 69
+        // line 96
         echo "
             <div class=\"mdl-grid\">
-                <div class=\"mdl-cell mdl-cell--4-col\">
-                    <h3>Les Restaurants</h3>
+                <div class=\"mdl-cell mdl-cell--2-col\">
+
                 </div>
                 <div class=\"mdl-cell mdl-cell--8-col\">
                     ";
-        // line 75
+        // line 102
+        $this->loadTemplate(":svg:RRtext.svg.twig", "::layout.html.twig", 102)->display($context);
+        // line 103
+        echo "                   <div class=\"mdl-grid\">
+                        <div class=\"mdl-cell mdl-cell--2-col\">
+                        </div>
+                        <div class=\"mdl-cell mdl-cell--8-col\">
+                            ";
+        // line 107
+        $this->displayBlock('fos_user', $context, $blocks);
+        // line 109
+        echo "                        </div>
+                        </div>
+                    ";
+        // line 111
         $this->displayBlock('body', $context, $blocks);
-        // line 77
+        // line 113
         echo "                </div>
+
             </div>
 
 
             ";
-        // line 81
+        // line 118
         $this->displayBlock('content', $context, $blocks);
-        // line 83
+        // line 120
         echo "        </div>
     </main>
 
@@ -164,9 +236,9 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 
 
 ";
-        // line 91
+        // line 128
         $this->displayBlock('javascript', $context, $blocks);
-        // line 94
+        // line 131
         echo "<!-- /container -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\">
@@ -178,27 +250,27 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 
 </html>";
         
-        $__internal_3ae146dde75595a2e54223f04a4d2920551ebeca762b9f6e8c011dce6fb9bcb3->leave($__internal_3ae146dde75595a2e54223f04a4d2920551ebeca762b9f6e8c011dce6fb9bcb3_prof);
+        $__internal_8383412073d977de277222879b47de2cf254242d37f3e1dc915006822933fa21->leave($__internal_8383412073d977de277222879b47de2cf254242d37f3e1dc915006822933fa21_prof);
 
     }
 
     // line 9
     public function block_title($context, array $blocks = array())
     {
-        $__internal_2b127aa761f2b70b3f24b8aa04f566dfa44b66a005c4f0329f7cd40c39c7ac78 = $this->env->getExtension("native_profiler");
-        $__internal_2b127aa761f2b70b3f24b8aa04f566dfa44b66a005c4f0329f7cd40c39c7ac78->enter($__internal_2b127aa761f2b70b3f24b8aa04f566dfa44b66a005c4f0329f7cd40c39c7ac78_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_7399b5c31fb65629aee00ce335893d7669b7266a0a874aa33a6b0d94331640cc = $this->env->getExtension("native_profiler");
+        $__internal_7399b5c31fb65629aee00ce335893d7669b7266a0a874aa33a6b0d94331640cc->enter($__internal_7399b5c31fb65629aee00ce335893d7669b7266a0a874aa33a6b0d94331640cc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Resto'Regimes";
         
-        $__internal_2b127aa761f2b70b3f24b8aa04f566dfa44b66a005c4f0329f7cd40c39c7ac78->leave($__internal_2b127aa761f2b70b3f24b8aa04f566dfa44b66a005c4f0329f7cd40c39c7ac78_prof);
+        $__internal_7399b5c31fb65629aee00ce335893d7669b7266a0a874aa33a6b0d94331640cc->leave($__internal_7399b5c31fb65629aee00ce335893d7669b7266a0a874aa33a6b0d94331640cc_prof);
 
     }
 
     // line 13
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_e6c5ddcc8a9fe7b17b80cef37f41220bb7f8c2a50196076c5f2714152b349a13 = $this->env->getExtension("native_profiler");
-        $__internal_e6c5ddcc8a9fe7b17b80cef37f41220bb7f8c2a50196076c5f2714152b349a13->enter($__internal_e6c5ddcc8a9fe7b17b80cef37f41220bb7f8c2a50196076c5f2714152b349a13_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_8d046dace412fd50a4dfde2758a4a5fee708c539777d64cf9deb986fab72c693 = $this->env->getExtension("native_profiler");
+        $__internal_8d046dace412fd50a4dfde2758a4a5fee708c539777d64cf9deb986fab72c693->enter($__internal_8d046dace412fd50a4dfde2758a4a5fee708c539777d64cf9deb986fab72c693_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 14
         echo "        <link rel=\"stylesheet\" href=\"";
@@ -215,73 +287,73 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
         <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">
     ";
         
-        $__internal_e6c5ddcc8a9fe7b17b80cef37f41220bb7f8c2a50196076c5f2714152b349a13->leave($__internal_e6c5ddcc8a9fe7b17b80cef37f41220bb7f8c2a50196076c5f2714152b349a13_prof);
+        $__internal_8d046dace412fd50a4dfde2758a4a5fee708c539777d64cf9deb986fab72c693->leave($__internal_8d046dace412fd50a4dfde2758a4a5fee708c539777d64cf9deb986fab72c693_prof);
 
     }
 
-    // line 65
-    public function block_fos_user($context, array $blocks = array())
-    {
-        $__internal_9f3699ae9d44f10b6a8672329aea4b49533df81439cf3bb2c8063277cacc274d = $this->env->getExtension("native_profiler");
-        $__internal_9f3699ae9d44f10b6a8672329aea4b49533df81439cf3bb2c8063277cacc274d->enter($__internal_9f3699ae9d44f10b6a8672329aea4b49533df81439cf3bb2c8063277cacc274d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user"));
-
-        // line 66
-        echo "            ";
-        
-        $__internal_9f3699ae9d44f10b6a8672329aea4b49533df81439cf3bb2c8063277cacc274d->leave($__internal_9f3699ae9d44f10b6a8672329aea4b49533df81439cf3bb2c8063277cacc274d_prof);
-
-    }
-
-    // line 67
+    // line 94
     public function block_jumbotron($context, array $blocks = array())
     {
-        $__internal_710da97fc0bc9ab8163ebb089b03bd1cce177c7f769e8dad803ab78358ad6e0f = $this->env->getExtension("native_profiler");
-        $__internal_710da97fc0bc9ab8163ebb089b03bd1cce177c7f769e8dad803ab78358ad6e0f->enter($__internal_710da97fc0bc9ab8163ebb089b03bd1cce177c7f769e8dad803ab78358ad6e0f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "jumbotron"));
+        $__internal_d7cc6a6ce0da43b01741265acc96cf283460b6e8c426b229c8509fd84a72bc7f = $this->env->getExtension("native_profiler");
+        $__internal_d7cc6a6ce0da43b01741265acc96cf283460b6e8c426b229c8509fd84a72bc7f->enter($__internal_d7cc6a6ce0da43b01741265acc96cf283460b6e8c426b229c8509fd84a72bc7f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "jumbotron"));
 
-        // line 68
+        // line 95
         echo "            ";
         
-        $__internal_710da97fc0bc9ab8163ebb089b03bd1cce177c7f769e8dad803ab78358ad6e0f->leave($__internal_710da97fc0bc9ab8163ebb089b03bd1cce177c7f769e8dad803ab78358ad6e0f_prof);
+        $__internal_d7cc6a6ce0da43b01741265acc96cf283460b6e8c426b229c8509fd84a72bc7f->leave($__internal_d7cc6a6ce0da43b01741265acc96cf283460b6e8c426b229c8509fd84a72bc7f_prof);
 
     }
 
-    // line 75
+    // line 107
+    public function block_fos_user($context, array $blocks = array())
+    {
+        $__internal_86b48e37ed03ff85bf9f83951f878aac9d1eac7d16f0ee86a0904c204b72462f = $this->env->getExtension("native_profiler");
+        $__internal_86b48e37ed03ff85bf9f83951f878aac9d1eac7d16f0ee86a0904c204b72462f->enter($__internal_86b48e37ed03ff85bf9f83951f878aac9d1eac7d16f0ee86a0904c204b72462f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user"));
+
+        // line 108
+        echo "                            ";
+        
+        $__internal_86b48e37ed03ff85bf9f83951f878aac9d1eac7d16f0ee86a0904c204b72462f->leave($__internal_86b48e37ed03ff85bf9f83951f878aac9d1eac7d16f0ee86a0904c204b72462f_prof);
+
+    }
+
+    // line 111
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4594fd2a005e10bfd6dbd6cb31ce56b692225adcaf45c92cdc7d973ca6576317 = $this->env->getExtension("native_profiler");
-        $__internal_4594fd2a005e10bfd6dbd6cb31ce56b692225adcaf45c92cdc7d973ca6576317->enter($__internal_4594fd2a005e10bfd6dbd6cb31ce56b692225adcaf45c92cdc7d973ca6576317_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_4303a3c6143ecd70020d17148ea62b46bb95e5965aec05de6d1653a4f685b3c8 = $this->env->getExtension("native_profiler");
+        $__internal_4303a3c6143ecd70020d17148ea62b46bb95e5965aec05de6d1653a4f685b3c8->enter($__internal_4303a3c6143ecd70020d17148ea62b46bb95e5965aec05de6d1653a4f685b3c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 76
+        // line 112
         echo "                    ";
         
-        $__internal_4594fd2a005e10bfd6dbd6cb31ce56b692225adcaf45c92cdc7d973ca6576317->leave($__internal_4594fd2a005e10bfd6dbd6cb31ce56b692225adcaf45c92cdc7d973ca6576317_prof);
+        $__internal_4303a3c6143ecd70020d17148ea62b46bb95e5965aec05de6d1653a4f685b3c8->leave($__internal_4303a3c6143ecd70020d17148ea62b46bb95e5965aec05de6d1653a4f685b3c8_prof);
 
     }
 
-    // line 81
+    // line 118
     public function block_content($context, array $blocks = array())
     {
-        $__internal_2c42365e0875f0d4249621dd0b805ebce70cdc5f721c90f38d6f2d18e747fd7c = $this->env->getExtension("native_profiler");
-        $__internal_2c42365e0875f0d4249621dd0b805ebce70cdc5f721c90f38d6f2d18e747fd7c->enter($__internal_2c42365e0875f0d4249621dd0b805ebce70cdc5f721c90f38d6f2d18e747fd7c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_ad978db8aa87545777af9d84a91543713183908a2a72cdf3c74468a6f760658f = $this->env->getExtension("native_profiler");
+        $__internal_ad978db8aa87545777af9d84a91543713183908a2a72cdf3c74468a6f760658f->enter($__internal_ad978db8aa87545777af9d84a91543713183908a2a72cdf3c74468a6f760658f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 82
+        // line 119
         echo "            ";
         
-        $__internal_2c42365e0875f0d4249621dd0b805ebce70cdc5f721c90f38d6f2d18e747fd7c->leave($__internal_2c42365e0875f0d4249621dd0b805ebce70cdc5f721c90f38d6f2d18e747fd7c_prof);
+        $__internal_ad978db8aa87545777af9d84a91543713183908a2a72cdf3c74468a6f760658f->leave($__internal_ad978db8aa87545777af9d84a91543713183908a2a72cdf3c74468a6f760658f_prof);
 
     }
 
-    // line 91
+    // line 128
     public function block_javascript($context, array $blocks = array())
     {
-        $__internal_58cd594ad60971285b560b44c337d2550dbbcb7c6242af92b2dc987b429ceda8 = $this->env->getExtension("native_profiler");
-        $__internal_58cd594ad60971285b560b44c337d2550dbbcb7c6242af92b2dc987b429ceda8->enter($__internal_58cd594ad60971285b560b44c337d2550dbbcb7c6242af92b2dc987b429ceda8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+        $__internal_78f136e2818bb8d260acd99cb3aa0a5a7499c44f00e2309fc912c85e7b8fc04e = $this->env->getExtension("native_profiler");
+        $__internal_78f136e2818bb8d260acd99cb3aa0a5a7499c44f00e2309fc912c85e7b8fc04e->enter($__internal_78f136e2818bb8d260acd99cb3aa0a5a7499c44f00e2309fc912c85e7b8fc04e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 92
+        // line 129
         echo "
 ";
         
-        $__internal_58cd594ad60971285b560b44c337d2550dbbcb7c6242af92b2dc987b429ceda8->leave($__internal_58cd594ad60971285b560b44c337d2550dbbcb7c6242af92b2dc987b429ceda8_prof);
+        $__internal_78f136e2818bb8d260acd99cb3aa0a5a7499c44f00e2309fc912c85e7b8fc04e->leave($__internal_78f136e2818bb8d260acd99cb3aa0a5a7499c44f00e2309fc912c85e7b8fc04e_prof);
 
     }
 
@@ -297,7 +369,7 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 
     public function getDebugInfo()
     {
-        return array (  281 => 92,  275 => 91,  268 => 82,  262 => 81,  255 => 76,  249 => 75,  242 => 68,  236 => 67,  229 => 66,  223 => 65,  213 => 16,  209 => 15,  204 => 14,  198 => 13,  186 => 9,  170 => 94,  168 => 91,  158 => 83,  156 => 81,  150 => 77,  148 => 75,  140 => 69,  137 => 67,  134 => 65,  126 => 63,  124 => 62,  117 => 57,  112 => 55,  108 => 54,  103 => 53,  98 => 51,  93 => 50,  91 => 49,  86 => 47,  82 => 46,  78 => 45,  73 => 43,  47 => 19,  45 => 13,  38 => 9,  29 => 2,);
+        return array (  353 => 129,  347 => 128,  340 => 119,  334 => 118,  327 => 112,  321 => 111,  314 => 108,  308 => 107,  301 => 95,  295 => 94,  285 => 16,  281 => 15,  276 => 14,  270 => 13,  258 => 9,  242 => 131,  240 => 128,  230 => 120,  228 => 118,  221 => 113,  219 => 111,  215 => 109,  213 => 107,  207 => 103,  205 => 102,  197 => 96,  195 => 94,  186 => 87,  181 => 85,  177 => 84,  172 => 83,  167 => 81,  162 => 80,  160 => 79,  155 => 77,  151 => 76,  147 => 75,  142 => 73,  132 => 65,  127 => 63,  122 => 61,  117 => 59,  114 => 58,  109 => 56,  104 => 54,  101 => 53,  99 => 52,  86 => 42,  75 => 33,  67 => 31,  65 => 30,  58 => 28,  47 => 19,  45 => 13,  38 => 9,  29 => 2,);
     }
 }
 /* {# app/Resources/views/layout.html.twig #}*/
@@ -322,27 +394,57 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 /* </head>*/
 /* */
 /* <body>*/
-/* <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer*/
+/* */
+/* <div class="mdl-layout mdl-js-layout*/
 /*             mdl-layout--fixed-header">*/
-/*     <header class="mdl-layout__header mdl-layout__header--transparent ">*/
+/*     <header class="mdl-layout__header">*/
 /*         <div class="mdl-layout__header-row">*/
-/*             <span class="mdl-layout-title">Resto'Regimes </span>*/
+/*             <span class="mdl-layout-title"><a href="{{ path('rr_core_homepage') }}">{% include(":svg:iconRRBlackShadow.svg.twig") %}</a></span>*/
 /*             <div class="mdl-layout-spacer"></div>*/
+/*             {% if app.user is not null %}*/
+/*                 Bonjour {{ app.user.username }} - {{ app.user.email }}*/
+/*             {% endif %}*/
 /*             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable*/
 /*                   mdl-textfield--floating-label mdl-textfield--align-right">*/
 /* */
-/*                     <label class="mdl-button mdl-js-button mdl-button--icon"*/
-/*                            for="fixed-header-drawer-exp">*/
-/*                             <i class="material-icons" >search</i>*/
+/* */
+/*                 <label class="mdl-button mdl-js-button mdl-button--icon"*/
+/*                        for="fixed-header-drawer-exp">*/
+/*                     <i class="material-icons" >search</i>*/
 /*                     </label>*/
+/*                     <div class="mdl-textfield__expandable-holder">*/
+/*                         {{ render(controller('RRCoreBundle:Default:searchForm', {})) }}*/
+/*                     </div>*/
+/*                 </label>*/
 /* */
 /* */
 /*             </div>*/
+/*             <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">*/
+/*                 <i class="material-icons">more_vert</i>*/
+/*             </button>*/
+/*             <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">*/
+/*                 {% if app.user is not null %}*/
+/* */
+/*                     <a class="mdl-menu__item" href="{{ path('fos_user_profile_show') }}">Mon Compte</a>*/
+/* */
+/*                     <a class="mdl-menu__item" href="{{ path('fos_user_security_logout') }}">Logout</a>*/
+/*                 {% else %}*/
+/* */
+/*                     <a class="mdl-menu__item" href="{{ path('fos_user_security_login') }}">Connexion</a>*/
+/* */
+/*                     <a class="mdl-menu__item" href="{{ path('fos_user_registration_register') }}">Inscription</a>*/
+/* */
+/*                     <a class="mdl-menu__item" href="{{ path('fos_user_registration_registerPro') }}">Professionnel</a>*/
+/*                 {% endif %}*/
+/*                 <a class="mdl-menu__item" href="#">A propos</a>*/
+/*             </nav>*/
 /*         </div>*/
+/* */
+/* */
 /*     </header>*/
 /*     <div class="mdl-layout__drawer mdl-layout__drawer">*/
 /* */
-/*         <span class="mdl-layout-title"><img src="{{ asset('bundles/rrcore/images/RRLogo.png') }}" style="width: 150px;"> </span>*/
+/*         <span class="mdl-layout-title">{% include(":svg:iconRRShadow.svg.twig") %}</span>*/
 /*         <nav class="mdl-navigation">*/
 /*             <a class="mdl-navigation__link" href="{{ path('rr_core_homepage') }}">Acceuil</a>*/
 /*             <a class="mdl-navigation__link" href="{{ path('rr_restaurant_home') }}">les restaurants</a>*/
@@ -361,22 +463,29 @@ class __TwigTemplate_edac31b67019276a33b8505dcd87d6a8be755b950d10d1c4c6cb30f9a9f
 /*     <main class="mdl-layout__content">*/
 /*         <div class="page-content">*/
 /* */
-/*             {% if app.user is not null %}*/
-/*                 Bonjour {{ app.user.username }} - {{ app.user.email }}*/
-/*             {% endif %}*/
-/*             {% block fos_user %}*/
-/*             {% endblock fos_user %}*/
+/* */
+/* */
 /*             {% block jumbotron %}*/
 /*             {% endblock %}*/
 /* */
 /*             <div class="mdl-grid">*/
-/*                 <div class="mdl-cell mdl-cell--4-col">*/
-/*                     <h3>Les Restaurants</h3>*/
+/*                 <div class="mdl-cell mdl-cell--2-col">*/
+/* */
 /*                 </div>*/
 /*                 <div class="mdl-cell mdl-cell--8-col">*/
+/*                     {% include(":svg:RRtext.svg.twig") %}*/
+/*                    <div class="mdl-grid">*/
+/*                         <div class="mdl-cell mdl-cell--2-col">*/
+/*                         </div>*/
+/*                         <div class="mdl-cell mdl-cell--8-col">*/
+/*                             {% block fos_user %}*/
+/*                             {% endblock fos_user %}*/
+/*                         </div>*/
+/*                         </div>*/
 /*                     {% block body %}*/
 /*                     {% endblock %}*/
 /*                 </div>*/
+/* */
 /*             </div>*/
 /* */
 /* */

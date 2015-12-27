@@ -26,20 +26,20 @@ class __TwigTemplate_505f575b2f13eab1bcae0fd5fade30d75002fbec942b5091d5e832a7f29
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cfa905ffd6b957e783e137bc0fd8c5323f35a6860e491ad0aeee9ae67d04b52b = $this->env->getExtension("native_profiler");
-        $__internal_cfa905ffd6b957e783e137bc0fd8c5323f35a6860e491ad0aeee9ae67d04b52b->enter($__internal_cfa905ffd6b957e783e137bc0fd8c5323f35a6860e491ad0aeee9ae67d04b52b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:layout.html.twig"));
+        $__internal_799017c254851c038a7556f6106eac395aaae55a4b7bd2b4feaa6fd2c7886682 = $this->env->getExtension("native_profiler");
+        $__internal_799017c254851c038a7556f6106eac395aaae55a4b7bd2b4feaa6fd2c7886682->enter($__internal_799017c254851c038a7556f6106eac395aaae55a4b7bd2b4feaa6fd2c7886682_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:layout.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_cfa905ffd6b957e783e137bc0fd8c5323f35a6860e491ad0aeee9ae67d04b52b->leave($__internal_cfa905ffd6b957e783e137bc0fd8c5323f35a6860e491ad0aeee9ae67d04b52b_prof);
+        $__internal_799017c254851c038a7556f6106eac395aaae55a4b7bd2b4feaa6fd2c7886682->leave($__internal_799017c254851c038a7556f6106eac395aaae55a4b7bd2b4feaa6fd2c7886682_prof);
 
     }
 
     // line 4
     public function block_javascript($context, array $blocks = array())
     {
-        $__internal_307693fbe48a3d166475ebe5e1373b0505089b5d68b01cacdad464a66be2a4c9 = $this->env->getExtension("native_profiler");
-        $__internal_307693fbe48a3d166475ebe5e1373b0505089b5d68b01cacdad464a66be2a4c9->enter($__internal_307693fbe48a3d166475ebe5e1373b0505089b5d68b01cacdad464a66be2a4c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+        $__internal_9f86d37381e52336b6955d95e497d7ee2a837cb1841dc938b8b6c3e8ee6b33d5 = $this->env->getExtension("native_profiler");
+        $__internal_9f86d37381e52336b6955d95e497d7ee2a837cb1841dc938b8b6c3e8ee6b33d5->enter($__internal_9f86d37381e52336b6955d95e497d7ee2a837cb1841dc938b8b6c3e8ee6b33d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
         // line 5
         echo "    <script language=\"javascript\" type=\"text/javascript\" src=\"";
@@ -52,130 +52,81 @@ class __TwigTemplate_505f575b2f13eab1bcae0fd5fade30d75002fbec942b5091d5e832a7f29
 
 ";
         
-        $__internal_307693fbe48a3d166475ebe5e1373b0505089b5d68b01cacdad464a66be2a4c9->leave($__internal_307693fbe48a3d166475ebe5e1373b0505089b5d68b01cacdad464a66be2a4c9_prof);
+        $__internal_9f86d37381e52336b6955d95e497d7ee2a837cb1841dc938b8b6c3e8ee6b33d5->leave($__internal_9f86d37381e52336b6955d95e497d7ee2a837cb1841dc938b8b6c3e8ee6b33d5_prof);
 
     }
 
     // line 9
     public function block_title($context, array $blocks = array())
     {
-        $__internal_633149fae52b448b2b369656e7db876a93e8226720f18d8627201f92eb2bd3a8 = $this->env->getExtension("native_profiler");
-        $__internal_633149fae52b448b2b369656e7db876a93e8226720f18d8627201f92eb2bd3a8->enter($__internal_633149fae52b448b2b369656e7db876a93e8226720f18d8627201f92eb2bd3a8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_7bc605c7915777e4822318b54a91a4492ba70fae3eb9f096833d2bd33d159762 = $this->env->getExtension("native_profiler");
+        $__internal_7bc605c7915777e4822318b54a91a4492ba70fae3eb9f096833d2bd33d159762->enter($__internal_7bc605c7915777e4822318b54a91a4492ba70fae3eb9f096833d2bd33d159762_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 10
-        echo "    Annonces - ";
-        $this->displayParentBlock("title", $context, $blocks);
-        echo "
+        echo "  Resto'Regimes
 ";
         
-        $__internal_633149fae52b448b2b369656e7db876a93e8226720f18d8627201f92eb2bd3a8->leave($__internal_633149fae52b448b2b369656e7db876a93e8226720f18d8627201f92eb2bd3a8_prof);
+        $__internal_7bc605c7915777e4822318b54a91a4492ba70fae3eb9f096833d2bd33d159762->leave($__internal_7bc605c7915777e4822318b54a91a4492ba70fae3eb9f096833d2bd33d159762_prof);
 
     }
 
     // line 12
     public function block_jumbotron($context, array $blocks = array())
     {
-        $__internal_e719ea9a5fc80b36e6b200a7137c6b17469e3a07ef01654ac7d24e371e284ff8 = $this->env->getExtension("native_profiler");
-        $__internal_e719ea9a5fc80b36e6b200a7137c6b17469e3a07ef01654ac7d24e371e284ff8->enter($__internal_e719ea9a5fc80b36e6b200a7137c6b17469e3a07ef01654ac7d24e371e284ff8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "jumbotron"));
+        $__internal_b96cca4e500832a541e494990adaf63333a20920d7cc389f49ecb6ec80e87003 = $this->env->getExtension("native_profiler");
+        $__internal_b96cca4e500832a541e494990adaf63333a20920d7cc389f49ecb6ec80e87003->enter($__internal_b96cca4e500832a541e494990adaf63333a20920d7cc389f49ecb6ec80e87003_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "jumbotron"));
 
         // line 13
-        echo "    <div class=\"jumbotron\" >
-
-    <div id=\"jumbotron\"></div>
-        <div id=\"jumbotron1\">
-        <h1>Un Régime?&nbsp;<div class=\"\">Un Resto!</div></h1>
-        <p class=\"lead\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <a class=\"btn btn-large btn-success\" href=\"";
-        // line 19
-        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
-        echo "\">S'inscrire</a>
-        </div>
-
-
-
-
-    </div>
+        echo "
 ";
         
-        $__internal_e719ea9a5fc80b36e6b200a7137c6b17469e3a07ef01654ac7d24e371e284ff8->leave($__internal_e719ea9a5fc80b36e6b200a7137c6b17469e3a07ef01654ac7d24e371e284ff8_prof);
+        $__internal_b96cca4e500832a541e494990adaf63333a20920d7cc389f49ecb6ec80e87003->leave($__internal_b96cca4e500832a541e494990adaf63333a20920d7cc389f49ecb6ec80e87003_prof);
 
     }
 
-    // line 27
+    // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_a9b23c3ba220c5b5766e577d3470478f1d4518b2fd562610332584ffb6ab16e2 = $this->env->getExtension("native_profiler");
-        $__internal_a9b23c3ba220c5b5766e577d3470478f1d4518b2fd562610332584ffb6ab16e2->enter($__internal_a9b23c3ba220c5b5766e577d3470478f1d4518b2fd562610332584ffb6ab16e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e523328c6357f8cbdd356046f2d9aec54b393e21448253c52620ae24cbc35c75 = $this->env->getExtension("native_profiler");
+        $__internal_e523328c6357f8cbdd356046f2d9aec54b393e21448253c52620ae24cbc35c75->enter($__internal_e523328c6357f8cbdd356046f2d9aec54b393e21448253c52620ae24cbc35c75_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 28
+        // line 16
         echo "
     ";
-        // line 30
-        echo "    <h1>Restaurants</h1>
-
-    <hr>
-
-    ";
-        // line 35
-        echo "    ";
+        // line 17
         $this->displayBlock('rrplatform_body', $context, $blocks);
-        // line 37
+        // line 19
         echo "
 ";
         
-        $__internal_a9b23c3ba220c5b5766e577d3470478f1d4518b2fd562610332584ffb6ab16e2->leave($__internal_a9b23c3ba220c5b5766e577d3470478f1d4518b2fd562610332584ffb6ab16e2_prof);
+        $__internal_e523328c6357f8cbdd356046f2d9aec54b393e21448253c52620ae24cbc35c75->leave($__internal_e523328c6357f8cbdd356046f2d9aec54b393e21448253c52620ae24cbc35c75_prof);
 
     }
 
-    // line 35
+    // line 17
     public function block_rrplatform_body($context, array $blocks = array())
     {
-        $__internal_e09bb23e043350dd0b95ca874200f8a0bc8b2755bf496a273d7e250174e169ef = $this->env->getExtension("native_profiler");
-        $__internal_e09bb23e043350dd0b95ca874200f8a0bc8b2755bf496a273d7e250174e169ef->enter($__internal_e09bb23e043350dd0b95ca874200f8a0bc8b2755bf496a273d7e250174e169ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_body"));
+        $__internal_d3963172460a10860afe26250c2e26ab293d2806d8139338f0649d656ad0face = $this->env->getExtension("native_profiler");
+        $__internal_d3963172460a10860afe26250c2e26ab293d2806d8139338f0649d656ad0face->enter($__internal_d3963172460a10860afe26250c2e26ab293d2806d8139338f0649d656ad0face_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_body"));
 
-        // line 36
+        // line 18
         echo "    ";
         
-        $__internal_e09bb23e043350dd0b95ca874200f8a0bc8b2755bf496a273d7e250174e169ef->leave($__internal_e09bb23e043350dd0b95ca874200f8a0bc8b2755bf496a273d7e250174e169ef_prof);
+        $__internal_d3963172460a10860afe26250c2e26ab293d2806d8139338f0649d656ad0face->leave($__internal_d3963172460a10860afe26250c2e26ab293d2806d8139338f0649d656ad0face_prof);
 
     }
 
-    // line 39
+    // line 21
     public function block_content($context, array $blocks = array())
     {
-        $__internal_0b734552dd9f6d85aa080c1f6d05603d79a3f7329fcbbcb9a83efbf26a841fea = $this->env->getExtension("native_profiler");
-        $__internal_0b734552dd9f6d85aa080c1f6d05603d79a3f7329fcbbcb9a83efbf26a841fea->enter($__internal_0b734552dd9f6d85aa080c1f6d05603d79a3f7329fcbbcb9a83efbf26a841fea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_e64b06e10513e1153b25c2a46f92ef57d837a34316b66979ec271f68fc3ae021 = $this->env->getExtension("native_profiler");
+        $__internal_e64b06e10513e1153b25c2a46f92ef57d837a34316b66979ec271f68fc3ae021->enter($__internal_e64b06e10513e1153b25c2a46f92ef57d837a34316b66979ec271f68fc3ae021_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 40
-        echo "    <div class=\"row-fluid marketing\">
-        <div class=\"span6\">
-            <h4>Subheading</h4>
-
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-            </p>
-            <h4>Subheading</h4>
-
-            <p class=\"\">Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Subheading</h4>
-
-            <p class=\"\">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-        <div class=\"span6\">
-            <h4>Subheading</h4>
-
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-            </p>
-            <h4>Subheading</h4>
-
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Subheading</h4>
-
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-    </div>
+        // line 22
+        echo "
 ";
         
-        $__internal_0b734552dd9f6d85aa080c1f6d05603d79a3f7329fcbbcb9a83efbf26a841fea->leave($__internal_0b734552dd9f6d85aa080c1f6d05603d79a3f7329fcbbcb9a83efbf26a841fea_prof);
+        $__internal_e64b06e10513e1153b25c2a46f92ef57d837a34316b66979ec271f68fc3ae021->leave($__internal_e64b06e10513e1153b25c2a46f92ef57d837a34316b66979ec271f68fc3ae021_prof);
 
     }
 
@@ -191,7 +142,7 @@ class __TwigTemplate_505f575b2f13eab1bcae0fd5fade30d75002fbec942b5091d5e832a7f29
 
     public function getDebugInfo()
     {
-        return array (  150 => 40,  144 => 39,  137 => 36,  131 => 35,  123 => 37,  120 => 35,  114 => 30,  111 => 28,  105 => 27,  90 => 19,  82 => 13,  76 => 12,  66 => 10,  60 => 9,  50 => 6,  45 => 5,  39 => 4,  11 => 3,);
+        return array (  126 => 22,  120 => 21,  113 => 18,  107 => 17,  99 => 19,  97 => 17,  94 => 16,  88 => 15,  80 => 13,  74 => 12,  66 => 10,  60 => 9,  50 => 6,  45 => 5,  39 => 4,  11 => 3,);
     }
 }
 /* {# src/OC/PlatformBundle/Resources/views/layout.html.twig #}*/
@@ -203,60 +154,17 @@ class __TwigTemplate_505f575b2f13eab1bcae0fd5fade30d75002fbec942b5091d5e832a7f29
 /* */
 /* {% endblock %}*/
 /* {% block title %}*/
-/*     Annonces - {{ parent() }}*/
+/*   Resto'Regimes*/
 /* {% endblock %}*/
 /* {% block jumbotron %}*/
-/*     <div class="jumbotron" >*/
 /* */
-/*     <div id="jumbotron"></div>*/
-/*         <div id="jumbotron1">*/
-/*         <h1>Un Régime?&nbsp;<div class="">Un Resto!</div></h1>*/
-/*         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>*/
-/*             <a class="btn btn-large btn-success" href="{{ path('fos_user_registration_register') }}">S'inscrire</a>*/
-/*         </div>*/
-/* */
-/* */
-/* */
-/* */
-/*     </div>*/
 /* {% endblock %}*/
 /* {% block body %}*/
 /* */
-/*     {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}*/
-/*     <h1>Restaurants</h1>*/
-/* */
-/*     <hr>*/
-/* */
-/*     {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}*/
 /*     {% block rrplatform_body %}*/
 /*     {% endblock %}*/
 /* */
 /* {% endblock %}*/
 /* {% block content %}*/
-/*     <div class="row-fluid marketing">*/
-/*         <div class="span6">*/
-/*             <h4>Subheading</h4>*/
 /* */
-/*             <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.*/
-/*             </p>*/
-/*             <h4>Subheading</h4>*/
-/* */
-/*             <p class="">Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>*/
-/*             <h4>Subheading</h4>*/
-/* */
-/*             <p class="">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>*/
-/*         </div>*/
-/*         <div class="span6">*/
-/*             <h4>Subheading</h4>*/
-/* */
-/*             <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.*/
-/*             </p>*/
-/*             <h4>Subheading</h4>*/
-/* */
-/*             <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>*/
-/*             <h4>Subheading</h4>*/
-/* */
-/*             <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>*/
-/*         </div>*/
-/*     </div>*/
 /* {% endblock %}*/
