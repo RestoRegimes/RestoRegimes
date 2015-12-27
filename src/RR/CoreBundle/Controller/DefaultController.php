@@ -26,8 +26,11 @@ class DefaultController extends Controller
 
         $data = array();
         $form = $this->createFormBuilder($data)
-            ->add('recherche', 'text',array('required'=>false))
-            ->add('radius','integer')
+            ->add('recherche', 'text',array('label'=>"",'required'=>false))
+            ->add('geo','checkbox',array('label'=>"",'required'=>false))
+            ->add('lat',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
+            ->add('lng',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
+            ->add('radius','integer',array('label'=>"",'required'=>false))
             ->add('vegetarien', 'checkbox', array(
                 'label'    => 'Vegetarien',
                 'required' => false,
@@ -47,7 +50,6 @@ class DefaultController extends Controller
             ->add('Cholesterol', 'checkbox', array(
                 'required' => false,
             ))
-            ->add('rechercher','submit')
             ->getForm();
 
 
@@ -62,17 +64,17 @@ class DefaultController extends Controller
 
 
             if(empty($data['radius']))$data['radius']=10;
+            if($data['geo']!=1) {
+                $curl = new \Ivory\HttpAdapter\CurlHttpAdapter();
+                $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
 
-            $curl     = new \Ivory\HttpAdapter\CurlHttpAdapter();
-            $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
-            $ip=$this->container->get('request_stack')->getCurrentRequest()->getClientIp();
-            #TODO recuperer l'addresse avec l'IP
 
-            $address=$geocoder->geocode($data['recherche']." France");
+                $address = $geocoder->geocode($data['recherche'] . " France");
 
-            $coord=$address->first()->getCoordinates();
-            $data['lat']=$coord->getLatitude();
-            $data['lng']=$coord->getLongitude();
+                $coord = $address->first()->getCoordinates();
+                $data['lat'] = $coord->getLatitude();
+                $data['lng'] = $coord->getLongitude();
+            }
             if($data['lat']==0 && $data['lng']==0){
                 //erreur recherche
             }
@@ -86,6 +88,7 @@ class DefaultController extends Controller
 
             return $this->render('RRCoreBundle:Default:search.html.twig',array(
                 "form"=>$form->createView(),
+                "data"=>$data,
                 "listRestaurants"=>$listRestaurants,
             ));
 

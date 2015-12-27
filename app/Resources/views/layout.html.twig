@@ -88,34 +88,36 @@
     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
-
-
-
-            {% block jumbotron %}
-            {% endblock %}
-
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col">
-
-                </div>
-                <div class="mdl-cell mdl-cell--8-col">
-                    {% include(":svg:RRtext.svg.twig") %}
-                   <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--2-col">
-                        </div>
-                        <div class="mdl-cell mdl-cell--8-col">
-                            {% block fos_user %}
-                            {% endblock fos_user %}
-                        </div>
-                        </div>
-                    {% block body %}
-                    {% endblock %}
-                </div>
-
-            </div>
-
-
             {% block content %}
+
+
+
+                {% block jumbotron %}
+                {% endblock %}
+
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col">
+                        {% block rrplatform_search %}
+                        {% endblock %}
+                    </div>
+                    <div class="mdl-cell mdl-cell--8-col">
+                        {% include(":svg:RRtext.svg.twig") %}
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--2-col">
+
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                                {% block fos_user %}
+                                {% endblock fos_user %}
+                            </div>
+                        </div>
+                        {% block body %}
+                        {% endblock %}
+                    </div>
+
+                </div>
+
+
             {% endblock %}
         </div>
     </main>

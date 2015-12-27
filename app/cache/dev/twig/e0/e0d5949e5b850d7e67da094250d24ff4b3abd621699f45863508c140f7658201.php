@@ -10,7 +10,7 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
         // line 1
         $this->parent = $this->loadTemplate("RRCoreBundle:Default:layout.html.twig", "RRCoreBundle:Default:search.html.twig", 1);
         $this->blocks = array(
-            'rrplatform_body' => array($this, 'block_rrplatform_body'),
+            'rrplatform_search' => array($this, 'block_rrplatform_search'),
         );
     }
 
@@ -21,134 +21,170 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee = $this->env->getExtension("native_profiler");
-        $__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee->enter($__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:search.html.twig"));
+        $__internal_61d58f28c724fcb8989dbd52993d1795189ebe1acc0245fd1d10d71c7ed1d268 = $this->env->getExtension("native_profiler");
+        $__internal_61d58f28c724fcb8989dbd52993d1795189ebe1acc0245fd1d10d71c7ed1d268->enter($__internal_61d58f28c724fcb8989dbd52993d1795189ebe1acc0245fd1d10d71c7ed1d268_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:search.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee->leave($__internal_d4a5adab4ff1eb743e07a9c3a552bf2cb0902cb4930b23631bd3e96a9b4353ee_prof);
+        $__internal_61d58f28c724fcb8989dbd52993d1795189ebe1acc0245fd1d10d71c7ed1d268->leave($__internal_61d58f28c724fcb8989dbd52993d1795189ebe1acc0245fd1d10d71c7ed1d268_prof);
 
     }
 
     // line 2
-    public function block_rrplatform_body($context, array $blocks = array())
+    public function block_rrplatform_search($context, array $blocks = array())
     {
-        $__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065 = $this->env->getExtension("native_profiler");
-        $__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065->enter($__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_body"));
+        $__internal_f2288549c2df64d307cc06733ecf0204d8380d52a0315dc351936c536df98be4 = $this->env->getExtension("native_profiler");
+        $__internal_f2288549c2df64d307cc06733ecf0204d8380d52a0315dc351936c536df98be4->enter($__internal_f2288549c2df64d307cc06733ecf0204d8380d52a0315dc351936c536df98be4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_search"));
 
-        // line 3
+        // line 15
         echo "
-
-
-
-
-<div class=\"container-fluid\">
-    <div class=\"row-fluid\">
-        <div class=\"span12\">
-        ";
-        // line 11
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
-        echo "
-        ";
-        // line 12
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
-        echo "
-        ";
-        // line 13
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "recherche", array()), 'row');
-        echo "<br>
-        ";
-        // line 14
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "radius", array()), 'row');
-        echo "<br>
-
-        ";
-        // line 16
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetarien", array()), 'errors');
-        echo "
+            <p id=\"demo\"></p>
         ";
         // line 17
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetarien", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-vertical")));
         echo "
         ";
         // line 18
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetarien", array()), 'label', array("label" => "Vegetarien"));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
-        ";
-        // line 19
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetalien", array()), 'errors');
-        echo "
+    <div id=\"adresse\">
         ";
         // line 20
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetalien", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "recherche", array()), 'errors');
         echo "
         ";
         // line 21
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetalien", array()), 'label', array("label" => "Vegetalien"));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "recherche", array()), 'widget', array("attr" => array("class" => "mdl-textfield__input", "placeholder" => "Adresse")));
         echo "
         ";
         // line 22
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "gluten", array()), 'errors');
-        echo "
-        ";
-        // line 23
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "gluten", array()), 'widget', array("attr" => array("class" => "form-control")));
-        echo "
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "recherche", array()), 'label', array("label" => " "));
+        echo "</div>
+
         ";
         // line 24
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "gluten", array()), 'label', array("label" => "Sans gluten"));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "geo", array()), 'errors');
+        echo "
+        <label class=\"mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect\" for=\"form_geo\">
+            ";
+        // line 26
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "geo", array()), 'widget', array("attr" => array("class" => "mdl-checkbox__input", "onclick" => "getLocation()")));
+        echo "
+            <span class=\"mdl-checkbox__label\"><b id=\"geo\">Se Geolocaliser</b></span>
+
+        </label>
+
+        ";
+        // line 31
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "radius", array()), 'errors');
         echo "
         ";
-        // line 25
+        // line 32
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "radius", array()), 'widget', array("attr" => array("class" => "mdl-textfield__input", "placeholder" => "Rayon de recherche (km)")));
+        echo "
+        ";
+        // line 33
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "radius", array()), 'label', array("label" => " "));
+        echo "
+        <br>
+        ";
+        // line 35
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetarien", array()), 'errors');
+        echo "
+        <label class=\"mdl-switch mdl-js-switch mdl-js-ripple-effect\" for=\"form_vegetarien\">
+            <span class=\"mdl-switch__label\">";
+        // line 37
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetarien", array()), 'label', array("label" => "Vegetarien"));
+        echo "</span>
+            ";
+        // line 38
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetarien", array()), 'widget', array("attr" => array("class" => "mdl-switch__input")));
+        echo "
+        </label> <br><br>
+        ";
+        // line 40
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetalien", array()), 'errors');
+        echo "
+        <label class=\"mdl-switch mdl-js-switch mdl-js-ripple-effect\" for=\"form_vegetalien\">
+            <span class=\"mdl-switch__label\">";
+        // line 42
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetalien", array()), 'label', array("label" => "Vegetalien"));
+        echo "</span>
+            ";
+        // line 43
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "vegetalien", array()), 'widget', array("attr" => array("class" => "mdl-switch__input")));
+        echo "
+        </label> <br><br>
+        ";
+        // line 45
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "gluten", array()), 'errors');
+        echo "
+        <label class=\"mdl-switch mdl-js-switch mdl-js-ripple-effect\" for=\"form_gluten\">
+            <span class=\"mdl-switch__label\">";
+        // line 47
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "gluten", array()), 'label', array("label" => "Sans gluten"));
+        echo "</span>
+            ";
+        // line 48
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "gluten", array()), 'widget', array("attr" => array("class" => "mdl-switch__input")));
+        echo "
+        </label> <br><br>
+
+        ";
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "diabete", array()), 'errors');
         echo "
-        ";
-        // line 26
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "diabete", array()), 'widget', array("attr" => array("class" => "form-control")));
-        echo "
-        ";
-        // line 27
+        <label class=\"mdl-switch mdl-js-switch mdl-js-ripple-effect\" for=\"form_diabete\">
+            <span class=\"mdl-switch__label\">";
+        // line 53
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "diabete", array()), 'label', array("label" => "Diabete"));
+        echo "</span>
+            ";
+        // line 54
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "diabete", array()), 'widget', array("attr" => array("class" => "mdl-switch__input")));
         echo "
+        </label> <br><br>
+
         ";
-        // line 28
+        // line 57
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Cholesterol", array()), 'errors');
         echo "
-        ";
-        // line 29
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Cholesterol", array()), 'widget', array("attr" => array("class" => "form-control")));
-        echo "
-        ";
-        // line 30
+        <label class=\"mdl-switch mdl-js-switch mdl-js-ripple-effect\" for=\"form_Cholesterol\">
+            <span class=\"mdl-switch__label\">";
+        // line 59
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Cholesterol", array()), 'label', array("label" => "cholesterol"));
-        echo "<br>
+        echo "</span>
+            ";
+        // line 60
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Cholesterol", array()), 'widget', array("attr" => array("class" => "mdl-switch__input")));
+        echo "
+        </label> <br><br>
 
-
+        <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored\">
+            <i class=\"material-icons\">search</i>
+        </button>
 
         ";
-        // line 34
+        // line 67
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 
         ";
-        // line 37
+        // line 70
         echo "        ";
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-        </div>
 
-    </div>
-</div>
 <div>
     ";
-        // line 43
+        // line 73
         if (array_key_exists("listRestaurants", $context)) {
-            // line 44
+            // line 74
             echo "        ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["listRestaurants"]) ? $context["listRestaurants"] : $this->getContext($context, "listRestaurants")));
             foreach ($context['_seq'] as $context["_key"] => $context["restaurant"]) {
-                // line 45
+                // line 75
                 echo "            ";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["restaurant"], "nom", array()), "html", null, true);
                 echo "<br>
@@ -157,15 +193,51 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['restaurant'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 47
+            // line 77
             echo "    ";
         }
-        // line 48
+        // line 78
         echo "</div>
+
+
+    <script>
+        var x = document.getElementById(\"form_lng\");
+        var y = document.getElementById(\"form_lat\");
+        var z = document.getElementById(\"geo\");
+        var a = document.getElementById(\"adresse\");
+        var ad= document.getElementById(\"form_recherche\");
+        var click=false;
+
+        function getLocation() {
+            if(!click){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    z.innerHTML = \"La Geolocation n'est pas supportée par le navigateur.\";
+                }
+                click=true;
+            }else{
+                x.value = \"\";
+                y.value = \"\";
+                z.innerHTML = \"Se Geolocaliser\";
+                a.style.visibility = 'visible';
+                ad.value = \"\";
+                click=false;
+            }
+        }
+
+        function showPosition(position) {
+            x.value = position.coords.latitude;
+            y.value = position.coords.longitude;
+            z.innerHTML = \"Addresse trouvée\";
+            a.style.visibility = 'hidden';
+            ad.value = \"\";
+        }
+    </script>
 
 ";
         
-        $__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065->leave($__internal_128b00694c7309ea7f7757437d95ab3a528cd92f9844bfd74824ac5e6c454065_prof);
+        $__internal_f2288549c2df64d307cc06733ecf0204d8380d52a0315dc351936c536df98be4->leave($__internal_f2288549c2df64d307cc06733ecf0204d8380d52a0315dc351936c536df98be4_prof);
 
     }
 
@@ -181,50 +253,80 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 
     public function getDebugInfo()
     {
-        return array (  164 => 48,  161 => 47,  152 => 45,  147 => 44,  145 => 43,  135 => 37,  130 => 34,  123 => 30,  119 => 29,  115 => 28,  111 => 27,  107 => 26,  103 => 25,  99 => 24,  95 => 23,  91 => 22,  87 => 21,  83 => 20,  79 => 19,  75 => 18,  71 => 17,  67 => 16,  62 => 14,  58 => 13,  54 => 12,  50 => 11,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  200 => 78,  197 => 77,  188 => 75,  183 => 74,  181 => 73,  174 => 70,  169 => 67,  159 => 60,  155 => 59,  150 => 57,  144 => 54,  140 => 53,  135 => 51,  129 => 48,  125 => 47,  120 => 45,  115 => 43,  111 => 42,  106 => 40,  101 => 38,  97 => 37,  92 => 35,  87 => 33,  83 => 32,  79 => 31,  71 => 26,  66 => 24,  61 => 22,  57 => 21,  53 => 20,  48 => 18,  44 => 17,  40 => 15,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends "RRCoreBundle:Default:layout.html.twig" %}*/
-/* {% block rrplatform_body %}*/
+/* {% block rrplatform_search %}*/
+/* {# data form*/
+/* {% if data is defined %}*/
+/*     lat:{{ data.lat }}<br>*/
+/*     lng: {{ data.lng }}<br>*/
+/*     veg:{{ data.vegetarien }}<br>*/
+/*     vegl:{{ data.vegetalien }}<br>*/
+/*     glu:{{ data.gluten }}<br>*/
+/*     dia:{{ data.diabete }}<br>*/
+/*     cho:{{ data.Cholesterol }}<br>*/
+/*     rech:{{ data.recherche }}<br>*/
+/*     rad:{{ data.radius }}<br>*/
+/* {% endif %}#}*/
 /* */
-/* */
-/* */
-/* */
-/* */
-/* <div class="container-fluid">*/
-/*     <div class="row-fluid">*/
-/*         <div class="span12">*/
-/*         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}*/
+/*             <p id="demo"></p>*/
+/*         {{ form_start(form, {'attr': {'class': 'form-vertical'}}) }}*/
 /*         {{ form_errors(form) }}*/
-/*         {{ form_row(form.recherche) }}<br>*/
-/*         {{ form_row(form.radius) }}<br>*/
+/*     <div id="adresse">*/
+/*         {{ form_errors(form.recherche) }}*/
+/*         {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}*/
+/*         {{ form_label(form.recherche, " ") }}</div>*/
 /* */
+/*         {{ form_errors(form.geo) }}*/
+/*         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="form_geo">*/
+/*             {{ form_widget(form.geo, {'attr': {'class': 'mdl-checkbox__input','onclick':"getLocation()"}}) }}*/
+/*             <span class="mdl-checkbox__label"><b id="geo">Se Geolocaliser</b></span>*/
+/* */
+/*         </label>*/
+/* */
+/*         {{ form_errors(form.radius) }}*/
+/*         {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Rayon de recherche (km)'}}) }}*/
+/*         {{ form_label(form.radius, " ") }}*/
+/*         <br>*/
 /*         {{ form_errors(form.vegetarien) }}*/
-/*         {{ form_widget(form.vegetarien, {'attr': {'class': 'form-control'}}) }}*/
-/*         {{ form_label(form.vegetarien, "Vegetarien") }}*/
+/*         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetarien">*/
+/*             <span class="mdl-switch__label">{{ form_label(form.vegetarien, "Vegetarien") }}</span>*/
+/*             {{ form_widget(form.vegetarien, {'attr': {'class': 'mdl-switch__input'}}) }}*/
+/*         </label> <br><br>*/
 /*         {{ form_errors(form.vegetalien) }}*/
-/*         {{ form_widget(form.vegetalien, {'attr': {'class': 'form-control'}}) }}*/
-/*         {{ form_label(form.vegetalien, "Vegetalien") }}*/
+/*         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetalien">*/
+/*             <span class="mdl-switch__label">{{ form_label(form.vegetalien, "Vegetalien") }}</span>*/
+/*             {{ form_widget(form.vegetalien, {'attr': {'class': 'mdl-switch__input'}}) }}*/
+/*         </label> <br><br>*/
 /*         {{ form_errors(form.gluten) }}*/
-/*         {{ form_widget(form.gluten, {'attr': {'class': 'form-control'}}) }}*/
-/*         {{ form_label(form.gluten, "Sans gluten") }}*/
+/*         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_gluten">*/
+/*             <span class="mdl-switch__label">{{ form_label(form.gluten, "Sans gluten") }}</span>*/
+/*             {{ form_widget(form.gluten, {'attr': {'class': 'mdl-switch__input'}}) }}*/
+/*         </label> <br><br>*/
+/* */
 /*         {{ form_errors(form.diabete) }}*/
-/*         {{ form_widget(form.diabete, {'attr': {'class': 'form-control'}}) }}*/
-/*         {{ form_label(form.diabete, "Diabete") }}*/
+/*         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_diabete">*/
+/*             <span class="mdl-switch__label">{{ form_label(form.diabete, "Diabete") }}</span>*/
+/*             {{ form_widget(form.diabete, {'attr': {'class': 'mdl-switch__input'}}) }}*/
+/*         </label> <br><br>*/
+/* */
 /*         {{ form_errors(form.Cholesterol) }}*/
-/*         {{ form_widget(form.Cholesterol, {'attr': {'class': 'form-control'}}) }}*/
-/*         {{ form_label(form.Cholesterol, "cholesterol") }}<br>*/
+/*         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_Cholesterol">*/
+/*             <span class="mdl-switch__label">{{ form_label(form.Cholesterol, "cholesterol") }}</span>*/
+/*             {{ form_widget(form.Cholesterol, {'attr': {'class': 'mdl-switch__input'}}) }}*/
+/*         </label> <br><br>*/
 /* */
-/* */
+/*         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">*/
+/*             <i class="material-icons">search</i>*/
+/*         </button>*/
 /* */
 /*         {{ form_rest(form) }}*/
 /* */
 /*         {# Fermeture de la balise <form> du formulaire HTML #}*/
 /*         {{ form_end(form) }}*/
-/*         </div>*/
 /* */
-/*     </div>*/
-/* </div>*/
 /* <div>*/
 /*     {% if listRestaurants is defined %}*/
 /*         {% for restaurant in listRestaurants %}*/
@@ -232,6 +334,42 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 /*         {% endfor %}*/
 /*     {% endif %}*/
 /* </div>*/
+/* */
+/* */
+/*     <script>*/
+/*         var x = document.getElementById("form_lng");*/
+/*         var y = document.getElementById("form_lat");*/
+/*         var z = document.getElementById("geo");*/
+/*         var a = document.getElementById("adresse");*/
+/*         var ad= document.getElementById("form_recherche");*/
+/*         var click=false;*/
+/* */
+/*         function getLocation() {*/
+/*             if(!click){*/
+/*                 if (navigator.geolocation) {*/
+/*                     navigator.geolocation.getCurrentPosition(showPosition);*/
+/*                 } else {*/
+/*                     z.innerHTML = "La Geolocation n'est pas supportée par le navigateur.";*/
+/*                 }*/
+/*                 click=true;*/
+/*             }else{*/
+/*                 x.value = "";*/
+/*                 y.value = "";*/
+/*                 z.innerHTML = "Se Geolocaliser";*/
+/*                 a.style.visibility = 'visible';*/
+/*                 ad.value = "";*/
+/*                 click=false;*/
+/*             }*/
+/*         }*/
+/* */
+/*         function showPosition(position) {*/
+/*             x.value = position.coords.latitude;*/
+/*             y.value = position.coords.longitude;*/
+/*             z.innerHTML = "Addresse trouvée";*/
+/*             a.style.visibility = 'hidden';*/
+/*             ad.value = "";*/
+/*         }*/
+/*     </script>*/
 /* */
 /* {% endblock %}*/
 /* */

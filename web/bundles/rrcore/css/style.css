@@ -10,41 +10,14 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 #jumbotron{position: absolute;left:100px; z-index: 0;}
 #jumbotron1{position:relative;z-index: 1;}
 
-/*
-  Hide radio button (the round disc)
-  we will use just the label to create pushbutton effect
-*/
-input[type=checkbox] {
-    display:none;
-    margin:10px;
-}
 
-/*
-  Change the look'n'feel of labels (which are adjacent to checkboxbuttons).
-  Add some margin, padding to label
-*/
-input[type=checkbox] + label {
-    display:inline-block;
-    margin:-2px;
-    padding: 4px 12px;
-    background-color: #12e7e7;
-    border-color: #ddd;
-}
-/*
- Change background color for label next to checked checkbox button
- to make it look like highlighted button
-*/
-input[type=checkbox]:checked + label {
-    background-image: none;
-    background-color:#d0d0d0;
-}
 
 .mdl-layout__header,
 .mdl-layout__drawer-button,
 .material-icons{
     /* This background is dark, so we set text to white. Use 87% black instead if
        your background is light. */
-    color: #0277bd;
+    color: #262626;
 }
 
 .mdl-layout__header{
