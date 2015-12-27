@@ -12,16 +12,17 @@
 
 {% block content %}
 
-    {% block jumbotron %}
-    {% endblock %}
 
     <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--2-col">
+        <div class="mdl-cell mdl-cell--3-col">
+
+
             {% block rrplatform_search %}
+                {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
             {% endblock %}
         </div>
         <div class="mdl-cell mdl-cell--8-col">
-            {% include(":svg:RRtext.svg.twig") %}
+
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--2-col">
 
@@ -29,6 +30,11 @@
                 <div class="mdl-cell mdl-cell--8-col">
                     {% block fos_user %}
                     {% endblock fos_user %}
+                    {% if listRestaurants is defined %}
+                    {% for restaurant in listRestaurants %}
+                        {{ restaurant.nom }}
+                    {% endfor %}
+                    {% endif %}
                 </div>
             </div>
             {% block body %}

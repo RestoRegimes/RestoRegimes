@@ -13,19 +13,11 @@ use RR\RestaurantBundle\Form\RestaurantImageType;
 use RR\RestaurantBundle\Form\RestaurantEditType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Ivory\GoogleMapBundle\Model\Map;
-use Ivory\GoogleMap\Overlays\Animation;
-use Ivory\GoogleMap\Overlays\Marker;
-use Ivory\GoogleMap\Base\Coordinate;
-use \Ivory\GoogleMap\Base\Bound;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use RR\RestaurantBundle\Entity\Restaurant;
 use RR\RestaurantBundle\Entity\ImageRestaurant;
 use RR\RestaurantBundle\Entity\RegimeRestaurant;
-use Ivory\GoogleMap\Controls\ControlPosition;
-use Ivory\GoogleMap\Controls\ZoomControl;
-use Ivory\GoogleMap\Controls\ZoomControlStyle;
-use Ivory\GoogleMap\Overlays\MarkerImage;
+
 
 
 class RestaurantController extends Controller
@@ -36,7 +28,7 @@ class RestaurantController extends Controller
         if ($page < 1) {
             throw $this->createNotFoundException("La page ".$page." n'existe pas.");
         }
-        $nbPerPage=1;//test Paris lat 48.89-48.82 lng 2.4-2.28
+        $nbPerPage=5;//test Paris lat 48.89-48.82 lng 2.4-2.28
 
         $listRestaurants = $this->getDoctrine()
             ->getManager()
@@ -48,101 +40,9 @@ class RestaurantController extends Controller
         if($page>$nbPage){
             return $this->redirect($this->generateUrl('rr_core_homepage'));
         }
-        $map = $this->get('ivory_google_map.map');
         $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
-        $bounds = new Bound();
-        $markerImageStandard = new MarkerImage();
-        $markerImageGluten = new MarkerImage();
-        $markerImageVegetarien = new MarkerImage();
-        $markerImageVegetalien = new MarkerImage();
-        $markerImageDiabete = new MarkerImage();
-        $markerImageCholestherol = new MarkerImage();
-        $markerImageMultiple = new MarkerImage();
-
-        // Configure your marker image options
-        $markerImageStandard->setPrefixJavascriptVariable('marker_image_standard_');
-        $markerImageStandard->setUrl($link."S.png");
-        $markerImageStandard->setSize(34, 34, "px", "px");
-        $markerImageStandard->setScaledSize(34, 34, "px", "px");
-
-        $markerImageGluten->setPrefixJavascriptVariable('marker_image_gluten_');
-        $markerImageGluten->setUrl($link."G.png");
-        $markerImageGluten->setSize(34, 34, "px", "px");
-        $markerImageGluten->setScaledSize(34, 34, "px", "px");
-
-        $markerImageDiabete->setPrefixJavascriptVariable('marker_image_diabete_');
-        $markerImageDiabete->setUrl($link."D.png");
-        $markerImageDiabete->setSize(34, 34, "px", "px");
-        $markerImageDiabete->setScaledSize(34, 34, "px", "px");
-
-        $markerImageVegetarien->setPrefixJavascriptVariable('marker_image_vegetarien_');
-        $markerImageVegetarien->setUrl($link."V.png");
-        $markerImageVegetarien->setSize(34, 34, "px", "px");
-        $markerImageVegetarien->setScaledSize(34, 34, "px", "px");
-
-        $markerImageVegetalien->setPrefixJavascriptVariable('mamarkerImage_vegetalien_');
-        $markerImageVegetalien->setUrl($link."VL.png");
-        $markerImageVegetalien->setSize(34, 34, "px", "px");
-        $markerImageVegetalien->setScaledSize(34, 34, "px", "px");
-
-        $markerImageCholestherol->setPrefixJavascriptVariable('mamarkerImage_cholestherol_');
-        $markerImageCholestherol->setUrl($link."C.png");
-        $markerImageCholestherol->setSize(34, 34, "px", "px");
-        $markerImageCholestherol->setScaledSize(34, 34, "px", "px");
-
-        $markerImageMultiple->setPrefixJavascriptVariable('mamarkerImage_multiple_');
-        $markerImageMultiple->setUrl($link."+.png");
-        $markerImageMultiple->setSize(34, 34, "px", "px");
-        $markerImageMultiple->setScaledSize(34, 34, "px", "px");
-
-        foreach($listRestaurants as $restaurant) {
-            $marker = new Marker();
-
-// Configure your marker options
-            $coordinate = new Coordinate($restaurant->getAddress()->getLatitude(), $restaurant->getAddress()->getLongitude());
-            $marker->setPrefixJavascriptVariable('marker_');
-            $marker->setPosition($coordinate, true);
-            $marker->setAnimation(Animation::DROP);
-
-            $marker->setOption('clickable', false);
-            $marker->setOption('flat', true);
-            $marker->setOptions(array(
-                'clickable' => false,
-                'flat' => true,
-            ));
-            $regimes = $restaurant->getRegimes();
-
-            if(is_null($regimes[0]))$marker->setIcon($markerImageStandard);
-            else if(count($regimes)>2)$marker->setIcon($markerImageMultiple);
-            else{
-                switch($regimes[0]->getId()){
-                    case 1: $marker->setIcon($markerImageVegetarien);
-                        break;
-                    case 2: $marker->setIcon($markerImageVegetalien);
-                        break;
-                    case 3: $marker->setIcon($markerImageGluten);
-                        break;
-                    case 4: $marker->setIcon($markerImageDiabete);
-                        break;
-                    case 5: $marker->setIcon($markerImageCholestherol);
-                        break;
-                    default : $marker->setIcon($markerImageStandard);
-                }
-
-            }
-
-
-
-            $bounds->extend($marker);
-            $map->addMarker($marker);
-        }
-        if(count($map->getMarkers())>1){
-            $map->setAutoZoom(true);
-            $map->setBound($bounds);
-        }
-// Configure your zoom control
-
-        $map->setCenter($coordinate);
+        $map = $this->get('ivory_google_map.map');
+        $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link);
 
 
         return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
@@ -377,6 +277,102 @@ class RestaurantController extends Controller
         ));
     }
 
+    public function getMapRestaurant($listRestaurants,$link){
+        $map = $this->get('ivory_google_map.map');
+        $bounds = new Bound();
+        $markerImageStandard = new MarkerImage();
+        $markerImageGluten = new MarkerImage();
+        $markerImageVegetarien = new MarkerImage();
+        $markerImageVegetalien = new MarkerImage();
+        $markerImageDiabete = new MarkerImage();
+        $markerImageCholestherol = new MarkerImage();
+        $markerImageMultiple = new MarkerImage();
 
+        // Configure your marker image options
+        $markerImageStandard->setPrefixJavascriptVariable('marker_image_standard_');
+        $markerImageStandard->setUrl($link."S.png");
+        $markerImageStandard->setSize(34, 34, "px", "px");
+        $markerImageStandard->setScaledSize(34, 34, "px", "px");
+
+        $markerImageGluten->setPrefixJavascriptVariable('marker_image_gluten_');
+        $markerImageGluten->setUrl($link."G.png");
+        $markerImageGluten->setSize(34, 34, "px", "px");
+        $markerImageGluten->setScaledSize(34, 34, "px", "px");
+
+        $markerImageDiabete->setPrefixJavascriptVariable('marker_image_diabete_');
+        $markerImageDiabete->setUrl($link."D.png");
+        $markerImageDiabete->setSize(34, 34, "px", "px");
+        $markerImageDiabete->setScaledSize(34, 34, "px", "px");
+
+        $markerImageVegetarien->setPrefixJavascriptVariable('marker_image_vegetarien_');
+        $markerImageVegetarien->setUrl($link."V.png");
+        $markerImageVegetarien->setSize(34, 34, "px", "px");
+        $markerImageVegetarien->setScaledSize(34, 34, "px", "px");
+
+        $markerImageVegetalien->setPrefixJavascriptVariable('mamarkerImage_vegetalien_');
+        $markerImageVegetalien->setUrl($link."VL.png");
+        $markerImageVegetalien->setSize(34, 34, "px", "px");
+        $markerImageVegetalien->setScaledSize(34, 34, "px", "px");
+
+        $markerImageCholestherol->setPrefixJavascriptVariable('mamarkerImage_cholestherol_');
+        $markerImageCholestherol->setUrl($link."C.png");
+        $markerImageCholestherol->setSize(34, 34, "px", "px");
+        $markerImageCholestherol->setScaledSize(34, 34, "px", "px");
+
+        $markerImageMultiple->setPrefixJavascriptVariable('mamarkerImage_multiple_');
+        $markerImageMultiple->setUrl($link."+.png");
+        $markerImageMultiple->setSize(34, 34, "px", "px");
+        $markerImageMultiple->setScaledSize(34, 34, "px", "px");
+
+        foreach($listRestaurants as $restaurant) {
+            $marker = new Marker();
+
+// Configure your marker options
+            $coordinate = new Coordinate($restaurant->getAddress()->getLatitude(), $restaurant->getAddress()->getLongitude());
+            $marker->setPrefixJavascriptVariable('marker_');
+            $marker->setPosition($coordinate, true);
+            $marker->setAnimation(Animation::DROP);
+
+            $marker->setOption('clickable', false);
+            $marker->setOption('flat', true);
+            $marker->setOptions(array(
+                'clickable' => false,
+                'flat' => true,
+            ));
+            $regimes = $restaurant->getRegimes();
+
+            if(is_null($regimes[0]))$marker->setIcon($markerImageStandard);
+            else if(count($regimes)>2)$marker->setIcon($markerImageMultiple);
+            else{
+                switch($regimes[0]->getId()){
+                    case 1: $marker->setIcon($markerImageVegetarien);
+                        break;
+                    case 2: $marker->setIcon($markerImageVegetalien);
+                        break;
+                    case 3: $marker->setIcon($markerImageGluten);
+                        break;
+                    case 4: $marker->setIcon($markerImageDiabete);
+                        break;
+                    case 5: $marker->setIcon($markerImageCholestherol);
+                        break;
+                    default : $marker->setIcon($markerImageStandard);
+                }
+
+            }
+
+
+
+            $bounds->extend($marker);
+            $map->addMarker($marker);
+        }
+        if(count($map->getMarkers())>1){
+            $map->setAutoZoom(true);
+            $map->setBound($bounds);
+        }
+// Configure your zoom control
+
+        $map->setCenter($coordinate);
+        return $map;
+    }
 
 }

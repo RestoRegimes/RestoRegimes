@@ -11,8 +11,8 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         $this->parent = $this->loadTemplate("RRRestaurantBundle::layout.html.twig", "RRRestaurantBundle:Restaurant:index.html.twig", 3);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'jumbotron' => array($this, 'block_jumbotron'),
-            'rrrestaurant_body' => array($this, 'block_rrrestaurant_body'),
+            'map' => array($this, 'block_map'),
+            'body' => array($this, 'block_body'),
         );
     }
 
@@ -23,20 +23,20 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_79eea162645a5347e15ef102b4bd5c37990673c4e79d409e08c018bc8d83dc4b = $this->env->getExtension("native_profiler");
-        $__internal_79eea162645a5347e15ef102b4bd5c37990673c4e79d409e08c018bc8d83dc4b->enter($__internal_79eea162645a5347e15ef102b4bd5c37990673c4e79d409e08c018bc8d83dc4b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRRestaurantBundle:Restaurant:index.html.twig"));
+        $__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf = $this->env->getExtension("native_profiler");
+        $__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf->enter($__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRRestaurantBundle:Restaurant:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_79eea162645a5347e15ef102b4bd5c37990673c4e79d409e08c018bc8d83dc4b->leave($__internal_79eea162645a5347e15ef102b4bd5c37990673c4e79d409e08c018bc8d83dc4b_prof);
+        $__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf->leave($__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_2126ebf49a1b08ab804558f8ee144f3e032047c31b3862c5587a40fdecfd9ffb = $this->env->getExtension("native_profiler");
-        $__internal_2126ebf49a1b08ab804558f8ee144f3e032047c31b3862c5587a40fdecfd9ffb->enter($__internal_2126ebf49a1b08ab804558f8ee144f3e032047c31b3862c5587a40fdecfd9ffb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0 = $this->env->getExtension("native_profiler");
+        $__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0->enter($__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 6
         echo "    Accueil - ";
@@ -44,67 +44,61 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         echo "
 ";
         
-        $__internal_2126ebf49a1b08ab804558f8ee144f3e032047c31b3862c5587a40fdecfd9ffb->leave($__internal_2126ebf49a1b08ab804558f8ee144f3e032047c31b3862c5587a40fdecfd9ffb_prof);
+        $__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0->leave($__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0_prof);
 
     }
 
     // line 8
-    public function block_jumbotron($context, array $blocks = array())
+    public function block_map($context, array $blocks = array())
     {
-        $__internal_812e31107dff31e137e43ec9c9019e6bc57fe5611b880380f634691494e0ea6b = $this->env->getExtension("native_profiler");
-        $__internal_812e31107dff31e137e43ec9c9019e6bc57fe5611b880380f634691494e0ea6b->enter($__internal_812e31107dff31e137e43ec9c9019e6bc57fe5611b880380f634691494e0ea6b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "jumbotron"));
+        $__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539 = $this->env->getExtension("native_profiler");
+        $__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539->enter($__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "map"));
 
         // line 9
-        echo "    <div class=\"mdl-grid\">
-        <div class=\"mdl-cell mdl-cell--12-col\">";
-        // line 10
+        echo "    ";
         echo $this->env->getExtension('ivory_google_map')->renderMap((isset($context["map"]) ? $context["map"] : $this->getContext($context, "map")));
-        echo "</div>
-    </div>
-
-
-
+        echo "
 ";
         
-        $__internal_812e31107dff31e137e43ec9c9019e6bc57fe5611b880380f634691494e0ea6b->leave($__internal_812e31107dff31e137e43ec9c9019e6bc57fe5611b880380f634691494e0ea6b_prof);
+        $__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539->leave($__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539_prof);
 
     }
 
-    // line 16
-    public function block_rrrestaurant_body($context, array $blocks = array())
+    // line 11
+    public function block_body($context, array $blocks = array())
     {
-        $__internal_db512025f1fe645ba8d2c336604661615a80b3bbb8a822f641585ceb6440a68c = $this->env->getExtension("native_profiler");
-        $__internal_db512025f1fe645ba8d2c336604661615a80b3bbb8a822f641585ceb6440a68c->enter($__internal_db512025f1fe645ba8d2c336604661615a80b3bbb8a822f641585ceb6440a68c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrrestaurant_body"));
+        $__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31 = $this->env->getExtension("native_profiler");
+        $__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31->enter($__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 17
+        // line 12
         echo "
     <h2>Liste des restaurants</h2>
 
     <ul>
        ";
-        // line 21
+        // line 16
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listRestaurants"]) ? $context["listRestaurants"] : $this->getContext($context, "listRestaurants")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["restaurant"]) {
-            // line 22
+            // line 17
             echo "            <li>
                 <a href=\"";
-            // line 23
+            // line 18
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_view", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
             echo "\">
                     ";
-            // line 24
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($context["restaurant"], "nom", array()), "html", null, true);
             echo "
                 </a>
                 regimes: <br/>
                 ";
-            // line 27
+            // line 22
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["restaurant"], "regimes", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["regime"]) {
-                // line 28
+                // line 23
                 echo "                    ";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["regime"], "libelle", array()), "html", null, true);
                 echo "
@@ -113,14 +107,14 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['regime'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 29
+            // line 24
             echo " <br/>
                 <a href=\"";
-            // line 30
+            // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_delete", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
             echo "\">Suprimer</a><br/>
                 <a href=\"";
-            // line 31
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_edit", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
             echo "\">Editer</a><br/>
             </li>
@@ -128,54 +122,60 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 34
+            // line 29
             echo "            <li>Pas (encore !) de restaurants</li>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['restaurant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 31
         echo "    </ul>
     <div class=\"mdl-tabs mdl-js-tabs mdl-js-ripple-effect\">
   ";
-        // line 39
-        echo "        <div class=\"mdl-tabs__tab-bar\">
-            ";
-        // line 40
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["nbPages"]) ? $context["nbPages"] : $this->getContext($context, "nbPages"))));
-        foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-            // line 41
-            echo "                <a href=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_home", array("page" => $context["p"])), "html", null, true);
-            echo "\">
-                <button class=\"mdl-button mdl-js-button mdl-button";
-            // line 42
-            if (($context["p"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
-                echo "--accent mdl-button--raised";
-            } else {
-                echo "--primary mdl-js-ripple-effect";
+        // line 34
+        echo "        ";
+        if (array_key_exists("listRestaurant", $context)) {
+            // line 35
+            echo "            <div class=\"mdl-tabs__tab-bar\">
+                ";
+            // line 36
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["nbPages"]) ? $context["nbPages"] : $this->getContext($context, "nbPages"))));
+            foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
+                // line 37
+                echo "                    <a href=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_home", array("page" => $context["p"])), "html", null, true);
+                echo "\">
+                    <button class=\"mdl-button mdl-js-button mdl-button";
+                // line 38
+                if (($context["p"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+                    echo "--accent mdl-button--raised";
+                } else {
+                    echo "--primary mdl-js-ripple-effect";
+                }
+                echo "\">
+                        ";
+                // line 39
+                echo twig_escape_filter($this->env, $context["p"], "html", null, true);
+                echo "
+                    </button>
+                    </a>
+                ";
             }
-            echo "\">
-                    ";
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
             // line 43
-            echo twig_escape_filter($this->env, $context["p"], "html", null, true);
-            echo "
-                </button>
-                </a>
-            ";
+            echo "            </div>
+        ";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
-        echo "        </div>
-    </div>
+        // line 45
+        echo "    </div>
 
 ";
         
-        $__internal_db512025f1fe645ba8d2c336604661615a80b3bbb8a822f641585ceb6440a68c->leave($__internal_db512025f1fe645ba8d2c336604661615a80b3bbb8a822f641585ceb6440a68c_prof);
+        $__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31->leave($__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31_prof);
 
     }
 
@@ -191,7 +191,7 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
     public function getDebugInfo()
     {
-        return array (  173 => 47,  163 => 43,  155 => 42,  150 => 41,  146 => 40,  143 => 39,  139 => 36,  132 => 34,  124 => 31,  120 => 30,  117 => 29,  108 => 28,  104 => 27,  98 => 24,  94 => 23,  91 => 22,  86 => 21,  80 => 17,  74 => 16,  61 => 10,  58 => 9,  52 => 8,  42 => 6,  36 => 5,  11 => 3,);
+        return array (  174 => 45,  170 => 43,  160 => 39,  152 => 38,  147 => 37,  143 => 36,  140 => 35,  137 => 34,  133 => 31,  126 => 29,  118 => 26,  114 => 25,  111 => 24,  102 => 23,  98 => 22,  92 => 19,  88 => 18,  85 => 17,  80 => 16,  74 => 12,  68 => 11,  58 => 9,  52 => 8,  42 => 6,  36 => 5,  11 => 3,);
     }
 }
 /* {# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}*/
@@ -201,15 +201,10 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 /* {% block title %}*/
 /*     Accueil - {{ parent() }}*/
 /* {% endblock %}*/
-/* {% block jumbotron %}*/
-/*     <div class="mdl-grid">*/
-/*         <div class="mdl-cell mdl-cell--12-col">{{ google_map(map) }}</div>*/
-/*     </div>*/
-/* */
-/* */
-/* */
+/* {% block map %}*/
+/*     {{ google_map(map) }}*/
 /* {% endblock %}*/
-/* {% block rrrestaurant_body %}*/
+/* {% block body %}*/
 /* */
 /*     <h2>Liste des restaurants</h2>*/
 /* */
@@ -232,15 +227,17 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 /*     </ul>*/
 /*     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">*/
 /*   {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}*/
-/*         <div class="mdl-tabs__tab-bar">*/
-/*             {% for p in range(1, nbPages) %}*/
-/*                 <a href="{{ path('rr_restaurant_home', {'page': p}) }}">*/
-/*                 <button class="mdl-button mdl-js-button mdl-button{% if p == page %}--accent mdl-button--raised{% else %}--primary mdl-js-ripple-effect{% endif %}">*/
-/*                     {{ p }}*/
-/*                 </button>*/
-/*                 </a>*/
-/*             {% endfor %}*/
-/*         </div>*/
+/*         {% if listRestaurant is defined %}*/
+/*             <div class="mdl-tabs__tab-bar">*/
+/*                 {% for p in range(1, nbPages) %}*/
+/*                     <a href="{{ path('rr_restaurant_home', {'page': p}) }}">*/
+/*                     <button class="mdl-button mdl-js-button mdl-button{% if p == page %}--accent mdl-button--raised{% else %}--primary mdl-js-ripple-effect{% endif %}">*/
+/*                         {{ p }}*/
+/*                     </button>*/
+/*                     </a>*/
+/*                 {% endfor %}*/
+/*             </div>*/
+/*         {% endif %}*/
 /*     </div>*/
 /* */
 /* {% endblock %}*/

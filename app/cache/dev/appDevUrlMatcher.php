@@ -211,8 +211,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // rr_core_search
-        if ($pathinfo === '/recherche') {
-            return array (  '_controller' => 'RR\\CoreBundle\\Controller\\DefaultController::rechercheAction',  '_route' => 'rr_core_search',);
+        if (0 === strpos($pathinfo, '/recherche') && preg_match('#^/recherche(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'rr_core_search')), array (  '_controller' => 'RR\\CoreBundle\\Controller\\DefaultController::rechercheAction',  'page' => 1,));
         }
 
         if (0 === strpos($pathinfo, '/log')) {

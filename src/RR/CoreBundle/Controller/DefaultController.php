@@ -5,6 +5,7 @@ namespace RR\CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
+use Ivory\GoogleMap\Base\Coordinate;
 
 class DefaultController extends Controller
 {
@@ -20,9 +21,42 @@ class DefaultController extends Controller
 
         return $this->render('RRCoreBundle:Default:searchform.html.twig',array('formAccueil'=>$form->createView()));
     }
-    public function rechercheAction(Request $request)
+    public function searchFormFullAction()
     {
+        $form = $this->createFormBuilder(array())
+            ->add('recherche', 'text',array('label'=>"",'required'=>false))
+            ->add('geo','checkbox',array('label'=>"",'required'=>false))
+            ->add('lat',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
+            ->add('lng',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
+            ->add('radius','integer',array('label'=>"",'required'=>false))
+            ->add('vegetarien', 'checkbox', array(
+                'label'    => 'Vegetarien',
+                'required' => false,
+            ))
+            ->add('vegetalien', 'checkbox', array(
+                'label'    => 'Vegetalien',
+                'required' => false,
+            ))
+            ->add('gluten', 'checkbox', array(
+                'label'    => 'Sans gluten',
+                'required' => false,
+            ))
+            ->add('diabete', 'checkbox', array(
+                'label'    => 'Diabete',
+                'required' => false,
+            ))
+            ->add('Cholesterol', 'checkbox', array(
+                'required' => false,
+            ))
+            ->getForm();
 
+        return $this->render('RRCoreBundle:Default:search.html.twig',array('form'=>$form->createView()));
+    }
+    public function rechercheAction(Request $request,$page=NULL)
+    {
+        if ($page < 1) {
+            throw $this->createNotFoundException("La page ".$page." n'existe pas.");
+        }
 
         $data = array();
         $form = $this->createFormBuilder($data)
@@ -74,29 +108,39 @@ class DefaultController extends Controller
                 $coord = $address->first()->getCoordinates();
                 $data['lat'] = $coord->getLatitude();
                 $data['lng'] = $coord->getLongitude();
+            }else{
+                $coord=new Coordinate($data['lat'], $data['lng']);
             }
             if($data['lat']==0 && $data['lng']==0){
                 //erreur recherche
             }
-
+            $nbPerPage=5;
             $listRestaurants= $this->getDoctrine()
                 ->getManager()
                 ->getRepository('RRRestaurantBundle:Restaurant')
-                ->searchRestaurants($data);
+                ->searchRestaurants($data,$page,$nbPerPage);
                         ;
+            $nbPage=ceil(count($listRestaurants)/5);
 
+            $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
+            $map = $this->get('ivory_google_map.map');
+            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$coord);
 
-            return $this->render('RRCoreBundle:Default:search.html.twig',array(
-                "form"=>$form->createView(),
-                "data"=>$data,
-                "listRestaurants"=>$listRestaurants,
+            return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
+                'listRestaurants' => $listRestaurants,
+                'nbPages'=>$nbPage,
+                'page'=>$page,
+                'map'=>$map,
+                'link'=>$link
             ));
 
+
     }
-       return $this->render('RRCoreBundle:Default:search.html.twig',array(
+       return $this->render('RRCoreBundle:Default:layout.html.twig',array(
             "form"=>$form->createView(),
 
         ));
     }
+
 
 }

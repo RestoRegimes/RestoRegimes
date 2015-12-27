@@ -1,5 +1,4 @@
-{% extends "RRCoreBundle:Default:layout.html.twig" %}
-{% block rrplatform_search %}
+
 {# data form
 {% if data is defined %}
     lat:{{ data.lat }}<br>
@@ -13,8 +12,7 @@
     rad:{{ data.radius }}<br>
 {% endif %}#}
 
-            <p id="demo"></p>
-        {{ form_start(form, {'attr': {'class': 'form-vertical'}}) }}
+        {{ form_start(form, {'action': path('rr_core_search') }) }}
         {{ form_errors(form) }}
     <div id="adresse">
         {{ form_errors(form.recherche) }}
@@ -31,11 +29,12 @@
         {{ form_errors(form.radius) }}
         {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Rayon de recherche (km)'}}) }}
         {{ form_label(form.radius, " ") }}
-        <br>
+
+
         {{ form_errors(form.vegetarien) }}
         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetarien">
             <span class="mdl-switch__label">{{ form_label(form.vegetarien, "Vegetarien") }}</span>
-            {{ form_widget(form.vegetarien, {'attr': {'class': 'mdl-switch__input'}}) }}
+            {{ form_widget(form.vegetarien, {'attr': {'class': 'mdl-switch__input mdl-color--green-A400'}}) }}
         </label> <br><br>
         {{ form_errors(form.vegetalien) }}
         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetalien">
@@ -60,7 +59,7 @@
             {{ form_widget(form.Cholesterol, {'attr': {'class': 'mdl-switch__input'}}) }}
         </label> <br><br>
 
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
             <i class="material-icons">search</i>
         </button>
 
@@ -90,10 +89,10 @@
             if(!click){
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(showPosition);
+                    click=true;
                 } else {
                     z.innerHTML = "La Geolocation n'est pas supportée par le navigateur.";
                 }
-                click=true;
             }else{
                 x.value = "";
                 y.value = "";
@@ -105,12 +104,11 @@
         }
 
         function showPosition(position) {
-            x.value = position.coords.latitude;
-            y.value = position.coords.longitude;
+            y.value = position.coords.latitude;
+            x.value = position.coords.longitude;
             z.innerHTML = "Addresse trouvée";
             a.style.visibility = 'hidden';
             ad.value = "";
         }
     </script>
 
-{% endblock %}

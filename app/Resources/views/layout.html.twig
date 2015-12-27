@@ -25,14 +25,11 @@
             mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title"><a href="{{ path('rr_core_homepage') }}">{% include(":svg:iconRRBlackShadow.svg.twig") %}</a></span>
+            <span class="mdl-layout-title" id="title"><a href="{{ path('rr_core_homepage') }}"><div id="RRLogoText" class="mdl-cell--hide-phone">{% include(":svg:RRtext.svg.twig") %}</div><div class="mdl-cell--hide-desktop mdl-cell--hide-tablet">{% include(":svg:iconRRBlackShadow.svg.twig") %}</div></a></span>
             <div class="mdl-layout-spacer"></div>
-            {% if app.user is not null %}
-                Bonjour {{ app.user.username }} - {{ app.user.email }}
-            {% endif %}
+            <div class="mdl-cell--hide-phone">Bonjour {{ app.user.username }} - {{ app.user.email }}</div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
-
 
                 <label class="mdl-button mdl-js-button mdl-button--icon"
                        for="fixed-header-drawer-exp">
@@ -51,6 +48,9 @@
             <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
                 {% if app.user is not null %}
 
+                    <div class="mdl-menu__item mdl-cell--hide-desktop mdl-cell--hide-tablet">Bonjour {{ app.user.username }}</div>
+
+
                     <a class="mdl-menu__item" href="{{ path('fos_user_profile_show') }}">Mon Compte</a>
 
                     <a class="mdl-menu__item" href="{{ path('fos_user_security_logout') }}">Logout</a>
@@ -68,7 +68,7 @@
 
 
     </header>
-    <div class="mdl-layout__drawer mdl-layout__drawer">
+    <div id="drawer" class="mdl-layout__drawer mdl-layout__drawer">
 
         <span class="mdl-layout-title">{% include(":svg:iconRRShadow.svg.twig") %}</span>
         <nav class="mdl-navigation">
@@ -90,34 +90,6 @@
         <div class="page-content">
             {% block content %}
 
-
-
-                {% block jumbotron %}
-                {% endblock %}
-
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--2-col">
-                        {% block rrplatform_search %}
-                        {% endblock %}
-                    </div>
-                    <div class="mdl-cell mdl-cell--8-col">
-                        {% include(":svg:RRtext.svg.twig") %}
-                        <div class="mdl-grid">
-                            <div class="mdl-cell mdl-cell--2-col">
-
-                            </div>
-                            <div class="mdl-cell mdl-cell--8-col">
-                                {% block fos_user %}
-                                {% endblock fos_user %}
-                            </div>
-                        </div>
-                        {% block body %}
-                        {% endblock %}
-                    </div>
-
-                </div>
-
-
             {% endblock %}
         </div>
     </main>
@@ -130,6 +102,7 @@
 {% block javascript %}
 
 {% endblock %}
+
 <!-- /container -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">

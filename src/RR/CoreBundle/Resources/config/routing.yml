@@ -3,5 +3,7 @@ rr_core_homepage:
     defaults: { _controller: RRCoreBundle:Default:index }
 
 rr_core_search:
-    path:     /recherche
-    defaults: { _controller: RRCoreBundle:Default:recherche }
+    path:     /recherche/{page}
+    defaults: { _controller: RRCoreBundle:Default:recherche, page: 1}
+    requirements:
+            page: \d*
