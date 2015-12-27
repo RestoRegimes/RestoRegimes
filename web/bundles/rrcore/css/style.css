@@ -50,3 +50,16 @@ input[type=checkbox]:checked + label {
 .mdl-layout__header{
     background-color: transparent;
 }
+
+.upperIcon{
+    fill: #000000;
+}
+.mdl-layout-title:hover .lowerIcon{
+
+    fill: #76FF03;
+}
+
+.lowerIcon{
+    fill: #000000;
+    transition: fill 1s;
+}

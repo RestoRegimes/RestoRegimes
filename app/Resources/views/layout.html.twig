@@ -25,7 +25,7 @@
             mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Resto'Regimes </span>
+            <span class="mdl-layout-title"><a href="{{ path('rr_core_homepage') }}">{% include(":svg:iconRRBlackShadow.svg.twig") %}</a></span>
             <div class="mdl-layout-spacer"></div>
             {% if app.user is not null %}
                 Bonjour {{ app.user.username }} - {{ app.user.email }}
@@ -90,30 +90,22 @@
         <div class="page-content">
 
 
-            {% block fos_user %}
-            {% endblock fos_user %}
+
             {% block jumbotron %}
             {% endblock %}
 
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--2-col">
-                    Nulla lorem libero, pretium quis odio eget, faucibus tempor sem. Cras lobortis egestas risus, sed scelerisque elit aliquet nec. Aliquam sit amet tempus elit. Sed vitae turpis enim. Aenean metus orci, lacinia convallis dui at, faucibus facilisis ex. In hac habitasse platea dictumst. Aliquam sodales eleifend mi, et gravida neque bibendum nec.
 
-                    Aliquam imperdiet, sapien vitae consequat suscipit, neque ex fermentum odio, vel mollis mauris lectus a neque. Nam sit amet aliquet sapien. Aenean vestibulum quam orci, in facilisis leo gravida sollicitudin. Ut ac convallis nulla, in molestie tellus. Mauris ultricies congue felis vitae pulvinar. Nulla gravida dui vel pellentesque venenatis. Morbi tincidunt tempus mi, ut luctus turpis vulputate efficitur. Mauris tempus sapien eu sollicitudin condimentum. Duis pulvinar orci nibh, nec scelerisque purus condimentum dignissim. Proin ut arcu ut urna tristique ornare vulputate dictum risus. Quisque ac libero et lectus ultricies maximus. Maecenas elementum arcu felis. Praesent tristique nibh sit amet lectus tristique, et aliquet lacus consequat. Aliquam nisl magna, finibus vel elit non, euismod bibendum sem. Donec libero ex, sagittis euismod metus facilisis, rhoncus convallis leo.
                 </div>
                 <div class="mdl-cell mdl-cell--8-col">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non condimentum enim, in pellentesque ligula. Cras eu velit id urna ullamcorper tristique ut eget eros. Vivamus sed purus dui. Duis id maximus metus. Maecenas vehicula porta justo sed viverra. Mauris mattis commodo mauris in blandit. Nulla facilisi. Phasellus purus felis, aliquet quis pretium vitae, vestibulum vel lacus. Aliquam nec lectus scelerisque, vulputate ligula nec, rutrum sapien.
-
-                    Fusce condimentum risus lorem. Vivamus eget mattis tortor. Vivamus vitae porttitor neque. Sed ornare nisi at risus laoreet ultrices. Pellentesque nec purus quam. Fusce nec hendrerit risus. Cras dapibus libero ut urna vestibulum, in feugiat nunc feugiat. Sed venenatis neque ut nunc dapibus, tristique hendrerit quam gravida. Praesent tincidunt, mi efficitur sagittis tincidunt, ante diam sollicitudin enim, vitae ullamcorper nisi nisl ac nulla. Aenean vulputate sem tristique est varius, sed aliquam dolor suscipit. Proin semper eu orci id facilisis. Curabitur euismod erat sit amet felis blandit pretium. Aenean pellentesque, metus nec vulputate elementum, velit lorem efficitur urna, ac interdum felis quam sit amet lacus. Integer sollicitudin fringilla accumsan.
-
+                    {% include(":svg:RRtext.svg.twig") %}
                    <div class="mdl-grid">
                         <div class="mdl-cell mdl-cell--2-col">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non condimentum enim, in pellentesque ligula. Cras eu velit id urna ullamcorper tristique ut eget eros. Vivamus sed purus dui. Duis id maximus metus. Maecenas vehicula porta justo sed viverra. Mauris mattis commodo mauris in blandit. Nulla facilisi. Phasellus purus felis, aliquet quis pretium vitae, vestibulum vel lacus. Aliquam nec lectus scelerisque, vulputate ligula nec, rutrum sapien.
-
-                            Fusce condimentum risus lorem. Vivamus eget mattis tortor. Vivamus vitae porttitor neque. Sed ornare nisi at risus laoreet ultrices. Pellentesque nec purus quam. Fusce nec hendrerit risus. Cras dapibus libero ut urna vestibulum, in feugiat nunc feugiat. Sed venenatis neque ut nunc dapibus, tristique hendrerit quam gravida. Praesent tincidunt, mi efficitur sagittis tincidunt, ante diam sollicitudin enim, vitae ullamcorper nisi nisl ac nulla. Aenean vulputate sem tristique est varius, sed aliquam dolor suscipit. Proin semper eu orci id facilisis. Curabitur euismod erat sit amet felis blandit pretium. Aenean pellentesque, metus nec vulputate elementum, velit lorem efficitur urna, ac interdum felis quam sit amet lacus. Integer sollicitudin fringilla accumsan.
                         </div>
                         <div class="mdl-cell mdl-cell--8-col">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non condimentum enim, in pellentesque ligula. Cras eu velit id urna ullamcorper tristique ut eget eros. Vivamus sed purus dui. Duis id maximus metus. Maecenas vehicula porta justo sed viverra. Mauris mattis commodo mauris in blandit. Nulla facilisi. Phasellus purus felis, aliquet quis pretium vitae, vestibulum vel lacus. Aliquam nec lectus scelerisque, vulputate ligula nec, rutrum sapien.
+                            {% block fos_user %}
+                            {% endblock fos_user %}
                         </div>
                         </div>
                     {% block body %}
