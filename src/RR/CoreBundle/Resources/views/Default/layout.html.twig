@@ -2,26 +2,19 @@
 
 {% extends "::layout.html.twig" %}
 {% block javascript %}
-    <script language="javascript" type="text/javascript" src="{{ asset('bundles/rrcore/js/p5.js') }}"></script>
-    <script language="javascript" type="text/javascript" src="{{ asset('bundles/rrcore/js/sketch.js') }}"></script>
-
 {% endblock %}
 {% block title %}
   Resto'Regimes
 {% endblock %}
 
 {% block content %}
-
-
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--3-col">
-
-
             {% block rrplatform_search %}
                 {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
             {% endblock %}
         </div>
-        <div class="mdl-cell mdl-cell--8-col">
+        <div class="mdl-cell mdl-cell--9-col">
 
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--2-col">

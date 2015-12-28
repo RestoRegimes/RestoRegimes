@@ -87,7 +87,7 @@ class RestaurantRepository extends EntityRepository
             ->setParameter('valide', true)
             ;
     }
-    public function searchRestaurants($data,$page,$nbPerPage){
+    public function searchRestaurants($data,$nbMaxResults){
 
         $query = $this
             ->createQueryBuilder('r')
@@ -148,15 +148,16 @@ class RestaurantRepository extends EntityRepository
             ->setParameter('distance', $data['radius']);
 
         $query
-            // On définit l'annonce à partir de laquelle commencer la liste
-            ->setFirstResult(($page-1) * $nbPerPage)
             // Ainsi que le nombre d'annonce à afficher sur une page
-            ->setMaxResults($nbPerPage)
+            ->setMaxResults($nbMaxResults)
         ;
 
         // Enfin, on retourne l'objet Paginator correspondant à la requête construite
         // (n'oubliez pas le use correspondant en début de fichier)
-        return new Paginator($query, true);
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
 
     }
 }

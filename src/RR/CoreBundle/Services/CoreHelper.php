@@ -20,11 +20,12 @@ use \Ivory\GoogleMap\Base\Bound;
 class CoreHelper
 {
 
-    public function getMapRestaurant($map,$listRestaurants,$link,$coord=NULL){
+    public function getMapRestaurant($map,$listRestaurants=NULL,$link,$coord=NULL){
 
         $bounds = new Bound();
 
         $markerImageStandard = new MarkerImage();
+        $markerImageUser = new MarkerImage();
         $markerImageGluten = new MarkerImage();
         $markerImageVegetarien = new MarkerImage();
         $markerImageVegetalien = new MarkerImage();
@@ -35,38 +36,43 @@ class CoreHelper
         // Configure your marker image options
         $markerImageStandard->setPrefixJavascriptVariable('marker_image_standard_');
         $markerImageStandard->setUrl($link."S.png");
-        $markerImageStandard->setSize(34, 34, "px", "px");
-        $markerImageStandard->setScaledSize(34, 34, "px", "px");
+        $markerImageStandard->setSize(27, 40, "px", "px");
+        $markerImageStandard->setScaledSize(27, 40, "px", "px");
+
+        $markerImageUser->setPrefixJavascriptVariable('marker_image_user_');
+        $markerImageUser->setUrl($link."U.png");
+        $markerImageUser->setSize(27, 40, "px", "px");
+        $markerImageUser->setScaledSize(27, 40, "px", "px");
 
         $markerImageGluten->setPrefixJavascriptVariable('marker_image_gluten_');
         $markerImageGluten->setUrl($link."G.png");
-        $markerImageGluten->setSize(34, 34, "px", "px");
-        $markerImageGluten->setScaledSize(34, 34, "px", "px");
+        $markerImageGluten->setSize(27, 40, "px", "px");
+        $markerImageGluten->setScaledSize(27, 40, "px", "px");
 
         $markerImageDiabete->setPrefixJavascriptVariable('marker_image_diabete_');
         $markerImageDiabete->setUrl($link."D.png");
-        $markerImageDiabete->setSize(34, 34, "px", "px");
-        $markerImageDiabete->setScaledSize(34, 34, "px", "px");
+        $markerImageDiabete->setSize(27, 40, "px", "px");
+        $markerImageDiabete->setScaledSize(27, 40, "px", "px");
 
         $markerImageVegetarien->setPrefixJavascriptVariable('marker_image_vegetarien_');
         $markerImageVegetarien->setUrl($link."V.png");
-        $markerImageVegetarien->setSize(34, 34, "px", "px");
-        $markerImageVegetarien->setScaledSize(34, 34, "px", "px");
+        $markerImageVegetarien->setSize(27, 40, "px", "px");
+        $markerImageVegetarien->setScaledSize(27, 40, "px", "px");
 
         $markerImageVegetalien->setPrefixJavascriptVariable('mamarkerImage_vegetalien_');
         $markerImageVegetalien->setUrl($link."VL.png");
-        $markerImageVegetalien->setSize(34, 34, "px", "px");
-        $markerImageVegetalien->setScaledSize(34, 34, "px", "px");
+        $markerImageVegetalien->setSize(27, 40, "px", "px");
+        $markerImageVegetalien->setScaledSize(27, 40, "px", "px");
 
         $markerImageCholestherol->setPrefixJavascriptVariable('mamarkerImage_cholestherol_');
         $markerImageCholestherol->setUrl($link."C.png");
-        $markerImageCholestherol->setSize(34, 34, "px", "px");
-        $markerImageCholestherol->setScaledSize(34, 34, "px", "px");
+        $markerImageCholestherol->setSize(27, 40, "px", "px");
+        $markerImageCholestherol->setScaledSize(27, 40, "px", "px");
 
         $markerImageMultiple->setPrefixJavascriptVariable('mamarkerImage_multiple_');
         $markerImageMultiple->setUrl($link."+.png");
-        $markerImageMultiple->setSize(34, 34, "px", "px");
-        $markerImageMultiple->setScaledSize(34, 34, "px", "px");
+        $markerImageMultiple->setSize(27, 40, "px", "px");
+        $markerImageMultiple->setScaledSize(27, 40, "px", "px");
 
         foreach($listRestaurants as $restaurant) {
             $marker = new Marker();
@@ -124,7 +130,7 @@ class CoreHelper
                 'clickable' => false,
                 'flat' => true,
             ));
-            $marker->setIcon($markerImageStandard);
+            $marker->setIcon($markerImageUser);
             $bounds->extend($marker);
             $map->addMarker($marker);
         }
@@ -138,5 +144,104 @@ class CoreHelper
         return $map;
     }
 
+    public function getSingleRestoMap($map,$link,$restaurant){
+
+
+        $bounds = new Bound();
+
+        $regimes = $restaurant->getRegimes();
+
+        $marker = new Marker();
+
+// Configure your marker options
+        $coordinate = new Coordinate($restaurant->getAddress()->getLatitude(), $restaurant->getAddress()->getLongitude());
+        $marker->setPrefixJavascriptVariable('marker_');
+        $marker->setPosition($coordinate, true);
+        $marker->setAnimation(Animation::DROP);
+
+        $marker->setOption('clickable', false);
+        $marker->setOption('flat', true);
+        $marker->setOptions(array(
+            'clickable' => false,
+            'flat' => true,
+        ));
+
+        if(is_null($regimes[0])){
+            $markerImageStandard = new MarkerImage();
+            $markerImageStandard->setPrefixJavascriptVariable('marker_image_standard_');
+            $markerImageStandard->setUrl($link."S.png");
+            $markerImageStandard->setSize(27, 40, "px", "px");
+            $markerImageStandard->setScaledSize(27, 40, "px", "px");
+            $marker->setIcon($markerImageStandard);
+        }
+        else if(count($regimes)>2){
+            $markerImageMultiple = new MarkerImage();
+            $markerImageMultiple->setPrefixJavascriptVariable('mamarkerImage_multiple_');
+            $markerImageMultiple->setUrl($link."+.png");
+            $markerImageMultiple->setSize(27, 40, "px", "px");
+            $markerImageMultiple->setScaledSize(27, 40, "px", "px");
+            $marker->setIcon($markerImageMultiple);
+        }
+        else{
+            switch($regimes[0]->getId()){
+                case 1:
+                    $markerImageVegetarien = new MarkerImage();
+                    $markerImageVegetarien->setPrefixJavascriptVariable('marker_image_vegetarien_');
+                    $markerImageVegetarien->setUrl($link."V.png");
+                    $markerImageVegetarien->setSize(27, 40, "px", "px");
+                    $markerImageVegetarien->setScaledSize(27, 40, "px", "px");
+                    $marker->setIcon($markerImageVegetarien);
+                    break;
+                case 2:
+                    $markerImageVegetalien = new MarkerImage();
+                    $markerImageVegetalien->setPrefixJavascriptVariable('mamarkerImage_vegetalien_');
+                    $markerImageVegetalien->setUrl($link."VL.png");
+                    $markerImageVegetalien->setSize(27, 40, "px", "px");
+                    $markerImageVegetalien->setScaledSize(27, 40, "px", "px");
+                    $marker->setIcon($markerImageVegetalien);
+                    break;
+                case 3:
+                    $markerImageGluten = new MarkerImage();
+                    $markerImageGluten->setPrefixJavascriptVariable('marker_image_gluten_');
+                    $markerImageGluten->setUrl($link."G.png");
+                    $markerImageGluten->setSize(27, 40, "px", "px");
+                    $markerImageGluten->setScaledSize(27, 40, "px", "px");
+                    $marker->setIcon($markerImageGluten);
+                    break;
+                case 4:
+                    $markerImageDiabete = new MarkerImage();
+                    $markerImageDiabete->setPrefixJavascriptVariable('marker_image_diabete_');
+                    $markerImageDiabete->setUrl($link."D.png");
+                    $markerImageDiabete->setSize(27, 40, "px", "px");
+                    $markerImageDiabete->setScaledSize(27, 40, "px", "px");
+                    $marker->setIcon($markerImageDiabete);
+                    break;
+                case 5:
+                    $markerImageCholestherol = new MarkerImage();
+                    $markerImageCholestherol->setPrefixJavascriptVariable('mamarkerImage_cholestherol_');
+                    $markerImageCholestherol->setUrl($link."C.png");
+                    $markerImageCholestherol->setSize(27, 40, "px", "px");
+                    $markerImageCholestherol->setScaledSize(27, 40, "px", "px");
+                    $marker->setIcon($markerImageCholestherol);
+                    break;
+                default :
+                    $markerImageStandard = new MarkerImage();
+                    $markerImageStandard->setPrefixJavascriptVariable('marker_image_standard_');
+                    $markerImageStandard->setUrl($link."S.png");
+                    $markerImageStandard->setSize(27, 40, "px", "px");
+                    $markerImageStandard->setScaledSize(27, 40, "px", "px");
+                    $marker->setIcon($markerImageStandard);
+            }
+
+        }
+
+        $bounds->extend($marker);
+        $map->addMarker($marker);
+
+
+        $map->setCenter($coordinate);
+        return $map;
+
+    }
 
 }

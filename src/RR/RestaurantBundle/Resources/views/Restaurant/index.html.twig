@@ -10,38 +10,78 @@
 {% endblock %}
 {% block body %}
 
-    <h2>Liste des restaurants</h2>
 
-    <ul>
+    <div class="pagination">
+        {% set count=0 %}
+        {% set numPage=1 %}
+        <div class="post" id="page-{{ numPage }}" style="height:400px;">
        {% for restaurant in listRestaurants %}
-            <li>
-                <a href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">
-                    {{ restaurant.nom }}
-                </a>
-                regimes: <br/>
-                {% for regime in restaurant.regimes %}
-                    {{ regime.libelle }}
-                {% endfor %} <br/>
-                <a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a><br/>
-                <a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a><br/>
-            </li>
+            {% if count==2 %}
+                {% set numPage=numPage+1 %}
+                </div>
+                <div class="post" id="page-{{ numPage }}">
+                {% set count=0 %}
+            {% endif %}
+                    <div class="mdl-card mdl-shadow--2dp" style="width:90%;min-height:100px;">
+                        <div class="mdl-card__title" {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                            style=" background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; "{% endif %}>
+                            <a class="mdl-button mdl-button--raised mdl-button--colored" href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">
+                                {{ restaurant.nom }}
+                            </a>
+
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            {{ restaurant.address|address()|raw }}
+                            {% for regime in restaurant.regimes %}
+                                {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/markerV.png') }}">{% endif %}
+                                {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/markerVL.png') }}">{% endif %}
+                                {% if regime.id==3%}<img src="{{ asset('bundles/rrcore/images/markerG.png') }}">{% endif %}
+                                {% if regime.id==4%}<img src="{{ asset('bundles/rrcore/images/markerD.png') }}">{% endif %}
+                                {% if regime.id==5%}<img src="{{ asset('bundles/rrcore/images/markerC.png') }}">{% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">share</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="height: 10px;"></div>
+           {% set count=count+1 %}
             {% else %}
-            <li>Pas (encore !) de restaurants</li>
+            <b>Aucun Restaurant trouvé</b>
         {% endfor %}
-    </ul>
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-  {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
-        {% if listRestaurant is defined %}
-            <div class="mdl-tabs__tab-bar">
-                {% for p in range(1, nbPages) %}
-                    <a href="{{ path('rr_restaurant_home', {'page': p}) }}">
-                    <button class="mdl-button mdl-js-button mdl-button{% if p == page %}--accent mdl-button--raised{% else %}--primary mdl-js-ripple-effect{% endif %}">
-                        {{ p }}
-                    </button>
-                    </a>
-                {% endfor %}
-            </div>
-        {% endif %}
+                </div>
     </div>
+
+    <a href="#" id="prev" onclick="prevPage()">Prev page</a>
+    <a href="#" id="next" onclick="nextPage()">Next page</a>
+    <script>
+        var page=1;
+        showPage(page);
+        function showPage(page) {
+            $('.pagination .post:not(#page-'+page+')').hide();
+            $('.pagination .post#page-'+page).show();
+        }
+        function prevPage() {
+            if (page == 1) {
+                page = $('.pagination .post').length;
+            } else {
+                page--;
+            }
+            showPage(page);
+        }
+
+        function nextPage() {
+            if (page == $('.pagination .post').length) {
+                page = 1;
+            } else {
+                page++;
+            }
+            showPage(page);
+        }
+    </script>
+
+
 
 {% endblock %}

@@ -52,11 +52,8 @@ class DefaultController extends Controller
 
         return $this->render('RRCoreBundle:Default:search.html.twig',array('form'=>$form->createView()));
     }
-    public function rechercheAction(Request $request,$page=NULL)
+    public function rechercheAction(Request $request)
     {
-        if ($page < 1) {
-            throw $this->createNotFoundException("La page ".$page." n'existe pas.");
-        }
 
         $data = array();
         $form = $this->createFormBuilder($data)
@@ -114,13 +111,15 @@ class DefaultController extends Controller
             if($data['lat']==0 && $data['lng']==0){
                 //erreur recherche
             }
-            $nbPerPage=5;
+            $nbMaxResult=100;
             $listRestaurants= $this->getDoctrine()
                 ->getManager()
                 ->getRepository('RRRestaurantBundle:Restaurant')
-                ->searchRestaurants($data,$page,$nbPerPage);
-                        ;
-            $nbPage=ceil(count($listRestaurants)/5);
+                ->searchRestaurants($data,$nbMaxResult);
+
+            $nbPerPage=1;
+            $nbPage=ceil(count($listRestaurants)/$nbPerPage);
+
 
             $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
             $map = $this->get('ivory_google_map.map');
@@ -128,8 +127,9 @@ class DefaultController extends Controller
 
             return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
                 'listRestaurants' => $listRestaurants,
-                'nbPages'=>$nbPage,
-                'page'=>$page,
+                'nbMaxResult'=>$nbMaxResult,
+                'nbPerPage' => $nbPerPage,
+                'nbPages' => $nbPage,
                 'map'=>$map,
                 'link'=>$link
             ));
@@ -138,7 +138,6 @@ class DefaultController extends Controller
     }
        return $this->render('RRCoreBundle:Default:layout.html.twig',array(
             "form"=>$form->createView(),
-
         ));
     }
 

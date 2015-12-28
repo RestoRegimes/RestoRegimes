@@ -12,12 +12,17 @@
     rad:{{ data.radius }}<br>
 {% endif %}#}
 
+<div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Recherche</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
         {{ form_start(form, {'action': path('rr_core_search') }) }}
         {{ form_errors(form) }}
-    <div id="adresse">
-        {{ form_errors(form.recherche) }}
-        {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}
-        {{ form_label(form.recherche, " ") }}</div>
+        <div id="adresse">
+            {{ form_errors(form.recherche) }}
+            {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}
+            {{ form_label(form.recherche, " ") }}</div>
 
         {{ form_errors(form.geo) }}
         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="form_geo">
@@ -29,13 +34,15 @@
         {{ form_errors(form.radius) }}
         {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Rayon de recherche (km)'}}) }}
         {{ form_label(form.radius, " ") }}
-
-
         {{ form_errors(form.vegetarien) }}
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetarien">
-            <span class="mdl-switch__label">{{ form_label(form.vegetarien, "Vegetarien") }}</span>
-            {{ form_widget(form.vegetarien, {'attr': {'class': 'mdl-switch__input mdl-color--green-A400'}}) }}
-        </label> <br><br>
+        <div class="row press">
+            {{ form_widget(form.vegetarien, {'attr': {'class': 'cbx hidden'}}) }}
+            <label for="form_vegetarien" class="lbl"></label>
+
+        </div>
+        {{ form_label(form.vegetarien, "Vegetarien") }}<br><br>
+
+
         {{ form_errors(form.vegetalien) }}
         <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetalien">
             <span class="mdl-switch__label">{{ form_label(form.vegetalien, "Vegetalien") }}</span>
@@ -58,26 +65,32 @@
             <span class="mdl-switch__label">{{ form_label(form.Cholesterol, "cholesterol") }}</span>
             {{ form_widget(form.Cholesterol, {'attr': {'class': 'mdl-switch__input'}}) }}
         </label> <br><br>
-
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
             <i class="material-icons">search</i>
         </button>
-
         {{ form_rest(form) }}
 
         {# Fermeture de la balise <form> du formulaire HTML #}
         {{ form_end(form) }}
+    </div>
 
-<div>
-    {% if listRestaurants is defined %}
-        {% for restaurant in listRestaurants %}
-            {{ restaurant.nom }}<br>
-        {% endfor %}
-    {% endif %}
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+{% block javascript %}
     <script>
+
         var x = document.getElementById("form_lng");
         var y = document.getElementById("form_lat");
         var z = document.getElementById("geo");
@@ -112,3 +125,4 @@
         }
     </script>
 
+{% endblock %}

@@ -28,7 +28,7 @@ class Restaurant
     private $id;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\User",cascade={"persist"})
+     * @ORM\ManytoOne(targetEntity="RR\UserBundle\Entity\User",cascade={"persist"})
      */
     private $proprietaire;
 
