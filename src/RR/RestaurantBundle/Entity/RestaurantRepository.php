@@ -106,7 +106,7 @@ class RestaurantRepository extends EntityRepository
                     $query->orWhere('reg.id = 3');
                 }
                 if($data['diabete']==1){
-                    $query->where('reg.id = 4');
+                    $query->orWhere('reg.id = 4');
                 }
                 if($data['Cholesterol']==1){
                     $query->orWhere('reg.id = 5');
@@ -117,7 +117,7 @@ class RestaurantRepository extends EntityRepository
                     $query->orWhere('reg.id = 3');
                 }
                 if($data['diabete']==1){
-                    $query->where('reg.id = 4');
+                    $query->orWhere('reg.id = 4');
                 }
                 if($data['Cholesterol']==1){
                     $query->orWhere('reg.id = 5');
@@ -139,13 +139,16 @@ class RestaurantRepository extends EntityRepository
             $query->where('reg.id = 5');
         }
         $query->andWhere(
-            '( 6380 * Acos(cos(radians(' . $data['lat'] . '))' . //haversine formula
+            '( 6380 * Acos(cos(radians(:lat))' . //haversine formula
             '* cos( radians( adr.latitude ) )' .
             '* cos( radians( adr.longitude )' .
-            '- radians(' . $data['lng'] . ') )' .
-            '+ sin( radians(' . $data['lat'] . ') )' .
+            '- radians(:lng) )' .
+            '+ sin( radians(:lat) )' .
             '* sin( radians( adr.latitude ) ) ) ) < :distance')
-            ->setParameter('distance', $data['radius']);
+            ->setParameter('distance', $data['radius'])
+            ->setParameter('lat', $data['lat'])
+            ->setParameter('lng', $data['lng']);
+
 
         $query
             // Ainsi que le nombre d'annonce à afficher sur une page
