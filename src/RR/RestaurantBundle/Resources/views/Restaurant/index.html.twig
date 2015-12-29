@@ -3,7 +3,7 @@
 {% extends "RRRestaurantBundle::layout.html.twig" %}
 
 {% block title %}
-    Accueil - {{ parent() }}
+    Recherche - {{ parent() }}
 {% endblock %}
 {% block map %}
     {{ google_map(map) }}
@@ -22,7 +22,7 @@
                 <div class="post" id="page-{{ numPage }}">
                 {% set count=0 %}
             {% endif %}
-                    <div class="mdl-card mdl-shadow--2dp" style="width:90%;min-height:100px;">
+                    <div class="mdl-card mdl-shadow--2dp" style="width:100%;min-height:100px;">
                         <div class="mdl-card__title" {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
                             style=" background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; "{% endif %}>
                             <a class="mdl-button mdl-button--raised mdl-button--colored" href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">
@@ -32,10 +32,10 @@
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <div class="mdl-grid">
-                                <div class="mdl-cell mdl-cell--6-col">
+                                <div class="mdl-cell mdl-cell--8-col">
                                     {{ restaurant.address|address()|raw }}
                                 </div>
-                                <div class="mdl-cell mdl-cell--6-col">
+                                <div class="mdl-cell mdl-cell--4-col">
                                     {% for regime in restaurant.regimes %}
                                         {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/Iconveg.png') }}">{% endif %}
                                         {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/Iconvegan.png') }}">{% endif %}
@@ -74,6 +74,12 @@
         >
     </button>
 
+
+
+
+
+{% endblock %}
+{% block javascript %}
     <script>
 
         var page=1;
@@ -106,7 +112,4 @@
             showPage(page);
         }
     </script>
-
-
-
 {% endblock %}

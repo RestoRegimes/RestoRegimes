@@ -159,7 +159,7 @@ ivory_google_map:
         width: "100%"
 
         # Map height
-        height: "400px"
+        height: "358px"
 
         # Custom map options
         # By default, there is no map options

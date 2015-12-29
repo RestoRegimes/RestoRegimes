@@ -16,8 +16,8 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2072bfd45ca6d09e0fdd27734273b81cce5d775272a4d3fd0df2d6ba48f41cae = $this->env->getExtension("native_profiler");
-        $__internal_2072bfd45ca6d09e0fdd27734273b81cce5d775272a4d3fd0df2d6ba48f41cae->enter($__internal_2072bfd45ca6d09e0fdd27734273b81cce5d775272a4d3fd0df2d6ba48f41cae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:search.html.twig"));
+        $__internal_d302303a8f3cad26f3c775377abbb11de9f0b04aecbc6c79d06a35f829e8a369 = $this->env->getExtension("native_profiler");
+        $__internal_d302303a8f3cad26f3c775377abbb11de9f0b04aecbc6c79d06a35f829e8a369->enter($__internal_d302303a8f3cad26f3c775377abbb11de9f0b04aecbc6c79d06a35f829e8a369_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRCoreBundle:Default:search.html.twig"));
 
         // line 1
         echo "
@@ -183,14 +183,14 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
         // line 89
         $this->displayBlock('javascript', $context, $blocks);
         
-        $__internal_2072bfd45ca6d09e0fdd27734273b81cce5d775272a4d3fd0df2d6ba48f41cae->leave($__internal_2072bfd45ca6d09e0fdd27734273b81cce5d775272a4d3fd0df2d6ba48f41cae_prof);
+        $__internal_d302303a8f3cad26f3c775377abbb11de9f0b04aecbc6c79d06a35f829e8a369->leave($__internal_d302303a8f3cad26f3c775377abbb11de9f0b04aecbc6c79d06a35f829e8a369_prof);
 
     }
 
     public function block_javascript($context, array $blocks = array())
     {
-        $__internal_32b04f52f39b7767908200fa77c312abf56afa078f3fec29ea1632135fd5ce0d = $this->env->getExtension("native_profiler");
-        $__internal_32b04f52f39b7767908200fa77c312abf56afa078f3fec29ea1632135fd5ce0d->enter($__internal_32b04f52f39b7767908200fa77c312abf56afa078f3fec29ea1632135fd5ce0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+        $__internal_7a5065e928de10fe7e2b3a4d0d7818f1a8882447d3473e0a2d3e96cc62048966 = $this->env->getExtension("native_profiler");
+        $__internal_7a5065e928de10fe7e2b3a4d0d7818f1a8882447d3473e0a2d3e96cc62048966->enter($__internal_7a5065e928de10fe7e2b3a4d0d7818f1a8882447d3473e0a2d3e96cc62048966_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
         // line 90
         echo "    <script>
@@ -201,6 +201,13 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
         var a = document.getElementById(\"adresse\");
         var ad= document.getElementById(\"form_recherche\");
         var click=false;
+        if(document.getElementById(\"form_geo\").checked){
+            z.innerHTML = \"Addresse trouvée\";
+            a.style.visibility = 'hidden';
+            ad.value = \"\";
+            click=true;
+        }
+
 
         function getLocation() {
             if(!click){
@@ -231,7 +238,7 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 
 ";
         
-        $__internal_32b04f52f39b7767908200fa77c312abf56afa078f3fec29ea1632135fd5ce0d->leave($__internal_32b04f52f39b7767908200fa77c312abf56afa078f3fec29ea1632135fd5ce0d_prof);
+        $__internal_7a5065e928de10fe7e2b3a4d0d7818f1a8882447d3473e0a2d3e96cc62048966->leave($__internal_7a5065e928de10fe7e2b3a4d0d7818f1a8882447d3473e0a2d3e96cc62048966_prof);
 
     }
 
@@ -347,6 +354,13 @@ class __TwigTemplate_70dbd1077a7e8f5d4812b5e58a5473231d50515066bf66464fd7810a0bb
 /*         var a = document.getElementById("adresse");*/
 /*         var ad= document.getElementById("form_recherche");*/
 /*         var click=false;*/
+/*         if(document.getElementById("form_geo").checked){*/
+/*             z.innerHTML = "Addresse trouvée";*/
+/*             a.style.visibility = 'hidden';*/
+/*             ad.value = "";*/
+/*             click=true;*/
+/*         }*/
+/* */
 /* */
 /*         function getLocation() {*/
 /*             if(!click){*/
