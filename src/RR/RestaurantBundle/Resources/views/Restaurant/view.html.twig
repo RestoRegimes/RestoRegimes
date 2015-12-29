@@ -1,161 +1,242 @@
 {# src/OC/PlatformBundle/Resources/view/Advert/view.html.twig #}
 {% extends "RRRestaurantBundle::layout.html.twig" %}
 
-{% block content %}
-<h1>Affichage d'un restaurant</h1>
-<li><a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a></li>
-<li><a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a></li>
-<li><a href="{{ path('rr_restaurant_horaires', {'id': restaurant.id}) }}">Horaires</a></li>
-<li><a href="{{ path('rr_restaurant_images', {'id': restaurant.id}) }}">Images</a></li>
-<p>
-    {# On affiche tous les messages flash dont le nom est « info » #}
-    {% for message in app.session.flashbag.get('notice') %}
-        <p>Message flash : {{ message }}</p>
-    {% endfor %}
-</p>
+{% block infos %}
 
-<p>
-    Ici nous pourrons lire les info du restaurant ayant comme id : {{ restaurant.id }}<br />
-    {{ restaurant.nom }}<br />
-    {{ restaurant.telephone }}<br />
-    {{ restaurant.description }}<br />
-    <table>
-    <thead><th> Horaires: </th><th> Lundi </th><th> Mardi </th><th> Mercredi </th><th> Jeudi </th><th> Vendredi </th><th> Samedi </th><th> Dimanche </th></thead>
+                    <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--4-col-tablet">
 
-        <tr>
-            <td>
-                Ouverture:
-            </td>
-            <td>
-                {{ restaurant.lundi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mardi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mercredi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.jeudi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.vendredi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.samedi.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.dimanche.ouverture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Fermeture:
-            </td>
-            <td>
-                {{ restaurant.lundi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mardi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mercredi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.jeudi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.vendredi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.samedi.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.dimanche.fermeture1.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Ouverture:
-            </td>
-             <td>
-                {{ restaurant.lundi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mardi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mercredi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.jeudi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.vendredi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.samedi.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.dimanche.ouverture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Fermeture:
-            </td>
-            <td>
-                {{ restaurant.lundi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mardi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.mercredi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.jeudi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.vendredi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.samedi.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-            <td>
-                {{ restaurant.dimanche.fermeture2.format("H:i")|default("fermé") }}{# idem que .format()#}
-            </td>
-        </tr>
-</table>
-<br/>
-    Adresse:
-    {{ restaurant.address|address()|raw }}<br />
-    Latitude: {{ restaurant.address.latitude }}<br />
-    Longitude: {{ restaurant.address.longitude }}<br />
-    regimes: <br/>
-    {% for regime in restaurant.regimes %}
-        {{ regime.libelle }}
-    {% endfor %} <br/>
-    images: <br/>
-{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
-    <img src="{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}" alt="{{ restaurant.image1.imageName }}" /><br/>
-{% endif %}
-{% if restaurant.image2 is not null and restaurant.image2.imageFile is not null %}
-    <img src="{{ asset(vich_uploader_asset(restaurant.image2,'imageFile')) }}" alt="{{ restaurant.image2.imageName }}" /><br/>
-{% endif %}
-{% if restaurant.image3 is not null and restaurant.image3.imageFile is not null %}
-    <img src="{{ asset(vich_uploader_asset(restaurant.image3,'imageFile')) }}" alt="{{ restaurant.image3.imageName }}" /><br/>
-{% endif %}
-{% if restaurant.image4 is not null and restaurant.image4.imageFile is not null %}
-    <img src="{{ asset(vich_uploader_asset(restaurant.image4,'imageFile')) }}" alt="{{ restaurant.image4.imageName }}" /><br/>
-{% endif %}
-{% if restaurant.image5 is not null and restaurant.image5.imageFile is not null %}
-    <img src="{{ asset(vich_uploader_asset(restaurant.image5,'imageFile')) }}" alt="{{ restaurant.image5.imageName }}" /><br/>
-{% endif %}
+                        <div class="mdl-card mdl-shadow--2dp" style="width:100%;">
+                            <div class="mdl-card__title" style="height:150px;{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                             background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; {% endif %}">
+                                <h2 class="mdl-card__title-text">{{ restaurant.nom }}</h2>
+
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="mdl-grid mdl-grid--no-spacing">
+                                    <div class="mdl-cell mdl-cell--6-col">
+
+                                        {{ restaurant.telephone }}<br />
+                                        {{ restaurant.description }}<br />
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col">
+
+                                                Horaires:<br>
+                                                L:{% if restaurant.lundi is not null %}
+                                                    {% if restaurant.lundi.ouverture1 is not null and restaurant.lundi.fermeture1 is not null %}
+                                                        {{ restaurant.lundi.ouverture1.format("H:i") }}-{{ restaurant.lundi.fermeture1.format("H:i") }}
+                                                        {% if restaurant.lundi.ouverture2 is not null and restaurant.lundi.fermeture2 is not null %}
+                                                            / {{ restaurant.lundi.ouverture2.format("H:i") }}-{{ restaurant.lundi.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.lundi.ouverture1 is not null and restaurant.lundi.fermeture2 is not null %}
+                                                        {{ restaurant.lundi.ouverture1.format("H:i") }}-{{ restaurant.lundi.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}<br>
+                                                M:{% if restaurant.mardi is not null %}
+                                                    {% if restaurant.mardi.ouverture1 is not null and restaurant.mardi.fermeture1 is not null %}
+                                                        {{ restaurant.mardi.ouverture1.format("H:i") }}-{{ restaurant.mardi.fermeture1.format("H:i") }}
+                                                        {% if restaurant.mardi.ouverture2 is not null and restaurant.mardi.fermeture2 is not null %}
+                                                            / {{ restaurant.mardi.ouverture2.format("H:i") }}-{{ restaurant.mardi.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.mardi.ouverture1 is not null and restaurant.mardi.fermeture2 is not null %}
+                                                        {{ restaurant.mardi.ouverture1.format("H:i") }}-{{ restaurant.mardi.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}<br>
+                                                M:{% if restaurant.mercredi is not null %}
+                                                    {% if restaurant.mercredi.ouverture1 is not null and restaurant.mercredi.fermeture1 is not null %}
+                                                        {{ restaurant.mercredi.ouverture1.format("H:i") }}-{{ restaurant.mercredi.fermeture1.format("H:i") }}
+                                                        {% if restaurant.mercredi.ouverture2 is not null and restaurant.mercredi.fermeture2 is not null %}
+                                                            / {{ restaurant.mercredi.ouverture2.format("H:i") }}-{{ restaurant.mercredi.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.mercredi.ouverture1 is not null and restaurant.mercredi.fermeture2 is not null %}
+                                                        {{ restaurant.mercredi.ouverture1.format("H:i") }}-{{ restaurant.mercredi.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}<br>
+                                                J:{% if restaurant.jeudi is not null %}
+                                                    {% if restaurant.jeudi.ouverture1 is not null and restaurant.jeudi.fermeture1 is not null %}
+                                                        {{ restaurant.jeudi.ouverture1.format("H:i") }}-{{ restaurant.jeudi.fermeture1.format("H:i") }}
+                                                        {% if restaurant.jeudi.ouverture2 is not null and restaurant.jeudi.fermeture2 is not null %}
+                                                            / {{ restaurant.jeudi.ouverture2.format("H:i") }}-{{ restaurant.jeudi.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.jeudi.ouverture1 is not null and restaurant.jeudi.fermeture2 is not null %}
+                                                        {{ restaurant.jeudi.ouverture1.format("H:i") }}-{{ restaurant.jeudi.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}<br>
+                                                V:{% if restaurant.vendredi is not null %}
+                                                    {% if restaurant.vendredi.ouverture1 is not null and restaurant.vendredi.fermeture1 is not null %}
+                                                        {{ restaurant.vendredi.ouverture1.format("H:i") }}-{{ restaurant.vendredi.fermeture1.format("H:i") }}
+                                                        {% if restaurant.vendredi.ouverture2 is not null and restaurant.vendredi.fermeture2 is not null %}
+                                                            / {{ restaurant.vendredi.ouverture2.format("H:i") }}-{{ restaurant.vendredi.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.vendredi.ouverture1 is not null and restaurant.vendredi.fermeture2 is not null %}
+                                                        {{ restaurant.vendredi.ouverture1.format("H:i") }}-{{ restaurant.vendredi.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}<br>
+                                                S:{% if restaurant.samedi is not null %}
+                                                    {% if restaurant.samedi.ouverture1 is not null and restaurant.samedi.fermeture1 is not null %}
+                                                        {{ restaurant.samedi.ouverture1.format("H:i") }}-{{ restaurant.samedi.fermeture1.format("H:i") }}
+                                                        {% if restaurant.samedi.ouverture2 is not null and restaurant.samedi.fermeture2 is not null %}
+                                                            / {{ restaurant.samedi.ouverture2.format("H:i") }}-{{ restaurant.samedi.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.samedi.ouverture1 is not null and restaurant.samedi.fermeture2 is not null %}
+                                                        {{ restaurant.samedi.ouverture1.format("H:i") }}-{{ restaurant.samedi.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}<br>
+                                                D:{% if restaurant.dimanche is not null %}
+                                                    {% if restaurant.dimanche.ouverture1 is not null and restaurant.dimanche.fermeture1 is not null %}
+                                                        {{ restaurant.dimanche.ouverture1.format("H:i") }}-{{ restaurant.dimanche.fermeture1.format("H:i") }}
+                                                        {% if restaurant.dimanche.ouverture2 is not null and restaurant.dimanche.fermeture2 is not null %}
+                                                            / {{ restaurant.dimanche.ouverture2.format("H:i") }}-{{ restaurant.dimanche.fermeture2.format("H:i") }}
+                                                        {% endif %}
+                                                    {% elseif restaurant.dimanche.ouverture1 is not null and restaurant.dimanche.fermeture2 is not null %}
+                                                        {{ restaurant.dimanche.ouverture1.format("H:i") }}-{{ restaurant.dimanche.fermeture2.format("H:i") }}
+                                                    {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--8-col">
+                                        {{ restaurant.address|address()|raw }}
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--4-col">
+                                        {% for regime in restaurant.regimes %}
+                                            {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/Iconveg.png') }}">{% endif %}
+                                            {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/Iconvegan.png') }}">{% endif %}
+                                            {% if regime.id==3%}<img src="{{ asset('bundles/rrcore/images/Icongluten.png') }}">{% endif %}
+                                            {% if regime.id==4%}<img src="{{ asset('bundles/rrcore/images/Icondiabete.png') }}">{% endif %}
+                                            {% if regime.id==5%}<img src="{{ asset('bundles/rrcore/images/Iconchol.png') }}">{% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button-resto">
+                                    <i class="material-icons">more_vert</i>
+                                </button>
+                                <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button-resto">
+                                    {% if app.user is not null and app.user==restaurant.proprietaire %}
+                                        <a class="mdl-menu__item" href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a>
+                                        <a class="mdl-menu__item" href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a>
+                                        <a class="mdl-menu__item" href="{{ path('rr_restaurant_horaires', {'id': restaurant.id}) }}">Horaires</a>
+                                        <a class="mdl-menu__item" href="{{ path('rr_restaurant_images', {'id': restaurant.id}) }}">Images</a>
+                                    {% endif %}
+                                    <a class="mdl-menu__item" href="#">A propos</a>
+                                </nav>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet">
 
 
-<br />
-{{ google_map(map) }}
+                            {% for message in app.session.flashbag.get('notice') %}
+                        <p>Message flash : {{ message }}</p>
+                        {% endfor %}
+                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                            <div class="mdl-tabs__tab-bar">
+                                <a href="#carte-panel" class="mdl-tabs__tab is-active">Carte</a>
+                                <a href="#images-panel" class="mdl-tabs__tab">Images</a>
+                                <a href="#commentaire-panel" class="mdl-tabs__tab">Commentaires</a>
+                            </div>
 
-</p>
+                            <div class="mdl-tabs__panel is-active" id="carte-panel">
+                                {{ google_map(map) }}
+                            </div>
+                            <div class="mdl-tabs__panel" id="images-panel">
+
+                                {% set nbImg=0 %}
+                                {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                                    {% set nbImg=nbImg+1 %}
+                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}" alt="{{ restaurant.image1.imageName }}" /><br/>
+
+                                {% endif %}
+                                {% if restaurant.image2 is not null and restaurant.image2.imageFile is not null %}
+                                    {% set nbImg=nbImg+1 %}
+                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image2,'imageFile')) }}" alt="{{ restaurant.image2.imageName }}" /><br/>
+                                {% endif %}
+                                {% if restaurant.image3 is not null and restaurant.image3.imageFile is not null %}
+                                    {% set nbImg=nbImg+1 %}
+                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image3,'imageFile')) }}" alt="{{ restaurant.image3.imageName }}" /><br/>
+                                {% endif %}
+                                {% if restaurant.image4 is not null and restaurant.image4.imageFile is not null %}
+                                    {% set nbImg=nbImg+1 %}
+                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image4,'imageFile')) }}" alt="{{ restaurant.image4.imageName }}" /><br/>
+                                {% endif %}
+                                {% if restaurant.image5 is not null and restaurant.image5.imageFile is not null %}
+                                    {% set nbImg=nbImg+1 %}
+                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image5,'imageFile')) }}" alt="{{ restaurant.image5.imageName }}" /><br/>
+                                {% endif %}
+                                {% if nbImg>2 %}
+                                    <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="prevPage()">
+                                        <
+                                    </button>
+                                    {% for i in 1..nbImg %}
+                                        <button class="pages mdl-button mdl-button--fab mdl-button--mini-fab" onclick="showPage({{ i }})">
+                                            {{ i }}
+                                        </button>
+                                    {% endfor %}
+                                    <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="nextPage()">
+                                        >
+                                    </button>
+                                {% endif %}
+                            </div>
+                            <div class="mdl-tabs__panel" id="commentaire-panel">
+
+                                <div class="mdl-card mdl-shadow--2dp">
+                                    <div class="mdl-card__title">
+                                        <h2 class="mdl-card__title-text">Username</h2>
+                                    </div>
+                                    <div class="mdl-card__supporting-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Mauris sagittis pellentesque lacus eleifend lacinia...
+                                    </div>
+                                    <div class="mdl-card__actions mdl-card--border">
+                                        Note
+                                    </div>
+                                    <div class="mdl-card__menu">
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                            <i class="material-icons">share</i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}
+
+{% block javascript %}
+    <script>
+
+        var page=1;
+        var aP = document.getElementsByClassName("pages");
+        showPage(page);
+        function showPage(page) {
+            $('.image-resto:not(#img-'+page+')').hide();
+            $('.image-resto#img-'+page).show();
+            for( var i=0;i<$('.image-resto').length;i++){
+                aP[i].style.backgroundColor= 'rgb(220,220,220)';
+            }
+            aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
+        }
+        function prevPage() {
+            if (page == 1) {
+                page = $('.image-resto').length;
+            } else {
+                page--;
+            }
+            showPage(page);
+        }
+
+        function nextPage() {
+            if (page == $('.image-resto').length) {
+                page = 1;
+            } else {
+                page++;
+            }
+            showPage(page);
+        }
+    </script>
 {% endblock %}

@@ -5,9 +5,13 @@
 {% block title %}
     Recherche - {{ parent() }}
 {% endblock %}
+{% block rrplatform_search %}
+    {% include "RRCoreBundle:Default:search.html.twig" %}
+{% endblock %}
 {% block map %}
     {{ google_map(map) }}
 {% endblock %}
+
 {% block body %}
 
 

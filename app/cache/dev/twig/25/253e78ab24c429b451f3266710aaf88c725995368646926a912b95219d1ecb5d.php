@@ -11,6 +11,7 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         $this->parent = $this->loadTemplate("RRRestaurantBundle::layout.html.twig", "RRRestaurantBundle:Restaurant:index.html.twig", 3);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
+            'rrplatform_search' => array($this, 'block_rrplatform_search'),
             'map' => array($this, 'block_map'),
             'body' => array($this, 'block_body'),
             'javascript' => array($this, 'block_javascript'),
@@ -24,20 +25,20 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d059234b93169a8cfa2ea3f5dfbcb22207cead8248f4eb1a90145165005989eb = $this->env->getExtension("native_profiler");
-        $__internal_d059234b93169a8cfa2ea3f5dfbcb22207cead8248f4eb1a90145165005989eb->enter($__internal_d059234b93169a8cfa2ea3f5dfbcb22207cead8248f4eb1a90145165005989eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRRestaurantBundle:Restaurant:index.html.twig"));
+        $__internal_3a792182868f6510832ec65641ffe40c6a260390b691e0a8de7eb816b4877296 = $this->env->getExtension("native_profiler");
+        $__internal_3a792182868f6510832ec65641ffe40c6a260390b691e0a8de7eb816b4877296->enter($__internal_3a792182868f6510832ec65641ffe40c6a260390b691e0a8de7eb816b4877296_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRRestaurantBundle:Restaurant:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d059234b93169a8cfa2ea3f5dfbcb22207cead8248f4eb1a90145165005989eb->leave($__internal_d059234b93169a8cfa2ea3f5dfbcb22207cead8248f4eb1a90145165005989eb_prof);
+        $__internal_3a792182868f6510832ec65641ffe40c6a260390b691e0a8de7eb816b4877296->leave($__internal_3a792182868f6510832ec65641ffe40c6a260390b691e0a8de7eb816b4877296_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_97f2c1278e944053973c111a20839f6c98d13997d2d129a04f7c43d2c26712a2 = $this->env->getExtension("native_profiler");
-        $__internal_97f2c1278e944053973c111a20839f6c98d13997d2d129a04f7c43d2c26712a2->enter($__internal_97f2c1278e944053973c111a20839f6c98d13997d2d129a04f7c43d2c26712a2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_bfedd055dbf707ed34b78341aaaa99e5ed9e757f395b91f9e7683230cdad86ec = $this->env->getExtension("native_profiler");
+        $__internal_bfedd055dbf707ed34b78341aaaa99e5ed9e757f395b91f9e7683230cdad86ec->enter($__internal_bfedd055dbf707ed34b78341aaaa99e5ed9e757f395b91f9e7683230cdad86ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 6
         echo "    Recherche - ";
@@ -45,87 +46,101 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         echo "
 ";
         
-        $__internal_97f2c1278e944053973c111a20839f6c98d13997d2d129a04f7c43d2c26712a2->leave($__internal_97f2c1278e944053973c111a20839f6c98d13997d2d129a04f7c43d2c26712a2_prof);
+        $__internal_bfedd055dbf707ed34b78341aaaa99e5ed9e757f395b91f9e7683230cdad86ec->leave($__internal_bfedd055dbf707ed34b78341aaaa99e5ed9e757f395b91f9e7683230cdad86ec_prof);
 
     }
 
     // line 8
-    public function block_map($context, array $blocks = array())
+    public function block_rrplatform_search($context, array $blocks = array())
     {
-        $__internal_2a997b6446f3e40dda875e5fbb4159290fbf7b3f601ecbd02522925970414f3e = $this->env->getExtension("native_profiler");
-        $__internal_2a997b6446f3e40dda875e5fbb4159290fbf7b3f601ecbd02522925970414f3e->enter($__internal_2a997b6446f3e40dda875e5fbb4159290fbf7b3f601ecbd02522925970414f3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "map"));
+        $__internal_f96be7390f5a530b5f66766847b4cb427b35d01a5b95dbdc787cddd8765980c6 = $this->env->getExtension("native_profiler");
+        $__internal_f96be7390f5a530b5f66766847b4cb427b35d01a5b95dbdc787cddd8765980c6->enter($__internal_f96be7390f5a530b5f66766847b4cb427b35d01a5b95dbdc787cddd8765980c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "rrplatform_search"));
 
         // line 9
+        echo "    ";
+        $this->loadTemplate("RRCoreBundle:Default:search.html.twig", "RRRestaurantBundle:Restaurant:index.html.twig", 9)->display($context);
+        
+        $__internal_f96be7390f5a530b5f66766847b4cb427b35d01a5b95dbdc787cddd8765980c6->leave($__internal_f96be7390f5a530b5f66766847b4cb427b35d01a5b95dbdc787cddd8765980c6_prof);
+
+    }
+
+    // line 11
+    public function block_map($context, array $blocks = array())
+    {
+        $__internal_b56e92cfb8c2456b5e83a9424776d412388c8841cc22b7e968b486cac5aaeaab = $this->env->getExtension("native_profiler");
+        $__internal_b56e92cfb8c2456b5e83a9424776d412388c8841cc22b7e968b486cac5aaeaab->enter($__internal_b56e92cfb8c2456b5e83a9424776d412388c8841cc22b7e968b486cac5aaeaab_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "map"));
+
+        // line 12
         echo "    ";
         echo $this->env->getExtension('ivory_google_map')->renderMap((isset($context["map"]) ? $context["map"] : $this->getContext($context, "map")));
         echo "
 ";
         
-        $__internal_2a997b6446f3e40dda875e5fbb4159290fbf7b3f601ecbd02522925970414f3e->leave($__internal_2a997b6446f3e40dda875e5fbb4159290fbf7b3f601ecbd02522925970414f3e_prof);
+        $__internal_b56e92cfb8c2456b5e83a9424776d412388c8841cc22b7e968b486cac5aaeaab->leave($__internal_b56e92cfb8c2456b5e83a9424776d412388c8841cc22b7e968b486cac5aaeaab_prof);
 
     }
 
-    // line 11
+    // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_ef521d8eadb7e086545788ea33376a83358d8ae78ef469d3512bc3f7461ace7b = $this->env->getExtension("native_profiler");
-        $__internal_ef521d8eadb7e086545788ea33376a83358d8ae78ef469d3512bc3f7461ace7b->enter($__internal_ef521d8eadb7e086545788ea33376a83358d8ae78ef469d3512bc3f7461ace7b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e0928665926e72165b7f97325416eb0055f56e496a3d0203504ee6ca0d1d9d8d = $this->env->getExtension("native_profiler");
+        $__internal_e0928665926e72165b7f97325416eb0055f56e496a3d0203504ee6ca0d1d9d8d->enter($__internal_e0928665926e72165b7f97325416eb0055f56e496a3d0203504ee6ca0d1d9d8d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 12
+        // line 16
         echo "
 
     <div class=\"pagination\">
         ";
-        // line 15
+        // line 19
         $context["count"] = 0;
-        // line 16
+        // line 20
         echo "        ";
         $context["numPage"] = 1;
-        // line 17
+        // line 21
         echo "        <div class=\"post\" id=\"page-";
         echo twig_escape_filter($this->env, (isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage")), "html", null, true);
         echo "\">
        ";
-        // line 18
+        // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listRestaurants"]) ? $context["listRestaurants"] : $this->getContext($context, "listRestaurants")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["restaurant"]) {
-            // line 19
+            // line 23
             echo "            ";
             if (((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) == 2)) {
-                // line 20
+                // line 24
                 echo "                ";
                 $context["numPage"] = ((isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage")) + 1);
-                // line 21
+                // line 25
                 echo "                </div>
                 <div class=\"post\" id=\"page-";
-                // line 22
+                // line 26
                 echo twig_escape_filter($this->env, (isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage")), "html", null, true);
                 echo "\">
                 ";
-                // line 23
+                // line 27
                 $context["count"] = 0;
-                // line 24
+                // line 28
                 echo "            ";
             }
-            // line 25
+            // line 29
             echo "                    <div class=\"mdl-card mdl-shadow--2dp\" style=\"width:100%;min-height:100px;\">
                         <div class=\"mdl-card__title\" ";
-            // line 26
+            // line 30
             if (( !(null === $this->getAttribute($context["restaurant"], "image1", array())) &&  !(null === $this->getAttribute($this->getAttribute($context["restaurant"], "image1", array()), "imageFile", array())))) {
-                // line 27
+                // line 31
                 echo "                            style=\" background: url('";
                 echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl($this->env->getExtension('vich_uploader')->asset($this->getAttribute($context["restaurant"], "image1", array()), "imageFile")), "html", null, true);
                 echo "') center / cover; \"";
             }
             echo ">
                             <a class=\"mdl-button mdl-button--raised mdl-button--colored\" href=\"";
-            // line 28
+            // line 32
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_view", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
             echo "\">
                                 ";
-            // line 29
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["restaurant"], "nom", array()), "html", null, true);
             echo "
                             </a>
@@ -135,58 +150,58 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
                             <div class=\"mdl-grid\">
                                 <div class=\"mdl-cell mdl-cell--8-col\">
                                     ";
-            // line 36
+            // line 40
             echo $this->env->getExtension('address')->address($this->getAttribute($context["restaurant"], "address", array()));
             echo "
                                 </div>
                                 <div class=\"mdl-cell mdl-cell--4-col\">
                                     ";
-            // line 39
+            // line 43
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["restaurant"], "regimes", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["regime"]) {
-                // line 40
+                // line 44
                 echo "                                        ";
                 if (($this->getAttribute($context["regime"], "id", array()) == 1)) {
                     echo "<img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/Iconveg.png"), "html", null, true);
                     echo "\">";
                 }
-                // line 41
+                // line 45
                 echo "                                        ";
                 if (($this->getAttribute($context["regime"], "id", array()) == 2)) {
                     echo "<img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/Iconvegan.png"), "html", null, true);
                     echo "\">";
                 }
-                // line 42
+                // line 46
                 echo "                                        ";
                 if (($this->getAttribute($context["regime"], "id", array()) == 3)) {
                     echo "<img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/Icongluten.png"), "html", null, true);
                     echo "\">";
                 }
-                // line 43
+                // line 47
                 echo "                                        ";
                 if (($this->getAttribute($context["regime"], "id", array()) == 4)) {
                     echo "<img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/Icondiabete.png"), "html", null, true);
                     echo "\">";
                 }
-                // line 44
+                // line 48
                 echo "                                        ";
                 if (($this->getAttribute($context["regime"], "id", array()) == 5)) {
                     echo "<img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/Iconchol.png"), "html", null, true);
                     echo "\">";
                 }
-                // line 45
+                // line 49
                 echo "                                    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['regime'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 46
+            // line 50
             echo "                                </div>
                             </div>
 
@@ -200,21 +215,21 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
                     </div>
                     <div style=\"height: 10px;\"></div>
            ";
-            // line 58
+            // line 62
             $context["count"] = ((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) + 1);
-            // line 59
+            // line 63
             echo "            ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 60
+            // line 64
             echo "            <b>Aucun Restaurant trouvé</b>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['restaurant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 66
         echo "                </div>
     </div>
 
@@ -222,16 +237,16 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         <
     </button>
     ";
-        // line 68
+        // line 72
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage"))));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 69
+            // line 73
             echo "        <button class=\"pages mdl-button mdl-button--fab mdl-button--mini-fab\" onclick=\"showPage(";
             echo twig_escape_filter($this->env, $context["i"], "html", null, true);
             echo ")\">
             ";
-            // line 70
+            // line 74
             echo twig_escape_filter($this->env, $context["i"], "html", null, true);
             echo "
         </button>
@@ -240,7 +255,7 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 77
         echo "    <button class=\"mdl-button mdl-button--fab mdl-button--mini-fab\" onclick=\"nextPage()\">
         >
     </button>
@@ -251,17 +266,17 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
 ";
         
-        $__internal_ef521d8eadb7e086545788ea33376a83358d8ae78ef469d3512bc3f7461ace7b->leave($__internal_ef521d8eadb7e086545788ea33376a83358d8ae78ef469d3512bc3f7461ace7b_prof);
+        $__internal_e0928665926e72165b7f97325416eb0055f56e496a3d0203504ee6ca0d1d9d8d->leave($__internal_e0928665926e72165b7f97325416eb0055f56e496a3d0203504ee6ca0d1d9d8d_prof);
 
     }
 
-    // line 82
+    // line 86
     public function block_javascript($context, array $blocks = array())
     {
-        $__internal_16f0aa7b1fe1e11f9bc032f18cf2b990dbffb79cf62ace6e3efb70b937ad9132 = $this->env->getExtension("native_profiler");
-        $__internal_16f0aa7b1fe1e11f9bc032f18cf2b990dbffb79cf62ace6e3efb70b937ad9132->enter($__internal_16f0aa7b1fe1e11f9bc032f18cf2b990dbffb79cf62ace6e3efb70b937ad9132_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+        $__internal_6f18783c58811e8f60f5b41e1fe229a1f018e7ebc4bcc73f3cafbed9369286f9 = $this->env->getExtension("native_profiler");
+        $__internal_6f18783c58811e8f60f5b41e1fe229a1f018e7ebc4bcc73f3cafbed9369286f9->enter($__internal_6f18783c58811e8f60f5b41e1fe229a1f018e7ebc4bcc73f3cafbed9369286f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 83
+        // line 87
         echo "    <script>
 
         var page=1;
@@ -296,7 +311,7 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
     </script>
 ";
         
-        $__internal_16f0aa7b1fe1e11f9bc032f18cf2b990dbffb79cf62ace6e3efb70b937ad9132->leave($__internal_16f0aa7b1fe1e11f9bc032f18cf2b990dbffb79cf62ace6e3efb70b937ad9132_prof);
+        $__internal_6f18783c58811e8f60f5b41e1fe229a1f018e7ebc4bcc73f3cafbed9369286f9->leave($__internal_6f18783c58811e8f60f5b41e1fe229a1f018e7ebc4bcc73f3cafbed9369286f9_prof);
 
     }
 
@@ -312,7 +327,7 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
     public function getDebugInfo()
     {
-        return array (  265 => 83,  259 => 82,  244 => 73,  235 => 70,  230 => 69,  226 => 68,  218 => 62,  211 => 60,  206 => 59,  204 => 58,  190 => 46,  184 => 45,  177 => 44,  170 => 43,  163 => 42,  156 => 41,  149 => 40,  145 => 39,  139 => 36,  129 => 29,  125 => 28,  118 => 27,  116 => 26,  113 => 25,  110 => 24,  108 => 23,  104 => 22,  101 => 21,  98 => 20,  95 => 19,  90 => 18,  85 => 17,  82 => 16,  80 => 15,  75 => 12,  69 => 11,  59 => 9,  53 => 8,  43 => 6,  37 => 5,  11 => 3,);
+        return array (  280 => 87,  274 => 86,  259 => 77,  250 => 74,  245 => 73,  241 => 72,  233 => 66,  226 => 64,  221 => 63,  219 => 62,  205 => 50,  199 => 49,  192 => 48,  185 => 47,  178 => 46,  171 => 45,  164 => 44,  160 => 43,  154 => 40,  144 => 33,  140 => 32,  133 => 31,  131 => 30,  128 => 29,  125 => 28,  123 => 27,  119 => 26,  116 => 25,  113 => 24,  110 => 23,  105 => 22,  100 => 21,  97 => 20,  95 => 19,  90 => 16,  84 => 15,  74 => 12,  68 => 11,  60 => 9,  54 => 8,  44 => 6,  38 => 5,  11 => 3,);
     }
 }
 /* {# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}*/
@@ -322,9 +337,13 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 /* {% block title %}*/
 /*     Recherche - {{ parent() }}*/
 /* {% endblock %}*/
+/* {% block rrplatform_search %}*/
+/*     {% include "RRCoreBundle:Default:search.html.twig" %}*/
+/* {% endblock %}*/
 /* {% block map %}*/
 /*     {{ google_map(map) }}*/
 /* {% endblock %}*/
+/* */
 /* {% block body %}*/
 /* */
 /* */

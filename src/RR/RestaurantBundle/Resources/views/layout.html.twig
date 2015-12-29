@@ -11,5 +11,6 @@
 {% endblock %}
 
 {% block rrplatform_search %}
-    {% include "RRCoreBundle:Default:search.html.twig" %}
+    {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
 {% endblock %}
+

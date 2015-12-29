@@ -238,3 +238,8 @@ visibility: hidden;
     margin: auto;
 }
 
+.image-resto{
+    max-height: 300px;
+    max-width:100%;
+}
+
