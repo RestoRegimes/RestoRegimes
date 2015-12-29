@@ -12,10 +12,7 @@
     rad:{{ data.radius }}<br>
 {% endif %}#}
 
-<div class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Recherche</h2>
-    </div>
+<div class="mdl-card mdl-shadow--2dp" style="width: 100%;">
     <div class="mdl-card__supporting-text">
         {{ form_start(form, {'action': path('rr_core_search') }) }}
         {{ form_errors(form) }}
@@ -25,46 +22,47 @@
             {{ form_label(form.recherche, " ") }}</div>
 
         {{ form_errors(form.geo) }}
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="form_geo">
+        <label class="mdl-checkbox mdl-js-checkbox " for="form_geo">
             {{ form_widget(form.geo, {'attr': {'class': 'mdl-checkbox__input','onclick':"getLocation()"}}) }}
             <span class="mdl-checkbox__label"><b id="geo">Se Geolocaliser</b></span>
 
         </label>
 
         {{ form_errors(form.radius) }}
-        {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Rayon de recherche (km)'}}) }}
+        {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Distance max (km)'}}) }}
         {{ form_label(form.radius, " ") }}
         {{ form_errors(form.vegetarien) }}
-        <div class="row press">
-            {{ form_widget(form.vegetarien, {'attr': {'class': 'cbx hidden'}}) }}
-            <label for="form_vegetarien" class="lbl"></label>
-
-        </div>
-        {{ form_label(form.vegetarien, "Vegetarien") }}<br><br>
-
-
+        <label class="tgl" style="font-size:18px;">
+            {{ form_widget(form.vegetarien) }}
+            <span id="vegetarien">{{ form_label(form.vegetarien, "Vegetarien") }}</span>
+        </label>
+        <br><br>
         {{ form_errors(form.vegetalien) }}
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_vegetalien">
-            <span class="mdl-switch__label">{{ form_label(form.vegetalien, "Vegetalien") }}</span>
-            {{ form_widget(form.vegetalien, {'attr': {'class': 'mdl-switch__input'}}) }}
-        </label> <br><br>
+        <label class="tgl" style="font-size:18px;">
+            {{ form_widget(form.vegetalien) }}
+            <span id="vegetalien">{{ form_label(form.vegetalien, "Vegetalien") }}</span>
+        </label>
+        <br><br>
         {{ form_errors(form.gluten) }}
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_gluten">
-            <span class="mdl-switch__label">{{ form_label(form.gluten, "Sans gluten") }}</span>
-            {{ form_widget(form.gluten, {'attr': {'class': 'mdl-switch__input'}}) }}
-        </label> <br><br>
-
+        <label class="tgl" style="font-size:18px;">
+            {{ form_widget(form.gluten) }}
+            <span id="gluten">{{ form_label(form.gluten, "Sans Gluten") }}</span>
+        </label>
+        <br><br>
         {{ form_errors(form.diabete) }}
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_diabete">
-            <span class="mdl-switch__label">{{ form_label(form.diabete, "Diabete") }}</span>
-            {{ form_widget(form.diabete, {'attr': {'class': 'mdl-switch__input'}}) }}
-        </label> <br><br>
+        <label class="tgl" style="font-size:18px;">
+            {{ form_widget(form.diabete) }}
+            <span id="diabete">{{ form_label(form.diabete, "Diabete") }}</span>
+        </label>
+        <br><br>
+        <label class="tgl" style="font-size:18px;">
+            {{ form_widget(form.Cholesterol) }}
+            <span id="cholesterol">{{ form_label(form.Cholesterol, "Cholesterol") }}</span>
 
+        </label>
         {{ form_errors(form.Cholesterol) }}
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="form_Cholesterol">
-            <span class="mdl-switch__label">{{ form_label(form.Cholesterol, "cholesterol") }}</span>
-            {{ form_widget(form.Cholesterol, {'attr': {'class': 'mdl-switch__input'}}) }}
-        </label> <br><br>
+        <br><br>
+
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
             <i class="material-icons">search</i>
         </button>

@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cf76a31-0690-46d2-bae8-ff672286177c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerU.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/jlbs/admin-bundle/Jlbs/AdminBundle" afterPath="$PROJECT_DIR$/vendor/jlbs/admin-bundle/Jlbs/AdminBundle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/marker+.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/marker+.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/markerC.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerC.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/markerD.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerD.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/markerG.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerG.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/markerS.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerS.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/markerV.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerV.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/images/markerVL.png" afterPath="$PROJECT_DIR$/web/bundles/rrcore/images/markerVL.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/satooshi/php-coveralls" afterPath="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/01/018798f5e9cf8b66bce3a5e55033163ea17b1943d43e0841635b77d8a2e02f64.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/01/018798f5e9cf8b66bce3a5e55033163ea17b1943d43e0841635b77d8a2e02f64.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c54bcc1de9ddb748631f7aefbad5b910d27e1413007d5938d190cb4fa05ccbb.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c54bcc1de9ddb748631f7aefbad5b910d27e1413007d5938d190cb4fa05ccbb.php" />
@@ -38,11 +30,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9d/9d33d1b014ef6af9c89c644cf1cb320355464ce0fd64b158abbf8f3657cb7de8.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9d/9d33d1b014ef6af9c89c644cf1cb320355464ce0fd64b158abbf8f3657cb7de8.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9e/9e7643362fd4e84ba001f4f8bfebf9824c12f15280c434161cd03e4101d9a128.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9e/9e7643362fd4e84ba001f4f8bfebf9824c12f15280c434161cd03e4101d9a128.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9f/9f1ac953ece0903b572ce9cdc98601a2253387841781da2560e0ce934d4d7f23.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9f/9f1ac953ece0903b572ce9cdc98601a2253387841781da2560e0ce934d4d7f23.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/CoreBundle/Services/CoreHelper.php" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Services/CoreHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/CoreBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/Restaurant.php" afterPath="$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/Restaurant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/RestaurantBundle/Controller/RestaurantController.php" afterPath="$PROJECT_DIR$/src/RR/RestaurantBundle/Controller/RestaurantController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/RestaurantRepository.php" afterPath="$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/RestaurantRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a1/a18c830193991b947b8c4287000730237ec1740fd90e5c6fd3814c2d41719e59.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a1/a18c830193991b947b8c4287000730237ec1740fd90e5c6fd3814c2d41719e59.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a3/a30280b489b3b890d1a3ca652dd4482c9d2627c157ca060e4d2310db179af480.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a3/a30280b489b3b890d1a3ca652dd4482c9d2627c157ca060e4d2310db179af480.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ad/ad00118a4996c0aeba4901cef041f1a1559238158fa82ef531da67723efd8a42.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ad/ad00118a4996c0aeba4901cef041f1a1559238158fa82ef531da67723efd8a42.php" />
@@ -65,12 +52,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f7/f78bc49489df47ffe6a5e96bf89f803b68f042a7eb6ea7f79a357cd4ea0dec77.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f7/f78bc49489df47ffe6a5e96bf89f803b68f042a7eb6ea7f79a357cd4ea0dec77.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fe/fec4525a795bcdefb2db96806df3bfe249c50b5925e2620925c3c7b9c90a958b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fe/fec4525a795bcdefb2db96806df3bfe249c50b5925e2620925c3c7b9c90a958b.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig" afterPath="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/prod.log" afterPath="$PROJECT_DIR$/app/logs/prod.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/CoreBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/rrcore/css/style.css" afterPath="$PROJECT_DIR$/web/bundles/rrcore/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -98,8 +83,8 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="17" column="65" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="65" />
+            <state vertical-scroll-proportion="-2.3076923">
+              <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -109,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.538462">
-              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -125,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestaurantRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/RestaurantRepository.php">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="28.23077">
-              <caret line="89" column="57" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.44822258">
+              <caret line="154" column="24" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -138,9 +123,16 @@
       <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-6.230769">
+              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <folding>
+                <element signature="e#376#396#0#HTML" expanded="true" />
+                <element signature="e#1376#1399#0#HTML" expanded="true" />
+                <element signature="e#1641#1664#0#HTML" expanded="true" />
+                <element signature="e#1902#1925#0#HTML" expanded="true" />
+                <element signature="e#2153#2176#0#HTML" expanded="true" />
+                <element signature="e#2363#2386#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,17 +140,17 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923">
+            <state vertical-scroll-proportion="-7.1923075">
               <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68438005">
+            <state vertical-scroll-proportion="-35.96154">
               <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="e#393#414#0#HTML" expanded="true" />
@@ -233,12 +225,12 @@
         <option value="$PROJECT_DIR$/src/RR/RestaurantBundle/Entity/RestaurantRepository.php" />
         <option value="$PROJECT_DIR$/src/RR/CoreBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/../jquery-quick-pagination-master/jquery-quick-pagination-master/index.php" />
-        <option value="$PROJECT_DIR$/web/bundles/rrcore/css/style.css" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig" />
         <option value="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig" />
-        <option value="$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/web/bundles/rrcore/css/style.css" />
       </list>
     </option>
   </component>
@@ -422,10 +414,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rrcore" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1053,15 +1041,22 @@
       <option name="project" value="LOCAL" />
       <updated>1451258628880</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="maj visuelle continuation:&#10;Recherche et pagination en cours en jquery&#10;ajout d'assets&#10;">
+      <created>1451344112056</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1451344112056</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24846625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1071,7 +1066,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1376,14 +1370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/js/jquery.simplePagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Controller/RestaurantController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-34.0">
@@ -1396,14 +1382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.615385">
           <caret line="131" column="24" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1424,30 +1402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.538462">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/view.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8846154">
@@ -1464,14 +1418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Services/CoreHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693">
@@ -1482,7 +1428,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68438005">
+        <state vertical-scroll-proportion="-35.96154">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="e#393#414#0#HTML" expanded="true" />
@@ -1490,6 +1436,53 @@
             <element signature="e#936#1044#0#HTML" expanded="true" />
             <element signature="e#2578#2599#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.230769">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="e#376#396#0#HTML" expanded="true" />
+            <element signature="e#1376#1399#0#HTML" expanded="true" />
+            <element signature="e#1641#1664#0#HTML" expanded="true" />
+            <element signature="e#1902#1925#0#HTML" expanded="true" />
+            <element signature="e#2153#2176#0#HTML" expanded="true" />
+            <element signature="e#2363#2386#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Resources/views/Default/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.538462">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3076923">
+          <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/rrcore/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44822258">
+          <caret line="154" column="24" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
