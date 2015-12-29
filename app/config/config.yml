@@ -205,5 +205,6 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
-gregwar_captcha: ~
-
+gregwar_captcha:
+    as_url: true
+    length: 4

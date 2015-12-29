@@ -50,3 +50,5 @@ assetic:
 # app/config/config_dev.yml
 bazinga_faker:
     orm: doctrine
+
+gregwar_captcha: ~
