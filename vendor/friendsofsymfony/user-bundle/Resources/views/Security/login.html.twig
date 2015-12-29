@@ -1,6 +1,9 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
+{% block loginLink %}
+    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_registration_register') }}">{{ 'Inscription'|trans({}, 'FOSUserBundle') }}</a>
+{% endblock %}
 
 {% block fos_user_content %}
 {% if error %}

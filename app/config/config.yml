@@ -177,21 +177,6 @@ ivory_google_map:
         language: fr
 
 
-bazinga_faker:
-    entities:
-        RR\RestaurantBundle\Entity\Restaurant:
-            number: 100
-            custom_formatters:
-                nom:   { method: lexify, parameters: [ '?????????????' ] }
-                telephone: {method: numerify, parameters: ['##########'] }
-                description: {method: text, parameters: [255]}
-                siret: {method: numerify, parameters: ['##############']}
-        Padam87\AddressBundle\Entity\Address:
-            number: 100
-            custom_formatters:
-                zipCode: {method: postcode}
-                city: {method: city}
-                street: {method: streetAddress}
 
 # app/config/config.yml
 vich_uploader:
