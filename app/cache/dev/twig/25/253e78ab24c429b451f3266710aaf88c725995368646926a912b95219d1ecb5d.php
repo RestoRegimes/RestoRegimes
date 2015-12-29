@@ -23,20 +23,20 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf = $this->env->getExtension("native_profiler");
-        $__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf->enter($__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRRestaurantBundle:Restaurant:index.html.twig"));
+        $__internal_48ee18479a7182cdff2018e5aeb69812a32b31d51619809e2ea040988553d998 = $this->env->getExtension("native_profiler");
+        $__internal_48ee18479a7182cdff2018e5aeb69812a32b31d51619809e2ea040988553d998->enter($__internal_48ee18479a7182cdff2018e5aeb69812a32b31d51619809e2ea040988553d998_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "RRRestaurantBundle:Restaurant:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf->leave($__internal_af70831b8c4e9e0df695890348d43b15c0dd81fb70e87c0d497c1cbd987bbfbf_prof);
+        $__internal_48ee18479a7182cdff2018e5aeb69812a32b31d51619809e2ea040988553d998->leave($__internal_48ee18479a7182cdff2018e5aeb69812a32b31d51619809e2ea040988553d998_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0 = $this->env->getExtension("native_profiler");
-        $__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0->enter($__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_4d101f86dbdeb368eeb6762734e0721b9f6ec911549548f67185dc4010bf9dc4 = $this->env->getExtension("native_profiler");
+        $__internal_4d101f86dbdeb368eeb6762734e0721b9f6ec911549548f67185dc4010bf9dc4->enter($__internal_4d101f86dbdeb368eeb6762734e0721b9f6ec911549548f67185dc4010bf9dc4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 6
         echo "    Accueil - ";
@@ -44,15 +44,15 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         echo "
 ";
         
-        $__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0->leave($__internal_f5b76d5dfdc7b499ae6b89b911064a16576a2db54a213af0651b8b97ef6b46d0_prof);
+        $__internal_4d101f86dbdeb368eeb6762734e0721b9f6ec911549548f67185dc4010bf9dc4->leave($__internal_4d101f86dbdeb368eeb6762734e0721b9f6ec911549548f67185dc4010bf9dc4_prof);
 
     }
 
     // line 8
     public function block_map($context, array $blocks = array())
     {
-        $__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539 = $this->env->getExtension("native_profiler");
-        $__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539->enter($__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "map"));
+        $__internal_26152b53d97d72a1cbda2b0622df5bb515b916ed7e040690419993392e83adb5 = $this->env->getExtension("native_profiler");
+        $__internal_26152b53d97d72a1cbda2b0622df5bb515b916ed7e040690419993392e83adb5->enter($__internal_26152b53d97d72a1cbda2b0622df5bb515b916ed7e040690419993392e83adb5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "map"));
 
         // line 9
         echo "    ";
@@ -60,122 +60,188 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
         echo "
 ";
         
-        $__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539->leave($__internal_5a69b295cf4045680e4abf587bbdd932cb80e17897be7d12f96278962b8e1539_prof);
+        $__internal_26152b53d97d72a1cbda2b0622df5bb515b916ed7e040690419993392e83adb5->leave($__internal_26152b53d97d72a1cbda2b0622df5bb515b916ed7e040690419993392e83adb5_prof);
 
     }
 
     // line 11
     public function block_body($context, array $blocks = array())
     {
-        $__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31 = $this->env->getExtension("native_profiler");
-        $__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31->enter($__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_20339529b98e74a3ef5ef23e40ddce18f7b164f7ed1403b7ced18e4bb21698bd = $this->env->getExtension("native_profiler");
+        $__internal_20339529b98e74a3ef5ef23e40ddce18f7b164f7ed1403b7ced18e4bb21698bd->enter($__internal_20339529b98e74a3ef5ef23e40ddce18f7b164f7ed1403b7ced18e4bb21698bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 12
         echo "
-    <h2>Liste des restaurants</h2>
 
-    <ul>
-       ";
+    <div class=\"pagination\">
+        ";
+        // line 15
+        $context["count"] = 0;
         // line 16
+        echo "        ";
+        $context["numPage"] = 1;
+        // line 17
+        echo "        <div class=\"post\" id=\"page-";
+        echo twig_escape_filter($this->env, (isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage")), "html", null, true);
+        echo "\" style=\"height:400px;\">
+       ";
+        // line 18
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listRestaurants"]) ? $context["listRestaurants"] : $this->getContext($context, "listRestaurants")));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["restaurant"]) {
-            // line 17
-            echo "            <li>
-                <a href=\"";
-            // line 18
+            // line 19
+            echo "            ";
+            if (((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) == 2)) {
+                // line 20
+                echo "                ";
+                $context["numPage"] = ((isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage")) + 1);
+                // line 21
+                echo "                </div>
+                <div class=\"post\" id=\"page-";
+                // line 22
+                echo twig_escape_filter($this->env, (isset($context["numPage"]) ? $context["numPage"] : $this->getContext($context, "numPage")), "html", null, true);
+                echo "\">
+                ";
+                // line 23
+                $context["count"] = 0;
+                // line 24
+                echo "            ";
+            }
+            // line 25
+            echo "                    <div class=\"mdl-card mdl-shadow--2dp\" style=\"width:90%;min-height:100px;\">
+                        <div class=\"mdl-card__title\" ";
+            // line 26
+            if (( !(null === $this->getAttribute($context["restaurant"], "image1", array())) &&  !(null === $this->getAttribute($this->getAttribute($context["restaurant"], "image1", array()), "imageFile", array())))) {
+                // line 27
+                echo "                            style=\" background: url('";
+                echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl($this->env->getExtension('vich_uploader')->asset($this->getAttribute($context["restaurant"], "image1", array()), "imageFile")), "html", null, true);
+                echo "') center / cover; \"";
+            }
+            echo ">
+                            <a class=\"mdl-button mdl-button--raised mdl-button--colored\" href=\"";
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_view", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
             echo "\">
-                    ";
-            // line 19
+                                ";
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["restaurant"], "nom", array()), "html", null, true);
             echo "
-                </a>
-                regimes: <br/>
-                ";
-            // line 22
+                            </a>
+
+                        </div>
+                        <div class=\"mdl-card__actions mdl-card--border\">
+                            ";
+            // line 34
+            echo $this->env->getExtension('address')->address($this->getAttribute($context["restaurant"], "address", array()));
+            echo "
+                            ";
+            // line 35
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["restaurant"], "regimes", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["regime"]) {
-                // line 23
-                echo "                    ";
-                echo twig_escape_filter($this->env, $this->getAttribute($context["regime"], "libelle", array()), "html", null, true);
-                echo "
-                ";
+                // line 36
+                echo "                                ";
+                if (($this->getAttribute($context["regime"], "id", array()) == 1)) {
+                    echo "<img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/markerV.png"), "html", null, true);
+                    echo "\">";
+                }
+                // line 37
+                echo "                                ";
+                if (($this->getAttribute($context["regime"], "id", array()) == 2)) {
+                    echo "<img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/markerVL.png"), "html", null, true);
+                    echo "\">";
+                }
+                // line 38
+                echo "                                ";
+                if (($this->getAttribute($context["regime"], "id", array()) == 3)) {
+                    echo "<img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/markerG.png"), "html", null, true);
+                    echo "\">";
+                }
+                // line 39
+                echo "                                ";
+                if (($this->getAttribute($context["regime"], "id", array()) == 4)) {
+                    echo "<img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/markerD.png"), "html", null, true);
+                    echo "\">";
+                }
+                // line 40
+                echo "                                ";
+                if (($this->getAttribute($context["regime"], "id", array()) == 5)) {
+                    echo "<img src=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/rrcore/images/markerC.png"), "html", null, true);
+                    echo "\">";
+                }
+                // line 41
+                echo "                            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['regime'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 24
-            echo " <br/>
-                <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_delete", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
-            echo "\">Suprimer</a><br/>
-                <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_edit", array("id" => $this->getAttribute($context["restaurant"], "id", array()))), "html", null, true);
-            echo "\">Editer</a><br/>
-            </li>
-            ";
+            // line 42
+            echo "                        </div>
+                        <div class=\"mdl-card__menu\">
+                            <button class=\"mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect\">
+                                <i class=\"material-icons\">share</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style=\"height: 10px;\"></div>
+           ";
+            // line 50
+            $context["count"] = ((isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")) + 1);
+            // line 51
+            echo "            ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
-            echo "            <li>Pas (encore !) de restaurants</li>
+            // line 52
+            echo "            <b>Aucun Restaurant trouvé</b>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['restaurant'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        echo "    </ul>
-    <div class=\"mdl-tabs mdl-js-tabs mdl-js-ripple-effect\">
-  ";
-        // line 34
-        echo "        ";
-        if (array_key_exists("listRestaurant", $context)) {
-            // line 35
-            echo "            <div class=\"mdl-tabs__tab-bar\">
-                ";
-            // line 36
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["nbPages"]) ? $context["nbPages"] : $this->getContext($context, "nbPages"))));
-            foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-                // line 37
-                echo "                    <a href=\"";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rr_restaurant_home", array("page" => $context["p"])), "html", null, true);
-                echo "\">
-                    <button class=\"mdl-button mdl-js-button mdl-button";
-                // line 38
-                if (($context["p"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
-                    echo "--accent mdl-button--raised";
-                } else {
-                    echo "--primary mdl-js-ripple-effect";
-                }
-                echo "\">
-                        ";
-                // line 39
-                echo twig_escape_filter($this->env, $context["p"], "html", null, true);
-                echo "
-                    </button>
-                    </a>
-                ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 43
-            echo "            </div>
-        ";
+        // line 54
+        echo "                </div>
+    </div>
+
+    <a href=\"#\" id=\"prev\" onclick=\"prevPage()\">Prev page</a>
+    <a href=\"#\" id=\"next\" onclick=\"nextPage()\">Next page</a>
+    <script>
+        var page=1;
+        showPage(page);
+        function showPage(page) {
+            \$('.pagination .post:not(#page-'+page+')').hide();
+            \$('.pagination .post#page-'+page).show();
         }
-        // line 45
-        echo "    </div>
+        function prevPage() {
+            if (page == 1) {
+                page = \$('.pagination .post').length;
+            } else {
+                page--;
+            }
+            showPage(page);
+        }
+
+        function nextPage() {
+            if (page == \$('.pagination .post').length) {
+                page = 1;
+            } else {
+                page++;
+            }
+            showPage(page);
+        }
+    </script>
+
+
 
 ";
         
-        $__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31->leave($__internal_48781108a5acee598d64118c741467aea746af155fd1f73387b4b798b5022c31_prof);
+        $__internal_20339529b98e74a3ef5ef23e40ddce18f7b164f7ed1403b7ced18e4bb21698bd->leave($__internal_20339529b98e74a3ef5ef23e40ddce18f7b164f7ed1403b7ced18e4bb21698bd_prof);
 
     }
 
@@ -191,7 +257,7 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 
     public function getDebugInfo()
     {
-        return array (  174 => 45,  170 => 43,  160 => 39,  152 => 38,  147 => 37,  143 => 36,  140 => 35,  137 => 34,  133 => 31,  126 => 29,  118 => 26,  114 => 25,  111 => 24,  102 => 23,  98 => 22,  92 => 19,  88 => 18,  85 => 17,  80 => 16,  74 => 12,  68 => 11,  58 => 9,  52 => 8,  42 => 6,  36 => 5,  11 => 3,);
+        return array (  209 => 54,  202 => 52,  197 => 51,  195 => 50,  185 => 42,  179 => 41,  172 => 40,  165 => 39,  158 => 38,  151 => 37,  144 => 36,  140 => 35,  136 => 34,  128 => 29,  124 => 28,  117 => 27,  115 => 26,  112 => 25,  109 => 24,  107 => 23,  103 => 22,  100 => 21,  97 => 20,  94 => 19,  89 => 18,  84 => 17,  81 => 16,  79 => 15,  74 => 12,  68 => 11,  58 => 9,  52 => 8,  42 => 6,  36 => 5,  11 => 3,);
     }
 }
 /* {# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}*/
@@ -206,38 +272,78 @@ class __TwigTemplate_5159c13af36d3e62ad842ef633cbc9da3a9b4e4f7f4fc646e522a9a26e8
 /* {% endblock %}*/
 /* {% block body %}*/
 /* */
-/*     <h2>Liste des restaurants</h2>*/
 /* */
-/*     <ul>*/
+/*     <div class="pagination">*/
+/*         {% set count=0 %}*/
+/*         {% set numPage=1 %}*/
+/*         <div class="post" id="page-{{ numPage }}" style="height:400px;">*/
 /*        {% for restaurant in listRestaurants %}*/
-/*             <li>*/
-/*                 <a href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">*/
-/*                     {{ restaurant.nom }}*/
-/*                 </a>*/
-/*                 regimes: <br/>*/
-/*                 {% for regime in restaurant.regimes %}*/
-/*                     {{ regime.libelle }}*/
-/*                 {% endfor %} <br/>*/
-/*                 <a href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a><br/>*/
-/*                 <a href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a><br/>*/
-/*             </li>*/
+/*             {% if count==2 %}*/
+/*                 {% set numPage=numPage+1 %}*/
+/*                 </div>*/
+/*                 <div class="post" id="page-{{ numPage }}">*/
+/*                 {% set count=0 %}*/
+/*             {% endif %}*/
+/*                     <div class="mdl-card mdl-shadow--2dp" style="width:90%;min-height:100px;">*/
+/*                         <div class="mdl-card__title" {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}*/
+/*                             style=" background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; "{% endif %}>*/
+/*                             <a class="mdl-button mdl-button--raised mdl-button--colored" href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">*/
+/*                                 {{ restaurant.nom }}*/
+/*                             </a>*/
+/* */
+/*                         </div>*/
+/*                         <div class="mdl-card__actions mdl-card--border">*/
+/*                             {{ restaurant.address|address()|raw }}*/
+/*                             {% for regime in restaurant.regimes %}*/
+/*                                 {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/markerV.png') }}">{% endif %}*/
+/*                                 {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/markerVL.png') }}">{% endif %}*/
+/*                                 {% if regime.id==3%}<img src="{{ asset('bundles/rrcore/images/markerG.png') }}">{% endif %}*/
+/*                                 {% if regime.id==4%}<img src="{{ asset('bundles/rrcore/images/markerD.png') }}">{% endif %}*/
+/*                                 {% if regime.id==5%}<img src="{{ asset('bundles/rrcore/images/markerC.png') }}">{% endif %}*/
+/*                             {% endfor %}*/
+/*                         </div>*/
+/*                         <div class="mdl-card__menu">*/
+/*                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">*/
+/*                                 <i class="material-icons">share</i>*/
+/*                             </button>*/
+/*                         </div>*/
+/*                     </div>*/
+/*                     <div style="height: 10px;"></div>*/
+/*            {% set count=count+1 %}*/
 /*             {% else %}*/
-/*             <li>Pas (encore !) de restaurants</li>*/
+/*             <b>Aucun Restaurant trouvé</b>*/
 /*         {% endfor %}*/
-/*     </ul>*/
-/*     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">*/
-/*   {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}*/
-/*         {% if listRestaurant is defined %}*/
-/*             <div class="mdl-tabs__tab-bar">*/
-/*                 {% for p in range(1, nbPages) %}*/
-/*                     <a href="{{ path('rr_restaurant_home', {'page': p}) }}">*/
-/*                     <button class="mdl-button mdl-js-button mdl-button{% if p == page %}--accent mdl-button--raised{% else %}--primary mdl-js-ripple-effect{% endif %}">*/
-/*                         {{ p }}*/
-/*                     </button>*/
-/*                     </a>*/
-/*                 {% endfor %}*/
-/*             </div>*/
-/*         {% endif %}*/
+/*                 </div>*/
 /*     </div>*/
+/* */
+/*     <a href="#" id="prev" onclick="prevPage()">Prev page</a>*/
+/*     <a href="#" id="next" onclick="nextPage()">Next page</a>*/
+/*     <script>*/
+/*         var page=1;*/
+/*         showPage(page);*/
+/*         function showPage(page) {*/
+/*             $('.pagination .post:not(#page-'+page+')').hide();*/
+/*             $('.pagination .post#page-'+page).show();*/
+/*         }*/
+/*         function prevPage() {*/
+/*             if (page == 1) {*/
+/*                 page = $('.pagination .post').length;*/
+/*             } else {*/
+/*                 page--;*/
+/*             }*/
+/*             showPage(page);*/
+/*         }*/
+/* */
+/*         function nextPage() {*/
+/*             if (page == $('.pagination .post').length) {*/
+/*                 page = 1;*/
+/*             } else {*/
+/*                 page++;*/
+/*             }*/
+/*             showPage(page);*/
+/*         }*/
+/*     </script>*/
+/* */
+/* */
 /* */
 /* {% endblock %}*/

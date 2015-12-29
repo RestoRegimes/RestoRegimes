@@ -28,6 +28,8 @@ return array(
     'Ivory\\GoogleMap\\' => array($vendorDir . '/egeloen/google-map/src'),
     'Ivory\\GoogleMapBundle\\' => array($vendorDir . '/egeloen/google-map-bundle'),
     'Incenteev\\ParameterHandler\\' => array($vendorDir . '/incenteev/composer-parameter-handler'),
+    'Gregwar\\Captcha\\' => array($vendorDir . '/gregwar/captcha'),
+    'Gregwar\\CaptchaBundle\\' => array($vendorDir . '/gregwar/captcha-bundle'),
     'GeoIp2\\' => array($vendorDir . '/geoip2/geoip2/src'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'FOS\\UserBundle\\' => array($vendorDir . '/friendsofsymfony/user-bundle'),

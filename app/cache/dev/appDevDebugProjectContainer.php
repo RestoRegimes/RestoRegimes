@@ -56,6 +56,7 @@ class appDevDebugProjectContainer extends Container
             'bazinga_geocoder.logger' => 'getBazingaGeocoder_LoggerService',
             'cache_clearer' => 'getCacheClearerService',
             'cache_warmer' => 'getCacheWarmerService',
+            'captcha.type' => 'getCaptcha_TypeService',
             'controller_name_converter' => 'getControllerNameConverterService',
             'core_helper' => 'getCoreHelperService',
             'data_collector.dump' => 'getDataCollector_DumpService',
@@ -167,6 +168,10 @@ class appDevDebugProjectContainer extends Container
             'fragment.renderer.hinclude' => 'getFragment_Renderer_HincludeService',
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'fragment.renderer.ssi' => 'getFragment_Renderer_SsiService',
+            'gregwar_captcha.captcha_builder' => 'getGregwarCaptcha_CaptchaBuilderService',
+            'gregwar_captcha.generator' => 'getGregwarCaptcha_GeneratorService',
+            'gregwar_captcha.image_file_handler' => 'getGregwarCaptcha_ImageFileHandlerService',
+            'gregwar_captcha.phrase_builder' => 'getGregwarCaptcha_PhraseBuilderService',
             'http_kernel' => 'getHttpKernelService',
             'ivory_google_map.bound' => 'getIvoryGoogleMap_BoundService',
             'ivory_google_map.bound.builder' => 'getIvoryGoogleMap_Bound_BuilderService',
@@ -667,6 +672,19 @@ class appDevDebugProjectContainer extends Container
         $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, ($this->targetDirs[2].'/Resources'));
 
         return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TranslationsCacheWarmer($this->get('translator')), 3 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 4 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 5 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
+    }
+
+    /**
+     * Gets the 'captcha.type' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Gregwar\CaptchaBundle\Type\CaptchaType A Gregwar\CaptchaBundle\Type\CaptchaType instance.
+     */
+    protected function getCaptcha_TypeService()
+    {
+        return $this->services['captcha.type'] = new \Gregwar\CaptchaBundle\Type\CaptchaType($this->get('session'), $this->get('gregwar_captcha.generator'), $this->get('translator'), array('length' => 5, 'width' => 130, 'height' => 50, 'font' => ($this->targetDirs[3].'\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'), 'keep_value' => false, 'charset' => 'abcdefhjkmnprstuvwxyz23456789', 'as_file' => false, 'as_url' => false, 'reload' => false, 'image_folder' => 'captcha', 'web_path' => ($this->targetDirs[2].'/../web'), 'gc_freq' => 100, 'expiration' => 60, 'quality' => 30, 'invalid_message' => 'Bad code value', 'bypass_code' => NULL, 'whitelist_key' => 'captcha_whitelist_key', 'humanity' => 0, 'distortion' => true, 'max_front_lines' => NULL, 'max_behind_lines' => NULL, 'interpolation' => true, 'text_color' => array(), 'background_color' => array(), 'background_images' => array(), 'disabled' => false, 'ignore_all_effects' => false));
     }
 
     /**
@@ -1255,7 +1273,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['faker.generator'] = $instance = \Faker\Factory::create('en_US');
 
-        $instance->seed(1022);
+        $instance->seed(22609);
 
         return $instance;
     }
@@ -1340,7 +1358,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'fos_user_username' => 'fos_user.username_form_type', 'fos_user_profile' => 'fos_user.profile.form.type', 'fos_user_registration' => 'fos_user.registration.form.type', 'fos_user_change_password' => 'fos_user.change_password.form.type', 'fos_user_resetting' => 'fos_user.resetting.form.type', 'places_autocomplete' => 'ivory_google_map.places_autocomplete.form.type', 'vich_file' => 'vich_uploader.form.type.file', 'vich_image' => 'vich_uploader.form.type.image'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf', 3 => 'form.type_extension.form.data_collector'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'fos_user_username' => 'fos_user.username_form_type', 'fos_user_profile' => 'fos_user.profile.form.type', 'fos_user_registration' => 'fos_user.registration.form.type', 'fos_user_change_password' => 'fos_user.change_password.form.type', 'fos_user_resetting' => 'fos_user.resetting.form.type', 'places_autocomplete' => 'ivory_google_map.places_autocomplete.form.type', 'vich_file' => 'vich_uploader.form.type.file', 'vich_image' => 'vich_uploader.form.type.image', 'captcha' => 'captcha.type'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf', 3 => 'form.type_extension.form.data_collector'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
     }
 
     /**
@@ -2225,6 +2243,58 @@ class appDevDebugProjectContainer extends Container
         $instance->setFragmentPath('/_fragment');
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'gregwar_captcha.captcha_builder' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Gregwar\Captcha\CaptchaBuilder A Gregwar\Captcha\CaptchaBuilder instance.
+     */
+    protected function getGregwarCaptcha_CaptchaBuilderService()
+    {
+        return $this->services['gregwar_captcha.captcha_builder'] = new \Gregwar\Captcha\CaptchaBuilder();
+    }
+
+    /**
+     * Gets the 'gregwar_captcha.generator' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Gregwar\CaptchaBundle\Generator\CaptchaGenerator A Gregwar\CaptchaBundle\Generator\CaptchaGenerator instance.
+     */
+    protected function getGregwarCaptcha_GeneratorService()
+    {
+        return $this->services['gregwar_captcha.generator'] = new \Gregwar\CaptchaBundle\Generator\CaptchaGenerator($this->get('router'), $this->get('gregwar_captcha.captcha_builder'), $this->get('gregwar_captcha.phrase_builder'), $this->get('gregwar_captcha.image_file_handler'));
+    }
+
+    /**
+     * Gets the 'gregwar_captcha.image_file_handler' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Gregwar\CaptchaBundle\Generator\ImageFileHandler A Gregwar\CaptchaBundle\Generator\ImageFileHandler instance.
+     */
+    protected function getGregwarCaptcha_ImageFileHandlerService()
+    {
+        return $this->services['gregwar_captcha.image_file_handler'] = new \Gregwar\CaptchaBundle\Generator\ImageFileHandler('captcha', ($this->targetDirs[2].'/../web'), 100, 60);
+    }
+
+    /**
+     * Gets the 'gregwar_captcha.phrase_builder' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Gregwar\Captcha\PhraseBuilder A Gregwar\Captcha\PhraseBuilder instance.
+     */
+    protected function getGregwarCaptcha_PhraseBuilderService()
+    {
+        return $this->services['gregwar_captcha.phrase_builder'] = new \Gregwar\Captcha\PhraseBuilder();
     }
 
     /**
@@ -3367,8 +3437,8 @@ class appDevDebugProjectContainer extends Container
         $instance->add($this->get('data_collector.form'));
         $instance->add(new \Symfony\Bridge\Twig\DataCollector\TwigDataCollector($this->get('twig.profile')));
         $instance->add($d);
-        $instance->add(new \Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector($this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('security.role_hierarchy')));
         $instance->add(new \Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector($this));
+        $instance->add(new \Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector($this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('security.role_hierarchy')));
         $instance->add(new \Bazinga\Bundle\GeocoderBundle\DataCollector\GeocoderDataCollector($this->get('bazinga_geocoder.logger')));
         $instance->add($this->get('data_collector.dump'));
 
@@ -3659,7 +3729,7 @@ class appDevDebugProjectContainer extends Container
         $u = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $h, $p, 'main', $s, $t, array('check_path' => 'fos_user_security_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d, NULL);
         $u->setRememberMeServices($q);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($o, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $r, 3 => $u, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $q, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5680652c51a9a7.52514788', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $o, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $p, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $p, 'fos_user_security_login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($o, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $r, 3 => $u, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $q, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '56826354543943.17257782', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $o, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $p, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $p, 'fos_user_security_login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -4637,7 +4707,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\ExpressionExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($c));
         $instance->addExtension($d);
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig', 1 => 'VichUploaderBundle:Form:fields.html.twig', 2 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig')), $this->get('security.csrf.token_manager', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'GregwarCaptchaBundle::captcha.html.twig', 1 => 'form_div_layout.html.twig', 2 => 'VichUploaderBundle:Form:fields.html.twig', 3 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig')), $this->get('security.csrf.token_manager', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
         $instance->addExtension(new \Twig_Extension_Debug());
         $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(), new \Symfony\Bundle\AsseticBundle\DefaultValueSupplier($this)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
@@ -4715,6 +4785,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'\\vendor\\willdurand\\geocoder-bundle\\Bazinga\\Bundle\\GeocoderBundle/Resources/views'), 'BazingaGeocoder');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\egeloen\\google-map-bundle/Resources/views'), 'IvoryGoogleMap');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\vich\\uploader-bundle/Resources/views'), 'VichUploader');
+        $instance->addPath(($this->targetDirs[3].'\\vendor\\gregwar\\captcha-bundle/Resources/views'), 'GregwarCaptcha');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views'), 'WebProfiler');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views'), 'SensioDistribution');
@@ -4997,7 +5068,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getWebProfiler_Controller_ProfilerService()
     {
-        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.ajax' => array(0 => 'ajax', 1 => '@WebProfiler/Collector/ajax.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.twig' => array(0 => 'twig', 1 => '@WebProfiler/Collector/twig.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => '@Doctrine/Collector/db.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'bazinga_geocoder.data_collector' => array(0 => 'geocoder', 1 => 'BazingaGeocoderBundle:Collector:geocoder'), 'data_collector.dump' => array(0 => 'dump', 1 => '@Debug/Profiler/dump.html.twig')), 'bottom');
+        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.ajax' => array(0 => 'ajax', 1 => '@WebProfiler/Collector/ajax.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.twig' => array(0 => 'twig', 1 => '@WebProfiler/Collector/twig.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => '@Doctrine/Collector/db.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'bazinga_geocoder.data_collector' => array(0 => 'geocoder', 1 => 'BazingaGeocoderBundle:Collector:geocoder'), 'data_collector.dump' => array(0 => 'dump', 1 => '@Debug/Profiler/dump.html.twig')), 'bottom');
     }
 
     /**
@@ -5219,7 +5290,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, '2b34770401aea22ced93ce7602c3a5cbe69e18fe', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5680652c51a9a7.52514788')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, '2b34770401aea22ced93ce7602c3a5cbe69e18fe', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('56826354543943.17257782')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -5477,7 +5548,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => $this->targetDirs[2],
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => __DIR__,
             'kernel.logs_dir' => ($this->targetDirs[2].'\\logs'),
             'kernel.bundles' => array(
@@ -5497,6 +5568,7 @@ class appDevDebugProjectContainer extends Container
                 'Padam87AddressBundle' => 'Padam87\\AddressBundle\\Padam87AddressBundle',
                 'IvoryGoogleMapBundle' => 'Ivory\\GoogleMapBundle\\IvoryGoogleMapBundle',
                 'VichUploaderBundle' => 'Vich\\UploaderBundle\\VichUploaderBundle',
+                'GregwarCaptchaBundle' => 'Gregwar\\CaptchaBundle\\GregwarCaptchaBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -5787,9 +5859,10 @@ class appDevDebugProjectContainer extends Container
             'twig.controller.preview_error.class' => 'Symfony\\Bundle\\TwigBundle\\Controller\\PreviewErrorController',
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
-                0 => 'form_div_layout.html.twig',
-                1 => 'VichUploaderBundle:Form:fields.html.twig',
-                2 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig',
+                0 => 'GregwarCaptchaBundle::captcha.html.twig',
+                1 => 'form_div_layout.html.twig',
+                2 => 'VichUploaderBundle:Form:fields.html.twig',
+                3 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig',
             ),
             'monolog.logger.class' => 'Symfony\\Bridge\\Monolog\\Logger',
             'monolog.gelf.publisher.class' => 'Gelf\\MessagePublisher',
@@ -6234,6 +6307,51 @@ class appDevDebugProjectContainer extends Container
                 ),
             ),
             'vich_uploader.file_injector.class' => 'Vich\\UploaderBundle\\Injector\\FileInjector',
+            'gregwar_captcha.captcha_type.class' => 'Gregwar\\CaptchaBundle\\Type\\CaptchaType',
+            'gregwar_captcha.captcha_generator.class' => 'Gregwar\\CaptchaBundle\\Generator\\CaptchaGenerator',
+            'gregwar_captcha.image_file_handler.class' => 'Gregwar\\CaptchaBundle\\Generator\\ImageFileHandler',
+            'gregwar_captcha.captcha_builder.class' => 'Gregwar\\Captcha\\CaptchaBuilder',
+            'gregwar_captcha.phrase_builder.class' => 'Gregwar\\Captcha\\PhraseBuilder',
+            'gregwar_captcha.config' => array(
+                'length' => 5,
+                'width' => 130,
+                'height' => 50,
+                'font' => ($this->targetDirs[3].'\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'),
+                'keep_value' => false,
+                'charset' => 'abcdefhjkmnprstuvwxyz23456789',
+                'as_file' => false,
+                'as_url' => false,
+                'reload' => false,
+                'image_folder' => 'captcha',
+                'web_path' => ($this->targetDirs[2].'/../web'),
+                'gc_freq' => 100,
+                'expiration' => 60,
+                'quality' => 30,
+                'invalid_message' => 'Bad code value',
+                'bypass_code' => NULL,
+                'whitelist_key' => 'captcha_whitelist_key',
+                'humanity' => 0,
+                'distortion' => true,
+                'max_front_lines' => NULL,
+                'max_behind_lines' => NULL,
+                'interpolation' => true,
+                'text_color' => array(
+
+                ),
+                'background_color' => array(
+
+                ),
+                'background_images' => array(
+
+                ),
+                'disabled' => false,
+                'ignore_all_effects' => false,
+            ),
+            'gregwar_captcha.config.image_folder' => 'captcha',
+            'gregwar_captcha.config.web_path' => ($this->targetDirs[2].'/../web'),
+            'gregwar_captcha.config.gc_freq' => 100,
+            'gregwar_captcha.config.expiration' => 60,
+            'gregwar_captcha.config.whitelist_key' => 'captcha_whitelist_key',
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',
@@ -6299,13 +6417,13 @@ class appDevDebugProjectContainer extends Container
                     0 => 'db',
                     1 => '@Doctrine/Collector/db.html.twig',
                 ),
-                'data_collector.security' => array(
-                    0 => 'security',
-                    1 => '@Security/Collector/security.html.twig',
-                ),
                 'swiftmailer.data_collector' => array(
                     0 => 'swiftmailer',
                     1 => '@Swiftmailer/Collector/swiftmailer.html.twig',
+                ),
+                'data_collector.security' => array(
+                    0 => 'security',
+                    1 => '@Security/Collector/security.html.twig',
                 ),
                 'bazinga_geocoder.data_collector' => array(
                     0 => 'geocoder',

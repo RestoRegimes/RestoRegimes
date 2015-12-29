@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
-    $vendorDir . '/igorw/get-in/src/get_in.php',
-    $vendorDir . '/kriswallsmith/assetic/src/functions.php',
-    $vendorDir . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/functions.php',
+    '01b872096dad055849387e42d41a176d' => $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
+    '92363f9255f52d62394fbafc1e8431b3' => $vendorDir . '/igorw/get-in/src/get_in.php',
+    'f0cfed1a23b444183024a3c7df93aafa' => $vendorDir . '/kriswallsmith/assetic/src/functions.php',
+    '41c1f482e95e048ac21560f14c0e11f3' => $vendorDir . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/functions.php',
 );
