@@ -13,15 +13,20 @@
 <form action="{{ path("fos_user_security_check") }}" method="post">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+    <input class="mdl-textfield__input" type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Nom" />
 
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" />
+    <input class="mdl-textfield__input" type="password" id="password" name="_password" required="required" placeholder="Mot de passe"/>
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    <label class="mdl-checkbox mdl-js-checkbox " for="remember_me">
+        <input class="mdl-checkbox__input" type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <span class="mdl-checkbox__label"><b id="geo">Se souvenir de moi</b></span>
+    </label>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    <div>
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">check</i>
+        </button>
+    </div>
+
 </form>
 {% endblock fos_user_content %}
