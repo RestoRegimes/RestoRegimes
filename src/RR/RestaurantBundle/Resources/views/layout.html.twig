@@ -19,7 +19,7 @@
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--2-col">
             {% block rrplatform_search %}
-                {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
+                {% include "RRCoreBundle:Default:search.html.twig" %}
             {% endblock %}
         </div>
         <div class="mdl-cell mdl-cell--10-col">

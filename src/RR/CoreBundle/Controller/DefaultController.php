@@ -126,6 +126,7 @@ class DefaultController extends Controller
             $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$coord);
 
             return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
+                'form'=>$form->createView(),
                 'listRestaurants' => $listRestaurants,
                 'nbMaxResult'=>$nbMaxResult,
                 'nbPerPage' => $nbPerPage,

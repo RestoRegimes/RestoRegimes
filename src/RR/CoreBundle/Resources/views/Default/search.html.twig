@@ -95,6 +95,13 @@
         var a = document.getElementById("adresse");
         var ad= document.getElementById("form_recherche");
         var click=false;
+        if(document.getElementById("form_geo").checked){
+            z.innerHTML = "Addresse trouvée";
+            a.style.visibility = 'hidden';
+            ad.value = "";
+            click=true;
+        }
+
 
         function getLocation() {
             if(!click){
