@@ -14,7 +14,7 @@
     <div class="pagination">
         {% set count=0 %}
         {% set numPage=1 %}
-        <div class="post" id="page-{{ numPage }}" style="height:400px;">
+        <div class="post" id="page-{{ numPage }}">
        {% for restaurant in listRestaurants %}
             {% if count==2 %}
                 {% set numPage=numPage+1 %}
@@ -31,14 +31,22 @@
 
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            {{ restaurant.address|address()|raw }}
-                            {% for regime in restaurant.regimes %}
-                                {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/markerV.png') }}">{% endif %}
-                                {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/markerVL.png') }}">{% endif %}
-                                {% if regime.id==3%}<img src="{{ asset('bundles/rrcore/images/markerG.png') }}">{% endif %}
-                                {% if regime.id==4%}<img src="{{ asset('bundles/rrcore/images/markerD.png') }}">{% endif %}
-                                {% if regime.id==5%}<img src="{{ asset('bundles/rrcore/images/markerC.png') }}">{% endif %}
-                            {% endfor %}
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--6-col">
+                                    {{ restaurant.address|address()|raw }}
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col">
+                                    {% for regime in restaurant.regimes %}
+                                        {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/Iconveg.png') }}">{% endif %}
+                                        {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/Iconvegan.png') }}">{% endif %}
+                                        {% if regime.id==3%}<img src="{{ asset('bundles/rrcore/images/Icongluten.png') }}">{% endif %}
+                                        {% if regime.id==4%}<img src="{{ asset('bundles/rrcore/images/Icondiabete.png') }}">{% endif %}
+                                        {% if regime.id==5%}<img src="{{ asset('bundles/rrcore/images/Iconchol.png') }}">{% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+
                         </div>
                         <div class="mdl-card__menu">
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -54,14 +62,31 @@
                 </div>
     </div>
 
-    <a href="#" id="prev" onclick="prevPage()">Prev page</a>
-    <a href="#" id="next" onclick="nextPage()">Next page</a>
+    <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="prevPage()">
+        <
+    </button>
+    {% for i in 1..numPage %}
+        <button class="pages mdl-button mdl-button--fab mdl-button--mini-fab" onclick="showPage({{ i }})">
+            {{ i }}
+        </button>
+    {% endfor %}
+    <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="nextPage()">
+        >
+    </button>
+
     <script>
+
         var page=1;
+        var aP = document.getElementsByClassName("pages");
+
         showPage(page);
         function showPage(page) {
             $('.pagination .post:not(#page-'+page+')').hide();
             $('.pagination .post#page-'+page).show();
+            for( var i=0;i<$('.pagination .post').length;i++){
+                aP[i].style.backgroundColor= 'rgb(220,220,220)';
+            }
+            aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
         }
         function prevPage() {
             if (page == 1) {
