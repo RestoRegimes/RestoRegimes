@@ -82,17 +82,6 @@ class appDevDebugProjectContainer extends Container
             'doctrine_cache.providers.doctrine.orm.default_metadata_cache' => 'getDoctrineCache_Providers_Doctrine_Orm_DefaultMetadataCacheService',
             'doctrine_cache.providers.doctrine.orm.default_query_cache' => 'getDoctrineCache_Providers_Doctrine_Orm_DefaultQueryCacheService',
             'doctrine_cache.providers.doctrine.orm.default_result_cache' => 'getDoctrineCache_Providers_Doctrine_Orm_DefaultResultCacheService',
-            'faker.entities.0' => 'getFaker_Entities_0Service',
-            'faker.entities.0.formatters.0' => 'getFaker_Entities_0_Formatters_0Service',
-            'faker.entities.0.formatters.1' => 'getFaker_Entities_0_Formatters_1Service',
-            'faker.entities.0.formatters.2' => 'getFaker_Entities_0_Formatters_2Service',
-            'faker.entities.0.formatters.3' => 'getFaker_Entities_0_Formatters_3Service',
-            'faker.entities.0.metadata' => 'getFaker_Entities_0_MetadataService',
-            'faker.entities.1' => 'getFaker_Entities_1Service',
-            'faker.entities.1.formatters.0' => 'getFaker_Entities_1_Formatters_0Service',
-            'faker.entities.1.formatters.1' => 'getFaker_Entities_1_Formatters_1Service',
-            'faker.entities.1.formatters.2' => 'getFaker_Entities_1_Formatters_2Service',
-            'faker.entities.1.metadata' => 'getFaker_Entities_1_MetadataService',
             'faker.formatter_factory' => 'getFaker_FormatterFactoryService',
             'faker.generator' => 'getFaker_GeneratorService',
             'faker.populator' => 'getFaker_PopulatorService',
@@ -684,7 +673,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCaptcha_TypeService()
     {
-        return $this->services['captcha.type'] = new \Gregwar\CaptchaBundle\Type\CaptchaType($this->get('session'), $this->get('gregwar_captcha.generator'), $this->get('translator'), array('as_url' => true, 'length' => 4, 'width' => 130, 'height' => 50, 'font' => ($this->targetDirs[3].'\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'), 'keep_value' => false, 'charset' => 'abcdefhjkmnprstuvwxyz23456789', 'as_file' => false, 'reload' => false, 'image_folder' => 'captcha', 'web_path' => ($this->targetDirs[2].'/../web'), 'gc_freq' => 100, 'expiration' => 60, 'quality' => 30, 'invalid_message' => 'Bad code value', 'bypass_code' => NULL, 'whitelist_key' => 'captcha_whitelist_key', 'humanity' => 0, 'distortion' => true, 'max_front_lines' => NULL, 'max_behind_lines' => NULL, 'interpolation' => true, 'text_color' => array(), 'background_color' => array(), 'background_images' => array(), 'disabled' => false, 'ignore_all_effects' => false));
+        return $this->services['captcha.type'] = new \Gregwar\CaptchaBundle\Type\CaptchaType($this->get('session'), $this->get('gregwar_captcha.generator'), $this->get('translator'), array('length' => 5, 'width' => 130, 'height' => 50, 'font' => ($this->targetDirs[3].'\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'), 'keep_value' => false, 'charset' => 'abcdefhjkmnprstuvwxyz23456789', 'as_file' => false, 'as_url' => false, 'reload' => false, 'image_folder' => 'captcha', 'web_path' => ($this->targetDirs[2].'/../web'), 'gc_freq' => 100, 'expiration' => 60, 'quality' => 30, 'invalid_message' => 'Bad code value', 'bypass_code' => NULL, 'whitelist_key' => 'captcha_whitelist_key', 'humanity' => 0, 'distortion' => true, 'max_front_lines' => NULL, 'max_behind_lines' => NULL, 'interpolation' => true, 'text_color' => array(), 'background_color' => array(), 'background_images' => array(), 'disabled' => false, 'ignore_all_effects' => false));
     }
 
     /**
@@ -1106,149 +1095,6 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'faker.entities.0' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Faker\ORM\Doctrine\EntityPopulator A Faker\ORM\Doctrine\EntityPopulator instance.
-     */
-    protected function getFaker_Entities_0Service()
-    {
-        return $this->services['faker.entities.0'] = new \Faker\ORM\Doctrine\EntityPopulator($this->get('faker.entities.0.metadata'));
-    }
-
-    /**
-     * Gets the 'faker.entities.0.formatters.0' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_0_Formatters_0Service()
-    {
-        return $this->services['faker.entities.0.formatters.0'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'lexify', array(0 => '?????????????'), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.0.formatters.1' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_0_Formatters_1Service()
-    {
-        return $this->services['faker.entities.0.formatters.1'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'numerify', array(0 => '##########'), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.0.formatters.2' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_0_Formatters_2Service()
-    {
-        return $this->services['faker.entities.0.formatters.2'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'text', array(0 => 255), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.0.formatters.3' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_0_Formatters_3Service()
-    {
-        return $this->services['faker.entities.0.formatters.3'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'numerify', array(0 => '##############'), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.0.metadata' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Doctrine\ORM\Mapping\ClassMetadata A Doctrine\ORM\Mapping\ClassMetadata instance.
-     */
-    protected function getFaker_Entities_0_MetadataService()
-    {
-        return $this->services['faker.entities.0.metadata'] = $this->get('doctrine.orm.default_entity_manager')->getClassMetadata('RR\\RestaurantBundle\\Entity\\Restaurant');
-    }
-
-    /**
-     * Gets the 'faker.entities.1' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Faker\ORM\Doctrine\EntityPopulator A Faker\ORM\Doctrine\EntityPopulator instance.
-     */
-    protected function getFaker_Entities_1Service()
-    {
-        return $this->services['faker.entities.1'] = new \Faker\ORM\Doctrine\EntityPopulator($this->get('faker.entities.1.metadata'));
-    }
-
-    /**
-     * Gets the 'faker.entities.1.formatters.0' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_1_Formatters_0Service()
-    {
-        return $this->services['faker.entities.1.formatters.0'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'postcode', array(), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.1.formatters.1' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_1_Formatters_1Service()
-    {
-        return $this->services['faker.entities.1.formatters.1'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'city', array(), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.1.formatters.2' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \closure A closure instance.
-     */
-    protected function getFaker_Entities_1_Formatters_2Service()
-    {
-        return $this->services['faker.entities.1.formatters.2'] = $this->get('faker.formatter_factory')->createClosure($this->get('faker.generator'), 'streetAddress', array(), false, NULL);
-    }
-
-    /**
-     * Gets the 'faker.entities.1.metadata' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return \Doctrine\ORM\Mapping\ClassMetadata A Doctrine\ORM\Mapping\ClassMetadata instance.
-     */
-    protected function getFaker_Entities_1_MetadataService()
-    {
-        return $this->services['faker.entities.1.metadata'] = $this->get('doctrine.orm.default_entity_manager')->getClassMetadata('Padam87\\AddressBundle\\Entity\\Address');
-    }
-
-    /**
      * Gets the 'faker.formatter_factory' service.
      *
      * This service is shared.
@@ -1273,7 +1119,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['faker.generator'] = $instance = \Faker\Factory::create('en_US');
 
-        $instance->seed(15121);
+        $instance->seed(16276);
 
         return $instance;
     }
@@ -1288,12 +1134,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFaker_PopulatorService()
     {
-        $this->services['faker.populator'] = $instance = new \Faker\ORM\Doctrine\Populator($this->get('faker.generator'), $this->get('doctrine.orm.default_entity_manager'));
-
-        $instance->addEntity($this->get('faker.entities.0'), 100, array('nom' => $this->get('faker.entities.0.formatters.0'), 'telephone' => $this->get('faker.entities.0.formatters.1'), 'description' => $this->get('faker.entities.0.formatters.2'), 'siret' => $this->get('faker.entities.0.formatters.3')), array(), false);
-        $instance->addEntity($this->get('faker.entities.1'), 100, array('zipCode' => $this->get('faker.entities.1.formatters.0'), 'city' => $this->get('faker.entities.1.formatters.1'), 'street' => $this->get('faker.entities.1.formatters.2')), array(), false);
-
-        return $instance;
+        return $this->services['faker.populator'] = new \Faker\ORM\Doctrine\Populator($this->get('faker.generator'), $this->get('doctrine.orm.default_entity_manager'));
     }
 
     /**
@@ -1969,7 +1810,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFosUser_MailerService()
     {
-        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('swiftmailer.mailer.default'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('registration@example.com' => 'Demo Registration'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
+        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('swiftmailer.mailer.default'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('noreply.resto@gmail.com' => 'Enregistrement RestoRegimes'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
     }
 
     /**
@@ -3729,7 +3570,7 @@ class appDevDebugProjectContainer extends Container
         $u = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $h, $p, 'main', $s, $t, array('check_path' => 'fos_user_security_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d, NULL);
         $u->setRememberMeServices($q);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($o, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $r, 3 => $u, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $q, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5682c40f61b6a0.12756544', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $o, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $p, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $p, 'fos_user_security_login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($o, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $r, 3 => $u, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $q, $g, $a, $d, true, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5683ae9f300ad4.90096802', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $o, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $p, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $p, 'fos_user_security_login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -5290,7 +5131,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, '2b34770401aea22ced93ce7602c3a5cbe69e18fe', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5682c40f61b6a0.12756544')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, '2b34770401aea22ced93ce7602c3a5cbe69e18fe', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5683ae9f300ad4.90096802')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -6137,7 +5978,7 @@ class appDevDebugProjectContainer extends Container
                 1 => 'Default',
             ),
             'fos_user.registration.confirmation.from_email' => array(
-                'registration@example.com' => 'Demo Registration',
+                'noreply.resto@gmail.com' => 'Enregistrement RestoRegimes',
             ),
             'fos_user.registration.confirmation.enabled' => true,
             'fos_user.registration.form.type' => 'fos_user_registration',
@@ -6313,14 +6154,14 @@ class appDevDebugProjectContainer extends Container
             'gregwar_captcha.captcha_builder.class' => 'Gregwar\\Captcha\\CaptchaBuilder',
             'gregwar_captcha.phrase_builder.class' => 'Gregwar\\Captcha\\PhraseBuilder',
             'gregwar_captcha.config' => array(
-                'as_url' => true,
-                'length' => 4,
+                'length' => 5,
                 'width' => 130,
                 'height' => 50,
                 'font' => ($this->targetDirs[3].'\\vendor\\gregwar\\captcha-bundle\\DependencyInjection/../Generator/Font/captcha.ttf'),
                 'keep_value' => false,
                 'charset' => 'abcdefhjkmnprstuvwxyz23456789',
                 'as_file' => false,
+                'as_url' => false,
                 'reload' => false,
                 'image_folder' => 'captcha',
                 'web_path' => ($this->targetDirs[2].'/../web'),

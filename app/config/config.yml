@@ -112,8 +112,8 @@ fos_user:
         confirmation:
             enabled: true
             from_email:
-                address:       registration@example.com
-                sender_name:   Demo Registration
+                address:       noreply.resto@gmail.com
+                sender_name:   Enregistrement RestoRegimes
 
 bazinga_geocoder:
     default_provider:         google_maps
@@ -190,6 +190,4 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
-gregwar_captcha:
-    as_url: true
-    length: 4
+gregwar_captcha: ~

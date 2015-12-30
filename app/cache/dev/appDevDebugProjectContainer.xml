@@ -579,7 +579,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="registration@example.com">Demo Registration</parameter>
+      <parameter key="noreply.resto@gmail.com">Enregistrement RestoRegimes</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
@@ -755,14 +755,14 @@
     <parameter key="gregwar_captcha.captcha_builder.class">Gregwar\Captcha\CaptchaBuilder</parameter>
     <parameter key="gregwar_captcha.phrase_builder.class">Gregwar\Captcha\PhraseBuilder</parameter>
     <parameter key="gregwar_captcha.config" type="collection">
-      <parameter key="as_url">true</parameter>
-      <parameter key="length">4</parameter>
+      <parameter key="length">5</parameter>
       <parameter key="width">130</parameter>
       <parameter key="height">50</parameter>
       <parameter key="font">C:\wamp\www\RestoRegimes\vendor\gregwar\captcha-bundle\DependencyInjection/../Generator/Font/captcha.ttf</parameter>
       <parameter key="keep_value">false</parameter>
       <parameter key="charset">abcdefhjkmnprstuvwxyz23456789</parameter>
       <parameter key="as_file">false</parameter>
+      <parameter key="as_url">false</parameter>
       <parameter key="reload">false</parameter>
       <parameter key="image_folder">captcha</parameter>
       <parameter key="web_path">C:\wamp\www\RestoRegimes\app/../web</parameter>
@@ -2048,7 +2048,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5682c40f61b6a0.12756544</argument>
+            <argument>5683ae9f300ad4.90096802</argument>
           </service>
         </argument>
       </argument>
@@ -2428,7 +2428,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5682c40f61b6a0.12756544</argument>
+            <argument>5683ae9f300ad4.90096802</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -4051,14 +4051,14 @@
       <argument type="service" id="gregwar_captcha.generator"/>
       <argument type="service" id="translator"/>
       <argument type="collection">
-        <argument key="as_url">true</argument>
-        <argument key="length">4</argument>
+        <argument key="length">5</argument>
         <argument key="width">130</argument>
         <argument key="height">50</argument>
         <argument key="font">C:\wamp\www\RestoRegimes\vendor\gregwar\captcha-bundle\DependencyInjection/../Generator/Font/captcha.ttf</argument>
         <argument key="keep_value">false</argument>
         <argument key="charset">abcdefhjkmnprstuvwxyz23456789</argument>
         <argument key="as_file">false</argument>
+        <argument key="as_url">false</argument>
         <argument key="reload">false</argument>
         <argument key="image_folder">captcha</argument>
         <argument key="web_path">C:\wamp\www\RestoRegimes\app/../web</argument>
@@ -4237,116 +4237,15 @@
     <service id="faker.generator" class="Faker\Factory">
       <argument>en_US</argument>
       <call method="seed">
-        <argument>15121</argument>
+        <argument>16276</argument>
       </call>
       <factory class="Faker\Factory" method="create"/>
     </service>
     <service id="faker.populator" class="Faker\ORM\Doctrine\Populator">
       <argument type="service" id="faker.generator"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <call method="addEntity">
-        <argument type="service" id="faker.entities.0"/>
-        <argument>100</argument>
-        <argument type="collection">
-          <argument key="nom" type="service" id="faker.entities.0.formatters.0"/>
-          <argument key="telephone" type="service" id="faker.entities.0.formatters.1"/>
-          <argument key="description" type="service" id="faker.entities.0.formatters.2"/>
-          <argument key="siret" type="service" id="faker.entities.0.formatters.3"/>
-        </argument>
-        <argument type="collection"/>
-        <argument>false</argument>
-      </call>
-      <call method="addEntity">
-        <argument type="service" id="faker.entities.1"/>
-        <argument>100</argument>
-        <argument type="collection">
-          <argument key="zipCode" type="service" id="faker.entities.1.formatters.0"/>
-          <argument key="city" type="service" id="faker.entities.1.formatters.1"/>
-          <argument key="street" type="service" id="faker.entities.1.formatters.2"/>
-        </argument>
-        <argument type="collection"/>
-        <argument>false</argument>
-      </call>
     </service>
     <service id="faker.formatter_factory" class="Bazinga\Bundle\FakerBundle\Factory\FormatterFactory"/>
-    <service id="faker.entities.0.metadata" class="Doctrine\ORM\Mapping\ClassMetadata">
-      <argument>RR\RestaurantBundle\Entity\Restaurant</argument>
-      <factory service="doctrine.orm.entity_manager" method="getClassMetadata"/>
-    </service>
-    <service id="faker.entities.0" class="Faker\ORM\Doctrine\EntityPopulator">
-      <argument type="service" id="faker.entities.0.metadata"/>
-    </service>
-    <service id="faker.entities.0.formatters.0" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>lexify</argument>
-      <argument type="collection">
-        <argument>?????????????</argument>
-      </argument>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
-    <service id="faker.entities.0.formatters.1" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>numerify</argument>
-      <argument type="collection">
-        <argument>##########</argument>
-      </argument>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
-    <service id="faker.entities.0.formatters.2" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>text</argument>
-      <argument type="collection">
-        <argument>255</argument>
-      </argument>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
-    <service id="faker.entities.0.formatters.3" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>numerify</argument>
-      <argument type="collection">
-        <argument>##############</argument>
-      </argument>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
-    <service id="faker.entities.1.metadata" class="Doctrine\ORM\Mapping\ClassMetadata">
-      <argument>Padam87\AddressBundle\Entity\Address</argument>
-      <factory service="doctrine.orm.entity_manager" method="getClassMetadata"/>
-    </service>
-    <service id="faker.entities.1" class="Faker\ORM\Doctrine\EntityPopulator">
-      <argument type="service" id="faker.entities.1.metadata"/>
-    </service>
-    <service id="faker.entities.1.formatters.0" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>postcode</argument>
-      <argument type="collection"/>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
-    <service id="faker.entities.1.formatters.1" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>city</argument>
-      <argument type="collection"/>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
-    <service id="faker.entities.1.formatters.2" class="closure">
-      <argument type="service" id="faker.generator"/>
-      <argument>streetAddress</argument>
-      <argument type="collection"/>
-      <argument>false</argument>
-      <argument>null</argument>
-      <factory service="faker.formatter_factory" method="createClosure"/>
-    </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
       <call method="pushHandler">
@@ -4692,7 +4591,7 @@
         <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="registration@example.com">Demo Registration</argument>
+            <argument key="noreply.resto@gmail.com">Enregistrement RestoRegimes</argument>
           </argument>
           <argument key="resetting" type="collection">
             <argument key="webmaster@example.com">webmaster</argument>
