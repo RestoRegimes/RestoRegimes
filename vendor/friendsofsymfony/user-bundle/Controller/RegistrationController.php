@@ -21,6 +21,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
+use FOS\UserBundle\Controller\RegistrationController as BaseController;
+use RR\UserBundle\Form\RegistrationProType;
 
 /**
  * Controller managing the registration
@@ -207,4 +209,6 @@ class RegistrationController extends Controller
             return $this->get('session')->get($key);
         }
     }
+
+
 }

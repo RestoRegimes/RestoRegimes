@@ -1,9 +1,67 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_registerPro'), 'attr': {'class': 'fos_user_registration_registerPro'}}) }}
-{{ form_widget(form) }}
-<div>Registration pro</div>
+{% trans_default_domain 'FOSUserBundle' %}
+
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_registerPro'), 'attr': {'class': 'fos_user_registration_registerPro'}}) }}
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','placeholder':'Email'}}) }}
+        {{ form_label(form.email, " ") }}
+        {{ form_errors(form.username) }}
+        {{ form_widget(form.username, {'attr': {'class': 'mdl-textfield__input','placeholder':'Nom'}}) }}
+        {{ form_label(form.username, " ") }}
+<br><br>
+{{ form_errors(form.address.zipcode) }}
+        {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Code postal'}}) }}
+        {{ form_label(form.address.zipcode, " ") }}
+
+        {{ form_errors(form.address.city) }}
+        {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Ville'},'required':'true'}) }}
+        {{ form_label(form.address.city, " ") }}
+
+        {{ form_errors(form.address.street) }}
+        {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Rue' },'required':'true'}) }}
+        {{ form_label(form.address.street, " ") }}
+<br><br>
+        {{ form_errors(form.telephone) }}
+        {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'Telephone' },'required':'true'}) }}
+        {{ form_label(form.telephone, " ") }}
+<br><br>
+        {{ form_errors(form.profileImage.imageFile.file) }}
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+            <input class="mdl-textfield__input" placeholder="Image de profil" type="text" id="uploadFile"  readonly/>
+            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                <i class="material-icons">attach_file</i>{{ form_widget(form.profileImage.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+            </div>
+        </div>
+        {{ form_label(form.profileImage.imageFile.file, " ") }}
+<br><br>
+{% for passwordField in form.plainPassword %}
+
+    {{ form_label(passwordField," ") }}
+    {% if loop.first %}
+        {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Mot de passe'} }) }}
+    {% else %}
+        {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Confirmer mot de passe'} }) }}
+    {% endif %}
+
+{% endfor %}
+
+<div class="g-recaptcha" data-sitekey="6LdvIxQTAAAAAIyKJZeBK1wIeO71I8YxeVNI_H78"></div>
+
 <div>
-    <input type="submit" value="{{ 'submit'|trans }}" />
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">check</i>
+    </button>
 </div>
+
+
 {{ form_end(form) }}
+
+
+<script>
+
+    document.getElementById("fos_user_registration_form_profileImage_imageFile_file").onchange = function () {
+        document.getElementById("uploadFile").value = this.files[0].name;
+    };
+
+</script>

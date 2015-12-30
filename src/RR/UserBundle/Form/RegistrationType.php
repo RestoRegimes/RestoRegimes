@@ -15,7 +15,9 @@ array $options)
     'label' => 'Adresse',
     'data_class' => 'Padam87\AddressBundle\Entity\GeocodedAddress',
     'required'=>false
-    ));
+    ))
+    ->add('telephone','text',array('required'=>false))
+    ->add('profileImage',new UserImageType(),array('required'=>false));
 
 }
 
