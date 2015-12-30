@@ -6,10 +6,11 @@
 
 
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        {{ 'Connecté en tant que'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+
                         <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_logout') }}">
                             {{ 'Deconnexion'|trans({}, 'FOSUserBundle') }}
                         </a>
+
                     {% else %}
                         {% block loginLink %}
                         <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_login') }}">{{ 'Connexion'|trans({}, 'FOSUserBundle') }}</a>

@@ -19,9 +19,38 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OnetoOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist","remove"})
+     */
+    private $address;
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * Set address
+     *
+     * @param \Padam87\AddressBundle\Entity\GeocodedAddress $address
+     *
+     * @return User
+     */
+    public function setAddress(\Padam87\AddressBundle\Entity\GeocodedAddress $address = null)
+    {
+        $this->address = $address;
+    
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return \Padam87\AddressBundle\Entity\GeocodedAddress
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }

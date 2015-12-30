@@ -7,7 +7,19 @@
         {{ form_errors(form.username) }}
         {{ form_widget(form.username, {'attr': {'class': 'mdl-textfield__input','placeholder':'Nom'}}) }}
         {{ form_label(form.username, " ") }}
+        <br><br>
+        {{ form_errors(form.address.zipcode) }}
+        {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Code postal'}}) }}
+        {{ form_label(form.address.zipcode, " ") }}
 
+        {{ form_errors(form.address.city) }}
+        {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Ville'}}) }}
+        {{ form_label(form.address.city, " ") }}
+
+        {{ form_errors(form.address.street) }}
+        {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Rue' }}) }}
+        {{ form_label(form.address.street, " ") }}
+        <br><br>
         {% for passwordField in form.plainPassword %}
 
                 {{ form_label(passwordField," ") }}
@@ -20,7 +32,7 @@
         {% endfor %}
 
 
-        {{ form_rest(form) }}
+
         <div>
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                 <i class="material-icons">check</i>
@@ -29,3 +41,20 @@
 
         {{ form_end(form) }}
 
+<script>
+    var zip = $("#fos_user_registration_form_address_zipcode.address");
+    var city = $("#fos_user_registration_form_address_city.address");
+    var street = $("#fos_user_registration_form_address_street.address");
+    $(".address").keyup( function() {
+        if(zip.val().length>0 || city.val().length>0 || street.val().length>0){
+            zip.prop('required',true);
+            city.prop('required',true);
+            street.prop('required',true);
+        }else{
+            zip.prop('required',false);
+            city.prop('required',false);
+            street.prop('required',false);
+        }
+    });
+
+</script>

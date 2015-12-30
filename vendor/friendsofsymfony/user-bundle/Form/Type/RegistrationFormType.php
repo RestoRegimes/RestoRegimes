@@ -16,6 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Padam87\AddressBundle\Form\GeocodedAddressType;
 
 
 class RegistrationFormType extends AbstractType
@@ -36,12 +37,17 @@ class RegistrationFormType extends AbstractType
 
             ->add('email', 'email', array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
             ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
+            ->add('address',new GeocodedAddressType(),array(
+                'label' => 'Adresse',
+                'data_class' => 'Padam87\AddressBundle\Entity\GeocodedAddress',
+                'required'=>false
+            ))
             ->add('plainPassword', 'repeated', array(
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle'),
                 'first_options' => array('label' => 'form.password'),
                 'second_options' => array('label' => 'form.password_confirmation'),
-                'invalid_message' => 'fos_user.password.mismatch',
+                'invalid_message' => 'fos_user.password.mismatch'
             ))
         ;
     }

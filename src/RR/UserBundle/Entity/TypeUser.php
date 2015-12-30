@@ -104,4 +104,18 @@ class TypeUser {
     {
         return $this->user;
     }
+
+    /**
+     * Set user
+     *
+     * @param integer $user
+     *
+     * @return TypeUser
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
 }
