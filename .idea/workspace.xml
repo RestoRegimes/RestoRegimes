@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cf76a31-0690-46d2-bae8-ff672286177c" name="Default" comment="Captcha à l'enregistrement, débug">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Entity/Commentaire.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Entity/CommentaireRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Entity/Favoris.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RR/CoreBundle/Entity/FavorisRepository.php" />
       <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\25\253e78ab24c429b451f3266710aaf88c725995368646926a912b95219d1ecb5d.php" afterPath="" />
       <change type="DELETED" beforePath="C:\wamp\www\RestoRegimes\app\cache\dev\twig\ad\ad00118a4996c0aeba4901cef041f1a1559238158fa82ef531da67723efd8a42.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
@@ -107,41 +107,43 @@
       <file leaf-file-name="CommentaireRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/CommentaireRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="306">
-              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="306">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Commentaire.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Commentaire.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/Commentaire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88296044" vertical-offset="2479" max-vertical-offset="4131">
-              <caret line="177" column="21" selection-start-line="177" selection-start-column="21" selection-end-line="177" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RR/UserBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3461537" vertical-offset="48" max-vertical-offset="1037">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypeUser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RR/UserBundle/Entity/TypeUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="14.384615" vertical-offset="612" max-vertical-offset="2159">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="4148">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
               <folding>
                 <element signature="e#39#71#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Favoris.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/Favoris.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5903614" vertical-offset="1493" max-vertical-offset="2074">
+              <caret line="108" column="6" selection-start-line="108" selection-start-column="6" selection-end-line="108" selection-end-column="6" />
+              <folding>
+                <element signature="e#39#71#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FavorisRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/FavorisRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="306">
+              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,6 +165,8 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/RR/CoreBundle/Entity/CommentaireRepository.php" />
         <option value="$PROJECT_DIR$/src/RR/CoreBundle/Entity/Commentaire.php" />
+        <option value="$PROJECT_DIR$/src/RR/CoreBundle/Entity/FavorisRepository.php" />
+        <option value="$PROJECT_DIR$/src/RR/CoreBundle/Entity/Favoris.php" />
       </list>
     </option>
   </component>
@@ -358,6 +362,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -485,13 +490,20 @@
       <option name="project" value="LOCAL" />
       <updated>1451411415504</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Entité Commentaire créée">
+      <created>1451503289389</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1451503289389</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -508,7 +520,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -544,7 +555,8 @@
     <MESSAGE value="Le formulaire de recherche conserves les données de la recherche en cours" />
     <MESSAGE value="nettoyage block twig&#10;restructuration de la grid pr affichage tablette et phone&#10;&#10;#Vue recherche finie  TODO=&gt; ajouter notes" />
     <MESSAGE value="profil restaurant v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="profil restaurant v1" />
+    <MESSAGE value="Entité Commentaire créée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entité Commentaire créée" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -554,25 +566,11 @@
           <line>2</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="94" column="53" selection-start-line="93" selection-start-column="12" selection-end-line="94" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR/RestaurantBundle/Resources/views/Restaurant/view.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="155" column="59" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app_dev.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -910,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/CommentaireRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="306">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4265233" vertical-offset="0" max-vertical-offset="10081">
@@ -944,11 +934,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/CommentaireRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/Commentaire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88296044" vertical-offset="2479" max-vertical-offset="4131">
-          <caret line="177" column="21" selection-start-line="177" selection-start-column="21" selection-end-line="177" selection-end-column="21" />
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="4148">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="e#39#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/FavorisRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="306">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RR/CoreBundle/Entity/Favoris.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5903614" vertical-offset="1493" max-vertical-offset="2074">
+          <caret line="108" column="6" selection-start-line="108" selection-start-column="6" selection-end-line="108" selection-end-column="6" />
+          <folding>
+            <element signature="e#39#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
