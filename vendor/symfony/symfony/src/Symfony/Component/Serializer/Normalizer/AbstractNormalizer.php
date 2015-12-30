@@ -259,7 +259,7 @@ abstract class AbstractNormalizer extends SerializerAwareNormalizer implements N
             }
         }
 
-        return $allowedAttributes;
+        return array_unique($allowedAttributes);
     }
 
     /**

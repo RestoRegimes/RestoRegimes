@@ -188,11 +188,9 @@ EOF
                 }
             }
 
-            if (!$bundleTransPath) {
-                $bundleTransPath = end($transPaths).'translations';
+            if ($bundleTransPath) {
+                $writer->writeTranslations($operation->getResult(), $input->getOption('output-format'), array('path' => $bundleTransPath, 'default_locale' => $this->getContainer()->getParameter('kernel.default_locale')));
             }
-
-            $writer->writeTranslations($operation->getResult(), $input->getOption('output-format'), array('path' => $bundleTransPath, 'default_locale' => $this->getContainer()->getParameter('kernel.default_locale')));
         }
 
         $output->newLine();

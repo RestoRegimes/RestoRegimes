@@ -26,18 +26,6 @@ class InitAclCommand extends ContainerAwareCommand
     /**
      * {@inheritdoc}
      */
-    public function isEnabled()
-    {
-        if (!$this->getContainer()->has('security.acl.dbal.connection')) {
-            return false;
-        }
-
-        return parent::isEnabled();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function configure()
     {
         $this
