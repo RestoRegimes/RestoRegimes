@@ -12,8 +12,7 @@
     rad:{{ data.radius }}<br>
 {% endif %}#}
 
-<div class="mdl-card mdl-shadow--2dp" style="width: 100%;">
-    <div class="mdl-card__supporting-text">
+
         {{ form_start(form, {'action': path('rr_core_search') }) }}
         {{ form_errors(form) }}
         <div id="adresse">
@@ -70,9 +69,6 @@
 
         {# Fermeture de la balise <form> du formulaire HTML #}
         {{ form_end(form) }}
-    </div>
-
-</div>
 
 
 
