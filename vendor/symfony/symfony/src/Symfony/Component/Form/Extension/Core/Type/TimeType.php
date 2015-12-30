@@ -58,21 +58,19 @@ class TimeType extends AbstractType
                 $hours = $minutes = array();
 
                 foreach ($options['hours'] as $hour) {
-                    $hours[str_pad($hour, 2, '0', STR_PAD_LEFT)] = $hour;
+                    $hours[$hour] = str_pad($hour, 2, '0', STR_PAD_LEFT);
                 }
 
                 // Only pass a subset of the options to children
                 $hourOptions['choices'] = $hours;
-                $hourOptions['choices_as_values'] = true;
                 $hourOptions['placeholder'] = $options['placeholder']['hour'];
 
                 if ($options['with_minutes']) {
                     foreach ($options['minutes'] as $minute) {
-                        $minutes[str_pad($minute, 2, '0', STR_PAD_LEFT)] = $minute;
+                        $minutes[$minute] = str_pad($minute, 2, '0', STR_PAD_LEFT);
                     }
 
                     $minuteOptions['choices'] = $minutes;
-                    $minuteOptions['choices_as_values'] = true;
                     $minuteOptions['placeholder'] = $options['placeholder']['minute'];
                 }
 
@@ -80,11 +78,10 @@ class TimeType extends AbstractType
                     $seconds = array();
 
                     foreach ($options['seconds'] as $second) {
-                        $seconds[str_pad($second, 2, '0', STR_PAD_LEFT)] = $second;
+                        $seconds[$second] = str_pad($second, 2, '0', STR_PAD_LEFT);
                     }
 
                     $secondOptions['choices'] = $seconds;
-                    $secondOptions['choices_as_values'] = true;
                     $secondOptions['placeholder'] = $options['placeholder']['second'];
                 }
 

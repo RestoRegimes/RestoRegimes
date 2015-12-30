@@ -6,7 +6,7 @@ parameters:
     database_user: root
     database_password: null
     mailer_transport: gmail
-    mailer_host: ~
+    mailer_host: null
     mailer_user: noreply.resto@gmail.com
     mailer_password: restoregime
     secret: 2b34770401aea22ced93ce7602c3a5cbe69e18fe
