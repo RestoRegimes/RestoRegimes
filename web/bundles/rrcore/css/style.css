@@ -24,7 +24,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 
 .mdl-layout__header{
-    background-color: transparent;
+    background-color: rgba(250,250,250,0.6);
 }
 
 .upperIcon{

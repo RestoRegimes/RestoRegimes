@@ -8,7 +8,6 @@
     {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
 {% endblock %}
 {% block content %}
-
 {% endblock %}
 {% block footer %}
     <footer class="mdl-mini-footer">
@@ -28,8 +27,7 @@
     <script src="{{ asset('bundles/rrcore/js/jquery.particleground.min.js') }}"></script>
 <script>
     $(document).ready(function(){
-        var header = $('.mdl-layout__content');
-
+        var header = $('body');
         var backgrounds = new Array(
                 'url("{{ asset('bundles/rrcore/images/mapBgParis.png') }}") center / cover'
                 ,'url("{{ asset('bundles/rrcore/images/ASSIETTE%202.jpg') }}") center / cover'
@@ -38,15 +36,41 @@
                 , 'url("{{ asset('bundles/rrcore/images/assiette%208.jpg') }}") center / cover'
         );
 
-        var current = Math.floor(Math.random() * 4);;
-        header.css('background', backgrounds[current]);
+        $(document).ready(function(){
+            var current = Math.floor((Math.random() * backgrounds.length));;
+            var tick=true;
+            var colorP ='#00E676';
+            switch(current){
+                case 0:
+                    colorP ='#00aa00';
+                    break;
+                case 1:
+                    colorP ='#99ff55';
+                    break;
+                case 2:
+                    colorP ='#3771c8';
+                    break;
+                case 3:
+                    colorP ='#ffe500';
+                    break;
+                case 4:
+                    colorP ='#d40000';
+                    break;
+            }
+            header.css('background', backgrounds[current]);
 
-        $('.particles').particleground({
-            dotColor: '#00E676',
-            lineColor: '#898989',
-            particleRadius: 10,
-            lineWidth: 2
-        });
+            $('.particles').particleground({
+                dotColor: colorP,
+                lineColor: '#898989',
+                particleRadius: 10,
+                lineWidth: 2
+            });
+
+        })
+
+
+
+
     });
 </script>
 {% endblock %}
