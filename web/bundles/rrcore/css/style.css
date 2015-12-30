@@ -32,17 +32,13 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 .mdl-layout-title:hover .lowerIcon{
 
-    fill: rgb(0,230,118);
+    fill: #3771c8;
 }
-
 .lowerIcon{
-    fill: #000000;
+    fill: rgb(0,230,118);
     transition: fill 1s;
 }
 
-.mdl-layout__drawer.is-visible:hover #RRLogoText{
-visibility: hidden;
-}
 .lbl {
     position: relative;
     display: block;
@@ -241,5 +237,17 @@ visibility: hidden;
 .image-resto{
     max-height: 300px;
     max-width:100%;
+}
+
+.particles {
+    position: fixed;
+    top:20%;
+    right:-250px;
+    width: 100%;
+    height:110%;
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Safari */
+    transform: rotate(-45deg);
+    z-index: 1;
 }
 

@@ -7,3 +7,45 @@
 {% block rrplatform_search %}
     {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
 {% endblock %}
+{% block content %}
+
+{% endblock %}
+{% block footer %}
+    <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo">Title</div>
+            <ul class="mdl-mini-footer__link-list">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="particles"></div>
+{% endblock %}
+
+{% block javascript %}
+
+    <script src="{{ asset('bundles/rrcore/js/jquery.particleground.min.js') }}"></script>
+<script>
+    $(document).ready(function(){
+        var header = $('.mdl-layout__content');
+
+        var backgrounds = new Array(
+                'url("{{ asset('bundles/rrcore/images/ASSIETTE%202.jpg') }}") center / cover'
+                , 'url("{{ asset('bundles/rrcore/images/ASSIETTE%204.jpg') }}") center / cover'
+                , 'url("{{ asset('bundles/rrcore/images/assiette%206.jpg') }}") center / cover'
+                , 'url("{{ asset('bundles/rrcore/images/assiette%208.jpg') }}") center / cover'
+        );
+
+        var current = Math.floor(Math.random() * 3);;
+        header.css('background', backgrounds[current]);
+
+        $('.particles').particleground({
+            dotColor: '#00E676',
+            lineColor: '#898989',
+            particleRadius: 10,
+            lineWidth: 2
+        });
+    });
+</script>
+{% endblock %}
