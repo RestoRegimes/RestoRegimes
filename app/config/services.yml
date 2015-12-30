@@ -6,4 +6,8 @@ parameters:
 services:
   core_helper:
     class:  %core_helper.class%
-
+  rruserbundle.registration.form.type:
+          class: RR\UserBundle\Form\RegistrationType
+          arguments: [%fos_user.model.user.class%]
+          tags:
+              - { name: form.type, alias: rruserbundle_user_registration }

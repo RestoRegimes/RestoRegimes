@@ -35,8 +35,7 @@
         "symfony/form": "~2.1",
         "willdurand/faker-bundle": "^1.2",
         "vich/uploader-bundle": "^0.14.0",
-        "beberlei/DoctrineExtensions": "^1.0",
-        "gregwar/captcha-bundle": "^2.0"
+        "beberlei/DoctrineExtensions": "^1.0"
 
     },
     "require-dev": {

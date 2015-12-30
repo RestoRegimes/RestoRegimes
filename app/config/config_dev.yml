@@ -51,4 +51,4 @@ assetic:
 bazinga_faker:
     orm: doctrine
 
-gregwar_captcha: ~
+
