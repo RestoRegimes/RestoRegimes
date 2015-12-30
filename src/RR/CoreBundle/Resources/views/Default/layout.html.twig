@@ -31,13 +31,14 @@
         var header = $('.mdl-layout__content');
 
         var backgrounds = new Array(
-                'url("{{ asset('bundles/rrcore/images/ASSIETTE%202.jpg') }}") center / cover'
+                'url("{{ asset('bundles/rrcore/images/mapBgParis.png') }}") center / cover'
+                ,'url("{{ asset('bundles/rrcore/images/ASSIETTE%202.jpg') }}") center / cover'
                 , 'url("{{ asset('bundles/rrcore/images/ASSIETTE%204.jpg') }}") center / cover'
                 , 'url("{{ asset('bundles/rrcore/images/assiette%206.jpg') }}") center / cover'
                 , 'url("{{ asset('bundles/rrcore/images/assiette%208.jpg') }}") center / cover'
         );
 
-        var current = Math.floor(Math.random() * 3);;
+        var current = Math.floor(Math.random() * 4);;
         header.css('background', backgrounds[current]);
 
         $('.particles').particleground({
