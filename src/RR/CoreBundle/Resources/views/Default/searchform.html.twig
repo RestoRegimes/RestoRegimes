@@ -1,8 +1,0 @@
-{{ form_start(formAccueil, {'action': path('rr_core_search') }) }}
-{{ form_errors(formAccueil) }}
-{{  form_errors(formAccueil.recherche) }}
-{{ form_widget(formAccueil.recherche, {'attr': {'class': 'mdl-textfield__input'},'id':'fixed-header-drawer-exp','placeholder':'Adresse'}) }}
-{{ form_label(formAccueil.recherche, "") }}
-
-{# Fermeture de la balise <form> du formulaire HTML #}
-{{ form_end(formAccueil) }}

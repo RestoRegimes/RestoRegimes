@@ -13,14 +13,6 @@ class DefaultController extends Controller
     {
         return $this->render('RRCoreBundle:Default:layout.html.twig',array());
     }
-    public function searchFormAction()
-    {
-        $form = $this->createFormBuilder(array())
-            ->add('recherche', 'text',array('required'=>false,'label'=>" "))
-            ->getForm();
-
-        return $this->render('RRCoreBundle:Default:searchform.html.twig',array('formAccueil'=>$form->createView()));
-    }
     public function searchFormFullAction()
     {
         $form = $this->createFormBuilder(array())
