@@ -111,18 +111,27 @@
                                 </div>
                             </div>
                             <div class="mdl-card__menu">
+
+                                {% if app.user is not null and app.user.roles[0]=='ROLE_USER' %}
+
+                                        <button id="fav_button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                                            <i id="fav_icon" class="material-icons">favorite_border</i>
+                                        </button>
+
+                                {% endif %}
+                                </button>
+                                {% if app.user is not null and app.user==restaurant.proprietaire %}
                                 <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button-resto">
                                     <i class="material-icons">more_vert</i>
                                 </button>
                                 <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button-resto">
-                                    {% if app.user is not null and app.user==restaurant.proprietaire %}
-                                        <a class="mdl-menu__item" href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a>
+                                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}">Suprimer</a>
                                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_edit', {'id': restaurant.id}) }}">Editer</a>
                                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_horaires', {'id': restaurant.id}) }}">Horaires</a>
                                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_images', {'id': restaurant.id}) }}">Images</a>
-                                    {% endif %}
-                                    <a class="mdl-menu__item" href="#">A propos</a>
+
                                 </nav>
+                                {% endif %}
                             </div>
                         </div>
 
@@ -209,9 +218,11 @@
 
 {% block javascript %}
     <script>
-
+        $('#fav_button').bind('click',addFav);
         var page=1;
+        var fav =false;
         var aP = document.getElementsByClassName("pages");
+        var favIcon=document.getElementById("fav_icon");
         showPage(page);
         function showPage(page) {
             $('.image-resto:not(#img-'+page+')').hide();
@@ -238,5 +249,50 @@
             }
             showPage(page);
         }
+
+        var DATA = {request : {{ restaurant.id }} };
+
+        function addFav(){
+            $('#fav_button')
+                    .unbind('click')
+                    .bind('click', removeFav)
+            ;
+            console.log(DATA);
+            favIcon.innerHTML="favorite";
+            $.ajax({
+                type: "POST",
+                url: "{{ path('rr_core_favori_add') }}",
+                data: DATA,
+                success: function(){
+                    alert('success add');
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    alert('Error : ' + errorThrown);
+                }
+            });
+        }
+
+        function removeFav(){
+            $('#fav_button')
+                    .unbind('click')
+                    .bind('click', addFav)
+            ;
+            favIcon.innerHTML="favorite_border";
+            $.ajax({
+                type: "POST",
+                url: "{{ path('rr_core_favori_remove') }}",
+                data: data,
+                success: function(){
+                    alert('success remove');
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    alert('Error : ' + errorThrown);
+                }
+            });
+        }
+
     </script>
 {% endblock %}

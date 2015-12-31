@@ -6,4 +6,11 @@ rr_core_search:
     path:     /recherche
     defaults: { _controller: RRCoreBundle:Default:recherche}
 
+rr_core_favori_add:
+    path:     /favori/add
+    defaults: { _controller: RRCoreBundle:Default:addfavori}
 
+
+rr_core_favori_remove:
+    path:     /favori/remove
+    defaults: { _controller: RRCoreBundle:Default:removefavori}

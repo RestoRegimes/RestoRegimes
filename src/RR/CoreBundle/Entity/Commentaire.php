@@ -18,12 +18,12 @@ class Commentaire
     protected $id;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\User")
+     * @ORM\ManytoOne(targetEntity="RR\UserBundle\Entity\User",cascade={"persist"})
      */
     protected $user;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant")
+     * @ORM\ManytoOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant",cascade={"persist"})
      */
     protected $resto;
 

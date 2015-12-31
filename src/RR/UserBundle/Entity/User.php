@@ -40,6 +40,13 @@ class User extends BaseUser
      */
     private $profileImage;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="RR\RestaurantBundle\Entity\Restaurant",cascade={"persist"})
+     */
+    private $favoris;
+
+
+
     public function __construct()
     {
         parent::__construct();
@@ -116,5 +123,39 @@ class User extends BaseUser
     public function getProfileImage()
     {
         return $this->profileImage;
+    }
+
+    /**
+     * Add favori
+     *
+     * @param \RR\RestaurantBundle\Entity\Restaurant $favori
+     *
+     * @return User
+     */
+    public function addFavori(\RR\RestaurantBundle\Entity\Restaurant $favori)
+    {
+        $this->favoris[] = $favori;
+    
+        return $this;
+    }
+
+    /**
+     * Remove favori
+     *
+     * @param \RR\RestaurantBundle\Entity\Restaurant $favori
+     */
+    public function removeFavori(\RR\RestaurantBundle\Entity\Restaurant $favori)
+    {
+        $this->favoris->removeElement($favori);
+    }
+
+    /**
+     * Get favoris
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFavoris()
+    {
+        return $this->favoris;
     }
 }

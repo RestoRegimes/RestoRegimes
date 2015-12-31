@@ -5,6 +5,7 @@ namespace RR\CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
+use Symfony\Component\HttpFoundation\Response;
 use Ivory\GoogleMap\Base\Coordinate;
 
 class DefaultController extends Controller
@@ -134,5 +135,42 @@ class DefaultController extends Controller
         ));
     }
 
+    public function addfavoriAction(Request $request){
+        // is it an Ajax request?
+        if($request->isXmlHttpRequest()) {
+            $id_resto = $request->request->get('request');
+            $user = $this->getUser();
+            if ($user->getRoles()[0] == "ROLE_USER") {
+                $em = $this->getDoctrine()->getManager();
+                $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id_resto);
+                if (!$user->getFavoris()->contains($restaurant)) {
+                    $user->addFavori($restaurant);
 
+                    $em->persist($user);
+                    $em->flush();
+                }
+            }
+
+            return new Response('Success add!');
+        }else return new Response('Error!');
+    }
+    public function removefavoriAction(Request $request){
+        // is it an Ajax request?
+        if($request->isXmlHttpRequest()) {
+            $id_resto = $request->request->get('request');
+            $user = $this->getUser();
+            if ($user->getRoles()[0] == "ROLE_USER") {
+                $em = $this->getDoctrine()->getManager();
+                $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id_resto);
+                if ($user->getFavoris()->contains($restaurant)) {
+                    $user->removeFavori($restaurant);
+                    $em->persist($user);
+                    $em->flush();
+                }
+            }
+
+            return new Response('Success remove!');
+        }else return new Response('Error!');
+
+    }
 }
