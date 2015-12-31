@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
 use Symfony\Component\HttpFoundation\Response;
 use Ivory\GoogleMap\Base\Coordinate;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -135,10 +136,10 @@ class DefaultController extends Controller
         ));
     }
 
-    public function addfavoriAction(Request $request){
+    public function addfavoriAction(Request $request,$id_resto){
         // is it an Ajax request?
+        $ret=new JsonResponse();
         if($request->isXmlHttpRequest()) {
-            $id_resto = $request->request->get('request');
             $user = $this->getUser();
             if ($user->getRoles()[0] == "ROLE_USER") {
                 $em = $this->getDoctrine()->getManager();
@@ -148,16 +149,15 @@ class DefaultController extends Controller
 
                     $em->persist($user);
                     $em->flush();
+                    return $ret->setData('success');
                 }
             }
-
-            return new Response('Success add!');
-        }else return new Response('Error!');
+        }else return $ret->setData('Error');
     }
-    public function removefavoriAction(Request $request){
+    public function removefavoriAction(Request $request,$id_resto){
         // is it an Ajax request?
+        $ret=new JsonResponse();
         if($request->isXmlHttpRequest()) {
-            $id_resto = $request->request->get('request');
             $user = $this->getUser();
             if ($user->getRoles()[0] == "ROLE_USER") {
                 $em = $this->getDoctrine()->getManager();
@@ -166,11 +166,10 @@ class DefaultController extends Controller
                     $user->removeFavori($restaurant);
                     $em->persist($user);
                     $em->flush();
+                    return $ret->setData('success');
                 }
             }
-
-            return new Response('Success remove!');
-        }else return new Response('Error!');
+        }else return $ret->setData('Error');
 
     }
 }

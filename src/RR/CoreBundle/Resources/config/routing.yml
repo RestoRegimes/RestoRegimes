@@ -7,10 +7,9 @@ rr_core_search:
     defaults: { _controller: RRCoreBundle:Default:recherche}
 
 rr_core_favori_add:
-    path:     /favori/add
+    path:     /favori/add/{id_resto}
     defaults: { _controller: RRCoreBundle:Default:addfavori}
 
-
 rr_core_favori_remove:
-    path:     /favori/remove
+    path:     /favori/remove/{id_resto}
     defaults: { _controller: RRCoreBundle:Default:removefavori}

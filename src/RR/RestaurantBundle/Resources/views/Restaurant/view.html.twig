@@ -113,10 +113,16 @@
                             <div class="mdl-card__menu">
 
                                 {% if app.user is not null and app.user.roles[0]=='ROLE_USER' %}
-
-                                        <button id="fav_button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                                    {% if restaurant in app.user.favoris %}
+                                        <button id="fav_button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored yes">
+                                            <i id="fav_icon" class="material-icons">favorite</i>
+                                        </button>
+                                    {% else %}
+                                        <button id="fav_button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored no">
                                             <i id="fav_icon" class="material-icons">favorite_border</i>
                                         </button>
+                                    {% endif %}
+
 
                                 {% endif %}
                                 </button>
@@ -218,81 +224,88 @@
 
 {% block javascript %}
     <script>
-        $('#fav_button').bind('click',addFav);
-        var page=1;
-        var fav =false;
-        var aP = document.getElementsByClassName("pages");
-        var favIcon=document.getElementById("fav_icon");
-        showPage(page);
-        function showPage(page) {
-            $('.image-resto:not(#img-'+page+')').hide();
-            $('.image-resto#img-'+page).show();
-            for( var i=0;i<$('.image-resto').length;i++){
-                aP[i].style.backgroundColor= 'rgb(220,220,220)';
-            }
-            aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
-        }
-        function prevPage() {
-            if (page == 1) {
-                page = $('.image-resto').length;
-            } else {
-                page--;
-            }
+        $(document).ready(function(){
+
+            $('#fav_button.yes').bind('click',removeFav);
+            $('#fav_button.no').bind('click',addFav);
+            var page=1;
+            var fav =false;
+            var aP = document.getElementsByClassName("pages");
+            var favIcon=document.getElementById("fav_icon");
             showPage(page);
-        }
-
-        function nextPage() {
-            if (page == $('.image-resto').length) {
-                page = 1;
-            } else {
-                page++;
+            function showPage(page) {
+                $('.image-resto:not(#img-'+page+')').hide();
+                $('.image-resto#img-'+page).show();
+                for( var i=0;i<$('.image-resto').length;i++){
+                    aP[i].style.backgroundColor= 'rgb(220,220,220)';
+                }
+                aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
             }
-            showPage(page);
-        }
-
-        var DATA = {request : {{ restaurant.id }} };
-
-        function addFav(){
-            $('#fav_button')
-                    .unbind('click')
-                    .bind('click', removeFav)
-            ;
-            console.log(DATA);
-            favIcon.innerHTML="favorite";
-            $.ajax({
-                type: "POST",
-                url: "{{ path('rr_core_favori_add') }}",
-                data: DATA,
-                success: function(){
-                    alert('success add');
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown)
-                {
-                    alert('Error : ' + errorThrown);
+            function prevPage() {
+                if (page == 1) {
+                    page = $('.image-resto').length;
+                } else {
+                    page--;
                 }
-            });
-        }
+                showPage(page);
+            }
 
-        function removeFav(){
-            $('#fav_button')
-                    .unbind('click')
-                    .bind('click', addFav)
-            ;
-            favIcon.innerHTML="favorite_border";
-            $.ajax({
-                type: "POST",
-                url: "{{ path('rr_core_favori_remove') }}",
-                data: data,
-                success: function(){
-                    alert('success remove');
-
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown)
-                {
-                    alert('Error : ' + errorThrown);
+            function nextPage() {
+                if (page == $('.image-resto').length) {
+                    page = 1;
+                } else {
+                    page++;
                 }
-            });
-        }
+                showPage(page);
+            }
 
+
+            function addFav(){
+                $.ajax({
+                    type: "POST",
+                    url: "{{ url('rr_core_favori_add', {'id_resto': restaurant.id}) }}",
+                    beforeSend: function(){
+                        $('#fav_button')
+                                .unbind('click');
+                        favIcon.innerHTML="favorite";
+                    },
+                    success: function(){
+                        $('#fav_button')
+                                .bind('click', removeFav);
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown)
+                    {
+                        $('#fav_button')
+                                .bind('click', addFav);
+                        favIcon.innerHTML="favorite_border";
+                        alert('Error : ' + errorThrown);
+                    }
+                });
+            }
+
+            function removeFav(){
+                $.ajax({
+                    type: "POST",
+                    url: "{{ url('rr_core_favori_remove', {'id_resto': restaurant.id}) }}",
+                    beforeSend: function(){
+                        $('#fav_button')
+                                .unbind('click');
+                        favIcon.innerHTML="favorite_border";
+                    },
+                    success: function(){
+                        $('#fav_button')
+                                .bind('click', addFav);
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown)
+                    {
+                        $('#fav_button')
+                                .bind('click', removeFav)
+                        ;
+                        favIcon.innerHTML="favorite";
+                        alert('Error : ' + errorThrown);
+                    }
+                });
+            }
+        });
     </script>
 {% endblock %}
