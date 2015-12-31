@@ -1,46 +1,39 @@
 rr_restaurant_home:
-    path:    /{page}
+    path:    /admin/{page}
     defaults: { _controller: RRRestaurantBundle:Restaurant:index, page: 1 }
     requirements:
         page: \d*
 
 rr_restaurant_view:
-    path:    /restaurant/{id}
+    path:    /{id}
     defaults: { _controller: RRRestaurantBundle:Restaurant:view }
     requirements:
             id: \d+
 
-rr_restaurant_view_slug:
-    path:    /restaurant/{year}/{slug}.{_format}
-    defaults: { _controller: RRRestaurantBundle:Restaurant:viewSlug, format: html}
-    requirements:
-        year:    \d{4}
-        _format:  html|xml
-
 rr_restaurant_add:
-    path:    /add
+    path:    /pro/add
     defaults: { _controller: RRRestaurantBundle:Restaurant:add }
 
 rr_restaurant_horaires:
-    path:    /horaires/{id}
+    path:    /pro/horaires/{id}
     defaults: { _controller: RRRestaurantBundle:Restaurant:horaires }
     requirements:
         id: \d+
 
 rr_restaurant_images:
-    path:    /images/{id}
+    path:    /pro/images/{id}
     defaults: { _controller: RRRestaurantBundle:Restaurant:images }
     requirements:
             id: \d+
 
 rr_restaurant_edit:
-    path:    /edit/{id}
+    path:    /pro/edit/{id}
     defaults: { _controller: RRRestaurantBundle:Restaurant:edit }
     requirements:
         id: \d+
 
 rr_restaurant_delete:
-    path:    /delete/{id}
+    path:    /pro/delete/{id}
     defaults: { _controller: RRRestaurantBundle:Restaurant:delete }
     requirements:
         id: \d+
