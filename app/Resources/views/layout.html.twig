@@ -67,6 +67,7 @@
 
         <span class="mdl-layout-title">{% include(":svg:iconRRShadow.svg.twig") %}</span>
         {% block rrplatform_search %}
+            {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
         {% endblock %}
     </div>
 
@@ -81,6 +82,7 @@
                         {% endblock %}
                     </div>
                 </div>
+                {% block fos_user %}
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--6-col-phone  mdl-cell--4-col-tablet">
 
@@ -89,8 +91,8 @@
                     <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--4-col-tablet">
                         {% block map %}
                         {% endblock %}
-                        {% block fos_user %}
-                        {% endblock fos_user %}
+
+
                     </div>
                     <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet">
                         {% block body %}
@@ -98,6 +100,7 @@
                     </div>
                     {% endblock %}
                 </div>
+                {% endblock fos_user %}
             {% endblock %}
         </div>
     </main>

@@ -1,5 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
+<div class="mdl-grid">
+    <div class="mdl-cell--6-col">
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
         {{ form_errors(form.email) }}
         {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','placeholder':'Email'}}) }}
@@ -7,6 +8,32 @@
         {{ form_errors(form.username) }}
         {{ form_widget(form.username, {'attr': {'class': 'mdl-textfield__input','placeholder':'Nom'}}) }}
         {{ form_label(form.username, " ") }}
+        <br><br>
+        {{ form_errors(form.telephone) }}
+        {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'Telephone' }}) }}
+        {{ form_label(form.telephone, " ") }}
+        <br><br>
+        {% for passwordField in form.plainPassword %}
+
+            {{ form_label(passwordField," ") }}
+            {% if loop.first %}
+                {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Mot de passe'} }) }}
+            {% else %}
+                {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Confirmer mot de passe'} }) }}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell--6-col">
+        {{ form_errors(form.profileImage.imageFile.file) }}
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+            <input class="mdl-textfield__input" placeholder="Image de profil" type="text" id="uploadFile"  readonly/>
+            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                <i class="material-icons">attach_file</i>{{ form_widget(form.profileImage.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+            </div>
+        </div>
+        {{ form_label(form.profileImage.imageFile.file, " ") }}
         <br><br>
         {{ form_errors(form.address.zipcode) }}
         {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Code postal'}}) }}
@@ -19,43 +46,24 @@
         {{ form_errors(form.address.street) }}
         {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Rue' }}) }}
         {{ form_label(form.address.street, " ") }}
-        <br><br>
-        {{ form_errors(form.telephone) }}
-                {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'Telephone' }}) }}
-                {{ form_label(form.telephone, " ") }}
-        <br><br>
-        {{ form_errors(form.profileImage.imageFile.file) }}
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-            <input class="mdl-textfield__input" placeholder="Image de profil" type="text" id="uploadFile"  readonly/>
-            <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                <i class="material-icons">attach_file</i>{{ form_widget(form.profileImage.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
-            </div>
-        </div>
-        {{ form_label(form.profileImage.imageFile.file, " ") }}
-        <br><br>
-        {% for passwordField in form.plainPassword %}
 
-                {{ form_label(passwordField," ") }}
-            {% if loop.first %}
-                {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Mot de passe'} }) }}
-            {% else %}
-                {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Confirmer mot de passe'} }) }}
-            {% endif %}
-
-        {% endfor %}
-
+    </div>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell--8-col">
         <div class="g-recaptcha" data-sitekey="6LdvIxQTAAAAAIyKJZeBK1wIeO71I8YxeVNI_H78"></div>
 
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell--2-col mdl-cell--middle">
         <div>
-            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
                 <i class="material-icons">check</i>
             </button>
         </div>
-
-
-        {{ form_end(form) }}
-
-
+    </div>
+</div>
+{{ form_end(form) }}
 <script>
     var zip = $("#fos_user_registration_form_address_zipcode.address");
     var city = $("#fos_user_registration_form_address_city.address");
