@@ -8,17 +8,23 @@
 
 namespace RR\CoreBundle\Services;
 
-
 use Ivory\GoogleMap\Overlays\MarkerImage;
 use RR\RestaurantBundle\Entity\RegimeRestaurant;
 use Ivory\GoogleMapBundle\Model\Map;
 use Ivory\GoogleMap\Overlays\Animation;
 use Ivory\GoogleMap\Overlays\Marker;
+use Ivory\GoogleMap\Overlays\InfoWindow;
 use Ivory\GoogleMap\Base\Coordinate;
 use \Ivory\GoogleMap\Base\Bound;
 
 class CoreHelper
 {
+    protected $router;
+
+    public function __construct($router) {
+
+        $this->router=$router;
+    }
 
     public function getMapRestaurant($map,$listRestaurants=NULL,$link,$coord=NULL){
 
@@ -75,7 +81,28 @@ class CoreHelper
         $markerImageMultiple->setScaledSize(27, 40, "px", "px");
 
         foreach($listRestaurants as $restaurant) {
+            $infoWindow = new InfoWindow();
+            $infoWindow->setPrefixJavascriptVariable('info_window_');
+            $infoWindow->setPosition(0, 0, true);
+            $infoWindow->setPixelOffset(1.1, 2.1, 'px', 'pt');
+            $url=$this->router->generate('rr_restaurant_view',array('id'=>$restaurant->getId()));
+            $infoWindow->setContent('<p><h5>'.$restaurant->getNom().'</h5>
+                                        <br>'.$restaurant->getTelephone().'
+                                        <br>'.$restaurant->getAddress()->getStreet().'
+                                        <br>'.$restaurant->getAddress()->getCity().'
+                                        <br>'.$restaurant->getAddress()->getZipCode().'<br><br>
+                                        <a class="mdl-button mdl-button--raised mdl-button--colored" href="'.$url.'">Infos</a>
+                                     </p>');
+            $infoWindow->setOpen(false);
+            $infoWindow->setAutoOpen(true);
+            $infoWindow->setOpenEvent('click');
+            $infoWindow->setAutoClose(true);
+            $infoWindow->setOptions(array(
+                'disableAutoPan' => false,
+                'zIndex'         => 10,
+            ));
             $marker = new Marker();
+            $marker->setInfoWindow($infoWindow);
 
 // Configure your marker options
             $coordinate = new Coordinate($restaurant->getAddress()->getLatitude(), $restaurant->getAddress()->getLongitude());
@@ -86,7 +113,7 @@ class CoreHelper
             $marker->setOption('clickable', false);
             $marker->setOption('flat', true);
             $marker->setOptions(array(
-                'clickable' => false,
+                'clickable' => true,
                 'flat' => true,
             ));
             $regimes = $restaurant->getRegimes();

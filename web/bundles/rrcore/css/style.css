@@ -298,8 +298,15 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background: #00aa00;
 }
 
-
+.search-button{
+    height: 56px;
+    width: 56px;
+}
 .card-accueil{
     background: rgba(250,250,250,0.6);
     margin-top: 5%;
+}
+
+.search-field{
+    margin-top: 40px;
 }

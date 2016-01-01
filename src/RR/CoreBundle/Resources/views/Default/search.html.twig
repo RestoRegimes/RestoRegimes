@@ -15,7 +15,7 @@
 
         {{ form_start(form, {'action': path('rr_core_search') }) }}
         {{ form_errors(form) }}
-        <div id="adresse">
+        <div id="adresse" class="search-field">
             {{ form_errors(form.recherche) }}
             {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}
             {{ form_label(form.recherche, " ") }}</div>

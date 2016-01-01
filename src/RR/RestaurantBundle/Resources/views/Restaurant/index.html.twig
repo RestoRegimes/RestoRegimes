@@ -65,18 +65,21 @@
         {% endfor %}
                 </div>
     </div>
-
+    {% if numPage>1 %}
     <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="prevPage()">
         <
     </button>
-    {% for i in 1..numPage %}
-        <button class="pages mdl-button mdl-button--fab mdl-button--mini-fab" onclick="showPage({{ i }})">
-            {{ i }}
-        </button>
-    {% endfor %}
+        {% if numPage>2 %}
+            {% for i in 1..numPage %}
+                <button class="pages mdl-button mdl-button--fab mdl-button--mini-fab" onclick="showPage({{ i }})">
+                    {{ i }}
+                </button>
+            {% endfor %}
+        {% endif %}
     <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="nextPage()">
         >
     </button>
+    {% endif %}
 
 
 
