@@ -43,9 +43,9 @@ var slideshow = (function(window, undefined) {
    */
   var slides = [
     document.location.origin+'/RestoRegimes/web/bundles/rrcore/images/Bg/Bg1.png',
-    document.location.origin+'/RestoRegimes/web/bundles/rrcore/images/Bg/Bg2.jpg',
+    document.location.origin+'/RestoRegimes/web/bundles/rrcore/images/Bg/Bg2.png',
     document.location.origin+'/RestoRegimes/web/bundles/rrcore/images/Bg/Bg3.png',
-    document.location.origin+'/RestoRegimes/web/bundles/rrcore/images/Bg/Bg4.jpg'
+    document.location.origin+'/RestoRegimes/web/bundles/rrcore/images/Bg/Bg4.png'
   ];
 
   /**
