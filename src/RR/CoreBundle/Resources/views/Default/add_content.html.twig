@@ -1,0 +1,92 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/add.html.twig #}
+
+{% extends "::layout.html.twig" %}
+    {% block fos_user %}
+        <div class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--3-col"></div>
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-card mdl-shadow--2dp" style="min-width: 100%;">
+                    <div class="mdl-card__title">
+
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+
+                        <div class="mdl-grid">
+                            <div class="mdl-cell--6-col">
+                                {{ form_start(form, {'method': 'post', 'action': path('rr_core_add_content')}) }}
+                                {{ form_errors(form.title) }}
+                                {{ form_widget(form.title, {'attr': {'class': 'mdl-textfield__input','placeholder':'titre'}}) }}
+                                {{ form_label(form.title, " ") }}
+                                {{ form_errors(form.subtitle) }}
+                                {{ form_widget(form.subtitle, {'attr': {'class': 'mdl-textfield__input','placeholder':'sous titre'}}) }}
+                                {{ form_label(form.subtitle, " ") }}
+                                {{ form_errors(form.type_content) }}
+                                {{ form_widget(form.type_content, {'attr': {'class': 'mdl-textfield__input','placeholder':'type de contenu'}}) }}
+                                {{ form_label(form.type_content, " ") }}
+                                {{ form_errors(form.content1) }}
+                                {{ form_widget(form.content1, {'attr': {'class': 'mdl-textfield__input mdl-textfield--expandable','placeholder':'contenu1'}}) }}
+                                {{ form_label(form.content1, " ") }}
+                                {{ form_errors(form.content2) }}
+                                {{ form_widget(form.content2, {'attr': {'class': 'mdl-textfield__input mdl-textfield--expandable','placeholder':'contenu2'}}) }}
+                                {{ form_label(form.content2, " ") }}
+                                {{ form_errors(form.content3) }}
+                                {{ form_widget(form.content3, {'attr': {'class': 'mdl-textfield__input mdl-textfield--expandable','placeholder':'contenu3'}}) }}
+                                {{ form_label(form.content3, " ") }}
+                                {{ form_errors(form.footer) }}
+                                {{ form_widget(form.footer, {'attr': {'class': 'mdl-textfield__input','placeholder':'footer'}}) }}
+                                {{ form_label(form.footer, " ") }}
+
+                                {{ form_errors(form.image.imageFile.file) }}
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input" placeholder="Image" type="text" id="uploadFile"  readonly/>
+                                    <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>{{ form_widget(form.image.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-cell--6-col">
+
+
+
+                            </div>
+                        </div>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell--8-col">
+
+                                {{ form_errors(form.enabled) }}
+                                <label class="mdl-checkbox mdl-js-checkbox " for="rr_corebundle_sitecontent_enabled">
+                                    {{ form_widget(form.enabled, {'attr': {'class': 'mdl-checkbox__input'}}) }}
+                                    <span class="mdl-checkbox__label"><b id="enabled">Mettre en ligne</b></span>
+
+                                </label>
+
+                            </div>
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-cell--2-col mdl-cell--middle">
+                                <div>
+                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+                                        <i class="material-icons">check</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+{% block javascript %}
+    <script>
+
+        document.getElementById("rr_corebundle_sitecontent_image_imageFile_file").onchange = function () {
+            document.getElementById("uploadFile").value = this.files[0].name;
+        };
+
+    </script>
+{% endblock %}
+

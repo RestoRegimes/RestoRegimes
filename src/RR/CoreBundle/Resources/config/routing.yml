@@ -13,3 +13,15 @@ rr_core_favori_add:
 rr_core_favori_remove:
     path:     /favori/remove/{id_resto}
     defaults: { _controller: RRCoreBundle:Default:removefavori}
+
+rr_core_faq:
+    path: /faq
+    defaults: { _controller:RRCoreBundle:Default:faq}
+
+rr_core_admin:
+    path: /admin
+    defaults: { _controller: RRCoreBundle:Default:adminindex}
+
+rr_core_add_content:
+    path:   /admin/add/content
+    defaults: { _controller: RRCoreBundle:Default:addcontent}

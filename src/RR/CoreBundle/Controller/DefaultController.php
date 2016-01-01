@@ -2,6 +2,8 @@
 
 namespace RR\CoreBundle\Controller;
 
+use RR\CoreBundle\Entity\SiteContent;
+use RR\CoreBundle\Form\SitecontentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
@@ -14,6 +16,12 @@ class DefaultController extends Controller
     public function indexAction()
     {
         return $this->render('RRCoreBundle:Default:layout.html.twig',array());
+    }
+    public function faqAction(){
+        $em = $this->getDoctrine()->getManager();
+        $faq = $em->getRepository('RRCoreBundle:SiteContent')->getTypeContent('FAQ');
+
+        return $this->render('RRCoreBundle:Default:faq.html.twig',array('faq'=>$faq));
     }
     public function searchFormFullAction()
     {
@@ -171,5 +179,42 @@ class DefaultController extends Controller
             }
         }else return $ret->setData('Error');
 
+    }
+
+    public function adminindexAction(){
+        return $this->render('RRCoreBundle:Default:admin_index.html.twig',array());
+    }
+
+    public function addcontentAction(Request $request){
+        $siteContent = new SiteContent();
+
+        // J'ai raccourci cette partie, car c'est plus rapide à écrire !
+        $form = $this->get('form.factory')->create(new SiteContentType, $siteContent);
+        // On fait le lien Requête <-> Formulaire
+        // À partir de maintenant, la variable $restaurant contient les valeurs entrées dans le formulaire par le visiteur
+        $form->handleRequest($request);
+
+        // On vérifie que les valeurs entrées sont correctes
+        if ($form->isValid() && $this->getUser()->getRoles()[0]=="ROLE_ADMIN") {
+
+
+            // On l'enregistre notre objet $advert dans la base de données, par exemple
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($siteContent);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('notice', 'contenu bien enregistrée.');
+
+            // On redirige vers la page de visualisation de l'annonce nouvellement créée
+            return $this->redirect($this->generateUrl('rr_core_admin'));
+        }
+
+        // À ce stade, le formulaire n'est pas valide car :
+        // - Soit la requête est de type GET, donc le visiteur vient d'arriver sur la page et veut voir le formulaire
+        // - Soit la requête est de type POST, mais le formulaire contient des valeurs invalides, donc on l'affiche de nouveau
+        return $this->render('RRCoreBundle:Default:add_content.html.twig', array(
+            'form' => $form->createView(),
+            'action' => "add"
+        ));
     }
 }
