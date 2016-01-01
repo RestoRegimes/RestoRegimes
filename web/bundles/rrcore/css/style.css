@@ -256,6 +256,10 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     right: 0;
 }
 
+.mdl-mini-footer{
+    z-index: 1;
+}
+
 /* PrismSlider */
 .cache {
     display: none;
