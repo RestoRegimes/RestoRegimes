@@ -1,12 +1,10 @@
 a[href^="http://maps.google.com/maps"]{display:none !important}
 a[href^="https://maps.google.com/maps"]{display:none !important}
 
-.gmnoprint a, .gmnoprint span, .gm-style-cc {
+.gmnoprint a, .gm-style-cc {
     display:none;
 }
-.gmnoprint div {
-    background:none !important;
-}
+
 #jumbotron{position: absolute;left:100px; z-index: 0;}
 #jumbotron1{position:relative;z-index: 1;}
 

@@ -166,8 +166,8 @@ ivory_google_map:
         # Custom map options
         # By default, there is no map options
         map_options:
-            disableDefaultUI: true
-            disableDoubleClickZoom: true
+            disableDefaultUI: false
+            disableDoubleClickZoom: false
 
         # Custom stylesheet options
         # By default, there is no stylesheet options except width & height
