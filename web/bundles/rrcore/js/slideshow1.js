@@ -86,7 +86,7 @@ var slideshow = (function(window, undefined) {
    * Set global duration.
    * @type {Number}
    */
-  var duration = 3000;
+  var duration = 5000;
 
   /**
    * Container for PrismSlider instances.
@@ -94,6 +94,16 @@ var slideshow = (function(window, undefined) {
    */
   var instances = {};
 
+  /**
+   * count for auto play
+   * @type {number}
+   */
+  var count=0;
+  /**
+   * interval beetween autoplay in milliseconds
+   * @type {number}
+   */
+  var auto_play_interval = 10000;
 
   /**
    * Init.
@@ -109,6 +119,16 @@ var slideshow = (function(window, undefined) {
     addNavigation_();
 
     addEvents_();
+
+    setTimeout(function () {
+        window.setInterval(function(){
+          Auto_();
+          for (var i = 0; i < slides.length; i++) {
+            navigation.element.childNodes[i].className = '';
+          }
+          navigation.element.childNodes[count].className = navigation.attrs.active;
+        }, auto_play_interval);
+    }, 5000);
   }
 
 
@@ -221,6 +241,16 @@ var slideshow = (function(window, undefined) {
     });
   }
 
+  /**
+   * auto switch for the slides
+   * @constructor
+   * @private
+   */
+  function Auto_(){
+    if(count==slides.length-1)count=0;
+    else count++;
+    slideAllTo_(count);
+  };
 
   /**
    * Call slideTo method of each instance.
