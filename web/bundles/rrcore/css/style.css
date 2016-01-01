@@ -239,18 +239,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     max-width:100%;
 }
 
-.particles {
-    position: fixed;
-    top:20%;
-    right:-250px;
-    width: 100%;
-    height:110%;
-    -ms-transform: rotate(-45deg); /* IE 9 */
-    -webkit-transform: rotate(-45deg); /* Safari */
-    transform: rotate(-45deg);
-    z-index: 1;
-}
-
 .mdl-button--file input {
     cursor: pointer;
     height: 100%;
@@ -270,3 +258,48 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     right: 0;
 }
 
+/* PrismSlider */
+.cache {
+    display: none;
+}
+
+.prism-slider {
+    width: 100%;
+    position: absolute;
+}
+
+.prism-slider canvas {
+    min-width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+.navigation {
+    width: 100%;
+    list-style: none;
+    z-index: 1;
+}
+
+.navigation li {
+    border: 3px solid #eceff1;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navigation .active {
+    background: #00aa00;
+}
+
+
+.card-accueil{
+    background: rgba(250,250,250,0.6);
+    margin-top: 5%;
+}

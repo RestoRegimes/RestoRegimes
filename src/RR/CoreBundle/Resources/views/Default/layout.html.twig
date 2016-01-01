@@ -6,6 +6,62 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container">
+
+        <div class="content">
+            <!-- Start Demo -->
+
+                <div class="cache">
+                    <!-- masks -->
+                    <img src="{{ asset('bundles/rrcore/images/masks/prism-a.svg') }}">
+                    <img src="{{ asset('bundles/rrcore/images/masks/prism-b.svg') }}">
+                    <img src="{{ asset('bundles/rrcore/images/masks/prism-c.svg') }}">
+                    <!-- photos -->
+                    <img src="{{ asset('bundles/rrcore/images/Bg/Bg1.png') }}">
+                    <img src="{{ asset('bundles/rrcore/images/Bg/Bg2.jpg') }}">
+                    <img src="{{ asset('bundles/rrcore/images/Bg/Bg3.png') }}">
+                    <img src="{{ asset('bundles/rrcore/images/Bg/Bg4.jpg') }}">
+                </div>
+                <div class="prism-slider">
+
+                </div>
+
+
+                <div class="mdl-grid">
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp card-accueil">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Bienvenue</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-grid">
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Mauris sagittis pellentesque lacus eleifend lacinia...
+                            </div>
+                            <div class="mdl-grid">
+                            <a class="mdl-button mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect">
+                                S'incrire
+                            </a>
+                            </div>
+
+                        </div>
+                        <div class="mdl-card__menu">
+                            <ul class="navigation"></ul>
+                        </div>
+                    </div>
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+
+				<!-- End Demo -->
+
+
+        </div>
+    </div>
+        <!-- Related demos -->
+
+
+
 {% endblock %}
 {% block footer %}
     <footer class="mdl-mini-footer">
@@ -17,58 +73,21 @@
             </ul>
         </div>
     </footer>
-    <div class="particles"></div>
 {% endblock %}
 
 {% block javascript %}
 
-    <script src="{{ asset('bundles/rrcore/js/jquery.particleground.min.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        var header = $('body');
-        var backgrounds = new Array(
-                'url("{{ asset('bundles/rrcore/images/mapBgParis.png') }}") center / cover'
-                ,'url("{{ asset('bundles/rrcore/images/ASSIETTE%202.jpg') }}") center / cover'
-                , 'url("{{ asset('bundles/rrcore/images/ASSIETTE%204.jpg') }}") center / cover'
-                , 'url("{{ asset('bundles/rrcore/images/assiette%206.jpg') }}") center / cover'
-                , 'url("{{ asset('bundles/rrcore/images/assiette%208.jpg') }}") center / cover'
-        );
+        <script src="{{ asset('bundles/rrcore/js/utils/rAF.js') }}" ></script>
+		<script src="{{ asset('bundles/rrcore/js/utils/easing.js') }}"></script>
+		<script src="{{ asset('bundles/rrcore/js/PrismSlider.js') }}"></script>
+		<script src="{{ asset('bundles/rrcore/js/slideshow1.js') }}"></script>
 
-        $(document).ready(function(){
-            var current = Math.floor((Math.random() * backgrounds.length));;
-            var tick=true;
-            var colorP ='#00E676';
-            switch(current){
-                case 0:
-                    colorP ='#00aa00';
-                    break;
-                case 1:
-                    colorP ='#99ff55';
-                    break;
-                case 2:
-                    colorP ='#3771c8';
-                    break;
-                case 3:
-                    colorP ='#ffe500';
-                    break;
-                case 4:
-                    colorP ='#d40000';
-                    break;
-            }
-            header.css('background', backgrounds[current]);
+        <script>
 
-            $('.particles').particleground({
-                dotColor: colorP,
-                lineColor: '#898989',
-                particleRadius: 10,
-                lineWidth: 2
-            });
-
-        })
+       console.log("size: "+$('li').size());
 
 
 
+        </script>
 
-    });
-</script>
 {% endblock %}

@@ -2,10 +2,7 @@
 {% extends "RRRestaurantBundle::layout.html.twig" %}
 
 {% block infos %}
-
-                    <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--4-col-tablet">
-
-                        <div class="mdl-card mdl-shadow--2dp" style="width:100%;">
+                        <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet mdl-card mdl-shadow--2dp">
                             <div class="mdl-card__title" style="height:150px;{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
                              background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; {% endif %}">
                                 <h2 class="mdl-card__title-text">{{ restaurant.nom }}</h2>
@@ -13,15 +10,17 @@
                             </div>
                             <div class="mdl-card__supporting-text">
                                 <div class="mdl-grid mdl-grid--no-spacing">
-                                    <div class="mdl-cell mdl-cell--6-col">
+                                    <div class="mdl-cell mdl-cell--7-col">
 
-                                        {{ restaurant.telephone }}<br />
-                                        {{ restaurant.description }}<br />
+                                        <h5>{{ restaurant.telephone }}</h5><br />
+                                        <b>{{ restaurant.description }}</b>
+
+
                                     </div>
-                                    <div class="mdl-cell mdl-cell--6-col">
+                                    <div class="mdl-cell mdl-cell--5-col">
 
                                                 Horaires:<br>
-                                                L:{% if restaurant.lundi is not null %}
+                                                L:<b>{% if restaurant.lundi is not null %}
                                                     {% if restaurant.lundi.ouverture1 is not null and restaurant.lundi.fermeture1 is not null %}
                                                         {{ restaurant.lundi.ouverture1.format("H:i") }}-{{ restaurant.lundi.fermeture1.format("H:i") }}
                                                         {% if restaurant.lundi.ouverture2 is not null and restaurant.lundi.fermeture2 is not null %}
@@ -30,8 +29,8 @@
                                                     {% elseif restaurant.lundi.ouverture1 is not null and restaurant.lundi.fermeture2 is not null %}
                                                         {{ restaurant.lundi.ouverture1.format("H:i") }}-{{ restaurant.lundi.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}<br>
-                                                M:{% if restaurant.mardi is not null %}
+                                                {% else %} fermé {% endif %}</b><br>
+                                                M:<b>{% if restaurant.mardi is not null %}
                                                     {% if restaurant.mardi.ouverture1 is not null and restaurant.mardi.fermeture1 is not null %}
                                                         {{ restaurant.mardi.ouverture1.format("H:i") }}-{{ restaurant.mardi.fermeture1.format("H:i") }}
                                                         {% if restaurant.mardi.ouverture2 is not null and restaurant.mardi.fermeture2 is not null %}
@@ -40,8 +39,8 @@
                                                     {% elseif restaurant.mardi.ouverture1 is not null and restaurant.mardi.fermeture2 is not null %}
                                                         {{ restaurant.mardi.ouverture1.format("H:i") }}-{{ restaurant.mardi.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}<br>
-                                                M:{% if restaurant.mercredi is not null %}
+                                                {% else %} fermé {% endif %}</b><br>
+                                                M:<b>{% if restaurant.mercredi is not null %}
                                                     {% if restaurant.mercredi.ouverture1 is not null and restaurant.mercredi.fermeture1 is not null %}
                                                         {{ restaurant.mercredi.ouverture1.format("H:i") }}-{{ restaurant.mercredi.fermeture1.format("H:i") }}
                                                         {% if restaurant.mercredi.ouverture2 is not null and restaurant.mercredi.fermeture2 is not null %}
@@ -50,8 +49,8 @@
                                                     {% elseif restaurant.mercredi.ouverture1 is not null and restaurant.mercredi.fermeture2 is not null %}
                                                         {{ restaurant.mercredi.ouverture1.format("H:i") }}-{{ restaurant.mercredi.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}<br>
-                                                J:{% if restaurant.jeudi is not null %}
+                                                {% else %} fermé {% endif %}</b><br>
+                                                J:<b>{% if restaurant.jeudi is not null %}
                                                     {% if restaurant.jeudi.ouverture1 is not null and restaurant.jeudi.fermeture1 is not null %}
                                                         {{ restaurant.jeudi.ouverture1.format("H:i") }}-{{ restaurant.jeudi.fermeture1.format("H:i") }}
                                                         {% if restaurant.jeudi.ouverture2 is not null and restaurant.jeudi.fermeture2 is not null %}
@@ -60,8 +59,8 @@
                                                     {% elseif restaurant.jeudi.ouverture1 is not null and restaurant.jeudi.fermeture2 is not null %}
                                                         {{ restaurant.jeudi.ouverture1.format("H:i") }}-{{ restaurant.jeudi.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}<br>
-                                                V:{% if restaurant.vendredi is not null %}
+                                                {% else %} fermé {% endif %}</b><br>
+                                                V:<b>{% if restaurant.vendredi is not null %}
                                                     {% if restaurant.vendredi.ouverture1 is not null and restaurant.vendredi.fermeture1 is not null %}
                                                         {{ restaurant.vendredi.ouverture1.format("H:i") }}-{{ restaurant.vendredi.fermeture1.format("H:i") }}
                                                         {% if restaurant.vendredi.ouverture2 is not null and restaurant.vendredi.fermeture2 is not null %}
@@ -70,8 +69,8 @@
                                                     {% elseif restaurant.vendredi.ouverture1 is not null and restaurant.vendredi.fermeture2 is not null %}
                                                         {{ restaurant.vendredi.ouverture1.format("H:i") }}-{{ restaurant.vendredi.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}<br>
-                                                S:{% if restaurant.samedi is not null %}
+                                                {% else %} fermé {% endif %}</b><br>
+                                                S:<b>{% if restaurant.samedi is not null %}
                                                     {% if restaurant.samedi.ouverture1 is not null and restaurant.samedi.fermeture1 is not null %}
                                                         {{ restaurant.samedi.ouverture1.format("H:i") }}-{{ restaurant.samedi.fermeture1.format("H:i") }}
                                                         {% if restaurant.samedi.ouverture2 is not null and restaurant.samedi.fermeture2 is not null %}
@@ -80,8 +79,8 @@
                                                     {% elseif restaurant.samedi.ouverture1 is not null and restaurant.samedi.fermeture2 is not null %}
                                                         {{ restaurant.samedi.ouverture1.format("H:i") }}-{{ restaurant.samedi.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}<br>
-                                                D:{% if restaurant.dimanche is not null %}
+                                                {% else %} fermé {% endif %}</b><br>
+                                                D:<b>{% if restaurant.dimanche is not null %}
                                                     {% if restaurant.dimanche.ouverture1 is not null and restaurant.dimanche.fermeture1 is not null %}
                                                         {{ restaurant.dimanche.ouverture1.format("H:i") }}-{{ restaurant.dimanche.fermeture1.format("H:i") }}
                                                         {% if restaurant.dimanche.ouverture2 is not null and restaurant.dimanche.fermeture2 is not null %}
@@ -90,7 +89,7 @@
                                                     {% elseif restaurant.dimanche.ouverture1 is not null and restaurant.dimanche.fermeture2 is not null %}
                                                         {{ restaurant.dimanche.ouverture1.format("H:i") }}-{{ restaurant.dimanche.fermeture2.format("H:i") }}
                                                     {% else %} fermé {% endif %}
-                                                {% else %} fermé {% endif %}
+                                                {% else %} fermé {% endif %}</b>
                                     </div>
                                 </div>
                             </div>
@@ -141,8 +140,8 @@
                             </div>
                         </div>
 
-                    </div>
-                    <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet">
+
+                    <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet" >
 
 
                             {% for message in app.session.flashbag.get('notice') %}
@@ -158,8 +157,8 @@
                             <div class="mdl-tabs__panel is-active" id="carte-panel">
                                 {{ google_map(map) }}
                             </div>
-                            <div class="mdl-tabs__panel" id="images-panel">
-
+                            <div  class="mdl-tabs__panel" id="images-panel">
+                                <div class="info">
                                 {% set nbImg=0 %}
                                 {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
                                     {% set nbImg=nbImg+1 %}
@@ -195,9 +194,10 @@
                                         >
                                     </button>
                                 {% endif %}
+                                </div>
                             </div>
                             <div class="mdl-tabs__panel" id="commentaire-panel">
-
+                                <div class="info">
                                 <div class="mdl-card mdl-shadow--2dp">
                                     <div class="mdl-card__title">
                                         <h2 class="mdl-card__title-text">Username</h2>
@@ -215,7 +215,7 @@
                                         </button>
                                     </div>
                                 </div>
-
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -224,8 +224,10 @@
 
 {% block javascript %}
     <script>
-        $(document).ready(function(){
-
+        var info = $('.info');
+        info.hide();
+        $(window).load(function(){
+            info.show();
             $('#fav_button.yes').bind('click',removeFav);
             $('#fav_button.no').bind('click',addFav);
             var page=1;
