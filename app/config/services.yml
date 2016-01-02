@@ -3,7 +3,7 @@
 parameters:
     core_helper.class: RR\CoreBundle\Services\CoreHelper
     site_image_directory_namer.class: RR\CoreBundle\Services\SiteImageDirectoryNamer
-    user_directory_namer.class: RR\UserBundle\Services\UsernameDirectoryNamer
+    user_directory_namer.class: RR\UserBundle\Services\UserNameDirectoryNamer
     resto_directory_namer.class: RR\RestaurantBundle\Services\RestaurantDirectoryNamer
 
 
