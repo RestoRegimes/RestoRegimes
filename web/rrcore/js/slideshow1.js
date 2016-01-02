@@ -64,14 +64,14 @@ var slideshow = (function(window, undefined) {
       source: document.location.origin+'/RestoRegimes/web/rrcore/images/masks/prism-b.svg',
       effects: {
         flip: false,
-        rotate: 45 // degrees
+        rotate: 180 // degrees
       }
     },
     {
       source: document.location.origin+'/RestoRegimes/web/rrcore/images/masks/prism-c.svg',
       effects: {
-        flip: false,
-        rotate: 180 // degrees
+        flip: 'Y',
+        rotate: 35 // degrees
       }
     }
   ];

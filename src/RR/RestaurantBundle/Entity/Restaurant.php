@@ -33,6 +33,11 @@ class Restaurant
     private $proprietaire;
 
     /**
+     * @ORM\OneToMany(targetEntity="RR\CoreBundle\Entity\Commentaire", mappedBy="restaurant", cascade={"persist", "remove"}, orphanRemoval=TRUE)
+     */
+    protected $commentaires;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -773,5 +778,39 @@ class Restaurant
     public function getProprietaire()
     {
         return $this->proprietaire;
+    }
+
+    /**
+     * Add commentaire
+     *
+     * @param \RR\CoreBundle\Entity\Commentaire $commentaire
+     *
+     * @return Restaurant
+     */
+    public function addCommentaire(\RR\CoreBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires[] = $commentaire;
+    
+        return $this;
+    }
+
+    /**
+     * Remove commentaire
+     *
+     * @param \RR\CoreBundle\Entity\Commentaire $commentaire
+     */
+    public function removeCommentaire(\RR\CoreBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires->removeElement($commentaire);
+    }
+
+    /**
+     * Get commentaires
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
     }
 }

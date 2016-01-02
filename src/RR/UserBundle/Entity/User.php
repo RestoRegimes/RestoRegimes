@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="user")
  */
 class User extends BaseUser
 {
@@ -45,6 +45,10 @@ class User extends BaseUser
      */
     private $favoris;
 
+    /**
+     * @ORM\OneToMany(targetEntity="RR\CoreBundle\Entity\Commentaire", mappedBy="user", cascade={"persist", "remove"}, orphanRemoval=TRUE)
+     */
+    protected $commentaires;
 
 
     public function __construct()
@@ -158,5 +162,39 @@ class User extends BaseUser
     public function getFavoris()
     {
         return $this->favoris;
+    }
+
+    /**
+     * Add commentaire
+     *
+     * @param \RR\CoreBundle\Entity\Commentaire $commentaire
+     *
+     * @return User
+     */
+    public function addCommentaire(\RR\CoreBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires[] = $commentaire;
+    
+        return $this;
+    }
+
+    /**
+     * Remove commentaire
+     *
+     * @param \RR\CoreBundle\Entity\Commentaire $commentaire
+     */
+    public function removeCommentaire(\RR\CoreBundle\Entity\Commentaire $commentaire)
+    {
+        $this->commentaires->removeElement($commentaire);
+    }
+
+    /**
+     * Get commentaires
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
     }
 }
