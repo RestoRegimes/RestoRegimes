@@ -28,6 +28,9 @@
                             {{ f.content2 }}<br>
                             {{ f.content3 }}</p><br>
                 </div>
+                {% if f.image is not null and f.image.imageFile is not null %}
+                    <img class="image-faq" src="{{ asset(vich_uploader_asset(f.image,'imageFile')) }}" alt="{{ f.image.imageName }}" /><br/>
+                {% endif %}
             </div>
             <div class="mdl-layout-spacer"></div>
         </div>

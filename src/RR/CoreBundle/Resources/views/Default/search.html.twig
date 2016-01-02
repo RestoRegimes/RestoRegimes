@@ -14,41 +14,38 @@
 
 
         {{ form_start(form, {'action': path('rr_core_search') }) }}
-        {{ form_errors(form) }}
+        <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form) }}</div>
         <div id="adresse" class="search-field">
-            {{ form_errors(form.recherche) }}
             {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}
             {{ form_label(form.recherche, " ") }}</div>
 
-        {{ form_errors(form.geo) }}
         <label class="mdl-checkbox mdl-js-checkbox " for="form_geo">
             {{ form_widget(form.geo, {'attr': {'class': 'mdl-checkbox__input','onclick':"getLocation()"}}) }}
             <span class="mdl-checkbox__label"><b id="geo">Se Geolocaliser</b></span>
 
         </label>
 
-        {{ form_errors(form.radius) }}
         {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Distance max (km)'}}) }}
         {{ form_label(form.radius, " ") }}
-        {{ form_errors(form.vegetarien) }}
+
         <label class="tgl" style="font-size:18px;">
             {{ form_widget(form.vegetarien) }}
             <span id="vegetarien">{{ form_label(form.vegetarien, "Vegetarien") }}</span>
         </label>
         <br><br>
-        {{ form_errors(form.vegetalien) }}
+
         <label class="tgl" style="font-size:18px;">
             {{ form_widget(form.vegetalien) }}
             <span id="vegetalien">{{ form_label(form.vegetalien, "Vegetalien") }}</span>
         </label>
         <br><br>
-        {{ form_errors(form.gluten) }}
+
         <label class="tgl" style="font-size:18px;">
             {{ form_widget(form.gluten) }}
             <span id="gluten">{{ form_label(form.gluten, "Sans Gluten") }}</span>
         </label>
         <br><br>
-        {{ form_errors(form.diabete) }}
+
         <label class="tgl" style="font-size:18px;">
             {{ form_widget(form.diabete) }}
             <span id="diabete">{{ form_label(form.diabete, "Diabete") }}</span>
@@ -59,7 +56,7 @@
             <span id="cholesterol">{{ form_label(form.Cholesterol, "Cholesterol") }}</span>
 
         </label>
-        {{ form_errors(form.Cholesterol) }}
+
         <br><br>
 
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">

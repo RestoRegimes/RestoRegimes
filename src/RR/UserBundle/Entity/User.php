@@ -111,6 +111,7 @@ class User extends BaseUser
     public function setProfileImage(\RR\UserBundle\Entity\UserImage $profileImage = null)
     {
         $this->profileImage = $profileImage;
+        $profileImage->setUser($this);
     
         return $this;
     }

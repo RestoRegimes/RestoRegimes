@@ -187,6 +187,8 @@ vich_uploader:
         resto_image:
             uri_prefix:         /images/resto
             upload_destination: %kernel.root_dir%/../web/images/resto
+            namer:              vich_uploader.namer_origname
+            directory_namer:    my.directory_namer.resto
 
             inject_on_load:     true
             delete_on_update:   true
@@ -194,6 +196,8 @@ vich_uploader:
         user_image:
             uri_prefix:         /images/user
             upload_destination: %kernel.root_dir%/../web/images/user
+            namer:              vich_uploader.namer_origname
+            directory_namer:    my.directory_namer.user
 
             inject_on_load:     true
             delete_on_update:   true
@@ -201,6 +205,8 @@ vich_uploader:
         site_image:
             uri_prefix:         /images/site
             upload_destination: %kernel.root_dir%/../web/images/site
+            namer:              vich_uploader.namer_origname
+            directory_namer:    my.directory_namer.site_image
 
             inject_on_load:     true
             delete_on_update:   true

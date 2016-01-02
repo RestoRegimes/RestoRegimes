@@ -28,6 +28,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="type_content", type="string", length=25)
+     * @Assert\Length(max=25,maxMessage="Erreur libelle")
      */
     private $typeContent;
 
@@ -35,6 +36,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255,maxMessage="le titre doit faire au maximum {{ limit }} caractères."))
      */
     private $title;
 
@@ -42,6 +44,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="subtitle", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255,maxMessage="le sous-titre doit faire au maximum {{ limit }} caractères.")
      */
     private $subtitle;
 
@@ -49,6 +52,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="content_1", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
      */
     private $content1;
 
@@ -56,6 +60,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="content_2", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
      */
     private $content2;
 
@@ -63,6 +68,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="content_3", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
      */
     private $content3;
 
@@ -70,6 +76,7 @@ class SiteContent
      * @var string
      *
      * @ORM\Column(name="footer", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255,maxMessage="le footer doit faire au maximum {{ limit }} caractères.")
      */
     private $footer;
 
@@ -248,6 +255,7 @@ class SiteContent
     public function setImage(\RR\CoreBundle\Entity\SiteImage $image = null)
     {
         $this->image = $image;
+        $image->setSitecontent($this);
     
         return $this;
     }

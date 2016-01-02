@@ -22,6 +22,10 @@ class UserImage
      */
     private $id;
 
+    /**
+     * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\User")
+     */
+    private $user;
     // ..... other fields
 
     /**
@@ -128,4 +132,28 @@ class UserImage
         return $this->updatedAt;
     }
 
+
+    /**
+     * Set user
+     *
+     * @param \RR\UserBundle\Entity\User $user
+     *
+     * @return UserImage
+     */
+    public function setUser(\RR\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \RR\UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

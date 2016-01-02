@@ -3,7 +3,7 @@
 namespace RR\CoreBundle\Controller;
 
 use RR\CoreBundle\Entity\SiteContent;
-use RR\CoreBundle\Form\SitecontentType;
+use RR\CoreBundle\Form\SiteContentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
@@ -195,7 +195,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         // On vérifie que les valeurs entrées sont correctes
-        if ($form->isValid() && $this->getUser()->getRoles()[0]=="ROLE_ADMIN") {
+        if ($form->isValid() /*&& $this->getUser()->getRoles()[0]=="ROLE_ADMIN"*/) {
 
 
             // On l'enregistre notre objet $advert dans la base de données, par exemple

@@ -22,6 +22,12 @@ class SiteImage
      */
     private $id;
 
+
+    /**
+     * @ORM\OnetoOne(targetEntity="RR\CoreBundle\Entity\SiteContent")
+     */
+    private $sitecontent;
+
     // ..... other fields
 
     /**
@@ -128,4 +134,28 @@ class SiteImage
         return $this->updatedAt;
     }
 
+
+    /**
+     * Set sitecontent
+     *
+     * @param \RR\CoreBundle\Entity\SiteContent $sitecontent
+     *
+     * @return SiteImage
+     */
+    public function setSitecontent(\RR\CoreBundle\Entity\SiteContent $sitecontent = null)
+    {
+        $this->sitecontent = $sitecontent;
+    
+        return $this;
+    }
+
+    /**
+     * Get sitecontent
+     *
+     * @return \RR\CoreBundle\Entity\SiteContent
+     */
+    public function getSitecontent()
+    {
+        return $this->sitecontent;
+    }
 }

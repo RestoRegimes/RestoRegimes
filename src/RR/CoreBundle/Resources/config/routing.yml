@@ -23,5 +23,5 @@ rr_core_admin:
     defaults: { _controller: RRCoreBundle:Default:adminindex}
 
 rr_core_add_content:
-    path:   /admin/add/content
+    path:   /add/content
     defaults: { _controller: RRCoreBundle:Default:addcontent}

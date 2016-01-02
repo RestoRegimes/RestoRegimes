@@ -638,6 +638,7 @@ class Restaurant
     public function setImage1(\RR\RestaurantBundle\Entity\RestoImage $image1 = null)
     {
         $this->image1 = $image1;
+        $image1->setRestaurant($this);
 
         return $this;
     }
@@ -662,6 +663,7 @@ class Restaurant
     public function setImage2(\RR\RestaurantBundle\Entity\RestoImage $image2 = null)
     {
         $this->image2 = $image2;
+        $image2->setRestaurant($this);
 
         return $this;
     }
@@ -686,6 +688,7 @@ class Restaurant
     public function setImage3(\RR\RestaurantBundle\Entity\RestoImage $image3 = null)
     {
         $this->image3 = $image3;
+        $image3->setRestaurant($this);
 
         return $this;
     }
@@ -710,7 +713,7 @@ class Restaurant
     public function setImage4(\RR\RestaurantBundle\Entity\RestoImage $image4 = null)
     {
         $this->image4 = $image4;
-
+        $image4->setRestaurant($this);
         return $this;
     }
 
@@ -734,7 +737,7 @@ class Restaurant
     public function setImage5(\RR\RestaurantBundle\Entity\RestoImage $image5 = null)
     {
         $this->image5 = $image5;
-
+        $image5->setRestaurant($this);
         return $this;
     }
 

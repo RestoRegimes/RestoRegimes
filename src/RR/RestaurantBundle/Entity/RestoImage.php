@@ -23,6 +23,10 @@ class RestoImage
     private $id;
 
     // ..... other fields
+    /**
+     * @ORM\ManytoOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant")
+     */
+    private $restaurant;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -128,4 +132,28 @@ class RestoImage
         return $this->updatedAt;
     }
 
+
+    /**
+     * Set restaurant
+     *
+     * @param \RR\RestaurantBundle\Entity\Restaurant $restaurant
+     *
+     * @return RestoImage
+     */
+    public function setRestaurant(\RR\RestaurantBundle\Entity\Restaurant $restaurant = null)
+    {
+        $this->restaurant = $restaurant;
+    
+        return $this;
+    }
+
+    /**
+     * Get restaurant
+     *
+     * @return \RR\RestaurantBundle\Entity\Restaurant
+     */
+    public function getRestaurant()
+    {
+        return $this->restaurant;
+    }
 }
