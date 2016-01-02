@@ -151,7 +151,10 @@
                             <div class="mdl-tabs__tab-bar">
                                 <a href="#carte-panel" class="mdl-tabs__tab is-active">Carte</a>
                                 <a href="#images-panel" class="mdl-tabs__tab">Images</a>
-                                <a href="#commentaire-panel" class="mdl-tabs__tab">Commentaires</a>
+                                <a href="#avis-panel" class="mdl-tabs__tab">Avis</a>
+                                {% if app.user is not null and app.user.roles[0]=="ROLE_USER" %}
+                                <a href="#commentaire-panel" class="mdl-tabs__tab">poster un avis</a>
+                                {% endif %}
                             </div>
 
                             <div class="mdl-tabs__panel is-active" id="carte-panel">
@@ -201,11 +204,11 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="mdl-tabs__panel" id="commentaire-panel">
+                            <div class="mdl-tabs__panel" id="avis-panel">
                                 <div class="info" style="overflow-y: scroll;">
                                         {% for commentaire in restaurant.commentaires %}
 
-                                            <div class="mdl-card mdl-shadow--2dp">
+                                            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
                                                 <div class="mdl-card__title">
                                                     <h2 class="mdl-card__title-text">{{ commentaire.user.username }}</h2>
                                                 </div>
@@ -223,9 +226,18 @@
                                             </div>
 
                                         {% endfor %}
-                                    {% include "RRRestaurantBundle:Restaurant:commentaire_form.html.twig" %}
+
                                 </div>
                             </div>
+                            {% if app.user is not null and app.user.roles[0]=="ROLE_USER" %}
+                            <div class="mdl-tabs__panel" id="commentaire-panel">
+                                <div class="info">
+
+                                        {% include "RRRestaurantBundle:Restaurant:commentaire_form.html.twig" %}
+
+                                </div>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
 

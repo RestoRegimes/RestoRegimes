@@ -19,6 +19,19 @@ class RestaurantRepository extends EntityRepository
             ;
     }
 
+    public function myfindOne($id){
+
+        $query = $this
+            ->createQueryBuilder('r')
+            ->select('r')
+            ->leftJoin('r.regimes','reg')
+            ->addSelect('reg')
+            ->leftJoin('r.address','adr')
+            ->addSelect('adr');
+
+        return $query;
+    }
+
 
     public function whereCurrentYear(QueryBuilder $qb)
     {

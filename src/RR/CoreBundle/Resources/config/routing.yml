@@ -14,6 +14,10 @@ rr_core_favori_remove:
     path:     /favori/remove/{id_resto}
     defaults: { _controller: RRCoreBundle:Default:removefavori}
 
+rr_core_commentaire_add:
+    path:     /commentaire/add/{id_resto}
+    defaults: { _controller: RRCoreBundle:Default:addcommentaire}
+
 rr_core_faq:
     path: /faq
     defaults: { _controller:RRCoreBundle:Default:faq}
@@ -23,5 +27,6 @@ rr_core_admin:
     defaults: { _controller: RRCoreBundle:Default:adminindex}
 
 rr_core_add_content:
-    path:   /add/content
+    path:   /admin/add/content
     defaults: { _controller: RRCoreBundle:Default:addcontent}
+

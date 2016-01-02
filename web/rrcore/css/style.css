@@ -233,7 +233,7 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 
 .image-resto{
-    max-height: 300px;
+    max-height: 400px;
     max-width:100%;
 }
 
@@ -315,4 +315,8 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 .logo-Phone{
     margin-left: 20px;
+}
+
+.info{
+    height: 450px;
 }

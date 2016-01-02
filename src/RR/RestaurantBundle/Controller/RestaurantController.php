@@ -5,8 +5,8 @@ namespace RR\RestaurantBundle\Controller;
 
 // N'oubliez pas ce use :
 use RR\RestaurantBundle\Entity\Product;
-use RR\RestaurantBundle\Entity\RestoImage;
 use RR\RestaurantBundle\Form\ProductType;
+use RR\CoreBundle\Form\CommentaireType;
 use RR\RestaurantBundle\Form\RestaurantType;
 use RR\RestaurantBundle\Form\RestaurantHorairesType;
 use RR\RestaurantBundle\Form\RestaurantImageType;
@@ -40,7 +40,7 @@ class RestaurantController extends Controller
         if($page>$nbPage){
             return $this->redirect($this->generateUrl('rr_core_homepage'));
         }
-        $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
+        $link=$this->getRequest()->getBasePath().'/rrcore/images/marker';
         $map = $this->get('ivory_google_map.map');
         $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link);
 
@@ -55,28 +55,24 @@ class RestaurantController extends Controller
 
     }
 
-    public function viewAction($id)
-    {// On récupère l'EntityManager
+    public function viewAction(Request $request,$id)
+    {
         $em = $this->getDoctrine()->getManager();
-
-        // Pour récupérer une annonce unique : on utilise find()
         $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id);
-
-        // On vérifie que l'annonce avec cet id existe bien
         if ($restaurant === null) {
             throw $this->createNotFoundException("Le restaurant d'id ".$id." n'existe pas.");
         }
 
-        $map = $this->get('ivory_google_map.map');
+        $form = $this->get('form.factory')->create(new CommentaireType());
 
-        $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
+        $map = $this->get('ivory_google_map.map');
+        $link=$this->getRequest()->getBasePath().'/rrcore/images/marker';
         $map = $this->get('ivory_google_map.map');
         $map=$this->get('core_helper')->getSingleRestoMap($map,$link,$restaurant);
-
-
         // Puis modifiez la ligne du render comme ceci, pour prendre en compte les variables :
         return $this->render('RRRestaurantBundle:Restaurant:view.html.twig', array(
-            'restaurant'           => $restaurant,
+            'form'=>$form->createView(),
+            'restaurant'=> $restaurant,
             'map'=> $map,
         ));
     }

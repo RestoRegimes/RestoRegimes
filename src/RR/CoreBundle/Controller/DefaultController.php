@@ -2,7 +2,9 @@
 
 namespace RR\CoreBundle\Controller;
 
+use RR\CoreBundle\Entity\Commentaire;
 use RR\CoreBundle\Entity\SiteContent;
+use RR\CoreBundle\Form\CommentaireType;
 use RR\CoreBundle\Form\SiteContentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,7 +32,7 @@ class DefaultController extends Controller
             ->add('geo','checkbox',array('label'=>"",'required'=>false))
             ->add('lat',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
             ->add('lng',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
-            ->add('radius','integer',array('label'=>"",'required'=>false))
+            ->add('radius','integer',array('label'=>"",'required'=>false,'attr'=>array('min'=>'1','max'=>'100')))
             ->add('vegetarien', 'checkbox', array(
                 'label'    => 'Vegetarien',
                 'required' => false,
@@ -63,7 +65,7 @@ class DefaultController extends Controller
             ->add('geo','checkbox',array('label'=>"",'required'=>false))
             ->add('lat',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
             ->add('lng',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
-            ->add('radius','integer',array('label'=>"",'required'=>false))
+            ->add('radius','integer',array('label'=>"",'required'=>false,'attr'=>array('min'=>'1','max'=>'100')))
             ->add('vegetarien', 'checkbox', array(
                 'label'    => 'Vegetarien',
                 'required' => false,
@@ -123,7 +125,7 @@ class DefaultController extends Controller
             $nbPage=ceil(count($listRestaurants)/$nbPerPage);
 
 
-            $link=$this->getRequest()->getBasePath().'/bundles/rrcore/images/marker';
+            $link=$this->getRequest()->getBasePath().'/rrcore/images/marker';
             $map = $this->get('ivory_google_map.map');
             $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$coord);
 
@@ -195,7 +197,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         // On vérifie que les valeurs entrées sont correctes
-        if ($form->isValid() /*&& $this->getUser()->getRoles()[0]=="ROLE_ADMIN"*/) {
+        if ($form->isValid() && $this->getUser()->getRoles()[0]=="ROLE_ADMIN") {
 
 
             // On l'enregistre notre objet $advert dans la base de données, par exemple
@@ -216,5 +218,50 @@ class DefaultController extends Controller
             'form' => $form->createView(),
             'action' => "add"
         ));
+    }
+    protected function getErrorsAsArray($form)
+    {
+        $errors = array();
+        foreach ($form->getErrors() as $error)
+            $errors[] = $error->getMessage();
+
+        foreach ($form->all() as $key => $child) {
+            if ($err = $this->getErrorsAsArray($child))
+                $errors[$key] = $err;
+        }
+        return $errors;
+    }
+    public function addcommentaireAction(Request $request,$id_resto)
+    {
+        $ret = new JsonResponse();
+        if($request->isXmlHttpRequest()) {
+            $commentaire=new Commentaire();
+            $form = $this->createForm(new CommentaireType(), $commentaire);
+            if ($request->getMethod() == 'POST')
+            {
+                $form->bind($request);
+                $user = $this->getUser();
+                if ($form->isValid() && $user->getRoles()[0] == "ROLE_USER")
+                {
+                    $em = $this->getDoctrine()->getManager();
+                    $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id_resto);
+                    $commentaire->setRestaurant($restaurant);
+                    $commentaire->setUser($user);
+                    $commentaire->setNoteMoyenne();
+                    $em->persist($commentaire);
+                    $em->flush();
+
+                    return $ret->setData('message enregistré');
+                }
+                else
+                {
+
+                    return new JsonResponse(array(
+                        'res'    => false,
+                        'errors' => $this->getErrorsAsArray($form)));
+                }
+            }
+        }return $ret->setData('Erreur protocole XmlHttp');
+
     }
 }

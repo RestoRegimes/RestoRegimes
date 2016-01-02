@@ -1,0 +1,41 @@
+
+<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp card-accueil">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Ajouter un commentaire</h2>
+    </div>
+
+    {{ form_start(form, {'action': path('rr_core_commentaire_add',{'id_resto': restaurant.id}) })}}
+            <div class="mdl-card--border">
+
+            <div class="mdl-color--accent mdl-shadow--2dp error">{{ form_errors(form) }}</div>
+
+
+            <div class="mdl-textfield mdl-js-textfield">
+                {{ form_widget(form.texteCommentaire, {'attr': {'class': 'mdl-textfield__input','rows':'5','placeholder':'Message'}}) }}
+                {{ form_label(form.texteCommentaire, " ") }}
+            </div>
+
+            {{ form_widget(form.noteCuisine, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Cuisine'}}) }}
+            {{ form_label(form.noteCuisine) }}
+
+            {{ form_widget(form.noteBesoins, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Besoins'}}) }}
+            {{ form_label(form.noteBesoins) }}
+
+            {{ form_widget(form.noteService, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Service'}}) }}
+            {{ form_label(form.noteService) }}
+
+
+            {{ form_rest(form) }}
+
+
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400" >
+                    <i class="material-icons">check</i>
+                </button>
+            </div>
+        </div>
+
+    {{ form_end(form) }}
+
+
+</div>

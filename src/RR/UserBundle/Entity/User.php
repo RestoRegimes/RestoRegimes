@@ -42,6 +42,7 @@ class User extends BaseUser
 
     /**
      * @ORM\ManyToMany(targetEntity="RR\RestaurantBundle\Entity\Restaurant",cascade={"persist"})
+     * @ORM\JoinTable(name="favoris")
      */
     private $favoris;
 
