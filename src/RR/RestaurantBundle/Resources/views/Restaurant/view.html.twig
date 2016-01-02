@@ -100,11 +100,11 @@
                                     </div>
                                     <div class="mdl-cell mdl-cell--4-col">
                                         {% for regime in restaurant.regimes %}
-                                            {% if regime.id==1%}<img src="{{ asset('bundles/rrcore/images/Iconveg.png') }}">{% endif %}
-                                            {% if regime.id==2%}<img src="{{ asset('bundles/rrcore/images/Iconvegan.png') }}">{% endif %}
-                                            {% if regime.id==3%}<img src="{{ asset('bundles/rrcore/images/Icongluten.png') }}">{% endif %}
-                                            {% if regime.id==4%}<img src="{{ asset('bundles/rrcore/images/Icondiabete.png') }}">{% endif %}
-                                            {% if regime.id==5%}<img src="{{ asset('bundles/rrcore/images/Iconchol.png') }}">{% endif %}
+                                            {% if regime.id==1%}<img src="{{ asset('rrcore/images/Iconveg.png') }}">{% endif %}
+                                            {% if regime.id==2%}<img src="{{ asset('rrcore/images/Iconvegan.png') }}">{% endif %}
+                                            {% if regime.id==3%}<img src="{{ asset('rrcore/images/Icongluten.png') }}">{% endif %}
+                                            {% if regime.id==4%}<img src="{{ asset('rrcore/images/Icondiabete.png') }}">{% endif %}
+                                            {% if regime.id==5%}<img src="{{ asset('rrcore/images/Iconchol.png') }}">{% endif %}
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -159,155 +159,255 @@
                             </div>
                             <div  class="mdl-tabs__panel" id="images-panel">
                                 <div class="info">
-                                {% set nbImg=0 %}
-                                {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
-                                    {% set nbImg=nbImg+1 %}
-                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}" alt="{{ restaurant.image1.imageName }}" /><br/>
 
-                                {% endif %}
-                                {% if restaurant.image2 is not null and restaurant.image2.imageFile is not null %}
-                                    {% set nbImg=nbImg+1 %}
-                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image2,'imageFile')) }}" alt="{{ restaurant.image2.imageName }}" /><br/>
-                                {% endif %}
-                                {% if restaurant.image3 is not null and restaurant.image3.imageFile is not null %}
-                                    {% set nbImg=nbImg+1 %}
-                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image3,'imageFile')) }}" alt="{{ restaurant.image3.imageName }}" /><br/>
-                                {% endif %}
-                                {% if restaurant.image4 is not null and restaurant.image4.imageFile is not null %}
-                                    {% set nbImg=nbImg+1 %}
-                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image4,'imageFile')) }}" alt="{{ restaurant.image4.imageName }}" /><br/>
-                                {% endif %}
-                                {% if restaurant.image5 is not null and restaurant.image5.imageFile is not null %}
-                                    {% set nbImg=nbImg+1 %}
-                                    <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image5,'imageFile')) }}" alt="{{ restaurant.image5.imageName }}" /><br/>
-                                {% endif %}
-                                {% if nbImg>2 %}
-                                    <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="prevPage()">
-                                        <
-                                    </button>
-                                    {% for i in 1..nbImg %}
-                                        <button class="pages mdl-button mdl-button--fab mdl-button--mini-fab" onclick="showPage({{ i }})">
-                                            {{ i }}
+                                    <div class="mdl-grid">
+                                            {% set nbImg=0 %}
+                                            {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                                                {% set nbImg=nbImg+1 %}
+                                                <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}" alt="{{ restaurant.image1.imageName }}" /><br/>
+
+                                            {% endif %}
+                                            {% if restaurant.image2 is not null and restaurant.image2.imageFile is not null %}
+                                                {% set nbImg=nbImg+1 %}
+                                                <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image2,'imageFile')) }}" alt="{{ restaurant.image2.imageName }}" /><br/>
+                                            {% endif %}
+                                            {% if restaurant.image3 is not null and restaurant.image3.imageFile is not null %}
+                                                {% set nbImg=nbImg+1 %}
+                                                <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image3,'imageFile')) }}" alt="{{ restaurant.image3.imageName }}" /><br/>
+                                            {% endif %}
+                                            {% if restaurant.image4 is not null and restaurant.image4.imageFile is not null %}
+                                                {% set nbImg=nbImg+1 %}
+                                                <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image4,'imageFile')) }}" alt="{{ restaurant.image4.imageName }}" /><br/>
+                                            {% endif %}
+                                            {% if restaurant.image5 is not null and restaurant.image5.imageFile is not null %}
+                                                {% set nbImg=nbImg+1 %}
+                                                <img class="image-resto" id="img-{{ nbImg }}" src="{{ asset(vich_uploader_asset(restaurant.image5,'imageFile')) }}" alt="{{ restaurant.image5.imageName }}" /><br/>
+                                            {% endif %}
+                                    </div>
+                                    {% if nbImg>1 %}
+                                        <div class="mdl-grid">
+                                        <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="prevPage()">
+                                            <
                                         </button>
-                                    {% endfor %}
-                                    <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="nextPage()">
-                                        >
-                                    </button>
-                                {% endif %}
+                                        {% for i in 1..nbImg %}
+                                            <button class="pages mdl-button mdl-button--fab mdl-button--mini-fab" onclick="showPage({{ i }})">
+                                                {{ i }}
+                                            </button>
+                                        {% endfor %}
+                                        <button class="mdl-button mdl-button--fab mdl-button--mini-fab" onclick="nextPage()">
+                                            >
+                                        </button>
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="mdl-tabs__panel" id="commentaire-panel">
-                                <div class="info">
-                                <div class="mdl-card mdl-shadow--2dp">
-                                    <div class="mdl-card__title">
-                                        <h2 class="mdl-card__title-text">Username</h2>
-                                    </div>
-                                    <div class="mdl-card__supporting-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Mauris sagittis pellentesque lacus eleifend lacinia...
-                                    </div>
-                                    <div class="mdl-card__actions mdl-card--border">
-                                        Note
-                                    </div>
-                                    <div class="mdl-card__menu">
-                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                            <i class="material-icons">share</i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <div class="info" style="overflow-y: scroll;">
+                                        {% for commentaire in restaurant.commentaires %}
+
+                                            <div class="mdl-card mdl-shadow--2dp">
+                                                <div class="mdl-card__title">
+                                                    <h2 class="mdl-card__title-text">{{ commentaire.user.username }}</h2>
+                                                </div>
+                                                <div class="mdl-card__supporting-text">
+                                                    {{ commentaire.texteCommentaire }}
+                                                </div>
+                                                <div class="mdl-card__actions mdl-card--border">
+                                                    {{ commentaire.noteMoyenne }}
+                                                </div>
+                                                <div class="mdl-card__menu">
+                                                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                                        <i class="material-icons">share</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        {% endfor %}
+                                    {% include "RRRestaurantBundle:Restaurant:commentaire_form.html.twig" %}
                                 </div>
                             </div>
                         </div>
                     </div>
 
-{% endblock %}
 
+
+{% endblock %}
 {% block javascript %}
     <script>
         var info = $('.info');
+        var page=1;
+        var fav =false;
+        var aP = document.getElementsByClassName("pages");
+        var favIcon=document.getElementById("fav_icon");
+
         info.hide();
         $(window).load(function(){
             info.show();
             $('#fav_button.yes').bind('click',removeFav);
             $('#fav_button.no').bind('click',addFav);
-            var page=1;
-            var fav =false;
-            var aP = document.getElementsByClassName("pages");
-            var favIcon=document.getElementById("fav_icon");
+
             showPage(page);
-            function showPage(page) {
-                $('.image-resto:not(#img-'+page+')').hide();
-                $('.image-resto#img-'+page).show();
-                for( var i=0;i<$('.image-resto').length;i++){
-                    aP[i].style.backgroundColor= 'rgb(220,220,220)';
-                }
-                aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
-            }
-            function prevPage() {
-                if (page == 1) {
-                    page = $('.image-resto').length;
-                } else {
-                    page--;
-                }
-                showPage(page);
-            }
 
-            function nextPage() {
-                if (page == $('.image-resto').length) {
-                    page = 1;
-                } else {
-                    page++;
-                }
-                showPage(page);
-            }
-
-
-            function addFav(){
-                $.ajax({
-                    type: "POST",
-                    url: "{{ url('rr_core_favori_add', {'id_resto': restaurant.id}) }}",
-                    beforeSend: function(){
-                        $('#fav_button')
-                                .unbind('click');
-                        favIcon.innerHTML="favorite";
-                    },
-                    success: function(){
-                        $('#fav_button')
-                                .bind('click', removeFav);
-                    },
-                    error: function(XMLHttpRequest, textStatus, errorThrown)
-                    {
-                        $('#fav_button')
-                                .bind('click', addFav);
-                        favIcon.innerHTML="favorite_border";
-                        alert('Error : ' + errorThrown);
-                    }
-                });
-            }
-
-            function removeFav(){
-                $.ajax({
-                    type: "POST",
-                    url: "{{ url('rr_core_favori_remove', {'id_resto': restaurant.id}) }}",
-                    beforeSend: function(){
-                        $('#fav_button')
-                                .unbind('click');
-                        favIcon.innerHTML="favorite_border";
-                    },
-                    success: function(){
-                        $('#fav_button')
-                                .bind('click', addFav);
-                    },
-                    error: function(XMLHttpRequest, textStatus, errorThrown)
-                    {
-                        $('#fav_button')
-                                .bind('click', removeFav)
-                        ;
-                        favIcon.innerHTML="favorite";
-                        alert('Error : ' + errorThrown);
-                    }
-                });
-            }
         });
-    </script>
+
+        function showPage(page) {
+            $('.image-resto:not(#img-'+page+')').hide();
+            $('.image-resto#img-'+page).show();
+            for( var i=0;i<$('.image-resto').length;i++){
+                aP[i].style.backgroundColor= 'rgb(220,220,220)';
+            }
+            aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
+        };
+        function prevPage() {
+            if (page == 1) {
+                page = $('.image-resto').length;
+            } else {
+                page--;
+            }
+            showPage(page);
+        };
+
+        function nextPage() {
+            if (page == $('.image-resto').length) {
+                page = 1;
+            } else {
+                page++;
+            }
+            showPage(page);
+        };
+
+
+        function addFav(){
+            $.ajax({
+                type: "POST",
+                url: "{{ url('rr_core_favori_add', {'id_resto': restaurant.id}) }}",
+                beforeSend: function(){
+                    $('#fav_button')
+                            .unbind('click');
+                    favIcon.innerHTML="favorite";
+                },
+                success: function(){
+                    $('#fav_button')
+                            .bind('click', removeFav);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    $('#fav_button')
+                            .bind('click', addFav);
+                    favIcon.innerHTML="favorite_border";
+                    alert('Error : ' + errorThrown);
+                }
+            });
+        };
+
+        function removeFav(){
+            $.ajax({
+                type: "POST",
+                url: "{{ url('rr_core_favori_remove', {'id_resto': restaurant.id}) }}",
+                beforeSend: function(){
+                    $('#fav_button')
+                            .unbind('click');
+                    favIcon.innerHTML="favorite_border";
+                },
+                success: function(){
+                    $('#fav_button')
+                            .bind('click', addFav);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    $('#fav_button')
+                            .bind('click', removeFav)
+                    ;
+                    favIcon.innerHTML="favorite";
+                    alert('Error : ' + errorThrown);
+                }
+            });
+        };
+
+
+
+
+
+        /*
+         Fonction retournant les erreurs dans un format "affichable".
+         Ici j'ai volontairement choisi de n'afficher que la première erreur.
+         On aurait pût les concaténer (cf commentaire plus bas)
+         */
+        function getFormErrors(data)
+        {
+            var errorMsg = '';
+            if (data['errors'])
+            {
+                for (key in data['errors'])
+                {
+                    // ou errorMsg = errorMsg + ' ' + ...
+                    if (data['errors'][key]['0'].length > 1)
+                        errorMsg = data['errors'][key]['0'];
+                    else
+                        errorMsg = data['errors'][key];
+                }
+            }
+            else
+            {
+                errorMsg = data;
+            }
+            return errorMsg;
+        }
+
+        function showFormError(data, elem)
+        {
+            var msg = getFormErrors(data);
+            elem.html(msg).slideDown(300).delay(5000).slideUp(300);
+        }
+
+        function postForm( $form, callback ){
+
+            /*
+             * Get all form values
+             */
+            var values = {};
+            $.each( $form.serializeArray(), function(i, field) {
+                values[field.name] = field.value;
+            });
+
+            /*
+             * Throw the form values to the server!
+             */
+            $.ajax({
+                type        : $form.attr( 'method' ),
+                url         : $form.attr( 'action' ),
+                data        : values,
+                success     : function(data) {
+                    callback( data );
+                    showFormError(data,$('.error'));
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+
+                    alert('Error : ' + errorThrown);
+                }
+
+            });
+
+        }
+
+        $(document).ready(function(){
+
+            var forms = [
+                '[ name="{{ form.vars.full_name }}"]'
+            ];
+
+            $( forms.join(',') ).submit( function( e ){
+                e.preventDefault();
+
+                postForm( $(this), function( response ){
+                });
+
+                return false;
+            });
+
+        });
+
+
+</script>
 {% endblock %}
