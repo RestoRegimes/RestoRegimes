@@ -300,21 +300,22 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     background: #00aa00;
 }
 
-.search-button{
-    height: 56px;
-    width: 56px;
+.mdl-layout__drawer-button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored{
+    margin-top: 30px;
+    height: 60px;
+    width: 60px;
 }
+
 .card-accueil{
     background: rgba(250,250,250,0.6);
     margin-top: 5%;
 }
-
 .search-field{
     margin-top: 40px;
 }
 
 .logo-Phone{
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .info{
