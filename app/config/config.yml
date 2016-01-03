@@ -212,3 +212,7 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
+ewz_recaptcha:
+    public_key:  6LePWhQTAAAAAEw7Djrf-tTiqLOdvfjugaiEd72l
+    private_key: 6LePWhQTAAAAADpkSZeAj2BWj6CD3iU9C5iIi4Dc
+    locale_key:  %kernel.default_locale%

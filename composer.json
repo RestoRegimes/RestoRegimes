@@ -36,7 +36,8 @@
         "willdurand/faker-bundle": "^1.2",
         "vich/uploader-bundle": "^0.14.0",
         "beberlei/DoctrineExtensions": "^1.0",
-        "google/apiclient": "^1.1"
+        "google/apiclient": "^1.1",
+        "excelwebzone/recaptcha-bundle": "^1.4"
 
     },
     "require-dev": {

@@ -6,10 +6,13 @@ namespace RR\UserBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 /**
  * @ORM\Entity
+ * @UniqueEntity(fields="telephone", message="Ce telephone est deja utilisé.")
  * @ORM\Table(name="user")
  */
 class User extends BaseUser
@@ -20,6 +23,13 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+
+
+    /**
+     * @Recaptcha\IsTrue
+     */
+    public $recaptcha;
 
     /**
      * @ORM\OnetoOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist","remove"})

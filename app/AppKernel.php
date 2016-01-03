@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Padam87\AddressBundle\Padam87AddressBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
