@@ -98,7 +98,7 @@ class DefaultController extends Controller
             $data = $form->getData();
 
 
-            if(empty($data['radius']))$data['radius']=10;
+            if(empty($data['radius']))$data['radius']=1;
             if($data['geo']!=1) {
                 $curl = new \Ivory\HttpAdapter\CurlHttpAdapter();
                 $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
@@ -127,7 +127,7 @@ class DefaultController extends Controller
 
             $link=$this->getRequest()->getBasePath().'/rrcore/images/marker';
             $map = $this->get('ivory_google_map.map');
-            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$coord);
+            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$coord,$data['radius']);
 
             return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
                 'form'=>$form->createView(),

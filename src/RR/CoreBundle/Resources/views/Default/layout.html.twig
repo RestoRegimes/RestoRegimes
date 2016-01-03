@@ -31,20 +31,23 @@
                     <div class="mdl-layout-spacer"></div>
                     <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp card-accueil">
                         <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">Bienvenue</h2>
+                            <h2 class="mdl-card__title-text">Bienvenue <br> {% if app.user is not null %}{{ app.user.username }}{% endif %}</h2>
                         </div>
                         <div class="mdl-card__supporting-text">
                             <div class="mdl-grid">
                                 <b>Restorégime est un service de recherche de restaurants en ligne gratuit. Notre mission est de vous proposer un large choix de restaurants classés selon différents critères de régime pour vous permettre où que vous alliez de trouver un restaurant qui réponde à vos besoins.</b>
                             </div>
+                            {% if app.user is null %}
                             <div class="mdl-grid">
                                 <div class="mdl-layout-spacer"></div>
+
                             <a class="mdl-button mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="{{ path('fos_user_registration_register') }}">
                                 S'incrire
                             </a>
+                                x
                                 <div class="mdl-layout-spacer"></div>
                             </div>
-
+                            {% endif %}
                         </div>
                         <div class="mdl-card__menu">
                             <ul class="navigation"></ul>

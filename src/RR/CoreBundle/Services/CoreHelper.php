@@ -11,6 +11,7 @@ namespace RR\CoreBundle\Services;
 use Ivory\GoogleMap\Overlays\MarkerImage;
 use RR\RestaurantBundle\Entity\RegimeRestaurant;
 use Ivory\GoogleMapBundle\Model\Map;
+use Ivory\GoogleMap\Overlays\Circle;
 use Ivory\GoogleMap\Overlays\Animation;
 use Ivory\GoogleMap\Overlays\Marker;
 use Ivory\GoogleMap\Overlays\InfoWindow;
@@ -26,7 +27,7 @@ class CoreHelper
         $this->router=$router;
     }
 
-    public function getMapRestaurant($map,$listRestaurants=NULL,$link,$coord=NULL){
+    public function getMapRestaurant($map,$listRestaurants=NULL,$link,$coord=NULL,$radius=NULL){
 
         $bounds = new Bound();
 
@@ -142,7 +143,7 @@ class CoreHelper
             $bounds->extend($marker);
             $map->addMarker($marker);
         }
-        if($coord!=null){
+        if($coord!=null && $radius!=null){
             $marker = new Marker();
 
 // Configure your marker options
@@ -160,13 +161,33 @@ class CoreHelper
             $marker->setIcon($markerImageUser);
             $bounds->extend($marker);
             $map->addMarker($marker);
+
+
+            $circle = new Circle();
+
+// Configure your circle options
+            $circle->setPrefixJavascriptVariable('circle_');
+            $circle->setCenter($coord->getLatitude(), $coord->getLongitude(), true);
+            $circle->setRadius($radius*1000);
+
+            $circle->setOption('clickable', false);
+            $circle->setOptions(array(
+                'strokeColor'=> '#FD6601',
+                'strokeOpacity'=> 0.6,
+                'strokeWeight'=> 4,
+                'fillColor'=>'#dadada',
+                'fillOpacity'=> 0.2,
+                'clickable'    => false
+            ));
+            $bounds->extend($circle);
+            $map->addCircle($circle);
         }
         if(count($map->getMarkers())>1){
+
             $map->setAutoZoom(true);
             $map->setBound($bounds);
         }
 // Configure your zoom control
-
         $map->setCenter($coordinate);
         return $map;
     }
