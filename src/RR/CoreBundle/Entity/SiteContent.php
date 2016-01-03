@@ -83,6 +83,7 @@ class SiteContent
 
     /**
      * @ORM\OnetoOne(targetEntity="RR\CoreBundle\Entity\SiteImage",cascade={"persist","remove"})
+     * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="site_image", fileNameProperty="imageName")
      */
     private $image;

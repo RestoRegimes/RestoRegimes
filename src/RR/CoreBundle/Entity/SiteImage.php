@@ -25,6 +25,7 @@ class SiteImage
 
     /**
      * @ORM\OnetoOne(targetEntity="RR\CoreBundle\Entity\SiteContent")
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $sitecontent;
 

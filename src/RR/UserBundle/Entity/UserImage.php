@@ -24,6 +24,7 @@ class UserImage
 
     /**
      * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $user;
     // ..... other fields

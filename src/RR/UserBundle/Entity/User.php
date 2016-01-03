@@ -46,6 +46,7 @@ class User extends BaseUser
 
     /**
      * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\UserImage",cascade={"persist","remove"})
+     * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="user_image", fileNameProperty="imageName")
      */
     private $profileImage;
