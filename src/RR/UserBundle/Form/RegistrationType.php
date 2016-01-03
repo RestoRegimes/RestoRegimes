@@ -5,7 +5,6 @@ use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 use Padam87\AddressBundle\Form\GeocodedAddressType;
-use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue as RecaptchaTrue;
 
 class RegistrationType extends BaseType
 {
@@ -20,13 +19,7 @@ array $options)
     ))
     ->add('telephone','text',array('required'=>false))
     ->add('profileImage',new UserImageType(),array('required'=>false))
-    ->add('recaptcha', 'ewz_recaptcha', array(
-        'attr'        => array(
-            'options' => array(
-                'theme' => 'light',
-                'type'  => 'image'
-            )
-        )));
+    ->add('recaptcha', 'ewz_recaptcha');
 
 
 

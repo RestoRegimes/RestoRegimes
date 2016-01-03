@@ -39,15 +39,15 @@
         {{ form_label(form.profileImage.imageFile.file, " ") }}
         <br><br>
         {{ form_errors(form.address.zipcode) }}
-        {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Code postal'}}) }}
+        {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input','placeholder':'Code postal'}}) }}
         {{ form_label(form.address.zipcode, " ") }}
 
         {{ form_errors(form.address.city) }}
-        {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Ville'},'required':'true'}) }}
+        {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input','placeholder':'Ville'},'required':'true'}) }}
         {{ form_label(form.address.city, " ") }}
 
         {{ form_errors(form.address.street) }}
-        {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Rue' },'required':'true'}) }}
+        {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input','placeholder':'Rue' },'required':'true'}) }}
         {{ form_label(form.address.street, " ") }}
 
     </div>

@@ -20,13 +20,13 @@ class Commentaire
 
 
     /**
-    * @ORM\ManytoOne(targetEntity="RR\UserBundle\Entity\User", inversedBy="commentaire")
+    * @ORM\ManytoOne(targetEntity="RR\UserBundle\Entity\User", inversedBy="commentaires")
     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=FALSE)
      */
     protected $user;
 
     /**
-     * @ORM\ManytoOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant", inversedBy="commentaire")
+     * @ORM\ManytoOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant", inversedBy="commentaires")
      * @ORM\JoinColumn(name="restaurant_id", referencedColumnName="id", nullable=FALSE)
      */
     protected $restaurant;

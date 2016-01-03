@@ -1,7 +1,10 @@
 {% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
 <div class="mdl-grid">
     <div class="mdl-cell--6-col">
-        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
         {{ form_errors(form.email) }}
         {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','placeholder':'Email'}}) }}
         {{ form_label(form.email, " ") }}
@@ -14,7 +17,6 @@
         {{ form_label(form.telephone, " ") }}
         <br><br>
         {% for passwordField in form.plainPassword %}
-
             {{ form_label(passwordField," ") }}
             {% if loop.first %}
                 {{ form_widget(passwordField, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Mot de passe'} }) }}
@@ -23,6 +25,7 @@
             {% endif %}
 
         {% endfor %}
+
     </div>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell--6-col">
@@ -36,15 +39,15 @@
         {{ form_label(form.profileImage.imageFile.file, " ") }}
         <br><br>
         {{ form_errors(form.address.zipcode) }}
-        {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Code postal'}}) }}
+        {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Code postal'}}) }}
         {{ form_label(form.address.zipcode, " ") }}
 
         {{ form_errors(form.address.city) }}
-        {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Ville'}}) }}
+        {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Ville'}}) }}
         {{ form_label(form.address.city, " ") }}
 
         {{ form_errors(form.address.street) }}
-        {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input address','placeholder':'Rue' }}) }}
+        {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Rue' }}) }}
         {{ form_label(form.address.street, " ") }}
 
     </div>
@@ -52,7 +55,6 @@
 <div class="mdl-grid">
     <div class="mdl-cell--8-col">
         {{ form_widget(form.recaptcha)}}
-
     </div>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell--2-col mdl-cell--middle">
@@ -64,25 +66,35 @@
     </div>
 </div>
 {{ form_end(form) }}
-<script>
-    var zip = $("#fos_user_registration_form_address_zipcode.address");
-    var city = $("#fos_user_registration_form_address_city.address");
-    var street = $("#fos_user_registration_form_address_street.address");
-    $(".address").keyup( function() {
-        if(zip.val().length>0 || city.val().length>0 || street.val().length>0){
-            zip.prop('required',true);
-            city.prop('required',true);
-            street.prop('required',true);
-        }else{
-            zip.prop('required',false);
-            city.prop('required',false);
-            street.prop('required',false);
-        }
-    });
+{% block javascript %}
+    <script>
+        $(document).ready(function(){
+
+            var zip = $("#fos_user_registration_form_address_zipcode");
+            var city = $("#fos_user_registration_form_address_city");
+            var street = $("#fos_user_registration_form_address_street");
+            $(".req").keyup( function() {
+                if(zip.val().length>0 || city.val().length>0 || street.val().length>0){
+                    zip.prop('required',true);
+                    city.prop('required',true);
+                    street.prop('required',true);
+                }else{
+                    zip.prop('required',false);
+                    city.prop('required',false);
+                    street.prop('required',false);
+                }
+            });
 
 
-    document.getElementById("fos_user_registration_form_profileImage_imageFile_file").onchange = function () {
-        document.getElementById("uploadFile").value = this.files[0].name;
-    };
+            document.getElementById("fos_user_registration_form_profileImage_imageFile_file").onchange = function () {
+                document.getElementById("uploadFile").value = this.files[0].name;
+            };
 
-</script>
+        });
+
+
+
+
+    </script>
+{% endblock %}
+
