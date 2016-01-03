@@ -40,10 +40,13 @@
                             {% if app.user is null %}
                             <div class="mdl-grid">
                                 <div class="mdl-layout-spacer"></div>
-
-                            <a class="mdl-button mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="{{ path('fos_user_registration_register') }}">
-                                S'incrire
-                            </a>
+                                <a class="mdl-button mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="{{ path('fos_user_registration_register') }}">
+                                    S'incrire
+                                </a>
+                                <div class="mdl-layout-spacer"></div>
+                                <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-color--green-A400" id="recherche_BTN">
+                                    Recherche
+                                </a>
                                 <div class="mdl-layout-spacer"></div>
                             </div>
                             {% endif %}
@@ -54,6 +57,12 @@
                     </div>
                     <div class="mdl-layout-spacer"></div>
                 </div>
+
+
+
+
+
+
 
 				<!-- End Demo -->
 
@@ -84,5 +93,15 @@
 		<script src="{{ asset('rrcore/js/utils/easing.js') }}"></script>
 		<script src="{{ asset('rrcore/js/PrismSlider.js') }}"></script>
 		<script src="{{ asset('rrcore/js/slideshow1.js') }}"></script>
+    <script>
+        $(window).load(function(){
+            var recherche_BTN = $('#recherche_BTN');
+
+            recherche_BTN.bind('click',function(){
+               $('#drawer').addClass('is-visible');
+                $('.mdl-layout__obfuscator').addClass('is-visible');
+            });
+        });
+    </script>
 
 {% endblock %}
