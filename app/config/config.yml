@@ -108,6 +108,8 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: RR\UserBundle\Entity\User
+    service:
+            mailer: fos_user.mailer.twig_swift
     registration:
         form:
             type: rruserbundle_user_registration
@@ -116,6 +118,7 @@ fos_user:
             from_email:
                 address:       noreply.resto@gmail.com
                 sender_name:   Enregistrement RestoRegimes
+
 
 bazinga_geocoder:
     default_provider:         google_maps
