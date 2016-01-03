@@ -70,9 +70,12 @@
     <script>
         $(document).ready(function(){
 
-            var zip = $("#fos_user_registration_form_address_zipcode");
-            var city = $("#fos_user_registration_form_address_city");
-            var street = $("#fos_user_registration_form_address_street");
+            var idZip= "#{{ form.address.zipcode.vars.id }}";
+            var zip = $(idZip);
+            var idCity= "#{{ form.address.city.vars.id }}";
+            var city = $(idCity);
+            var idStreet = "#{{ form.address.street.vars.id }}";
+            var street = $(idStreet);
             $(".req").keyup( function() {
                 if(zip.val().length>0 || city.val().length>0 || street.val().length>0){
                     zip.prop('required',true);
@@ -86,7 +89,7 @@
             });
 
 
-            document.getElementById("fos_user_registration_form_profileImage_imageFile_file").onchange = function () {
+            document.getElementById("{{ form.profileImage.imageFile.file.vars.id }}").onchange = function () {
                 document.getElementById("uploadFile").value = this.files[0].name;
             };
 

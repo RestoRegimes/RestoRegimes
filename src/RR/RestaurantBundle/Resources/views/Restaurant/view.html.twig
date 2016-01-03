@@ -2,11 +2,15 @@
 {% extends "RRRestaurantBundle::layout.html.twig" %}
 
 {% block infos %}
+
                         <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet mdl-card mdl-shadow--2dp">
                             <div class="mdl-card__title" style="height:150px;{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
                              background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; {% endif %}">
-                                <h2 class="mdl-card__title-text">{{ restaurant.nom }}</h2>
 
+                                <h2 class="mdl-card__title-text">{{ restaurant.nom }}</h2>
+                                {% for message in app.session.flashbag.get('notice') %}
+                                    <div class="mdl-color--accent mdl-shadow--2dp">{{ message }}</div>
+                                {% endfor %}
                             </div>
                             <div class="mdl-card__supporting-text">
                                 <div class="mdl-grid mdl-grid--no-spacing">
@@ -144,9 +148,7 @@
                     <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet" >
 
 
-                            {% for message in app.session.flashbag.get('notice') %}
-                        <p>Message flash : {{ message }}</p>
-                        {% endfor %}
+
                         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                             <div class="mdl-tabs__tab-bar">
                                 <a href="#carte-panel" class="mdl-tabs__tab is-active">Carte</a>
@@ -201,6 +203,8 @@
                                             >
                                         </button>
                                         </div>
+                                    {% else %}
+                                        <h6>Aucune image disponible.</h6>
                                     {% endif %}
                                 </div>
                             </div>
@@ -224,6 +228,8 @@
                                                     </button>
                                                 </div>
                                             </div>
+                                        {% else %}
+                                            <h6>Aucun avis posté.</h6>
 
                                         {% endfor %}
 

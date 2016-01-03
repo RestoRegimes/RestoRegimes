@@ -1,81 +1,86 @@
-{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
 
-{# Cette vue n'hérite de personne, elle sera incluse par d'autres vues qui,
-   elles, hériteront probablement du layout. Je dis « probablement » car,
-   ici pour cette vue, on n'en sait rien et c'est une info qui ne nous concerne pas. #}
+        <div class="mdl-grid">
 
-<h3>Formulaire restaurant</h3>
+            <div class="mdl-layout-spacer"></div>
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h5>Ajout d'images</h5>
 
-{# On laisse vide la vue pour l'instant, on la comblera plus tard
-   lorsqu'on saura afficher un formulaire. #}
-<div class="well">
-  {{ form(form) }}
-</div>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
 
-{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
+                        {{ form_start(form) }}
 
-{# On charge la bibliothèque jQuery. Ici, je la prends depuis le CDN google
-   mais si vous l'avez en local, changez simplement l'adresse. #}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.image1.imageFile.file) }}</div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input" placeholder="Image principale" type="text" id="uploadFile1"  readonly/>
+                                    <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>{{ form_widget(form.image1.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                                    </div>
+                                </div>
+                                <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.image2.imageFile.file) }}</div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input" placeholder="Image 1" type="text" id="uploadFile2"  readonly/>
+                                    <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>{{ form_widget(form.image2.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                                    </div>
+                                </div>
+                                <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.image3.imageFile.file) }}</div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input" placeholder="Image 2" type="text" id="uploadFile3"  readonly/>
+                                    <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>{{ form_widget(form.image3.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                                    </div>
+                                </div>
+                                <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.image4.imageFile.file) }}</div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input" placeholder="Image 3" type="text" id="uploadFile4"  readonly/>
+                                    <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>{{ form_widget(form.image4.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                                    </div>
+                                </div>
+                                <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.image5.imageFile.file) }}</div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input" placeholder="Image 4" type="text" id="uploadFile5"  readonly/>
+                                    <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>{{ form_widget(form.image5.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                                    </div>
+                                </div>
+                                <div class="mdl-grid">
+                                    <div class="mdl-layout-spacer"></div>
+                                    <div>
+                                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+                                            <i class="material-icons">check</i>
+                                        </button>
+                                    </div>
 
-{# Voici le script en question : #}
-<script type="text/javascript">
-   $(document).ready(function() {
-      // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
-      var $container = $('div#rr_restaurantbundle_restaurant_images');
-
-      // On ajoute un lien pour ajouter une nouvelle catégorie
-      var $addLink = $('<a href="#" id="add_image" class="btn btn-default">Ajouter une image</a>');
-      $container.append($addLink);
-
-      // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
-      $addLink.click(function(e) {
-         addImage($container);
-         e.preventDefault(); // évite qu'un # apparaisse dans l'URL
-         return false;
-      });
-
-      // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
-      var index = $container.find(':input').length;
-
-      // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
+                                </div>
 
 
-      // La fonction qui ajoute un formulaire Categorie
-      function addImage($container) {
-         if(index>=5)return;
-         // Dans le contenu de l'attribut « data-prototype », on remplace :
-         // - le texte "__name__label__" qu'il contient par le label du champ
-         // - le texte "__name__" qu'il contient par le numéro du champ
-         var $prototype = $($container.attr('data-prototype').replace(/__name__label__/g, 'Image n°' + (index+1))
-                 .replace(/__name__/g, index));
 
-         // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
-         addDeleteLink($prototype);
+                        {{ form_end(form) }}
+                    </div>
+            </div>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    <script>
 
-         // On ajoute le prototype modifié à la fin de la balise <div>
-         $container.append($prototype);
+        document.getElementById("{{ form.image1.imageFile.file.vars.id }}").onchange = function () {
+            document.getElementById("uploadFile1").value = this.files[0].name;
+        };
+        document.getElementById("{{ form.image2.imageFile.file.vars.id }}").onchange = function () {
+            document.getElementById("uploadFile2").value = this.files[0].name;
+        };
+        document.getElementById("{{ form.image3.imageFile.file.vars.id }}").onchange = function () {
+            document.getElementById("uploadFile3").value = this.files[0].name;
+        };
+        document.getElementById("{{ form.image4.imageFile.file.vars.id }}").onchange = function () {
+            document.getElementById("uploadFile4").value = this.files[0].name;
+        };
+        document.getElementById("{{ form.image5.imageFile.file.vars.id }}").onchange = function () {
+            document.getElementById("uploadFile5").value = this.files[0].name;
+        };
 
-         // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
-         index++;
-      }
+    </script>
 
-      // La fonction qui ajoute un lien de suppression d'une catégorie
-      function addDeleteLink($prototype) {
-         // Création du lien
-         $deleteLink = $('<a href="#" class="btn btn-danger">Supprimer</a>');
-
-         // Ajout du lien
-         $prototype.append($deleteLink);
-
-         // Ajout du listener sur le clic du lien
-         $deleteLink.click(function(e) {
-            $prototype.remove();
-            e.preventDefault(); // évite qu'un # apparaisse dans l'URL
-            index--;
-            return false;
-         });
-      }
-   });
-</script>
 

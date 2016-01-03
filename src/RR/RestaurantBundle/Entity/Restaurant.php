@@ -55,9 +55,8 @@ class Restaurant
 
     /**
      * @var string
-     * @ORM\Column(name="description", type="string", length=255)
-     * @Assert\NotBlank()
-     * @Assert\Length(min=10, minMessage="La description doit faire au moins {{ limit }} caractères.")
+     * @ORM\Column(name="description", type="string", length=255,nullable=true)
+     * @Assert\Length(max=255, maxMessage="La description doit faire au maximum {{ limit }} caractères.")
      */
     private $description;
 

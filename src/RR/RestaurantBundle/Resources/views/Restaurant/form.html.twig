@@ -1,14 +1,83 @@
-{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
+    <div class="mdl-grid">
 
-{# Cette vue n'hérite de personne, elle sera incluse par d'autres vues qui,
-   elles, hériteront probablement du layout. Je dis « probablement » car,
-   ici pour cette vue, on n'en sait rien et c'est une info qui ne nous concerne pas. #}
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="mdl-card mdl-shadow--2dp" style="min-width: 100%;">
+                <div class="mdl-card__title">
+                    <h5>Formulaire restaurant</h5>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
 
-<h3>Formulaire restaurant</h3>
+                    <div class="mdl-grid">
+                        <div class="mdl-cell--6-col">
 
-{# On laisse vide la vue pour l'instant, on la comblera plus tard
-   lorsqu'on saura afficher un formulaire. #}
-<div class="well">
-  {{ form(form) }}
-</div>
 
+                            {{ form_start(form) }}
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form) }}</div>
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.nom) }}</div>
+                            {{ form_widget(form.nom, {'attr': {'class': 'mdl-textfield__input','placeholder':'nom restaurant'}}) }}
+                            {{ form_label(form.nom, " ") }}
+                            <br>
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.telephone) }}</div>
+                            {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'telephone'}}) }}
+                            {{ form_label(form.telephone, " ") }}
+                        {% if action=="add" %}
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.siret) }}</div>
+                            {{ form_widget(form.siret, {'attr': {'class': 'mdl-textfield__input','placeholder':'numero SIRET'}}) }}
+                            {{ form_label(form.siret, " ") }}
+                        {% endif %}
+                            <br>
+
+
+
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.address.zipcode) }}</div>
+                            {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Code postal'}}) }}
+                            {{ form_label(form.address.zipcode, " ") }}
+
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.address.city) }}</div>
+                            {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Ville'}}) }}
+                            {{ form_label(form.address.city, " ") }}
+
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.address.street) }}</div>
+                            {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Rue' }}) }}
+                            {{ form_label(form.address.street, " ") }}
+
+
+
+                        </div>
+                        <div class="mdl-layout-spacer"></div>
+                        <div class="mdl-cell--6-col">
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.regimes) }}</div>
+                            {% for regime in form.regimes %}
+                                <br>
+                                <label class="mdl-checkbox mdl-js-checkbox " for="{{ regime.vars.id }}">
+                                    {{ form_widget(regime, {'attr': {'class': 'mdl-checkbox__input'}}) }}
+                                    <span class="mdl-checkbox__label"><b>{{ form_label(regime) }}</b></span>
+                                </label>
+                            {% endfor %}
+                            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.description) }}</div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input','rows':'3','maxlength':'255','placeholder':'contenu1'}}) }}
+                                {{ form_label(form.description, "description",{'attr': {'class': 'mdl-textfield__label'}}) }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="mdl-grid">
+                        <p>
+                            Attention : ce restaurant sera ajoutée directement
+                            au site qu'après validation du formulaire.
+                        </p>
+                        <div class="mdl-layout-spacer"></div>
+                            <div>
+                                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+                                    <i class="material-icons">check</i>
+                                </button>
+                            </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>

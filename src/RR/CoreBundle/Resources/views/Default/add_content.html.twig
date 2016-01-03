@@ -71,7 +71,7 @@
                             <div class="mdl-cell--8-col">
 
                                 <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.enabled) }}</div>
-                                <label class="mdl-checkbox mdl-js-checkbox " for="rr_corebundle_sitecontent_enabled">
+                                <label class="mdl-checkbox mdl-js-checkbox " for="{{ form.enabled.vars.id }}">
                                     {{ form_widget(form.enabled, {'attr': {'class': 'mdl-checkbox__input'}}) }}
                                     <span class="mdl-checkbox__label"><b id="enabled">Mettre en ligne</b></span>
 
@@ -98,7 +98,7 @@
 {% block javascript %}
     <script>
 
-        document.getElementById("rr_corebundle_sitecontent_image_imageFile_file").onchange = function () {
+        document.getElementById("{{ form.image.imageFile.file.vars.id }}").onchange = function () {
             document.getElementById("uploadFile").value = this.files[0].name;
         };
 

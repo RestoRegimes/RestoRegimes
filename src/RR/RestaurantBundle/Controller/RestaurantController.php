@@ -132,7 +132,7 @@ class RestaurantController extends Controller
             // Inutile de persister ici, Doctrine connait déjà notre annonce
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Restaurant bien modifié.');
+            $request->getSession()->getFlashBag()->add('notice', 'Horaires bien modifiés.');
 
             return $this->redirect($this->generateUrl('rr_restaurant_images', array('id' => $restaurant->getId())));
         }
@@ -162,7 +162,7 @@ class RestaurantController extends Controller
             // Inutile de persister ici, Doctrine connait déjà notre annonce
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Restaurant bien modifié.');
+            $request->getSession()->getFlashBag()->add('notice', 'Images bien ajoutées.');
 
             return $this->redirect($this->generateUrl('rr_restaurant_view', array('id' => $restaurant->getId())));
         }

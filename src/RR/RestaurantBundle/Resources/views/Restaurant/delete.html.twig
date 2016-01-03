@@ -6,24 +6,54 @@
     Supprimer un restaurant - {{ parent() }}
 {% endblock %}
 
-{% block rrrestaurant_body %}
+{% block fos_user %}
+    <div class="mdl-grid">
 
-    <h2>Supprimer un restaurant</h2>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-color--red-400">
+                    <h4>
+                        Etes-vous certain de vouloir supprimer<br>
+                        le restaurant "{{ restaurant.nom }}" ?
+                    </h4>
+                </div>
 
-    <p>
-        Etes-vous certain de vouloir supprimer le restaurant "{{ restaurant.nom }}" ?
-    </p>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-grid">
+                        <form action="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}" method="post">
 
-    {# On met l'id de l'annonce dans la route de l'action du formulaire #}
-    <form action="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}" method="post">
-        <a href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}" class="btn btn-default">
-            <i class="glyphicon glyphicon-chevron-left"></i>
-            Retour au restaurant
-        </a>
-        {# Ici j'ai écrit le bouton de soumission à la main #}
-        <input type="submit" value="Supprimer" class="btn btn-danger" />
-        {# Ceci va générer le champ CSRF #}
-        {{ form_rest(form) }}
-    </form>
+
+                            <button href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                Retour au restaurant
+                            </button>
+
+                            {# Ceci va générer le champ CSRF #}
+                            {{ form_rest(form) }}
+
+
+
+                            <div  class="mdl-grid">
+                                <div class="mdl-cell"><h5>Confirmer:</h5></div>
+                                <div class="mdl-layout-spacer"></div>
+                                <div class="mdl-cell">
+                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--red-A400">
+                                        <i class="material-icons">warning</i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+
+
+
+
+
 
 {% endblock %}

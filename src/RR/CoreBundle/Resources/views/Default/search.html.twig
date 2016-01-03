@@ -19,7 +19,7 @@
             {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}
             {{ form_label(form.recherche, " ") }}</div>
 
-        <label class="mdl-checkbox mdl-js-checkbox " for="form_geo">
+        <label class="mdl-checkbox mdl-js-checkbox " for="{{ form.geo.vars.id }}">
             {{ form_widget(form.geo, {'attr': {'class': 'mdl-checkbox__input','onclick':"getLocation()"}}) }}
             <span class="mdl-checkbox__label"><b id="geo">Se Geolocaliser</b></span>
 
@@ -82,11 +82,11 @@
 
     <script>
 
-        var x = document.getElementById("form_lng");
-        var y = document.getElementById("form_lat");
+        var x = document.getElementById("{{ form.lng.vars.id }}");
+        var y = document.getElementById("{{ form.lat.vars.id }}");
         var z = document.getElementById("geo");
         var a = document.getElementById("adresse");
-        var ad= document.getElementById("form_recherche");
+        var ad= document.getElementById("{{ form.recherche.vars.id }}");
         var click=false;
         if(document.getElementById("form_geo").checked){
             z.innerHTML = "Addresse trouvée";
