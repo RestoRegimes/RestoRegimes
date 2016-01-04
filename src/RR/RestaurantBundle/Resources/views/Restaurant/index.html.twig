@@ -27,7 +27,7 @@
                 {% set count=0 %}
             {% endif %}
                     <div class="mdl-card mdl-shadow--2dp" style="width:100%;min-height:100px;">
-                        <div class="mdl-card__title" {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                        <div class="mdl-card__title {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--light-green-A400 ','mdl-color--green-400','mdl-color--yellow-400']) }}" {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
                             style=" background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; "{% endif %}>
                             <a class="mdl-button mdl-button--raised mdl-button--colored" href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">
                                 {{ restaurant.nom }}

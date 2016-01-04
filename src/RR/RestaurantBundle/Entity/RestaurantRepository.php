@@ -107,7 +107,7 @@ class RestaurantRepository extends EntityRepository
             ->select('r')
             ->leftJoin('r.regimes','reg')
             ->addSelect('reg')
-            ->leftJoin('r.adresse','adr')
+            ->leftJoin('r.address','adr')
             ->addSelect('adr');
 
         if($data['vegetarien']==1){

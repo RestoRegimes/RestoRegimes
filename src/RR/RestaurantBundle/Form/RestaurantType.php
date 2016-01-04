@@ -39,7 +39,8 @@ class RestaurantType extends AbstractType
                 'expanded' => true,
                 'multiple' => true))
             ->add('address',new AdresseType(),array(
-                    'label' => 'Adresse'
+                'label' => ' ',
+                'data_class' => 'Padam87\AddressBundle\Entity\GeocodedAddress'
             ));
     }
     

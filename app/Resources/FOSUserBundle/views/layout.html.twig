@@ -5,7 +5,7 @@
             <div class="mdl-cell mdl-cell--3-col"></div>
             <div class="mdl-cell mdl-cell--6-col">
                 <div class="mdl-card mdl-shadow--2dp" style="min-width: 100%;">
-                    <div class="mdl-card__title">
+                    <div class="mdl-card__title {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--light-green-A400 ','mdl-color--green-400','mdl-color--yellow-400']) }}">
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
                             <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_logout') }}">
