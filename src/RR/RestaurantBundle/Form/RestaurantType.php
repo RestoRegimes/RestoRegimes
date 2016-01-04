@@ -2,11 +2,11 @@
 
 namespace RR\RestaurantBundle\Form;
 
+use RR\CoreBundle\Form\AdresseType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\CallbackTransformer;
-use Padam87\AddressBundle\Form\GeocodedAddressType;
 
 class RestaurantType extends AbstractType
 {
@@ -38,10 +38,8 @@ class RestaurantType extends AbstractType
                 'property' => 'libelle',
                 'expanded' => true,
                 'multiple' => true))
-            ->add('address',new GeocodedAddressType(),array(
-                    'label' => 'Adresse',
-                'data_class' => 'Padam87\AddressBundle\Entity\GeocodedAddress'
-
+            ->add('adresse',new AdresseType(),array(
+                    'label' => 'Adresse'
             ));
     }
     

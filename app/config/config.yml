@@ -122,7 +122,6 @@ fos_user:
 
 
 bazinga_geocoder:
-    default_provider:         google_maps
     providers:
         google_maps:
             locale:               null

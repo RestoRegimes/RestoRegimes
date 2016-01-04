@@ -2,9 +2,9 @@
 namespace RR\UserBundle\Form;
 
 use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
+use RR\CoreBundle\Form\AdresseType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-use Padam87\AddressBundle\Form\GeocodedAddressType;
 
 class RegistrationType extends BaseType
 {
@@ -12,9 +12,8 @@ public function buildForm(FormBuilderInterface $builder,
 array $options)
 {
     parent::buildForm($builder, $options);
-    $builder->add('address',new GeocodedAddressType(),array(
+    $builder->add('adresse',new AdresseType(),array(
     'label' => 'Adresse',
-    'data_class' => 'Padam87\AddressBundle\Entity\GeocodedAddress',
     'required'=>false
     ))
     ->add('telephone','text',array('required'=>false))

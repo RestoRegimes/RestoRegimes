@@ -3,7 +3,6 @@ fos_user:
 
 rr_user:
     resource: "@RRUserBundle/Resources/config/routing.yml"
-    prefix:   /User
 
 rr_restaurant:
     resource: "@RRRestaurantBundle/Resources/config/routing.yml"
