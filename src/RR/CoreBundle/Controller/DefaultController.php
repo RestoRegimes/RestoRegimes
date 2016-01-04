@@ -9,7 +9,7 @@ use RR\CoreBundle\Form\SiteContentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
-use Symfony\Component\HttpFoundation\Response;
+use Geocoder\HttpAdapter\CurlHttpAdapter;
 use Ivory\GoogleMap\Base\Coordinate;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -100,7 +100,7 @@ class DefaultController extends Controller
 
             if(empty($data['radius']))$data['radius']=1;
             if($data['geo']!=1) {
-                $curl = new \Ivory\HttpAdapter\CurlHttpAdapter();
+                $curl = new CurlHttpAdapter();
                 $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
 
 

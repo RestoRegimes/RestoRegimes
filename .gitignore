@@ -3,3 +3,5 @@
 /app/logs
 /bin
 .idea
+web/images
+web/bundles

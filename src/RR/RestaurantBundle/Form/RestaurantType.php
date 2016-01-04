@@ -38,7 +38,7 @@ class RestaurantType extends AbstractType
                 'property' => 'libelle',
                 'expanded' => true,
                 'multiple' => true))
-            ->add('adresse',new AdresseType(),array(
+            ->add('address',new AdresseType(),array(
                     'label' => 'Adresse'
             ));
     }

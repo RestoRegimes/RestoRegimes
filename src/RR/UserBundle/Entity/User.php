@@ -32,7 +32,7 @@ class User extends BaseUser
     public $recaptcha;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\CoreBundle\Entity\Adresse",cascade={"persist","remove"})
+     * @ORM\OnetoOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist","remove"})
      */
     private $address;
 
@@ -70,23 +70,24 @@ class User extends BaseUser
     }
 
     /**
-     * Set adress
+     * Set address
      *
-     * @param \RR\CoreBundle\Entity\Adresse $adress
+     * @param \Padam87\AddressBundle\Entity\GeocodedAddress $address
      *
      * @return User
      */
-    public function setAddress(\RR\CoreBundle\Entity\Adresse $address = null)
+    public function setAddress(\Padam87\AddressBundle\Entity\GeocodedAddress $address = null)
     {
+        $address->setCountry("France");
         $this->address = $address;
-    
+
         return $this;
     }
 
     /**
      * Get address
      *
-     * @return \RR\CoreBundle\Entity\Adresse
+     * @return \Padam87\AddressBundle\Entity\GeocodedAddress
      */
     public function getAddress()
     {

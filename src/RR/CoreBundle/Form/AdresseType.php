@@ -2,41 +2,22 @@
 
 namespace RR\CoreBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
+use Padam87\AddressBundle\Form\GeocodedAddressType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Symfony\Component\Form\CallbackTransformer;
 
 
-class AdresseType extends  AbstractType
+class AdresseType extends GeocodedAddressType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
-        $builder->add('zipcode', 'text', array(
-            'required' => false,
-            'label'=>'code postal'
-        ));
-        $builder->add('city', 'text', array(
-            'label'=>'ville'
-        ));
-        $builder->add('street', 'text', array(
-            'label'=>'rue'
-        ));
-
-
         parent::buildForm($builder, $options);
-    }
-
-    public function getDefaultOptions(array $options)
-    {
-        return array(
-            'data_class' => 'RR\CoreBundle\Entity\Adresse',
-        );
+        $builder->remove('country');
+        $builder->remove('state');
     }
 
     public function getName()
     {
         return 'rr_corebundle_adresse';
     }
+
 }

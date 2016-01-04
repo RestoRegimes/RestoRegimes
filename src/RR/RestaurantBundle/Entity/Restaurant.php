@@ -581,7 +581,9 @@ class Restaurant
      */
     public function setAddress(\Padam87\AddressBundle\Entity\GeocodedAddress $address = null)
     {
+        $address->setCountry("France");
         $this->address = $address;
+
 
         return $this;
     }

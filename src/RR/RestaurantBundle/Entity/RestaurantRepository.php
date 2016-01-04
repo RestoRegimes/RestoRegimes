@@ -26,7 +26,7 @@ class RestaurantRepository extends EntityRepository
             ->select('r')
             ->leftJoin('r.regimes','reg')
             ->addSelect('reg')
-            ->leftJoin('r.address','adr')
+            ->leftJoin('r.adresse','adr')
             ->addSelect('adr');
 
         return $query;
@@ -107,7 +107,7 @@ class RestaurantRepository extends EntityRepository
             ->select('r')
             ->leftJoin('r.regimes','reg')
             ->addSelect('reg')
-            ->leftJoin('r.address','adr')
+            ->leftJoin('r.adresse','adr')
             ->addSelect('adr');
 
         if($data['vegetarien']==1){
