@@ -9,7 +9,6 @@ use RR\CoreBundle\Form\SiteContentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
-use Geocoder\HttpAdapter\CurlHttpAdapter;
 use Ivory\GoogleMap\Base\Coordinate;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -100,15 +99,14 @@ class DefaultController extends Controller
 
             if(empty($data['radius']))$data['radius']=1;
             if($data['geo']!=1) {
-                $curl = new CurlHttpAdapter();
-                $geocoder = new \Geocoder\Provider\GoogleMaps($curl);
-
+                $adapter  = new \Geocoder\HttpAdapter\CurlHttpAdapter();
+                $provider = new \Geocoder\Provider\GoogleMapsProvider($adapter);
+                $geocoder = new \Geocoder\Geocoder($provider);
 
                 $address = $geocoder->geocode($data['recherche'] . " France");
 
-                $coord = $address->first()->getCoordinates();
-                $data['lat'] = $coord->getLatitude();
-                $data['lng'] = $coord->getLongitude();
+                $data['lat'] =$address->getLatitude();
+                $data['lng'] = $address->getLongitude();
             }else{
                 $coord=new Coordinate($data['lat'], $data['lng']);
             }
@@ -127,7 +125,7 @@ class DefaultController extends Controller
 
             $link=$this->getRequest()->getBasePath().'/rrcore/images/marker';
             $map = $this->get('ivory_google_map.map');
-            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$coord,$data['radius']);
+            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$address,$data['radius']);
 
             return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
                 'form'=>$form->createView(),

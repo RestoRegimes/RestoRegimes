@@ -54,8 +54,294 @@ class LoadResto implements FixtureInterface
 
 //---<
 //Florian--->
-
-
+'La Pierre Percée,0384313046, Restaurant végétarien ouvert tous les jours sur réservation.
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,1,0,0,0,0',
+'Le Pochon Magique,0384282806, Restaurant végétarien ouvert du lundi au samedi jusquà 13h30.
+,11:15,13:30,,
+,11:15,13:30,,
+,11:15,13:30,,
+,11:15,13:30,,
+,11:15,13:30,,
+,11:15,13:30,,
+,11:15,13:30,,
+,1,0,0,0,0',
+'Mirabelle,0381501020, Restaurant végétarien
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,11:15,14:00,18:30,23:00
+,,,,
+,,,,
+,1,0,0,0,0',
+'Saveurs VégétHalles,0140419395, Restaurant végétalien et bio ouvert tous les jours sauf le dimanche de 12h à 15h et 19h à 23h.
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,,,,
+,1,1,1,0,0',
+'Le Potager du Marais,0157409857, Restaurant végétalien et bio ouvert du mercredi au dimanche de 12h à 15h et de 19h à 23h.
+,,,,
+,,,,
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,12:00,15:00,19:00,23:00
+,1,1,1,0,0',
+'Bobs Kitchen,0952551166, Restaurant végétarien végétalien et bio ouvert du lundi au vendredi de 8h à 15h et le samedi et le dimanche de 10h à 16h.
+,08:00,15:00,,
+,08:00,15:00,,
+,08:00,15:00,,
+,08:00,15:00,,
+,08:00,15:00,,
+,10:00,16:00,,
+,10:00,16:00,,
+,1,1,1,0,0',
+'Café Pinson,0983825353, Restaurant végétalien bio et sans gluten
+,09:00,22:00,,
+,09:00,22:00,,
+,09:00,22:00,,
+,09:00,22:00,,
+,09:00,22:00,,
+,09:00,22:00,,
+,10:00,18:00,,
+,1,1,1,0,0',
+'Au Grand Appétit,0140270495, Restaurant végétalien et bio
+,12:00,15:00,19:00,21:00
+,12:00,15:00,19:00,21:00
+,12:00,15:00,19:00,21:00
+,12:00,15:00,,
+,12:00,14:30,,
+,12:00,15:00,,
+,12:00,15:00,,
+,1,1,1,0,0',
+'Café Ginger,0142724383, Restaurant végétalien bio et sans gluten
+,12:30,16:00,,
+,12:30,16:00,,
+,12:30,16:00,,
+,12:30,16:00,,
+,12:30,16:00,19:00,23:00
+,12:30,16:00,19:00,23:00
+,12:30,16:00,19:00,23:00
+,1,1,1,0,0',
+'Le Grenier de Notre-Dame,0143299829, Restaurant végétarien végétalien bio et sans gluten
+,12:00,14:30,18:30,23:00
+,12:00,14:30,18:30,23:00
+,12:00,14:30,18:30,23:00
+,12:00,14:30,18:30,23:00
+,12:00,14:30,18:30,23:00
+,12:00,14:30,18:30,23:00
+,12:00,14:30,18:30,23:00
+,1,1,1,0,0',
+'Vegan Folies,0143372189, Pâtisserie végétaliennes sans gluten et bio et sans gluten
+,,,,
+,11:00,22:00,,
+,11:00,22:00,,
+,11:00,22:00,,
+,11:00,22:00,,
+,11:00,22:00,,
+,11:00,22:00,,
+,1,1,1,0,0',
+'Maoz Falafel,0143263600, Snack-bar vendant des falafels végétariens et végétaliens
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,1,1,0,0,0',
+'Maoz Falafel,0146338719, Snack-bar vendant des falafels végétariens et végétaliens.
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,11:30,00:30,,
+,1,1,0,0,0',
+'Pousse Pousse,0153161081, Restaurant végétarien végétalien bio et sans gluten
+,,,,
+,12:00,14:45,,
+,12:00,14:45,,
+,12:00,14:45,,
+,12:00,14:45,,
+,12:00,18:00,,
+,,,,
+,1,1,1,0,0',
+'Le Végétarien,0142471514, Restaurant végétarien végétalien et sans gluten
+,11:30,15:00,,
+,11:30,15:00,,
+,11:30,15:00,,
+,11:30,15:00,,
+,11:30,15:00,,
+,12:00,18:00,,
+,,,,
+,1,1,1,0,0',
+'42 Degrés,0973657788, Restaurant végétalien bio et sans gluten
+,,,,
+,12:00,14:30,19:30,22:00
+,12:00,14:30,19:30,22:00
+,12:00,14:30,19:30,22:00
+,12:00,14:30,19:30,22:00
+,12:00,14:30,19:30,22:00
+,,,,
+,1,1,1,0,0',
+'Végébowl,0142464589, Restaurant végétalien bio et sans gluten. Sur réservation.
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,,,19:00,22:30
+,,,19:00,22:30
+,1,1,1,0,0',
+'Krishna-Bhavan,0142057843, Restaurant végétarien et végétalien sur demande
+,11:00,23:00,,
+,11:00,23:00,,
+,11:00,23:00,,
+,11:00,23:00,,
+,11:00,23:00,,
+,11:00,23:00,,
+,11:00,23:00,,
+,1,1,0,0,0',
+'Saravanaa Bhavan,0140050101, Restaurant végétarien et végétalien sur demande
+,10:30,23:00,,
+,10:30,23:00,,
+,10:30,23:00,,
+,10:30,23:00,,
+,10:30,23:00,,
+,10:30,23:00,,
+,10:30,23:00,,
+,1,1,0,0,0',
+'Tien Hiang,0142000823, Restaurant végétalien et sans gluten sur demande
+,12:00,15:00,18:30,23:00
+,,,,
+,12:00,15:00,18:30,23:00
+,12:00,15:00,18:30,23:00
+,12:00,15:00,18:30,23:00
+,12:00,15:00,18:30,23:00
+,12:00,15:00,18:30,23:00
+,1,1,1,0,0',
+'Bobs Juice Bar,0950063618, Restaurant végétarien végétalien bio et sans gluten
+,07:30,15:00,,
+,07:30,15:00,,
+,07:30,15:00,,
+,07:30,15:00,,
+,07:30,15:00,,
+,,,,
+,,,,
+,1,1,1,0,0',
+'Sol Semilla,0142010344, Bar à plantes végétalien bio et sans gluten. Sur réservation.
+,,,,
+,11:00,14:00,,
+,11:00,14:00,,
+,11:00,14:00,,
+,11:00,14:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,1,1,1,0,0',
+'Loving Hut,0148064384, Restaurant végétalien et bio
+,11:30,15:00,18:30,23:00
+,11:30,15:00,18:30,23:00
+,11:30,15:00,18:30,23:00
+,11:30,15:00,18:30,23:00
+,11:30,15:00,18:30,23:00
+,11:30,15:00,18:30,23:00
+,,,,
+,1,1,0,0,0',
+'Soya,0148063302, Restaurant végétarien végétalien bio et sans gluten
+,12:00,15:30,19:00,23:00
+,12:00,15:30,19:00,23:00
+,12:00,15:30,19:00,23:00
+,12:00,15:30,19:00,23:00
+,12:00,15:30,19:00,23:00
+,12:00,15:30,19:00,23:00
+,12:00,15:30,,
+,1,1,1,0,0',
+'Mamie Green,0143723668, Restaurant végétarien végétalien et bio
+,,,,
+,11:30,19:00,,
+,11:30,19:00,,
+,11:30,19:00,,
+,11:30,19:00,,
+,11:30,19:00,,
+,11:30,19:00,,
+,1,1,0,0,0',
+'East Side Burgers,0148064383, Fast food végétarien et végétalien
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,20:00,,
+,12:00,20:00,,
+,12:00,18:00,,
+,1,1,0,0,0',
+'Gentle Gourmet Café,0143434849, Restaurant végétalien bio et sans gluten
+,09:00,15:00,19:00,23:00
+,09:00,15:00,19:00,23:00
+,09:00,15:00,19:00,23:00
+,09:00,15:00,19:00,23:00
+,09:00,15:00,19:00,23:00
+,09:00,15:00,19:00,23:00
+,09:00,17:00,19:00,23:00
+,1,1,1,0,0',
+'Green Garden,0145829954, Restaurant végétalien
+,12:00,15:00,18:30,22:30
+,,,,
+,12:00,15:00,18:30,22:30
+,12:00,15:00,18:30,22:30
+,12:00,15:00,18:30,22:30
+,12:00,15:00,18:30,22:30
+,12:00,15:00,18:30,22:30
+,1,1,0,0,0',
+'Aquarius,0145413688, Restaurant végétarien végétalien et bio
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,12:00,14:30,19:00,22:30
+,,,,
+,1,1,0,0,0',
+'Joy in Food,0143879679, Restaurant végétarien végétalien et bio
+,12:00,14:30,,
+,12:00,14:30,,
+,12:00,14:30,,
+,12:00,14:30,,
+,12:00,14:30,,
+,,,,
+,,,,
+,1,1,0,0,0',
+'Au Grain de Folie,0142581557, Restaurant végétarien végétalien et bio ouvert du mercredi au dimanche de 13h à 14h30 et du mardi au samedi de 19h à 22h30.
+,,,,
+,,,19:00,22:30
+,13:00,14:30,19:00,22:30
+,13:00,14:30,19:00,22:30
+,13:00,14:30,19:00,22:30
+,13:00,14:30,19:00,22:30
+,13:00,14:30,,
+,1,1,0,0,0',
+'Bêtise et Volup Thé,0381508345, Restaurant végétarien végétalien et bio
+,,,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,,,,
+,1,1,0,0,0',
 
 //---<
 //Lan Lynn--->
@@ -75,10 +361,41 @@ class LoadResto implements FixtureInterface
 
 //---<
 //Luiz--->
-            'Belfort,15 Rue Aristide Briand,47.632488,6.855264',
+            'Belfort,90000,15 Rue Aristide Briand,47.632488,6.855264',
 //---<
 //Florian--->
-
+            'Fouvent-Saint-Andoche,70600,Domaine de la Pierre Percée,47.675662,5.685214999999971',
+            'Belfort,90000,18 rue de Brasse,47.6434499,6.857726800000023',
+            'Besançon,25000,1 rue Mégevand,47.2366432,6.022471200000041',
+            'Paris,75008,41 rue des Bourbonnais,48.8605333,2.345503199999939',
+            'Paris,75003,22 rue Rambuteau,48.8608996,2.3543503999999302',
+            'Paris,75003,74 rue des Gravilliers,48.86456769999999,2.3545662999999877',
+            'Paris,75004,6 rue du Forez,48.8636491,2.363151000000016',
+            'Paris,75005,9 rue de la Cerisaie,48.8516549,2.3664059999999836',
+            'Paris,75005,9 rue Jacques Cœur,48.8528822,2.367327799999998',
+            'Paris,75005,18 rue de la Bucherie,48.85193959999999,2.3484647000000223',
+            'Paris,75005,53 rue Mouffetard,48.8434104,2.3496196999999484',
+            'Paris,75005,8 rue Xavier Privas,48.85294469999999,2.3455804999999827',
+            'Paris,75006,36 rue Saint-André des Arts,48.85343599999999,2.3417021000000204',
+            'Paris,75009,7 rue Notre-Dame de Lorette,48.8771888,2.3384227999999894',
+            'Paris,75009,65 rue du Faubourg Poissonnière,48.8755311,2.3478463999999803',
+            'Paris,75009,109 rue du Faubourg Poissonnière,48.8776168,2.348911600000065',
+            'Paris,75009,3 rue de la Boule Rouge,48.87335849999999,2.344544199999973',
+            'Paris,75010,24 rue Cail,48.88292719999999,2.359570299999973',
+            'Paris,75010,170 rue du Faubourg-Saint-Denis,48.8798646,2.35756779999997',
+            'Paris,75010,14 rue Bichat,48.87027079999999,2.369061600000009',
+            'Paris,75010,15 rue Lucien Sampaix,48.872029,2.3604325000000017',
+            'Paris,75010,23 rue des Vinaigriers,48.87307099999999,2.3629620000000386',
+            'Paris,75011,92 Boulevard Beaumarchais,48.8598848,2.367854599999987',
+            'Paris,75011,20 rue de la Pierre levée,48.86811669999999,2.370258299999932',
+            'Paris,75011,25 rue de la Forgé Royale,48.8521114,2.380914599999983',
+            'Paris,75011,60 Boulevard Voltaire,48.8618141,2.3730745999999954',
+            'Paris,75012,24 Boulevard de la Bastille,48.84902599999999,2.3682651000000305',
+            'Paris,75013,20 rue Nationale,48.8234363,2.368519200000037',
+            'Paris,75014,40 rue de Gergovie,48.83319399999999,2.315592199999969',
+            'Paris,75017,22 rue Truffaut,48.8852398,2.322793899999965',
+            'Paris,75018,24 rue la Vieuville,48.88474129999999,2.340531800000008',
+            'Besançon,25000,79 rue des Granges,47.2371427,6.027574299999969',
 
 
 //---<
@@ -97,9 +414,10 @@ class LoadResto implements FixtureInterface
             $Address=new GeocodedAddress();
             $address=explode(',',$addresses[$i]);
             $Address->setCity($address[0]);
-            $Address->setStreet($address[1]);
-            $Address->setLatitude($address[2]);
-            $Address->setLongitude($address[3]);
+            $Address->setZipCode($address[1]);
+            $Address->setStreet($address[2]);
+            $Address->setLatitude($address[3]);
+            $Address->setLongitude($address[4]);
 
             $Restaurant = new Restaurant();
             $restaurant=explode(',',$restaurants[$i]);
@@ -153,7 +471,7 @@ class LoadResto implements FixtureInterface
             $Restaurant->setAddress($Address);
             $Restaurant->setValide(true);
 
-            if($restaurant[31]==1)$Restaurant->addRegime($vegetarien);
+           if($restaurant[31]==1)$Restaurant->addRegime($vegetarien);
             if($restaurant[32]==1)$Restaurant->addRegime($vegetalien);
             if($restaurant[33]==1)$Restaurant->addRegime($gluten);
             if($restaurant[34]==1)$Restaurant->addRegime($diabete);

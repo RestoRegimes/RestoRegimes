@@ -26,28 +26,28 @@ class Horaire
      *
      * @ORM\Column(name="ouverture1", type="time",nullable=true)
      */
-    private $ouverture1;
+    private $ouverture1=NULL;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fermeture1", type="time",nullable=true)
      */
-    private $fermeture1;
+    private $fermeture1=NULL;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="ouverture2", type="time",nullable=true)
      */
-    private $ouverture2;
+    private $ouverture2=NULL;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fermeture2", type="time",nullable=true)
      */
-    private $fermeture2;
+    private $fermeture2=NULL;
 
 
     /**
