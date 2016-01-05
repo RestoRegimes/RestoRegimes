@@ -61,16 +61,6 @@ class LoadResto implements FixtureInterface
 ,1,1,0,0,0',
 
 
-'Le Potager du Marais,0157409857,http://www.lepotagerdumarais.fr/
-,,,,
-,12:00,15:00,19:00,22:30
-,12:00,15:00,19:00,22:30
-,12:00,15:00,19:00,22:30
-,12:00,15:00,19:00,22:30
-,12:00,15:00,19:00,22:30
-,12:00,15:00,19:00,22:30
-,1,1,0,0,0',
-
 
 'Lemoni Café,0145084984,http://www.lemonicafe.fr/
 ,12:00,15:00,,
@@ -83,26 +73,7 @@ class LoadResto implements FixtureInterface
 ,1,0,0,0,0',
 
 
-'Le Grenier de Notre-Dame,0143299829,http://www.legrenierdenotredame.fr/
-,12:00,23:00,,
-,12:00,23:00,,
-,12:00,23:00,,
-,12:00,23:00,,
-,12:00,23:00,,
-,12:00,23:00,,
-,12:00,23:00,,
-,1,0,0,0,0',
 
-
-'Bobs Kitchen,0952551166,http://www.bobsjuicebar.com/
-,08:00,15:00,,
-,08:00,15:00,,
-,08:00,15:00,,
-,08:00,15:00,,
-,08:00,15:00,,
-,08:00,16:00,,
-,08:00,16:00,,
-,1,0,0,0,0',
 
 
 'Le Bio d Adam et Ève,0982369457,https://www.facebook.com/Le-Bio-dAdam-et-Eve-123116557815703/
@@ -445,10 +416,7 @@ class LoadResto implements FixtureInterface
 //Axel--->
             'Paris,75005,42 Rue Daubenton,48.840593,2.351203',
             'Paris,75005,18 Rue du Cardinal Lemoine,48.848696,2.353463',
-            'Paris,75003,24 Rue Rambuteau,48.861025,2.354372',
             'Paris,75001,5 Rue Hérold,48.86482,2.341126',
-            'Paris,75005,18 Rue de la Bûcherie,48.85194,2.348465',
-            'Paris,75003,74 Rue des Gravilliers,48.864568,2.354566',
             'Paris,75001,41 Rue Saint Honoré,48.860792,2.345479',
             'Paris,75001,36 Rue Croix des Petits Champs,48.86424,2.340392',
 
