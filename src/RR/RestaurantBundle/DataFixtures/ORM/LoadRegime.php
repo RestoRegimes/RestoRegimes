@@ -33,7 +33,6 @@ class LoadRegime implements FixtureInterface
         for($i=0;$i<5;$i++) {
             // On crée la catégorie
             $regime = new Regime();
-            $regime->setId($i);
             $regime->setLibelle($regimes[$i]);
             $regime->setDescription($description[$i]);
             // On la persiste

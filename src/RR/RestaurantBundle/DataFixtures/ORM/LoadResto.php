@@ -10,7 +10,8 @@ use RR\RestaurantBundle\Entity\Restaurant;
 use Padam87\AddressBundle\Entity\GeocodedAddress;
 
 
-class LoadRestoContent implements FixtureInterface
+
+class LoadResto implements FixtureInterface
 {
     // Dans l'argument de la méthode load, l'objet $manager est l'EntityManager
     /**
@@ -26,7 +27,7 @@ class LoadRestoContent implements FixtureInterface
 
 
         $restaurants=array(
-        'nom,telephone,description
+        /*'nom,telephone,description
         ,lundi_h1,lundi_h2,lundi_h3,lundi_h4
         ,mardi_h1,mardi_h2,mardi_h3,mardi_h4
         ,mercredi_h1,mercredi_h2,mercredi_h3,mercredi_h4
@@ -41,7 +42,15 @@ class LoadRestoContent implements FixtureInterface
 
 //---<
 //Luiz--->
-
+            'Château de Chine,0384280913,www.restaurant-chateau-chine.fr
+        ,,,,
+        ,11:15,14:00,18:30,23:00
+        ,11:15,14:00,18:30,23:00
+        ,11:15,14:00,18:30,23:00
+        ,11:15,14:00,18:30,23:00
+        ,11:15,14:00,18:30,23:00
+        ,11:15,14:00,18:30,23:00
+        ,1,1,0,1,0',
 
 //---<
 //Florian--->
@@ -59,15 +68,14 @@ class LoadRestoContent implements FixtureInterface
 //---<
         );
         $addresses=array(
-          'ville,rue,latitude,longitude',
+          /*'ville,rue,latitude,longitude',
           /* http://www.findlatitudeandlongitude.com/batch-geocode/#.VovUoBXhDtQ pour le geocodage de addresses*/
 //Axel--->
 
 
 //---<
 //Luiz--->
-
-
+            'Belfort,15 Rue Aristide Briand,47.632488,6.855264',
 //---<
 //Florian--->
 
@@ -100,46 +108,46 @@ class LoadRestoContent implements FixtureInterface
             $Restaurant->setTelephone($restaurant[1]);
             $Restaurant->setDescription($restaurant[2]);
             $lundi_h=new Horaire();
-            $lundi_h->setOuverture1($restaurant[3]);
-            $lundi_h->setFermeture1($restaurant[4]);
-            $lundi_h->setOuverture2($restaurant[5]);
-            $lundi_h->setFermeture2($restaurant[6]);
+            if(!empty($restaurant[3]))$lundi_h->setOuverture1(new \DateTime($restaurant[3]));
+            if(!empty($restaurant[4]))$lundi_h->setFermeture1(new \DateTime($restaurant[4]));
+            if(!empty($restaurant[5]))$lundi_h->setOuverture2(new \DateTime($restaurant[5]));
+            if(!empty($restaurant[6]))$lundi_h->setFermeture2(new \DateTime($restaurant[6]));
             if(strlen($restaurant[3].$restaurant[4].$restaurant[5].$restaurant[6])>0)$Restaurant->setLundi($lundi_h);
             $mardi_h=new Horaire();
-            $mardi_h->setOuverture1($restaurant[7]);
-            $mardi_h->setFermeture1($restaurant[8]);
-            $mardi_h->setOuverture2($restaurant[9]);
-            $mardi_h->setFermeture2($restaurant[10]);
+            if(!empty($restaurant[7]))$mardi_h->setOuverture1(new \DateTime($restaurant[7]));
+            if(!empty($restaurant[8]))$mardi_h->setFermeture1(new \DateTime($restaurant[8]));
+            if(!empty($restaurant[9]))$mardi_h->setOuverture2(new \DateTime($restaurant[9]));
+            if(!empty($restaurant[10]))$mardi_h->setFermeture2(new \DateTime($restaurant[10]));
             if(strlen($restaurant[7].$restaurant[8].$restaurant[9].$restaurant[10])>0)$Restaurant->setMardi($mardi_h);
             $mercredi_h=new Horaire();
-            $mercredi_h->setOuverture1($restaurant[11]);
-            $mercredi_h->setFermeture1($restaurant[12]);
-            $mercredi_h->setOuverture2($restaurant[13]);
-            $mercredi_h->setFermeture2($restaurant[14]);
+            if(!empty($restaurant[11]))$mercredi_h->setOuverture1(new \DateTime($restaurant[11]));
+            if(!empty($restaurant[12]))$mercredi_h->setFermeture1(new \DateTime($restaurant[12]));
+            if(!empty($restaurant[13]))$mercredi_h->setOuverture2(new \DateTime($restaurant[13]));
+            if(!empty($restaurant[14]))$mercredi_h->setFermeture2(new \DateTime($restaurant[14]));
             if(strlen($restaurant[11].$restaurant[12].$restaurant[13].$restaurant[14])>0)$Restaurant->setMercredi($mercredi_h);
             $jeudi_h=new Horaire();
-            $jeudi_h->setOuverture1($restaurant[15]);
-            $jeudi_h->setFermeture1($restaurant[16]);
-            $jeudi_h->setOuverture2($restaurant[17]);
-            $jeudi_h->setFermeture2($restaurant[18]);
+            if(!empty($restaurant[15]))$jeudi_h->setOuverture1(new \DateTime($restaurant[15]));
+            if(!empty($restaurant[16]))$jeudi_h->setFermeture1(new \DateTime($restaurant[16]));
+            if(!empty($restaurant[17]))$jeudi_h->setOuverture2(new \DateTime($restaurant[17]));
+            if(!empty($restaurant[18]))$jeudi_h->setFermeture2(new \DateTime($restaurant[18]));
             if(strlen($restaurant[15].$restaurant[16].$restaurant[17].$restaurant[18])>0)$Restaurant->setJeudi($jeudi_h);
             $vendredi_h=new Horaire();
-            $vendredi_h->setOuverture1($restaurant[19]);
-            $vendredi_h->setFermeture1($restaurant[20]);
-            $vendredi_h->setOuverture2($restaurant[21]);
-            $vendredi_h->setFermeture2($restaurant[22]);
+            if(!empty($restaurant[19]))$vendredi_h->setOuverture1(new \DateTime($restaurant[19]));
+            if(!empty($restaurant[20]))$vendredi_h->setFermeture1(new \DateTime($restaurant[20]));
+            if(!empty($restaurant[21]))$vendredi_h->setOuverture2(new \DateTime($restaurant[21]));
+            if(!empty($restaurant[22]))$vendredi_h->setFermeture2(new \DateTime($restaurant[22]));
             if(strlen($restaurant[19].$restaurant[20].$restaurant[21].$restaurant[22])>0)$Restaurant->setVendredi($vendredi_h);
             $samedi_h=new Horaire();
-            $samedi_h->setOuverture1($restaurant[23]);
-            $samedi_h->setFermeture1($restaurant[24]);
-            $samedi_h->setOuverture2($restaurant[25]);
-            $samedi_h->setFermeture2($restaurant[26]);
+            if(!empty($restaurant[23]))$samedi_h->setOuverture1(new \DateTime($restaurant[23]));
+            if(!empty($restaurant[24]))$samedi_h->setFermeture1(new \DateTime($restaurant[24]));
+            if(!empty($restaurant[25]))$samedi_h->setOuverture2(new \DateTime($restaurant[25]));
+            if(!empty($restaurant[26]))$samedi_h->setFermeture2(new \DateTime($restaurant[26]));
             if(strlen($restaurant[23].$restaurant[24].$restaurant[25].$restaurant[26])>0)$Restaurant->setSamedi($samedi_h);
             $dimanche_h=new Horaire();
-            $dimanche_h->setOuverture1($restaurant[27]);
-            $dimanche_h->setFermeture1($restaurant[28]);
-            $dimanche_h->setOuverture2($restaurant[29]);
-            $dimanche_h->setFermeture2($restaurant[30]);
+            if(!empty($restaurant[27]))$dimanche_h->setOuverture1(new \DateTime($restaurant[27]));
+            if(!empty($restaurant[28]))$dimanche_h->setFermeture1(new \DateTime($restaurant[28]));
+            if(!empty($restaurant[29]))$dimanche_h->setOuverture2(new \DateTime($restaurant[29]));
+            if(!empty($restaurant[30]))$dimanche_h->setFermeture2(new \DateTime($restaurant[30]));
             if(strlen($restaurant[27].$restaurant[28].$restaurant[29].$restaurant[30])>0)$Restaurant->setDimanche($dimanche_h);
 
             $Restaurant->setAddress($Address);
