@@ -138,6 +138,29 @@ class LoadResto implements FixtureInterface
 ,,,,
 ,0,0,1,0,0',
 
+
+'La verrière,0177183916,http://www.la-verriere.fr
+,11:00,20:00,,
+,11:00,20:00,,
+,11:00,20:00,,
+,11:00,20:00,,
+,11:00,20:00,,
+,,,,
+,,,,
+,1,1,0,0,0',
+
+
+'Hank,0972440399,http://hankburger.com
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,1,0,0,0,0',
+
+
 //---<
 //Luiz--->
 'Château de Chine,0384280913,www.restaurant-chateau-chine.fr
@@ -463,6 +486,9 @@ class LoadResto implements FixtureInterface
             'Paris,75008,47 Rue Laborde,48.875383,2317791',
             'Paris,75008,10 Place Henri Bergson,48.876352,2.320977',
             'Paris,75116,8 Avenue Kléber,48.872069,2.293266',
+            'Paris,75002,16 Passage des Panoramas,48.870976,2.341726',
+            'Paris,75007,24 Avenue de Tourville,48.854337,2.306967',
+            'Paris,75003,55 Rue des Archives,48.861575,2.358293',
 
 //---<
 //Luiz--->
