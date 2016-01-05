@@ -38,6 +38,38 @@ class LoadResto implements FixtureInterface
         ,vegetarien,vegetalien,gluten,diabete,cholesterol',
         /* format horaire:  hh:mm l'ordre de resto doit correspondre à l'ordre des addresses les regimes sont codé en binaire 0,1,0,0,0 -> vegetalien*/
 //Axel--->
+            'Saveurs Végét Halles,0140419395,http://www.saveursvegethalles.fr/index.htm
+        ,12:00,15:00,18:30,23:00
+        ,12:00,15:00,18:30,23:00
+        ,12:00,15:00,18:30,23:00
+        ,12:00,15:00,18:30,23:00
+        ,12:00,15:00,18:30,23:00
+        ,12:00,15:00,18:30,23:00
+        ,,,,
+        ,1,1,0,0,0',
+
+
+            'Mavrommatis,0143311717,http://www.mavrommatis.com/fr/
+        ,,,,
+        ,,19:00,23:00,
+        ,,19:00,23:00,
+        ,12:00,14:15,19:00,23:00
+        ,12:00,14:15,19:00,23:00
+        ,12:00,14:15,19:00,23:00
+        ,,,,
+        ,1,0,0,0,0',
+
+
+            'Le puits de legumes,0173202411,http://www.lepuitsdelegumesbio.fr/
+        ,12:00,16:00,19:00,22:00
+        ,12:00,16:00,19:00,22:00
+        ,12:00,16:00,19:00,22:00
+        ,12:00,16:00,19:00,22:00
+        ,12:00,16:00,19:00,22:00
+        ,12:00,16:00,19:00,22:00       
+        ,,,,
+        ,1,1,0,0,0',
+
 
 
 //---<
@@ -71,7 +103,9 @@ class LoadResto implements FixtureInterface
           /*'ville,rue,latitude,longitude',
           /* http://www.findlatitudeandlongitude.com/batch-geocode/#.VovUoBXhDtQ pour le geocodage de addresses*/
 //Axel--->
-
+            'Paris,41 Rue des Bourdonnais,48.860533,2.345503',
+            'Paris,42 Rue Daubenton,48.840593,2.351203'
+            'Paris,18 18 Rue du Cardinal Lemoine,48.848696,2.353463'
 
 //---<
 //Luiz--->
