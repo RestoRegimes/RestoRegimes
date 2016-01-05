@@ -37,7 +37,10 @@
                         <div class="mdl-card__actions mdl-card--border">
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--8-col">
+                                    <b>à environ {{ listdistance[loop.index0]|round('1','ceil') }} km</b><br>
                                     {{ restaurant.address|address()|raw }}
+
+
                                 </div>
                                 <div class="mdl-cell mdl-cell--4-col">
                                     {% for regime in restaurant.regimes %}
@@ -53,9 +56,19 @@
 
                         </div>
                         <div class="mdl-card__menu">
-                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                <i class="material-icons">share</i>
+                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="resto-options-{{ restaurant.id }}">
+                                <i class="material-icons">more</i>
                             </button>
+                                <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="resto-options-{{ restaurant.id }}">
+                                    <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Voir le profil</a>
+                                    {% if app.user is not null and app.user.roles[0]=="ROLE_USER" %}
+                                    <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Ajouter aux favoris</a>
+                                    {% else %}
+                                    <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Ceci est votre restaurant</a>
+                                    {% endif %}
+                                    <a class="mdl-menu__item" href="#">Reporter un probleme </a>
+                                </nav>
+
                         </div>
                     </div>
                     <div style="height: 10px;"></div>

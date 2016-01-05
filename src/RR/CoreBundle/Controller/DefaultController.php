@@ -97,7 +97,7 @@ class DefaultController extends Controller
             $data = $form->getData();
 
 
-            if(empty($data['radius']))$data['radius']=1;
+            if(empty($data['radius']))$data['radius']=0.5;
             if($data['geo']!=1) {
                 $adapter  = new \Geocoder\HttpAdapter\CurlHttpAdapter();
                 $provider = new \Geocoder\Provider\GoogleMapsProvider($adapter);
@@ -108,7 +108,7 @@ class DefaultController extends Controller
                 $data['lat'] =$address->getLatitude();
                 $data['lng'] = $address->getLongitude();
             }else{
-                $coord=new Coordinate($data['lat'], $data['lng']);
+                $address=new Coordinate($data['lat'], $data['lng']);
             }
             if($data['lat']==0 && $data['lng']==0){
                 //erreur recherche
@@ -119,17 +119,25 @@ class DefaultController extends Controller
                 ->getRepository('RRRestaurantBundle:Restaurant')
                 ->searchRestaurants($data,$nbMaxResult);
 
+            $listRestaurant=array();
+            $listdistance = array();
+            foreach($listRestaurants as $resto){
+                $listRestaurant[]=$resto[0];
+                $listdistance[]=$resto['distance'];
+            }
+            var_dump($listdistance);
             $nbPerPage=1;
             $nbPage=ceil(count($listRestaurants)/$nbPerPage);
 
 
             $link=$this->getRequest()->getBasePath().'/rrcore/images/marker';
             $map = $this->get('ivory_google_map.map');
-            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurants,$link,$address,$data['radius']);
+            $map=$this->get('core_helper')->getMapRestaurant($map,$listRestaurant,$link,$address,$data['radius']);
 
             return $this->render('RRRestaurantBundle:Restaurant:index.html.twig', array(
                 'form'=>$form->createView(),
-                'listRestaurants' => $listRestaurants,
+                'listRestaurants' => $listRestaurant,
+                'listdistance' => $listdistance,
                 'nbMaxResult'=>$nbMaxResult,
                 'nbPerPage' => $nbPerPage,
                 'nbPages' => $nbPage,

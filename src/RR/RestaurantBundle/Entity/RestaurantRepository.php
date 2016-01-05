@@ -108,7 +108,15 @@ class RestaurantRepository extends EntityRepository
             ->leftJoin('r.regimes','reg')
             ->addSelect('reg')
             ->leftJoin('r.address','adr')
-            ->addSelect('adr');
+            ->addSelect('adr')
+            ->addSelect('( 6380 * Acos(cos(radians(:lat))' . //haversine formula
+            '* cos( radians( adr.latitude ) )' .
+            '* cos( radians( adr.longitude )' .
+            '- radians(:lng) )' .
+            '+ sin( radians(:lat) )' .
+            '* sin( radians( adr.latitude ) ) ) ) as distance')
+            ->setParameter('lat', $data['lat'])
+            ->setParameter('lng', $data['lng']);
 
         if($data['vegetarien']==1){
            $query->where('reg.id = 1');
@@ -151,16 +159,10 @@ class RestaurantRepository extends EntityRepository
         }else if($data['Cholesterol']==1){
             $query->where('reg.id = 5');
         }
-        $query->andWhere(
-            '( 6380 * Acos(cos(radians(:lat))' . //haversine formula
-            '* cos( radians( adr.latitude ) )' .
-            '* cos( radians( adr.longitude )' .
-            '- radians(:lng) )' .
-            '+ sin( radians(:lat) )' .
-            '* sin( radians( adr.latitude ) ) ) ) < :distance')
-            ->setParameter('distance', $data['radius'])
-            ->setParameter('lat', $data['lat'])
-            ->setParameter('lng', $data['lng']);
+        $query->having(
+            'distance < :radius')
+            ->setParameter('radius', $data['radius'])
+            ;
 
 
         $query
