@@ -39,7 +39,7 @@ class LoadResto implements FixtureInterface
         /* format horaire:  hh:mm l'ordre de resto doit correspondre à l'ordre des addresses les regimes sont codé en binaire 0,1,0,0,0 -> vegetalien*/
 //Axel--->
 
-'Mavrommatis,0143311717,http://www.mavrommatis.com/fr/
+'Mavrommatis,0143311717,http://www.mavrommatis.com/fr
 ,,,,
 ,,19:00,23:00,
 ,,19:00,23:00,
@@ -50,7 +50,7 @@ class LoadResto implements FixtureInterface
 ,1,0,0,0,0',
 
 
-'Le puits de legumes,0173202411,http://www.lepuitsdelegumesbio.fr/
+'Le puits de legumes,0173202411,http://www.lepuitsdelegumesbio.fr
 ,12:00,16:00,19:00,22:00
 ,12:00,16:00,19:00,22:00
 ,12:00,16:00,19:00,22:00
@@ -61,8 +61,7 @@ class LoadResto implements FixtureInterface
 ,1,1,0,0,0',
 
 
-
-'Lemoni Café,0145084984,http://www.lemonicafe.fr/
+'Lemoni Café,0145084984,http://www.lemonicafe.fr
 ,12:00,15:00,,
 ,12:00,15:00,,
 ,12:00,15:00,,
@@ -73,10 +72,7 @@ class LoadResto implements FixtureInterface
 ,1,0,0,0,0',
 
 
-
-
-
-'Le Bio d Adam et Ève,0982369457,https://www.facebook.com/Le-Bio-dAdam-et-Eve-123116557815703/
+'Le Bio d Adam et Ève,0982369457,https://www.facebook.com/Le-Bio-dAdam-et-Eve-123116557815703
 ,11:30,20:00,,
 ,11:30,20:00,,
 ,11:30,20:00,,
@@ -87,7 +83,7 @@ class LoadResto implements FixtureInterface
 ,1,1,0,0,0',
 
 
-'Le Pot de Vins,0953842119,http://www.lepotdevins.com/
+'Le Pot de Vins,0953842119,http://www.lepotdevins.com
 ,12:00,14:30,19:00,22:30
 ,12:00,14:30,19:00,22:30
 ,12:00,14:30,19:00,22:30
@@ -96,6 +92,51 @@ class LoadResto implements FixtureInterface
 ,,,,
 ,,,,
 ,1,1,0,0,0',
+
+
+'Bio Sphère Café,0142934558,http://biospherecafe.fr
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,22:00,,
+,,,,
+,1,0,1,0,0',
+
+
+'AGAPAE,0145226325,http://agapae.fr/wordpress
+,11:00,20:00,,
+,11:00,20:00,,
+,11:00,20:00,,
+,11:00,20:00,,
+,11:00,20:00,,
+,,,,
+,,,,
+,0,0,1,0,0',
+
+
+
+'EXKi Kléber,0145018125,http://www.exki.com
+,08:00,21:00,,
+,08:00,21:00,,
+,08:00,21:00,,
+,08:00,21:00,,
+,08:00,21:00,,
+,11:00,17:00,,
+,11:00,17:00,,
+,0,0,1,0,0',
+
+
+'Noglu,0140264124,http://www.noglu.fr
+,12:00,15:00,,
+,12:00,15:00,19:30,23:00
+,12:00,15:00,19:30,23:00
+,12:00,15:00,19:30,23:00
+,12:00,15:00,19:30,23:00
+,12:00,15:00,19:30,23:00
+,,,,
+,0,0,1,0,0',
 
 //---<
 //Luiz--->
@@ -419,6 +460,9 @@ class LoadResto implements FixtureInterface
             'Paris,75001,5 Rue Hérold,48.86482,2.341126',
             'Paris,75001,41 Rue Saint Honoré,48.860792,2.345479',
             'Paris,75001,36 Rue Croix des Petits Champs,48.86424,2.340392',
+            'Paris,75008,47 Rue Laborde,48.875383,2317791',
+            'Paris,75008,10 Place Henri Bergson,48.876352,2.320977',
+            'Paris,75116,8 Avenue Kléber,48.872069,2.293266',
 
 //---<
 //Luiz--->
