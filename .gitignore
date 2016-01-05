@@ -5,3 +5,4 @@
 .idea
 web/images
 web/bundles
+/app/config/parameters.yml
