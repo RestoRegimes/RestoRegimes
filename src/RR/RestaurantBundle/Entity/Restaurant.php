@@ -63,7 +63,7 @@ class Restaurant
     /**
      * @var integer
      *
-     * @ORM\Column(name="siret", type="string",length=14,unique=true)
+     * @ORM\Column(name="siret", type="string",length=14,unique=true,nullable=true)
      * @Assert\Length(  min=14,
      *                  max=14,
      *                  minMessage="Le numero siret doit faire {{ limit }} caractères.",
