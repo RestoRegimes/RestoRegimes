@@ -71,6 +71,17 @@ class LoadResto implements FixtureInterface
         ,1,1,0,0,0',
 
 
+            'Le Potager du Marais,0157409857,http://www.lepotagerdumarais.fr/
+        ,,,,
+        ,12:00,15:00,19:00,22:30
+        ,12:00,15:00,19:00,22:30
+        ,12:00,15:00,19:00,22:30
+        ,12:00,15:00,19:00,22:30
+        ,12:00,15:00,19:00,22:30
+        ,12:00,15:00,19:00,22:30      
+        ,1,1,0,0,0',
+
+
 
 //---<
 //Luiz--->
@@ -104,9 +115,9 @@ class LoadResto implements FixtureInterface
           /* http://www.findlatitudeandlongitude.com/batch-geocode/#.VovUoBXhDtQ pour le geocodage de addresses*/
 //Axel--->
             'Paris,41 Rue des Bourdonnais,48.860533,2.345503',
-            'Paris,42 Rue Daubenton,48.840593,2.351203'
-            'Paris,18 18 Rue du Cardinal Lemoine,48.848696,2.353463'
-
+            'Paris,42 Rue Daubenton,48.840593,2.351203',
+            'Paris,18 Rue du Cardinal Lemoine,48.848696,2.353463',
+            'Paris,24 Rue Rambuteau,48.861025,2.354372',
 //---<
 //Luiz--->
             'Belfort,15 Rue Aristide Briand,47.632488,6.855264',
