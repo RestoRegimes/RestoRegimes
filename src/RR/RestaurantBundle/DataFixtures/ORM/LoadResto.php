@@ -167,15 +167,15 @@ class LoadResto implements FixtureInterface
           /*'ville,rue,latitude,longitude',
           /* http://www.findlatitudeandlongitude.com/batch-geocode/#.VovUoBXhDtQ pour le geocodage de addresses*/
 //Axel--->
-            'Paris,41 Rue des Bourdonnais,48.860533,2.345503',
-            'Paris,42 Rue Daubenton,48.840593,2.351203',
-            'Paris,18 Rue du Cardinal Lemoine,48.848696,2.353463',
-            'Paris,24 Rue Rambuteau,48.861025,2.354372',
-            'Paris,5 Rue Hérold,48.86482,2.341126',
-            'Paris,18 Rue de la Bûcherie,48.85194,2.348465',
-            'Paris,74 Rue des Gravilliers,48.864568,2.354566',
-            'Paris,41 Rue Saint Honoré,48.860792,2.345479',
-            'Paris,36 Rue Croix des Petits Champs,48.86424,2.340392',
+            'Paris,75001,41 Rue des Bourdonnais,48.860533,2.345503',
+            'Paris,75005,42 Rue Daubenton,48.840593,2.351203',
+            'Paris,75005,18 Rue du Cardinal Lemoine,48.848696,2.353463',
+            'Paris,75003,24 Rue Rambuteau,48.861025,2.354372',
+            'Paris,75001,5 Rue Hérold,48.86482,2.341126',
+            'Paris,75005,18 Rue de la Bûcherie,48.85194,2.348465',
+            'Paris,75003,74 Rue des Gravilliers,48.864568,2.354566',
+            'Paris,75001,41 Rue Saint Honoré,48.860792,2.345479',
+            'Paris,75001,36 Rue Croix des Petits Champs,48.86424,2.340392',
 
 //---<
 //Luiz--->
