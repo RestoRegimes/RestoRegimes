@@ -18,7 +18,7 @@ class LoadRegime implements FixtureInterface
             'Vegetalien',
             'Sans gluten',
             'Diabetique',
-            'Cholestherol'
+            'Cholesterol'
         );
         $description = array(
             "Le végétarisme est une pratique alimentaire qui exclut la consommation de chair animale pour des motivations diverses.",
