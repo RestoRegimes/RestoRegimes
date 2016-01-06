@@ -161,16 +161,6 @@ class LoadResto implements FixtureInterface
 ,1,0,0,0,0',
 
 
-'Vegebowl,0142464589,http://www.vegebowl.com/index.php
-,12:00,22:00,,
-,12:00,22:00,,
-,12:00,22:00,,
-,12:00,22:00,,
-,12:00,22:00,,
-,12:00,22:00,,
-,12:00,22:00,,
-,1,1,0,0,0',
-
 
 'Fée nature,0142214439,http://www.feenature.com
 ,12:00,16:00,,
@@ -194,15 +184,6 @@ class LoadResto implements FixtureInterface
 ,1,1,0,0,0',
 
 
-'Maoz Vegetarian,0143263600,http://www.maozusa.com/
-,11:00,23:00,,
-,11:00,23:00,,
-,11:00,23:00,,
-,00:00,02:00,11:00,24:00
-,00:00,02:00,11:00,24:00
-,00:00,02:00,11:00,24:00
-,11:00,23:00,,
-,1,0,1,0,0',
 
 //---<
 //Luiz--->
@@ -510,16 +491,8 @@ class LoadResto implements FixtureInterface
 //---<
 //Lan Lynn--->
 
-'Le News, 0143386318, http://www.lenews.fr
-,12:30,14:30,19:00,22:00
-,12:30,14:30,19:00,22:00
-,12:30,14:30,19:00,22:00
-,12:30,14:30,19:00,22:00
-,12:30,14:30,,
-,12:30,14:30,19:00,22:00
-,1,0,0,0,0',
 
-'Auberge de Venise, 0143354309, http://www.aubergedevenise.fr
+'Auberge de Venise,0143354309, http://www.aubergedevenise.fr
 ,11:30,14:45,18:00,23:45
 ,11:30,14:45,18:00,23:45
 ,11:30,14:45,18:00,23:45
@@ -529,7 +502,7 @@ class LoadResto implements FixtureInterface
 ,11:30,14:45,18:00,23:45
 ,1,0,0,0,0',
 
-'Sabai Siam, 0698091890, Restaurant végétarien thaïlandais
+'Sabai Siam,0698091890, Restaurant végétarien thaïlandais
 ,11:30,14:00,18:30,22:30
 ,11:30,14:00,18:30,22:30
 ,11:30,14:00,18:30,22:30
@@ -539,7 +512,7 @@ class LoadResto implements FixtureInterface
 ,11:30,14:00,18:30,22:30
 ,1,0,0,0,0',
 
-'Vege Saveurs, 0143452910, Restaurant asiatique végétarien et végétalien
+'Vege Saveurs,0143452910, Restaurant asiatique végétarien et végétalien
 ,11:30,14:30,18:30,22:30
 ,11:30,14:30,18:30,22:30
 ,11:30,14:30,18:30,22:30
@@ -549,7 +522,7 @@ class LoadResto implements FixtureInterface
 ,,,,
 ,1,1,0,0,0',
 
-'La Folie Douce, 0677458030, http://lafoliedoucebar.free.fr/accueil.html
+'La Folie Douce,0677458030, http://lafoliedoucebar.free.fr/accueil.html
 ,,,16:30,02:00
 ,,,16:30,02:00
 ,,,16:30,02:00
@@ -559,7 +532,7 @@ class LoadResto implements FixtureInterface
 ,,,16:30,02:00
 ,1,0,0,0,0',
 
-'EXKI - Avenue de France, 0157270125, http://www.exki.com
+'EXKI - Avenue de France,0157270125, http://www.exki.com
 ,08:00,,,21:30
 ,08:00,,,22:30
 ,08:00,,,22:30
@@ -569,7 +542,7 @@ class LoadResto implements FixtureInterface
 ,,,12:00,21:30
 ,1,0,0,0,0',
 
-'EXKI - Beaugrenelle, 0145777403, http://www.exki.com
+'EXKI - Beaugrenelle,0145777403, http://www.exki.com
 ,09:00,,,21:00
 ,09:00,,,21:00
 ,09:00,,,21:00
@@ -579,7 +552,7 @@ class LoadResto implements FixtureInterface
 ,,,,
 ,1,0,0,0,0',
 
-'EXKI - Bercy, 0143076461, http://www.exki.com
+'EXKI - Bercy,0143076461, http://www.exki.com
 ,10:30,,,19:00
 ,10:30,,,19:00
 ,10:30,,,19:00
@@ -639,14 +612,6 @@ class LoadResto implements FixtureInterface
 ,,,,
 ,0,0,1,0,0',
 
-'Bears & Raccoons,0951678771, www.bearsandraccoons.com,
-,11:00,15:30,,
-,11:00,15:30,,
-,11:00,15:30,,
-,11:00,15:30,18:30,21:30,
-,11:00,,,21:30
-,,,,
-,0,0,1,0,0',
 
 'Café Chilango,0147007895, Restaurant mexicain sans gluten
 ,,,,
@@ -657,47 +622,6 @@ class LoadResto implements FixtureInterface
 ,10:30,,,01:30
 ,10:00,,,17:00
 ,0,0,1,0,0',
-
-'L Atelier des Rendez-Vous,0153279853,Café sans gluten, sans lactose et végétarien
-,,,,
-,,,,
-,09:00,,,20:00
-,09:00,,,20:00
-,09:00,,,20:00
-,09:00,,,20:00
-,11:00,,,20:00
-,1,0,1,0,0,',
-
-'Je thé...me,01480424830, http://jetheme-terroir.blogspot.fr
-,,,,
-,12:00,14:30,19:30,21:00
-,12:00,14:30,19:30,21:00
-,12:00,14:30,19:30,21:00
-,12:00,14:30,19:30,21:00
-,12:00,14:30,19:30,21:00
-,,,,
-,1,0,1,0,0',
-
-'La Contre-Allée,0143549986, http://contre-allee.com
-,12:00,14:00,19:30,21:00
-,12:00,14:00,19:30,21:00
-,12:00,14:00,19:30,21:00
-,12:00,14:00,19:30,21:00
-,12:00,14:00,19:30,21:00
-,,,,
-,,,,
-,1,0,1,0,0',
-
-'Ma Grand-Mère m'a dit,0143061120, http://www.magrandmeremadit.fr
-,12:00,15:00,,
-,12:00,15:00,,
-,12:00,15:00,,
-,12:00,15:00,,
-,12:00,15:00,,
-,,,,
-,,,,
-,1,1,1,0,0',
-
 
 
 //---<
@@ -720,10 +644,8 @@ class LoadResto implements FixtureInterface
             'Paris,75116,8 Avenue Kléber,48.872069,2.293266',
             'Paris,75002,16 Passage des Panoramas,48.870976,2.341726',
             'Paris,75007,24 Avenue de Tourville,48.854337,2.306967',
-            'Paris,75003,55 Rue des Archives,48.861575,2.358293',
             'Paris,75002,69 Rue d Argout,4.8866398,2.34394',
             'Paris,75010,55 Rue du Paradis,48.875583,2.348767',
-            'Paris,75006,36 Rue Saint-André des Arts,48.853436,2.341702',
 
 //---<
 //Luiz--->
