@@ -24,7 +24,7 @@ class RestoImage
 
     // ..... other fields
     /**
-     * @ORM\ManytoOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant")
+     * @ORM\ManyToOne(targetEntity="RR\RestaurantBundle\Entity\Restaurant")
      * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $restaurant;

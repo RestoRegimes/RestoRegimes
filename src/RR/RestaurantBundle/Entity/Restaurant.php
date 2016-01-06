@@ -28,7 +28,7 @@ class Restaurant
     private $id;
 
     /**
-     * @ORM\ManytoOne(targetEntity="RR\UserBundle\Entity\User",cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="RR\UserBundle\Entity\User",cascade={"persist"})
      */
     private $proprietaire;
 
@@ -98,35 +98,35 @@ class Restaurant
     private $updatedAt;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
     private $image1;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
     private $image2;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
     private $image3;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
     private $image4;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\RestoImage",cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="CASCADE")
      * @Vich\UploadableField(mapping="resto_image", fileNameProperty="imageName")
      */
@@ -138,42 +138,42 @@ class Restaurant
     private $regimes;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
      */
     private $lundi;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
      */
     private $mardi;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
      */
     private $mercredi;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
      */
     private $jeudi;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"persist", "remove"})
      */
     private $vendredi;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"remove","persist"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"remove","persist"})
      */
     private $samedi;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"remove","persist"})
+     * @ORM\OneToOne(targetEntity="RR\RestaurantBundle\Entity\Horaire",cascade={"remove","persist"})
      */
     private $dimanche;
 
     /**
-     * @ORM\OnetoOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist", "remove"})
      */
     private $address;
 

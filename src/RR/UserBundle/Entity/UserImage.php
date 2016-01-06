@@ -23,7 +23,7 @@ class UserImage
     private $id;
 
     /**
-     * @ORM\OnetoOne(targetEntity="RR\UserBundle\Entity\User")
+     * @ORM\OneToOne(targetEntity="RR\UserBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $user;
