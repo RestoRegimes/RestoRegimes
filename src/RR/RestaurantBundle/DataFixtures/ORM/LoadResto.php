@@ -161,6 +161,49 @@ class LoadResto implements FixtureInterface
 ,1,0,0,0,0',
 
 
+'Vegebowl,0142464589,http://www.vegebowl.com/index.php
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,12:00,22:00,,
+,1,1,0,0,0',
+
+
+'Fée nature,0142214439,http://www.feenature.com
+,12:00,16:00,,
+,12:00,16:00,,
+,12:00,16:00,,
+,12:00,16:00,,
+,12:00,16:00,,
+,12:00,18:00,,
+,,,,
+,1,1,0,0,0',
+
+
+'Le veganovore,0148249006,https://www.facebook.com/leveganovore
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,12:00,18:00,,
+,,,,
+,1,1,0,0,0',
+
+
+'Maoz Vegetarian,0143263600,http://www.maozusa.com/
+,11:00,23:00,,
+,11:00,23:00,,
+,11:00,23:00,,
+,00:00,02:00,11:00,24:00
+,00:00,02:00,11:00,24:00
+,00:00,02:00,11:00,24:00
+,11:00,23:00,,
+,1,0,1,0,0',
+
 //---<
 //Luiz--->
 'Château de Chine,0384280913,www.restaurant-chateau-chine.fr
@@ -489,6 +532,9 @@ class LoadResto implements FixtureInterface
             'Paris,75002,16 Passage des Panoramas,48.870976,2.341726',
             'Paris,75007,24 Avenue de Tourville,48.854337,2.306967',
             'Paris,75003,55 Rue des Archives,48.861575,2.358293',
+            'Paris,75002,69 Rue d Argout,4.8866398,2.34394',
+            'Paris,75010,55 Rue du Paradis,48.875583,2.348767',
+            'Paris,75006,36 Rue Saint-André des Arts,48.853436,2.341702',
 
 //---<
 //Luiz--->
