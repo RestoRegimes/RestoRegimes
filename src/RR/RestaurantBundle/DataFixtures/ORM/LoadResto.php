@@ -353,7 +353,7 @@ class LoadResto implements FixtureInterface
 ,12:00,18:00,,
 ,,,,
 ,1,1,1,0,0',
-'42 Degrés,0973657788, Restaurant végétalien bio et sans gluten
+'42 Degrés,0973657788, Restaurant végétalien bio et sans gluten http://42degres.com/
 ,,,,
 ,12:00,14:30,19:30,22:00
 ,12:00,14:30,19:30,22:00
@@ -488,7 +488,7 @@ class LoadResto implements FixtureInterface
 ,,,,
 ,,,,
 ,1,1,0,0,0',
-'Au Grain de Folie,0142581557, Restaurant végétarien végétalien et bio ouvert du mercredi au dimanche de 13h à 14h30 et du mardi au samedi de 19h à 22h30.
+'Au Grain de Folie,0142581557, Restaurant végétarien végétalien et bio
 ,,,,
 ,,,19:00,22:30
 ,13:00,14:30,19:00,22:30
@@ -510,6 +510,87 @@ class LoadResto implements FixtureInterface
 //---<
 //Lan Lynn--->
 
+'Le News, 0143386318, http://www.lenews.fr
+,12:30,14:30,19:00,22:00
+,12:30,14:30,19:00,22:00
+,12:30,14:30,19:00,22:00
+,12:30,14:30,19:00,22:00
+,12:30,14:30,,
+,12:30,14:30,19:00,22:00
+,1,0,0,0,0',
+
+'Auberge de Venise, 0143354309, http://www.aubergedevenise.fr
+,11:30,14:45,18:00,23:45
+,11:30,14:45,18:00,23:45
+,11:30,14:45,18:00,23:45
+,11:30,14:45,18:00,23:45
+,11:30,14:45,18:00,23:45
+,11:30,14:45,18:00,23:45
+,11:30,14:45,18:00,23:45
+,1,0,0,0,0',
+
+'Sabai Siam, 0698091890, Restaurant végétarien thaïlandais
+,11:30,14:00,18:30,22:30
+,11:30,14:00,18:30,22:30
+,11:30,14:00,18:30,22:30
+,11:30,14:00,18:30,22:30
+,11:30,14:00,18:30,22:30
+,11:30,14:00,18:30,22:30
+,11:30,14:00,18:30,22:30
+,1,0,0,0,0',
+
+'Vege Saveurs, 0143452910, Restaurant asiatique végétarien et végétalien
+,11:30,14:30,18:30,22:30
+,11:30,14:30,18:30,22:30
+,11:30,14:30,18:30,22:30
+,11:30,14:30,18:30,22:30
+,11:30,14:30,18:30,22:30
+,11:30,14:30,18:30,22:30
+,,,,
+,1,1,0,0,0',
+
+'La Folie Douce, 0677458030, http://lafoliedoucebar.free.fr/accueil.html
+,,,16:30,02:00
+,,,16:30,02:00
+,,,16:30,02:00
+,,,16:30,02:00
+,,,16:30,02:00
+,,,16:30,02:00
+,,,16:30,02:00
+,1,0,0,0,0',
+
+'EXKI - Avenue de France, 0157270125, http://www.exki.com
+,08:00,,,21:30
+,08:00,,,22:30
+,08:00,,,22:30
+,08:00,,,22:30
+,08:00,,,22:30
+,09:00,,,22:30
+,,,12:00,21:30
+,1,0,0,0,0',
+
+'EXKI - Beaugrenelle, 0145777403, http://www.exki.com
+,09:00,,,21:00
+,09:00,,,21:00
+,09:00,,,21:00
+,09:00,,,22:00
+,09:00,,,21:00
+,09:00,,,21:00
+,,,,
+,1,0,0,0,0',
+
+'EXKI - Bercy, 0143076461, http://www.exki.com
+,10:30,,,19:00
+,10:30,,,19:00
+,10:30,,,19:00
+,10:30,,,19:00
+,10:30,,,19:00
+,10:30,,,19:00
+,,,,
+,1,0,0,0,0',
+
+//A REPRENDRE ICI
+
 
 //---<
 //Henry--->
@@ -518,7 +599,7 @@ class LoadResto implements FixtureInterface
 //---<
         );
         $addresses=array(
-          /*'ville,rue,latitude,longitude',
+          /*'ville,CP,rue,latitude,longitude',
           /* http://www.findlatitudeandlongitude.com/batch-geocode/#.VovUoBXhDtQ pour le geocodage de addresses*/
 //Axel--->
             'Paris,75005,42 Rue Daubenton,48.840593,2.351203',
@@ -577,6 +658,27 @@ class LoadResto implements FixtureInterface
 
 //---<
 //Lan Lynn--->
+            'Paris, 75011, 56 avenue de la République,48.864794, 2.375702',
+            'Paris, 75014, 10 rue Delambre, 48.841924,2.328321',
+            'Maisons-Alfort, 94700, 23 rue Jean Pierre Timbaud, 48.807601, 2.454505',
+            'Paris, 75012,29 rue Charenton, 48.85221,2.371418',
+            'Paris, 75011, 111 boulevard de Ménilmontant, 48.865281,2.384178',
+            'Paris, 75013,116 avenue de France,48.830806,2.376725',
+            'Paris, 75014, 14 rue Linois,48.848495,2.282602',
+            'Paris, 75012, 197 rue de Bercy,48.843823,2.372383',
+            'Paris, 75013, 34 Quai d'Austerlitz,48.840838,2.369991',
+            'Paris, 75011, 20 rue Keller, 48.854858, 2.376089',
+            'Paris, 17015, 99 rue du Théâtre,48.846843, 2.293703',
+            'Paris, 75011, 123 rue Oberkampf, 48.866187, 2.379075',
+            'Paris, 75012, 6 rue Crozatier, 48.845581, 2.383078',
+            'Paris, 75011, 21 rue Richard Lenoir, 48.8554, 2.381554',
+            'Paris, 75011, 82 rue de la Folie Méricourt, 48.866437, 2.370233',
+            'Paris, 75011, 5 bis rue Godefroy Cavaignac, 48.854179, 2.381768',
+            'Paris, 75015, 4 rue d'Alleray, 48.838614, 2.300429',
+            'Paris, 75014, 83 avenue Denfert Rochereau, 48.835374, 2.334379',
+            'Paris, 75015, 1 rue Falguière, 48.844122, 2.317639',
+
+
 
 
 //---<
