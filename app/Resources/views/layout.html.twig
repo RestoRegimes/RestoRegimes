@@ -11,14 +11,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ asset('rrcore/images/iconRRBlackOnlyText.png') }}">
-    <link rel="stylesheet" href="{{ asset('rrcore/css/material.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('rrcore/css/style.css') }}" type="text/css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="{{ asset('rrcore/js/material.min.js') }}"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {% block stylesheets %}
-
+        <link rel="stylesheet" href="{{ asset('rrcore/css/material.min.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('rrcore/css/style.css') }}" type="text/css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="{{ asset('rrcore/js/material.min.js') }}"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {% endblock %}
 </head>
 
@@ -47,7 +46,7 @@
                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a>
                     {% endif %}
                     {% if app.user.roles[0]=="ROLE_ADMIN" %}
-                        <a class="mdl-menu__item" href="{{ path('rr_core_add_content') }}">ajouter du contenu</a>
+                        <a class="mdl-menu__item" href="{{ path('rr_restaurant_home') }}">ajouter du conte</a>
                     {% endif %}
 
                     <a class="mdl-menu__item" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
