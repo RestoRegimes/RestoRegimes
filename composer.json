@@ -23,21 +23,19 @@
         "jlbs/admin-bundle": "dev-master",
         "jlbs/admin-fosuser-bundle": "dev-master",
         "padam87/address-bundle": "~1.0",
-        "willdurand/geocoder-bundle": "~4.0.0",
         "egeloen/google-map-bundle": "~2.1",
         "widop/http-adapter-bundle":"~1.0",
         "symfony/framework-bundle": "~2.1",
-        "willdurand/geocoder": "~3.1",
         "symfony/console": "~2.1",
         "egeloen/http-adapter": "~0.8",
         "igorw/get-in": "~1.0",
         "symfony/intl": "~2.3",
         "symfony/form": "~2.1",
-        "willdurand/faker-bundle": "^1.2",
         "vich/uploader-bundle": "^0.14.0",
         "beberlei/DoctrineExtensions": "^1.0",
         "google/apiclient": "^1.1",
-        "excelwebzone/recaptcha-bundle": "^1.4"
+        "excelwebzone/recaptcha-bundle": "^1.4",
+        "hwi/oauth-bundle": "^0.4.0"
 
     },
     "require-dev": {

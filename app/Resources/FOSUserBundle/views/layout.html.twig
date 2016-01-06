@@ -5,19 +5,10 @@
             <div class="mdl-cell mdl-cell--3-col"></div>
             <div class="mdl-cell mdl-cell--6-col">
                 <div class="mdl-card mdl-shadow--2dp" style="min-width: 100%;">
-                    <div class="mdl-card__title {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--light-green-A400 ','mdl-color--green-400','mdl-color--yellow-400']) }}">
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <div class="mdl-card__title {{ random(['mdl-color--red-A400', 'mdl-color--indigo-A400', 'mdl-color--light-green-A400 ','mdl-color--green-A400','mdl-color--yellow-A400']) }}">
 
-                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_logout') }}">
-                                {{ 'Deconnexion'|trans({}, 'FOSUserBundle') }}
-                            </a>
-
-                        {% else %}
-                            {% block loginLink %}
-                                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_login') }}">{{ 'Connexion'|trans({}, 'FOSUserBundle') }}</a>
+                        {% block message %}
                             {% endblock %}
-                        {% endif %}
-
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
 
@@ -39,11 +30,20 @@
 
 
                     <div class="mdl-card__menu">
-                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i class="material-icons">account_circle</i>
-                        </button>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_logout') }}">
+                                {{ 'Deconnexion'|trans({}, 'FOSUserBundle') }}
+                            </a>
+
+                        {% else %}
+                            {% block loginLink %}
+                                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_login') }}">{{ 'Connexion'|trans({}, 'FOSUserBundle') }}</a>
+                            {% endblock %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
+
     {% endblock %}

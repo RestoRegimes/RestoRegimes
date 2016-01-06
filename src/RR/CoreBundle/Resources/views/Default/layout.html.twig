@@ -94,7 +94,10 @@
 		<script src="{{ asset('rrcore/js/PrismSlider.js') }}"></script>
 		<script src="{{ asset('rrcore/js/slideshow1.js') }}"></script>
     <script>
-        $(window).load(function(){
+        $('body').hide();
+        $(document).ready(function(){
+            $('body').fadeIn(500);
+
             var recherche_BTN = $('#recherche_BTN');
 
             recherche_BTN.bind('click',function(){
