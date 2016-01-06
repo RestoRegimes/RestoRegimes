@@ -1,0 +1,16 @@
+{% extends '::layout.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ absolute_url(asset('bundles/framework/css/structure.css')) }}" rel="stylesheet" />
+    <link href="{{ absolute_url(asset('bundles/framework/css/body.css')) }}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+    <div class="mdl-grid">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell--8-col mdl-shadow--6dp">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+
+{% endblock %}
