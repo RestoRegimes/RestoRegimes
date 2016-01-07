@@ -166,6 +166,7 @@ class RestaurantRepository extends EntityRepository
 
 
         $query
+            ->orderBy('distance')
             // Ainsi que le nombre d'annonce à afficher sur une page
             ->setMaxResults($nbMaxResults)
         ;
