@@ -125,7 +125,6 @@ class DefaultController extends Controller
                 $listRestaurant[]=$resto[0];
                 $listdistance[]=$resto['distance'];
             }
-            var_dump($listdistance);
             $nbPerPage=1;
             $nbPage=ceil(count($listRestaurants)/$nbPerPage);
 
