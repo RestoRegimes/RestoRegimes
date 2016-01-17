@@ -1,5 +1,9 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
+
+{% block message %}
+    <h5>Mon compte</h5>
+{% endblock %}
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:show_content.html.twig" %}
 {% endblock fos_user_content %}

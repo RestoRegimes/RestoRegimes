@@ -1,8 +1,39 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
+<div class="mdl-grid">
+    <div class="mdl-cell--6-col">
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        <br><br>
+        <p>{{ 'profile.show.telephone'|trans }}: {{ user.telephone }}</p>
+    </div>
+
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell--6-col">
+        <p>Image de profil</p>
+        <br><br>
+        <p>{{ 'profile.show.zipcode'|trans }}: {{ address.zipcode }}</p>
+        <p>{{ 'profile.show.city'|trans }}: {{ address.city }}</p>
+        <p>{{ 'profile.show.street'|trans }}: {{ address.street }}</p>
+
+    </div>
+</div>
+
+<div class="mdl-grid">
+    <div class="mdl-cell--8-col">
+        <p><a href="{{ path("fos_user_profile_edit") }}">Editer le profil</a></p>
+        <p><a href="{{ path("fos_user_change_password") }}">Changer le mot de passe</a></p>
+    </div>
+</div>
+
+
+
+{#
 <div class="fos_user_user_show">
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
     <p><a href="{{ path("fos_user_profile_edit") }}">Editer le profil</a></p>
     <p><a href="{{ path("fos_user_change_password") }}">Changer le mot de passe</a></p>
 </div>
+#}
+

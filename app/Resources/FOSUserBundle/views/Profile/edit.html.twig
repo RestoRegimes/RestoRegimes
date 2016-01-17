@@ -1,5 +1,8 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
+{% block message %}
+    <h5>Editer mes informations</h5>
+{% endblock %}
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
 {% endblock fos_user_content %}
