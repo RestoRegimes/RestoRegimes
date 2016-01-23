@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    #google api key
+    recaptcha_public_key:  6LePWhQTAAAAAEw7Djrf-tTiqLOdvfjugaiEd72l
+    recaptcha_private_key: 6LePWhQTAAAAADpkSZeAj2BWj6CD3iU9C5iIi4Dc
