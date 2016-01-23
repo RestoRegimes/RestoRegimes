@@ -8,6 +8,12 @@ parameters:
 
 
 services:
+  admin.sitecontent:
+    class: RR\CoreBundle\Admin\SiteContent\SiteContentAdmin
+    arguments: [~, RR\CoreBundle\Entity\SiteContent, ~]
+    tags:
+        - { name: sonata.admin, manager_type: orm, label: SiteContent }
+
   core_helper:
     class:  %core_helper.class%
     arguments: [ @router ]
