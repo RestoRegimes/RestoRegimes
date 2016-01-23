@@ -45,7 +45,7 @@
                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a>
                     {% endif %}
                     {% if app.user.roles[0]=="ROLE_ADMIN" %}
-                        <a class="mdl-menu__item" href="{{ path('rr_core_add_content') }}">ajouter du contenu</a>
+                        <a class="mdl-menu__item" href="{{ path('sonata_admin_dashboard') }}">interface Admin</a>
                     {% endif %}
                     <a class="mdl-menu__item" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                 {% else %}

@@ -22,7 +22,4 @@ rr_core_faq:
     path: /faq
     defaults: { _controller:RRCoreBundle:Default:faq}
 
-rr_core_add_content:
-    path:   /admin/add/content
-    defaults: { _controller: RRCoreBundle:Default:addcontent}
 
