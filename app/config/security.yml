@@ -17,13 +17,15 @@ security:
             anonymous:      true
             provider:       fos_userbundle
             form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
             logout:
                 path:       fos_user_security_logout
                 target:     /
             remember_me:
-                key:        %secret%
+                key:        "%secret%"
             access_denied_url: fos_user_security_login
 
     access_control:
@@ -33,5 +35,5 @@ security:
         - { path: ^/Restaurant/admin, role: ROLE_ADMIN }
         - { path: ^/admin, role: ROLE_ADMIN }
         - { path: ^/Restaurant/pro, role: ROLE_PRO }
-        - { path: ^/pro, role: ROLE_PRO }
+        - { path: ^/pro/, role: ROLE_PRO }
         - { path: ^/user, role: ROLE_USER }

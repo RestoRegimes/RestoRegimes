@@ -5,16 +5,16 @@
         <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
         <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
         <br><br>
-        <p>{{ 'profile.show.telephone'|trans }}: {{ user.telephone }}</p>
+        <p>telephone: {{ user.telephone|default("-") }}</p>
     </div>
 
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell--6-col">
         <p>Image de profil</p>
         <br><br>
-        <p>{{ 'profile.show.zipcode'|trans }}: {{ address.zipcode }}</p>
-        <p>{{ 'profile.show.city'|trans }}: {{ address.city }}</p>
-        <p>{{ 'profile.show.street'|trans }}: {{ address.street }}</p>
+        <p>code postal: {{ user.address.zipcode|default("-") }}</p>
+        <p>ville: {{ user.address.city|default("-") }}</p>
+        <p>rue: {{ user.address.street|default("-") }}</p>
 
     </div>
 </div>
