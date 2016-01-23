@@ -42,10 +42,10 @@ var slideshow = (function(window, undefined) {
    * @type {Array}
    */
   var slides = [
-    document.location.origin+'/RestoRegimes/web/rrcore/images/Bg/Bg1.png',
-    document.location.origin+'/RestoRegimes/web/rrcore/images/Bg/Bg2.png',
-    document.location.origin+'/RestoRegimes/web/rrcore/images/Bg/Bg3.png',
-    document.location.origin+'/RestoRegimes/web/rrcore/images/Bg/Bg4.png'
+    'rrcore/images/Bg/Bg1.png',
+    'rrcore/images/Bg/Bg2.png',
+    'rrcore/images/Bg/Bg3.png',
+    'rrcore/images/Bg/Bg4.png'
   ];
 
   /**
@@ -54,21 +54,21 @@ var slideshow = (function(window, undefined) {
    */
   var masks = [
     {
-      source: document.location.origin+'/RestoRegimes/web/rrcore/images/masks/prism-a.svg',
+      source: 'rrcore/images/masks/prism-a.svg',
       effects: {
         flip: 'X',
         rotate: 45 // degrees
       }
     },
     {
-      source: document.location.origin+'/RestoRegimes/web/rrcore/images/masks/prism-b.svg',
+      source: 'rrcore/images/masks/prism-b.svg',
       effects: {
         flip: false,
         rotate: 180 // degrees
       }
     },
     {
-      source: document.location.origin+'/RestoRegimes/web/rrcore/images/masks/prism-c.svg',
+      source: 'rrcore/images/masks/prism-c.svg',
       effects: {
         flip: 'Y',
         rotate: 35 // degrees

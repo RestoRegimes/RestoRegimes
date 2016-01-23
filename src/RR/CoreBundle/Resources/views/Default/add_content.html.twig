@@ -96,6 +96,7 @@
     {% endblock %}
 
 {% block javascript %}
+    {{ parent() }}
     <script>
 
         document.getElementById("{{ form.image.imageFile.file.vars.id }}").onchange = function () {

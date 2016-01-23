@@ -251,6 +251,7 @@
 
 {% endblock %}
 {% block javascript %}
+    {{ parent() }}
     <script>
         var info = $('.info');
         var page=1;

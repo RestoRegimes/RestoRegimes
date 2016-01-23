@@ -32,7 +32,7 @@ class User extends BaseUser
     public $recaptcha;
 
     /**
-     * @ORM\OnetoOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist","remove"})
+     * @ORM\OneToOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist","remove"})
      */
     private $address;
 

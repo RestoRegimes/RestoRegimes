@@ -88,11 +88,8 @@
 {% endblock %}
 
 {% block javascript %}
-
-        <script src="{{ asset('rrcore/js/utils/rAF.js') }}" ></script>
-		<script src="{{ asset('rrcore/js/utils/easing.js') }}"></script>
-		<script src="{{ asset('rrcore/js/PrismSlider.js') }}"></script>
-		<script src="{{ asset('rrcore/js/slideshow1.js') }}"></script>
+    {{ parent() }}
+    <script src="{{ asset('js/compiled/slider.min.js') }}"></script>
     <script>
         $('body').hide();
         $(document).ready(function(){

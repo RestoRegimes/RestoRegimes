@@ -25,7 +25,6 @@ class LoadResto implements FixtureInterface
         $diabete = $manager->getRepository('RRRestaurantBundle:Regime')->find(4);
         $cholesterol = $manager->getRepository('RRRestaurantBundle:Regime')->find(5);
 
-
         $restaurants=array(
         /*'nom,telephone,description
         ,lundi_h1,lundi_h2,lundi_h3,lundi_h4
