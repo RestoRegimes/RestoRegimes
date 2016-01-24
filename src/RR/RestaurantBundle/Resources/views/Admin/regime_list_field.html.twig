@@ -3,7 +3,9 @@
 {% block field%}
 
 
-    <img src="{{ image.imageFile }}" alt="{{ image.imageName }}" >
+    {% for regime in regimes %}
+        {{ regime.libelle }}<br>
+    {% enfor %}
 
 
 {% endblock %}
