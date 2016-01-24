@@ -51,26 +51,10 @@ class SiteContent
     /**
      * @var string
      *
-     * @ORM\Column(name="content_1", type="string", length=255,nullable=true)
-     * @Assert\Length(max=255,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
+     * @ORM\Column(name="content", type="string", length=4096,nullable=true)
+     * @Assert\Length(max=4096,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
      */
-    private $content1;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content_2", type="string", length=255,nullable=true)
-     * @Assert\Length(max=255,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
-     */
-    private $content2;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content_3", type="string", length=255,nullable=true)
-     * @Assert\Length(max=255,maxMessage="le contenu doit faire au maximum {{ limit }} caractères.")
-     */
-    private $content3;
+    private $content;
 
     /**
      * @var string
@@ -134,74 +118,27 @@ class SiteContent
     /**
      * Set content1
      *
-     * @param string $content1
+     * @param string $content
      *
      * @return SiteContent
      */
-    public function setContent1($content1)
+    public function setContent($content)
     {
-        $this->content1 = $content1;
+        $this->content = $content;
     
         return $this;
     }
 
     /**
-     * Get content1
+     * Get content
      *
      * @return string
      */
-    public function getContent1()
+    public function getContent()
     {
-        return $this->content1;
+        return $this->content;
     }
 
-    /**
-     * Set content2
-     *
-     * @param string $content2
-     *
-     * @return SiteContent
-     */
-    public function setContent2($content2)
-    {
-        $this->content2 = $content2;
-    
-        return $this;
-    }
-
-    /**
-     * Get content2
-     *
-     * @return string
-     */
-    public function getContent2()
-    {
-        return $this->content2;
-    }
-
-    /**
-     * Set content3
-     *
-     * @param string $content3
-     *
-     * @return SiteContent
-     */
-    public function setContent3($content3)
-    {
-        $this->content3 = $content3;
-    
-        return $this;
-    }
-
-    /**
-     * Get content3
-     *
-     * @return string
-     */
-    public function getContent3()
-    {
-        return $this->content3;
-    }
 
     /**
      * @Assert\Callback

@@ -12,7 +12,12 @@ services:
     class: RR\CoreBundle\Admin\SiteContent\SiteContentAdmin
     arguments: [~, RR\CoreBundle\Entity\SiteContent, ~]
     tags:
-        - { name: sonata.admin, manager_type: orm, label: SiteContent }
+        - { name: sonata.admin, manager_type: orm, group: "Content", label: SiteContent }
+  admin.commentaire:
+      class: RR\CoreBundle\Admin\Commentaire\CommentaireAdmin
+      arguments: [~, RR\CoreBundle\Entity\Commentaire, ~]
+      tags:
+          - { name: sonata.admin, manager_type: orm, label: Commentaires }
 
   core_helper:
     class:  %core_helper.class%

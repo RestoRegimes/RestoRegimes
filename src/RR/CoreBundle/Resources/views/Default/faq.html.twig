@@ -24,9 +24,7 @@
                     <h5 class="mdl-card__title-text">{{ f.subtitle }}</h5>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                        <p> {{ f.content1 }}<br>
-                            {{ f.content2 }}<br>
-                            {{ f.content3 }}</p><br>
+                        <p> {{ f.content }}</p><br>
                 </div>
                 {% if f.image is not null and f.image.imageFile is not null %}
                     <img class="image-faq" src="{{ asset(vich_uploader_asset(f.image,'imageFile')) }}" alt="{{ f.image.imageName }}" /><br/>

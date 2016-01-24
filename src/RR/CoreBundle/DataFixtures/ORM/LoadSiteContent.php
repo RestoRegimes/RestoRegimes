@@ -141,9 +141,7 @@ class LoadSiteContent implements FixtureInterface
             $siteContent->setTypeContent($typeFAQ);
             if(strlen($titles[$i])>0) $siteContent->setTitle($titles[$i]);
             if(strlen($subTitles[$i])>0) $siteContent->setSubtitle($subTitles[$i]);
-            if(strlen($contents1[$i])>0) $siteContent->setContent1($contents1[$i]);
-            if(strlen($contents2[$i])>0) $siteContent->setContent2($contents2[$i]);
-            if(strlen($contents3[$i])>0) $siteContent->setContent3($contents3[$i]);
+            if(strlen($contents1[$i])>0) $siteContent->setContent($contents1[$i].$contents2[$i].$contents3[$i]);
             $siteContent->setEnabled(true);
             // On la persiste
             $manager->persist($siteContent);
