@@ -133,6 +133,9 @@ fos_user:
             from_email:
                 address:       %mailer_user%
                 sender_name:   Enregistrement RestoRegimes
+    profile:
+        form:
+            type: rruserbundle_user_edition
 
 
 bazinga_geocoder:

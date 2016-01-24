@@ -47,3 +47,9 @@ services:
           arguments: [%fos_user.model.user.class%]
           tags:
               - { name: form.type, alias: rruserbundle_user_registration }
+
+  rruserbundle.edition.form.type:
+          class: RR\UserBundle\Form\EditionType
+          arguments: [%fos_user.model.user.class%]
+          tags:
+              - { name: form.type, alias: rruserbundle_user_edition }

@@ -1,8 +1,88 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_profile_edit'), 'attr': {'class': 'fos_user_profile_edit'}}) }}
+
+    <div class="mdl-grid">
+        <div class="mdl-cell--6-col">
+
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email, {'attr': {'class': 'mdl-textfield__input','placeholder':'Email'}}) }}
+            {{ form_label(form.email, " ") }}
+            {{ form_errors(form.username) }}
+            {{ form_widget(form.username, {'attr': {'class': 'mdl-textfield__input','placeholder':'Nom'}}) }}
+            {{ form_label(form.username, " ") }}
+            <br><br>
+            {{ form_errors(form.telephone) }}
+            {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'Telephone' }}) }}
+            {{ form_label(form.telephone, " ") }}
+            <br><br>
+            {{ form_widget(form.current_password, { 'attr': {'class': 'mdl-textfield__input','placeholder':'Mot de passe'},'required':'false' }) }}
+        </div>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell--6-col">
+            {{ form_errors(form.profileImage.imageFile.file) }}
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                <input class="mdl-textfield__input" placeholder="Image de profil" type="text" id="uploadFile"  readonly/>
+                <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                    <i class="material-icons">attach_file</i>{{ form_widget(form.profileImage.imageFile.file, {'attr': {'class': 'mdl-button mdl-button--primary mdl-button--file' }}) }}
+                </div>
+            </div>
+            {{ form_label(form.profileImage.imageFile.file, " ") }}
+            <br><br>
+            {{ form_errors(form.address.zipcode) }}
+            {{ form_widget(form.address.zipcode, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Code postal'}}) }}
+            {{ form_label(form.address.zipcode, " ") }}
+
+            {{ form_errors(form.address.city) }}
+            {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Ville'}}) }}
+            {{ form_label(form.address.city, " ") }}
+
+            {{ form_errors(form.address.street) }}
+            {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Rue' }}) }}
+            {{ form_label(form.address.street, " ") }}
+
+        </div>
     </div>
-</form>
+    <div class="mdl-grid">
+        <div class="mdl-cell--8-col">
+            <a href="{{ path('fos_user_profile_show') }}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--accent">
+                <i class="material-icons">arrow_back</i>
+            </a>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell--2-col mdl-cell--middle">
+            <div>
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+                    <i class="material-icons">check</i>
+                </button>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+    {% block javascript %}
+        <script>
+            $(document).ready(function(){
+                var idZip= "#{{ form.address.zipcode.vars.id }}";
+                var zip = $(idZip);
+                var idCity= "#{{ form.address.city.vars.id }}";
+                var city = $(idCity);
+                var idStreet = "#{{ form.address.street.vars.id }}";
+                var street = $(idStreet);
+                $(".req").keyup( function() {
+                    if(zip.val().length>0 || city.val().length>0 || street.val().length>0){
+                        zip.prop('required',true);
+                        city.prop('required',true);
+                        street.prop('required',true);
+                    }else{
+                        zip.prop('required',false);
+                        city.prop('required',false);
+                        street.prop('required',false);
+                    }
+                });
+                document.getElementById("{{ form.profileImage.imageFile.file.vars.id }}").onchange = function () {
+                    document.getElementById("uploadFile").value = this.files[0].name;
+                };
+            });
+        </script>
+    {% endblock %}
