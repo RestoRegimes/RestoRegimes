@@ -27,7 +27,8 @@ class RestaurantType extends AbstractType
                             return preg_replace("/[0-9]{2}/", "$0 ", $originalDescription);
                         },
                         function ($submittedDescription) {
-                            return preg_replace('/[-. ]/', "",$submittedDescription);
+                            if(!empty($submittedDescription))return preg_replace('/[-. ]/', "",$submittedDescription);
+                            else return null;
                         }
                     )
                 ))

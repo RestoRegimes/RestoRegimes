@@ -136,7 +136,9 @@ fos_user:
     profile:
         form:
             type: rruserbundle_user_edition
-
+    change_password:
+        form:
+            type: rruserbundle_user_change_password
 
 bazinga_geocoder:
     providers:

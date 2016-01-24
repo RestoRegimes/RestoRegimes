@@ -5,6 +5,7 @@ use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 use RR\CoreBundle\Form\AdresseType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\CallbackTransformer;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue as RecaptchaTrue;
 
 class RegistrationType extends BaseType
 {
@@ -17,7 +18,7 @@ array $options)
         'data_class' => 'Padam87\AddressBundle\Entity\GeocodedAddress',
         'required'=>false
     ))
-        ->add($builder->create('telephone','text')
+        ->add($builder->create('telephone','text',array('required'=>false))
             ->addModelTransformer(
                 new CallbackTransformer(
                 // transform <br/> to \n so the textarea reads easier
@@ -26,12 +27,16 @@ array $options)
                         return preg_replace("/[0-9]{2}/", "$0 ", $originalDescription);
                     },
                     function ($submittedDescription) {
-                        return preg_replace('/[-. ]/', "",$submittedDescription);
+                        if(!empty($submittedDescription))return preg_replace('/[-. ]/', "",$submittedDescription);
+                        else return null;
                     }
                 )
             ))
     ->add('profileImage',new UserImageType(),array('required'=>false))
-    ->add('recaptcha', 'ewz_recaptcha');
+    ->add('recaptcha', 'ewz_recaptcha',array('mapped'      => false,
+        'constraints' => array(
+            new RecaptchaTrue()
+        )));
 
 
 

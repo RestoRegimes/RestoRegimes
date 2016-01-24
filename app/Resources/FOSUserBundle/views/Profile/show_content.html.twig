@@ -11,7 +11,7 @@
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell--6-col">
         <p>Image de profil:</p>
-        {% if user.profileImage.imageFile is defined %}
+        {% if user.profileImage is not null and user.profileImage.imageFile is not null %}
             <img src="{{ asset(vich_uploader_asset(user.profileImage,'imageFile')) }}" alt="" /><br/>
         {% endif %}
         <br><br>

@@ -26,10 +26,6 @@ class User extends BaseUser
 
 
 
-    /**
-     * @Recaptcha\IsTrue
-     */
-    public $recaptcha;
 
     /**
      * @ORM\OneToOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist","remove"})
@@ -40,7 +36,7 @@ class User extends BaseUser
      * @var integer
      *
      * @ORM\Column(name="telephone", type="string",length=10,unique=true,nullable=true)
-     * @Assert\Regex(pattern="#^0[1-68]([-. ]?[0-9]{2}){4}$#",message="Numero de telephone non valide")
+     * @Assert\Regex(pattern="#^0[1-68]([0-9]{2}){4}$#",message="Numero de telephone non valide ex: 0305678303")
      */
     private $telephone;
 

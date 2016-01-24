@@ -53,3 +53,9 @@ services:
           arguments: [%fos_user.model.user.class%]
           tags:
               - { name: form.type, alias: rruserbundle_user_edition }
+
+  rruserbundle.change_password.form.type:
+          class: RR\UserBundle\Form\ChangePasswordType
+          arguments: [%fos_user.model.user.class%]
+          tags:
+              - { name: form.type, alias: rruserbundle_user_change_password }
