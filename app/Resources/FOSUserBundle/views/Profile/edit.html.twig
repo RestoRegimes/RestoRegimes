@@ -6,3 +6,32 @@
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
 {% endblock fos_user_content %}
+{% block javascript %}
+    {{ parent() }}
+    <script>
+        $("label:contains('Profile image')").hide();
+        $("label:contains('Image file')").hide();
+        $(document).ready(function(){
+            var idZip= "#{{ form.address.zipcode.vars.id }}";
+            var zip = $(idZip);
+            var idCity= "#{{ form.address.city.vars.id }}";
+            var city = $(idCity);
+            var idStreet = "#{{ form.address.street.vars.id }}";
+            var street = $(idStreet);
+            $(".req").keyup( function() {
+                if(zip.val().length>0 || city.val().length>0 || street.val().length>0){
+                    zip.prop('required',true);
+                    city.prop('required',true);
+                    street.prop('required',true);
+                }else{
+                    zip.prop('required',false);
+                    city.prop('required',false);
+                    street.prop('required',false);
+                }
+            });
+            document.getElementById("{{ form.profileImage.imageFile.file.vars.id }}").onchange = function () {
+                document.getElementById("uploadFile").value = this.files[0].name;
+            };
+        });
+    </script>
+{% endblock %}

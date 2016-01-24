@@ -31,7 +31,8 @@ array $options)
                     }
                 )
             ))
-    ->add('profileImage',new UserImageType(),array('required'=>false));
+    ->add('profileImage',new UserImageType(),array('required'=>false))
+    ->remove('current_password');
 
 
 

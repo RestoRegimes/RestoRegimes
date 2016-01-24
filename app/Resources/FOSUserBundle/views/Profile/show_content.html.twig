@@ -6,37 +6,26 @@
         <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
         <br><br>
         <p>telephone: {{ user.telephone|default("-") }}</p>
+        <br><br>
+        <p>code postal: {{ user.address.zipcode|default("-") }}</p>
+        <p>ville: {{ user.address.city|default("-") }}</p>
+        <p>rue: {{ user.address.street|default("-") }}</p>
     </div>
 
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell--6-col">
         <p>Image de profil:</p>
         {% if user.profileImage is not null and user.profileImage.imageFile is not null %}
-            <img src="{{ asset(vich_uploader_asset(user.profileImage,'imageFile')) }}" alt="" /><br/>
+            <img class='profileImg' src="{{ asset(vich_uploader_asset(user.profileImage,'imageFile')) }}" alt="" /><br/>
         {% endif %}
-        <br><br>
-        <p>code postal: {{ user.address.zipcode|default("-") }}</p>
-        <p>ville: {{ user.address.city|default("-") }}</p>
-        <p>rue: {{ user.address.street|default("-") }}</p>
 
     </div>
 </div>
 
 <div class="mdl-grid">
-    <div class="mdl-cell--8-col">
-        <p><a href="{{ path("fos_user_profile_edit") }}">Editer le profil</a></p>
-        <p><a href="{{ path("fos_user_change_password") }}">Changer le mot de passe</a></p>
-    </div>
+    <p><a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-color--accent" href="{{ path("fos_user_profile_edit") }}">Editer le profil</a></p>
+    <div class="mdl-layout-spacer"></div>
+    <p><a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="{{ path("fos_user_change_password") }}">Changer le mot de passe</a></p>
 </div>
 
-
-
-{#
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-    <p><a href="{{ path("fos_user_profile_edit") }}">Editer le profil</a></p>
-    <p><a href="{{ path("fos_user_change_password") }}">Changer le mot de passe</a></p>
-</div>
-#}
 
