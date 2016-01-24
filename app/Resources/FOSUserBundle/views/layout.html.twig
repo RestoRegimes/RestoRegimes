@@ -30,6 +30,10 @@
 
 
                     <div class="mdl-card__menu">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect"
+                           href="{{ path('google_login') }}">
+                            Google connect
+                        </a>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
                             <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="{{ path('fos_user_security_logout') }}">

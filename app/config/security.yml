@@ -1,6 +1,7 @@
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
+        Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       [ROLE_USER, ROLE_PRO, ROLE_ADMIN]
@@ -8,6 +9,21 @@ security:
         ROLE_USER:        [ROLE_USER]
 
     providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, fos_userbundle]
+        in_memory:
+            memory:
+                users:
+                    user:
+                        password: user
+                        roles: 'ROLE_USER'
+                    pro:
+                        password: pro
+                        roles: 'ROLE_PRO'
+                    admin:
+                        password: admin
+                        roles: 'ROLE_ADMIN'
         fos_userbundle:
             id: fos_user.user_provider.username
 
@@ -15,9 +31,15 @@ security:
         main:
             pattern:        ^/
             anonymous:      true
-            provider:       fos_userbundle
+            oauth:
+                resource_owners:
+                    google:             "/login/check-google"
+                login_path:        /login
+                failure_path:      /login
+
+                oauth_user_provider:
+                    service: my_user_provider
             form_login:
-                provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check

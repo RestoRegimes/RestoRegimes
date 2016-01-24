@@ -5,9 +5,14 @@ parameters:
     site_image_directory_namer.class: RR\CoreBundle\Services\SiteImageDirectoryNamer
     user_directory_namer.class: RR\UserBundle\Services\UserNameDirectoryNamer
     resto_directory_namer.class: RR\RestaurantBundle\Services\RestaurantDirectoryNamer
+    my_user_provider.class: RR\UserBundle\Services\FOSUBUserProvider
 
 
 services:
+  my_user_provider:
+        class: "%my_user_provider.class%"
+        arguments: [@fos_user.user_manager,{google: google_id}]
+
   admin.sitecontent:
     class: RR\CoreBundle\Admin\SiteContent\SiteContentAdmin
     arguments: [~, RR\CoreBundle\Entity\SiteContent, ~]
