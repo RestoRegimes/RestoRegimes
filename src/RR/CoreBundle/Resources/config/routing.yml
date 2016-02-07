@@ -22,4 +22,12 @@ rr_core_faq:
     path: /faq
     defaults: { _controller:RRCoreBundle:Default:faq}
 
+rr_core_mentions:
+    path: /mentions
+    defaults: { _controller:RRCoreBundle:Default:mentions}
+
+rr_core_cgu:
+    path: /cgu
+    defaults: { _controller:RRCoreBundle:Default:cgu}
+
 

@@ -33,7 +33,6 @@
         "symfony/form": "~2.1",
         "vich/uploader-bundle": "^0.14.0",
         "beberlei/DoctrineExtensions": "^1.0",
-        "google/apiclient": "^1.1",
         "excelwebzone/recaptcha-bundle": "^1.4",
         "hwi/oauth-bundle": "^0.4.0",
         "sonata-project/admin-bundle": "2.3.*",

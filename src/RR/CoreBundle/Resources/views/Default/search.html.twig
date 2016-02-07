@@ -15,18 +15,32 @@
 
         {{ form_start(form, {'action': path('rr_core_search') }) }}
         <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form) }}</div>
-        <div id="adresse" class="search-field">
-            {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input','placeholder':'Adresse'}}) }}
-            {{ form_label(form.recherche, " ") }}</div>
+                <div id="adresse" class="search-field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_label(form.recherche, " ") }}
+                    <label class="mdl-textfield__label" for="{{ form.recherche.vars.id }}">Adresse...</label>
+                </div>
 
-        <label class="mdl-checkbox mdl-js-checkbox " for="{{ form.geo.vars.id }}">
-            {{ form_widget(form.geo, {'attr': {'class': 'mdl-checkbox__input','onclick':"getLocation()"}}) }}
-            <span class="mdl-checkbox__label"><b id="geo">Se Geolocaliser</b></span>
 
+        <label id="label-geo" class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="{{ form.geo.vars.id }}">
+            {{ form_widget(form.geo, {'attr': {'class': 'mdl-icon-toggle__input','onclick':"getLocation()"}}) }}
+            <i id="logo-gps" class="mdl-icon-toggle__label material-icons">&#xE1B4;</i>
         </label>
-
-        {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Distance max (km)'}}) }}
+        <div class="mdl-tooltip" for="label-geo">
+            Se Geolocaliser
+        </div>
+        <b id="geo"></b>
+        <br><hr>
+        <input id="radius-slider" class="mdl-slider mdl-js-slider" type="range"
+       min="0" max="9" value="0" tabindex="0">
+        {{ form_widget(form.radius, {'attr': {'class': 'mdl-textfield__input','placeholder':'Distance max (m)'}}) }}
         {{ form_label(form.radius, " ") }}
+        <br><br>
+
+
+        <div class="mdl-tooltip" for="radius-slider">
+            Distance max (m)
+        </div>
 
         <label class="tgl" style="font-size:18px;">
             {{ form_widget(form.vegetarien) }}
@@ -59,12 +73,14 @@
 
         <br><br>
 
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+        <button id="search-button-form" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
             <i class="material-icons">search</i>
         </button>
+        <div class="mdl-tooltip mdl-tooltip--large" for="search-button-form">
+            Valider
+        </div>
         {{ form_rest(form) }}
 
-        {# Fermeture de la balise <form> du formulaire HTML #}
         {{ form_end(form) }}
 
 
@@ -85,6 +101,7 @@
         var x = document.getElementById("{{ form.lng.vars.id }}");
         var y = document.getElementById("{{ form.lat.vars.id }}");
         var z = document.getElementById("geo");
+        var w = document.getElementById("logo-gps");
         var a = document.getElementById("adresse");
         var ad= document.getElementById("{{ form.recherche.vars.id }}");
         var click=false;
@@ -94,7 +111,12 @@
             ad.value = "";
             click=true;
         }
+        var radius_id = {{ form.radius.vars.id }};
 
+
+        $('#radius-slider').on("change mousemove", function() {
+            $("#{{ form.radius.vars.id }}").val($(this).val()*500+500);
+        });
 
         function getLocation() {
             if(!click){
@@ -102,12 +124,14 @@
                     navigator.geolocation.getCurrentPosition(showPosition);
                     click=true;
                 } else {
+                    w.innerHTML= "&#xE1B5;";
                     z.innerHTML = "La Geolocation n'est pas supportée par le navigateur.";
                 }
             }else{
                 x.value = "";
                 y.value = "";
-                z.innerHTML = "Se Geolocaliser";
+                z.innerHTML = " ";
+                w.innerHTML= "&#xE1B4;";
                 a.style.visibility = 'visible';
                 ad.value = "";
                 click=false;
@@ -118,6 +142,7 @@
             y.value = position.coords.latitude;
             x.value = position.coords.longitude;
             z.innerHTML = "Addresse trouvée";
+            w.innerHTML= "&#xE1B3;";
             a.style.visibility = 'hidden';
             ad.value = "";
         }

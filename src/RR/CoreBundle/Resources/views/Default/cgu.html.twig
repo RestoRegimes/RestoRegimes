@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    {% for f in faq %}
+    {% for f in cgu %}
         {% if f.title is not null %}
             <div class="mdl-grid">
                 <div class="mdl-layout-spacer"></div>
@@ -24,24 +24,11 @@
                     <h5 class="mdl-card__title-text">{{ f.subtitle }}</h5>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                    {% if f.image is not null and f.image.imageFile is not null %}
-                    <div class="mdl-grid">
-                        <div class="mdl-cell--6-col">
                         <p> {{ f.content }}</p><br>
-                        </div>
-
-                        <div class="mdl-cell--6-col">
-                            <div class='profileImg'>
-                                <img src="{{ asset(vich_uploader_asset(f.image,'imageFile')) }}" alt="{{ f.image.imageName }}" /><br/>
-                            </div>
-                        </div>
-                    </div>
-                    {% else %}
-                        <p> {{ f.content }}</p><br>
-                    {% endif %}
-
                 </div>
-
+                {% if f.image is not null and f.image.imageFile is not null %}
+                    <img class="image-faq" src="{{ asset(vich_uploader_asset(f.image,'imageFile')) }}" alt="{{ f.image.imageName }}" /><br/>
+                {% endif %}
             </div>
             <div class="mdl-layout-spacer"></div>
         </div>
@@ -53,9 +40,9 @@
         <div class="mdl-mini-footer__left-section">
             <div class="mdl-logo">Resto'Regimes</div>
             <ul class="mdl-mini-footer__link-list">
-                <li><a class="mdl-color-text--accent" href="{{ path('rr_core_faq') }}"><b>FAQ</b></a></li>
+                <li><a  href="{{ path('rr_core_faq') }}">FAQ</a></li>
                 <li><a href="{{ path('rr_core_mentions') }}">Mentions légales</a></li>
-                <li><a href="{{ path('rr_core_cgu') }}">Conditions génerales d'utilisation</a></li>
+                <li><a class="mdl-color-text--accent" href="{{ path('rr_core_cgu') }}"><b>Conditions génerales d'utilisation</b></a></li>
             </ul>
         </div>
     </footer>

@@ -246,6 +246,7 @@ sonata_block:
             contexts: [admin]
 
 
+
 hwi_oauth:
     connect:
         account_connector: my_user_provider

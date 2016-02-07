@@ -1,7 +1,7 @@
 
-<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp card-accueil">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--light-green-A400 ','mdl-color--green-400','mdl-color--yellow-400']) }}">Ajouter un commentaire</h2>
+<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp card-accueil ">
+    <div class="mdl-card__title {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--light-green-A400 ','mdl-color--green-400','mdl-color--yellow-400']) }}">
+        <h2 class="mdl-card__title-text">Ajouter un commentaire</h2>
     </div>
 
     {{ form_start(form, {'action': path('rr_core_commentaire_add',{'id_resto': restaurant.id}) })}}
@@ -9,22 +9,52 @@
 
             <div class="mdl-color--accent mdl-shadow--2dp error">{{ form_errors(form) }}</div>
 
-
-            <div class="mdl-textfield mdl-js-textfield">
-                {{ form_widget(form.texteCommentaire, {'attr': {'class': 'mdl-textfield__input','rows':'5','placeholder':'Message'}}) }}
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                {{ form_widget(form.texteCommentaire, {'attr': {'class': 'mdl-textfield__input','rows':'6'}}) }}
                 {{ form_label(form.texteCommentaire, " ") }}
+                <label class="mdl-textfield__label" for="{{ form.texteCommentaire.vars.id }}">Commentaire...</label>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--middle">
+                    <input id="cuisine-slider" class="mdl-slider mdl-js-slider" type="range"
+                           min="0" max="10" value="0" tabindex="0">
+                    <div class="mdl-tooltip" for="cuisine-slider">
+                        Note Cuisine
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    {{ form_widget(form.noteCuisine, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Cuisine'}}) }}
+                    {{ form_label(form.noteCuisine," ") }}
+                </div>
             </div>
 
-            {{ form_widget(form.noteCuisine, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Cuisine'}}) }}
-            {{ form_label(form.noteCuisine) }}
-
-            {{ form_widget(form.noteBesoins, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Besoins'}}) }}
-            {{ form_label(form.noteBesoins) }}
-
-            {{ form_widget(form.noteService, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Service'}}) }}
-            {{ form_label(form.noteService) }}
-
-
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--8-col mdl-cell--middle">
+                        <input id="besoins-slider" class="mdl-slider mdl-js-slider" type="range"
+                               min="0" max="10" value="0" tabindex="0">
+                        <div class="mdl-tooltip" for="besoins-slider">
+                            Note Besoins
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                        {{ form_widget(form.noteBesoins, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Besoins'}}) }}
+                        {{ form_label(form.noteBesoins," ") }}
+                    </div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--8-col mdl-cell--middle">
+                        <input id="service-slider" class="mdl-slider mdl-js-slider" type="range"
+                               min="0" max="10" value="0" tabindex="0">
+                        <div class="mdl-tooltip" for="service-slider">
+                            Note Service
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                        {{ form_widget(form.noteService, {'attr': {'class': 'mdl-textfield__input','placeholder':'Note Service'}}) }}
+                        {{ form_label(form.noteService," ") }}
+                    </div>
+                </div>
+                <br><br>
             {{ form_rest(form) }}
 
 
@@ -39,3 +69,14 @@
 
 
 </div>
+<script>
+    $('#cuisine-slider').on("change mousemove", function() {
+            $("#{{ form.noteCuisine.vars.id }}").val($(this).val());
+    });
+    $('#besoins-slider').on("change mousemove", function() {
+            $("#{{ form.noteBesoins.vars.id }}").val($(this).val());
+    });
+    $('#service-slider').on("change mousemove", function() {
+            $("#{{ form.noteService.vars.id }}").val($(this).val());
+    });
+</script>

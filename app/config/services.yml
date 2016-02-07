@@ -28,6 +28,11 @@ services:
         arguments: [~, RR\RestaurantBundle\Entity\Restaurant, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Restaurants }
+  admin.user:
+          class: RR\UserBundle\Admin\UserAdmin
+          arguments: [~, RR\UserBundle\Entity\User, ~]
+          tags:
+              - { name: sonata.admin, manager_type: orm, label: Utilisateurs }
 
   core_helper:
     class:  %core_helper.class%

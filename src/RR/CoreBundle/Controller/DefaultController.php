@@ -24,6 +24,18 @@ class DefaultController extends Controller
 
         return $this->render('RRCoreBundle:Default:faq.html.twig',array('faq'=>$faq));
     }
+    public function cguAction(){
+        $em = $this->getDoctrine()->getManager();
+        $cgu = $em->getRepository('RRCoreBundle:SiteContent')->getTypeContent('CGU');
+
+        return $this->render('RRCoreBundle:Default:cgu.html.twig',array('cgu'=>$cgu));
+    }
+    public function mentionsAction(){
+        $em = $this->getDoctrine()->getManager();
+        $mention = $em->getRepository('RRCoreBundle:SiteContent')->getTypeContent('MENTION');
+
+        return $this->render('RRCoreBundle:Default:mentions.html.twig',array('mention'=>$mention));
+    }
     public function searchFormFullAction()
     {
         $form = $this->createFormBuilder(array())
@@ -31,7 +43,7 @@ class DefaultController extends Controller
             ->add('geo','checkbox',array('label'=>"",'required'=>false))
             ->add('lat',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
             ->add('lng',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
-            ->add('radius','integer',array('label'=>"",'required'=>false,'attr'=>array('min'=>'1','max'=>'100')))
+            ->add('radius','integer',array('label'=>"",'required'=>false,'attr'=>array('min'=>'50','max'=>'5000')))
             ->add('vegetarien', 'checkbox', array(
                 'label'    => 'Vegetarien',
                 'required' => false,
@@ -64,7 +76,7 @@ class DefaultController extends Controller
             ->add('geo','checkbox',array('label'=>"",'required'=>false))
             ->add('lat',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
             ->add('lng',null,array( 'attr'=>array('style'=>'display:none;'),'required'=>false,'label'=>" "))
-            ->add('radius','integer',array('label'=>"",'required'=>false,'attr'=>array('min'=>'1','max'=>'100')))
+            ->add('radius','integer',array('label'=>"",'required'=>false,'attr'=>array('min'=>'50','max'=>'5000')))
             ->add('vegetarien', 'checkbox', array(
                 'label'    => 'Vegetarien',
                 'required' => false,
@@ -98,6 +110,7 @@ class DefaultController extends Controller
 
 
             if(empty($data['radius']))$data['radius']=0.5;
+            else $data['radius']=$data['radius']/1000;
             if($data['geo']!=1) {
                 $adapter  = new \Geocoder\HttpAdapter\CurlHttpAdapter();
                 $provider = new \Geocoder\Provider\GoogleMapsProvider($adapter);
@@ -233,4 +246,6 @@ class DefaultController extends Controller
         }return $ret->setData('Erreur protocole XmlHttp');
 
     }
+
+
 }

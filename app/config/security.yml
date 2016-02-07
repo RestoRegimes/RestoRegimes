@@ -11,7 +11,7 @@ security:
     providers:
         chain_provider:
             chain:
-                providers: [in_memory, fos_userbundle]
+                providers: [fos_userbundle,in_memory]
         in_memory:
             memory:
                 users:
@@ -30,6 +30,7 @@ security:
     firewalls:
         main:
             pattern:        ^/
+            provider: chain_provider
             anonymous:      true
             oauth:
                 resource_owners:

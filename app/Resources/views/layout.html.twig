@@ -18,21 +18,33 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
               rel="stylesheet">
     {% endblock %}
+    {% javascripts
+    '@jquery_and_ui' filter='uglifyjs2' output='js/compiled/main.min.js'  %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
 </head>
 
 <body>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
-        <div class="mdl-layout__drawer-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">search</i></div>
+        <div id="search-button-fab" class="mdl-layout__drawer-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">search</i></div>
+        <div class="mdl-tooltip mdl-tooltip--large" for="search-button-fab">
+            Recherche
+        </div>
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title" id="title"><a href="{{ path('rr_core_homepage') }}"><div id="RRLogoText" class="mdl-cell--hide-phone">{% include(":svg:RRtext.svg.twig") %}</div><div class="mdl-cell--hide-desktop mdl-cell--hide-tablet logo-Phone">{% include(":svg:iconRRBlackShadow.svg.twig") %}</div></a></span>
+
             <div class="mdl-layout-spacer"></div>
 
 
             <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
                 <i class="material-icons">more_vert</i>
             </button>
+            <div class="mdl-tooltip mdl-tooltip--large" for="more-button">
+                Menu
+            </div>
             <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
                 <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Acceuil</a>
                 {% if app.user is not null %}
@@ -65,7 +77,6 @@
     </header>
     <div id="drawer" class="mdl-layout__drawer mdl-layout__drawer">
 
-        <span class="mdl-cell--hide-phone mdl-layout-title">{% include(":svg:iconRRShadow.svg.twig") %}</span>
 
         {% block rrplatform_search %}
             {{ render(controller('RRCoreBundle:Default:searchFormFull', {})) }}
@@ -120,10 +131,6 @@
 </body>
 
 {% block javascript %}
-    {% javascripts
-    '@jquery_and_ui' filter='uglifyjs2' output='js/compiled/main.min.js'  %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
     {% javascripts
     '@prism_slider' filter='uglifyjs2' output='js/compiled/slider.min.js'  %}
     {% endjavascripts %}

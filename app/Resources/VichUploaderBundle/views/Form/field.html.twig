@@ -15,21 +15,26 @@
 {% endblock %}
 
 {% block vich_image_widget %}
-    <div class="vich-image">
+    {% if download_uri is defined and download_uri %}
+        <div class="profileImg">
+            <img  src="{{ download_uri }}" alt="" />
+        </div>
+    {% endif %}
+    <div class="mdl-grid">
         {{ form_widget(form.file) }}
         {{ form_label(form.file," ") }}
         {% if form.delete is defined %}
-            <label class="mdl-checkbox mdl-js-checkbox " for="{{ form.delete.vars.id }}">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-cell--8-col mdl-cell--middle" for="{{ form.delete.vars.id }}">
                 {{ form_widget(form.delete, {'attr': {'class': 'mdl-checkbox__input'}}) }}
                 <span class="mdl-checkbox__label"><b>{{ form_label(form.delete) }}</b></span>
             </label>
         {% endif %}
-
-        {% if download_uri is defined and download_uri %}
-         <a href="{{ download_uri }}" target="_blank"><img class="profileImg" src="{{ download_uri }}" alt="" /></a>
-        {% endif %}
+        <div class="mdl-layout-spacer"></div>
         {% if show_download_link and download_uri is defined and download_uri%}
-        <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--accent" href="{{ download_uri }}" target="_blank"><i class="material-icons">file_download</i></a>
+            <div class="mdl-cell--4-col "><a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--accent" href="{{ download_uri }}" target="_blank"><i class="material-icons">file_download</i></a></div>
         {% endif %}
     </div>
+
+
+
 {% endblock %}
