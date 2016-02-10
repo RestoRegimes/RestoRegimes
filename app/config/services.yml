@@ -6,7 +6,8 @@ parameters:
     user_directory_namer.class: RR\UserBundle\Services\UserNameDirectoryNamer
     resto_directory_namer.class: RR\RestaurantBundle\Services\RestaurantDirectoryNamer
     my_user_provider.class: RR\UserBundle\Services\FOSUBUserProvider
-
+    map_builder.class: RR\DataBundle\Services\MapBuilder
+    places_finder.class: RR\DataBundle\Services\PlacesFinder
 
 services:
   my_user_provider:
@@ -64,3 +65,12 @@ services:
           arguments: [%fos_user.model.user.class%]
           tags:
               - { name: form.type, alias: rruserbundle_user_change_password }
+
+  map_builder:
+          class: "%map_builder.class%"
+          arguments: [@ivory_google_map.map]
+          scope: "prototype"
+
+  places_finder:
+          class: "%places_finder.class%"
+          arguments: ["%google_api_key%","@doctrine.orm.entity_manager"]

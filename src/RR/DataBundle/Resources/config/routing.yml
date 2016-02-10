@@ -1,0 +1,12 @@
+rr_data_homepage:
+    path:     /places
+    defaults: { _controller: RRDataBundle:Default:index }
+
+rr_data_search:
+    path:     /places_search
+    defaults: { _controller: RRDataBundle:Default:search }
+
+rr_data_process:
+    path:     /process_data
+    defaults: { _controller: RRDataBundle:Default:findResto }
+

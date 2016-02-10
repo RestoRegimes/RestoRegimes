@@ -32,6 +32,19 @@ class RestaurantRepository extends EntityRepository
         return $query;
     }
 
+    public function FindByTelephone($telephone){
+
+        $query = $this
+            ->createQueryBuilder('r')
+            ->select('r')
+            ->where("r.telephone = :tel")
+            ->setParameter('tel',$telephone);
+
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
     public function whereCurrentYear(QueryBuilder $qb)
     {
