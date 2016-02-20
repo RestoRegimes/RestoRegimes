@@ -29,7 +29,7 @@ class ProRegistrationController extends RegistrationController
         /** @var $dispatcher \Symfony\Component\EventDispatcher\EventDispatcherInterface */
         $dispatcher = $this->get('event_dispatcher');
         $user = $userManager->createUser();
-        $user->setEnabled(true);
+        $user->setEnabled(false);
         $user->addRole('ROLE_PRO');
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);

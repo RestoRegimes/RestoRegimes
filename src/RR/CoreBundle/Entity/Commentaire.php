@@ -1,12 +1,13 @@
 <?php
 namespace RR\CoreBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="RR\CoreBundle\Entity\CommentaireRepository")
  * @ORM\Table(name="commentaire")
  */
 class Commentaire
@@ -61,6 +62,19 @@ class Commentaire
      * @Assert\Range(min=0, max=10)
      */
     protected $noteMoyenne;
+
+
+    /**
+     * @var= \DateTime
+     * @ORM\Column(type="date",nullable=false)
+     */
+    protected $date;
+
+
+    public function __construct()
+    {
+        $this->date=new \DateTime();
+    }
 
     /**
      * Get id
@@ -306,5 +320,29 @@ class Commentaire
     public function getRestaurant()
     {
         return $this->restaurant;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Commentaire
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

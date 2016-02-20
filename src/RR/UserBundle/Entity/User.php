@@ -65,10 +65,16 @@ class User extends BaseUser
     /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
     protected $google_access_token;
 
+    /**
+     * @ORM\Column(name="premium",type="boolean",options={"default": false})
+     */
+    protected $premium;
+
 
     public function __construct()
     {
         parent::__construct();
+        $this->premium=false;
         // your own logic
     }
 
@@ -258,5 +264,29 @@ class User extends BaseUser
     public function getGoogleAccessToken()
     {
         return $this->google_access_token;
+    }
+
+    /**
+     * Set premium
+     *
+     * @param boolean $premium
+     *
+     * @return User
+     */
+    public function setPremium($premium)
+    {
+        $this->premium = $premium;
+
+        return $this;
+    }
+
+    /**
+     * Get premium
+     *
+     * @return boolean
+     */
+    public function getPremium()
+    {
+        return $this->premium;
     }
 }

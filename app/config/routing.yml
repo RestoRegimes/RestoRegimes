@@ -1,6 +1,6 @@
 rr_data:
     resource: "@RRDataBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

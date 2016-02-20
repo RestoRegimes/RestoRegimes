@@ -15,15 +15,15 @@
                             {{ form_start(form) }}
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form) }}</div>
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.nom) }}</div>
-                            {{ form_widget(form.nom, {'attr': {'class': 'mdl-textfield__input','placeholder':'nom restaurant'}}) }}
+                            {{ form_widget(form.nom, {'attr': {'class': 'mdl-textfield__input','placeholder':'nom restaurant *'}}) }}
                             {{ form_label(form.nom, " ") }}
                             <br>
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.telephone) }}</div>
-                            {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'telephone'}}) }}
+                            {{ form_widget(form.telephone, {'attr': {'class': 'mdl-textfield__input','placeholder':'telephone *'}}) }}
                             {{ form_label(form.telephone, " ") }}
                         {% if action=="add" %}
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.siret) }}</div>
-                            {{ form_widget(form.siret, {'attr': {'class': 'mdl-textfield__input','placeholder':'numero SIRET'}}) }}
+                            {{ form_widget(form.siret, {'attr': {'class': 'mdl-textfield__input','placeholder':'numero SIRET *'}}) }}
                             {{ form_label(form.siret, " ") }}
                         {% endif %}
                             <br>
@@ -35,11 +35,11 @@
                             {{ form_label(form.address.zipcode, " ") }}
 
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.address.city) }}</div>
-                            {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Ville'}}) }}
+                            {{ form_widget(form.address.city, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Ville *'}}) }}
                             {{ form_label(form.address.city, " ") }}
 
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.address.street) }}</div>
-                            {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Rue' }}) }}
+                            {{ form_widget(form.address.street, {'attr': {'class': 'mdl-textfield__input req','placeholder':'Rue *' }}) }}
                             {{ form_label(form.address.street, " ") }}
 
 
@@ -57,8 +57,8 @@
                             {% endfor %}
                             <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form.description) }}</div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input','rows':'3','maxlength':'255','placeholder':'contenu1'}}) }}
-                                {{ form_label(form.description, "description",{'attr': {'class': 'mdl-textfield__label'}}) }}
+                                {{ form_widget(form.description, {'attr': {'class': 'mdl-textfield__input','rows':'3','maxlength':'255','placeholder':'Description'}}) }}
+                                {{ form_label(form.description, " ") }}
                             </div>
 
                         </div>

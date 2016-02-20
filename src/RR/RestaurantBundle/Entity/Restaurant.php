@@ -173,10 +173,19 @@ class Restaurant
     private $dimanche;
 
     /**
+     * @ORM\Column(name="photo_url",type="string",length=255,nullable=true)
+     */
+    private $photoUrl;
+
+
+    /**
      * @ORM\OneToOne(targetEntity="Padam87\AddressBundle\Entity\GeocodedAddress",cascade={"persist", "remove"})
      */
     private $address;
 
+    /**
+     * Restaurant constructor.
+     */
     public function __construct(){
         $this->dateCreation         = new \Datetime();
         $this->updatedAt = new \DateTime();
@@ -819,6 +828,29 @@ class Restaurant
     {
         return $this->commentaires;
     }
+    
 
+    /**
+     * Set photoUrl
+     *
+     * @param string $photoUrl
+     *
+     * @return Restaurant
+     */
+    public function setPhotoUrl($photoUrl)
+    {
+        $this->photoUrl = $photoUrl;
 
+        return $this;
+    }
+
+    /**
+     * Get photoUrl
+     *
+     * @return string
+     */
+    public function getPhotoUrl()
+    {
+        return $this->photoUrl;
+    }
 }

@@ -787,9 +787,10 @@ class LoadResto implements FixtureInterface
 
             // On la persiste
             $manager->persist($Restaurant);
+            $manager->flush();
         }
 
         // On déclenche l'enregistrement de toutes les catégories
-        $manager->flush();
+
     }
 }

@@ -126,17 +126,23 @@ class DefaultController extends Controller
             if($data['lat']==0 && $data['lng']==0){
                 //erreur recherche
             }
-            $nbMaxResult=100;
+            $nbMaxResult=6; // 6 resto
+
+            if($this->getUser()!==null && $this->getUser()->getPremium())
+                $nbMaxResult=14; //14 resto pour premium
+
+
             $listRestaurants= $this->getDoctrine()
                 ->getManager()
                 ->getRepository('RRRestaurantBundle:Restaurant')
-                ->searchRestaurants($data,$nbMaxResult);
+                ->searchRestaurants($data,50); //50 requetes sql max à ne pas confondre avec le nb de resultat on le filtre plus tard
+
 
             $listRestaurant=array();
             $listdistance = array();
-            foreach($listRestaurants as $resto){
-                $listRestaurant[]=$resto[0];
-                $listdistance[]=$resto['distance'];
+            for($i=0;$i<$nbMaxResult && $i<count($listRestaurants);$i++){
+                $listRestaurant[]=$listRestaurants[$i][0];
+                $listdistance[]=$listRestaurants[$i]['distance'];
             }
             $nbPerPage=1;
             $nbPage=ceil(count($listRestaurants)/$nbPerPage);
@@ -226,14 +232,24 @@ class DefaultController extends Controller
                 if ($form->isValid() && $user->getRoles()[0] == "ROLE_USER")
                 {
                     $em = $this->getDoctrine()->getManager();
-                    $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id_resto);
-                    $commentaire->setRestaurant($restaurant);
-                    $commentaire->setUser($user);
-                    $commentaire->setNoteMoyenne();
-                    $em->persist($commentaire);
-                    $em->flush();
+                    $comm=$this->getDoctrine()
+                        ->getManager()
+                        ->getRepository('RRCoreBundle:Commentaire')
+                        ->findLastCommentResto($id_resto,$this->getUser()->getId());
+                    if(count($comm)==0){
+                        $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id_resto);
+                        $commentaire->setRestaurant($restaurant);
+                        $commentaire->setUser($user);
+                        $commentaire->setNoteMoyenne();
+                        $em->persist($commentaire);
+                        $em->flush();
 
-                    return $ret->setData('message enregistré');
+                        return $ret->setData('message enregistré');
+
+                    }else
+                        return $ret->setData('nb Message journalier dépassé');
+
+
                 }
                 else
                 {

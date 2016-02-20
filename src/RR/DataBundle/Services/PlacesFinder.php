@@ -35,14 +35,16 @@ class PlacesFinder
 
         $array_id= file($file_id);
         $places_details=[];
+
         foreach($result["results"] as $res){
             if(!in_array($res["place_id"],$array_id)){
                 $array_id[]=$res["place_id"];
-                $places_details[]=$this->placeDetails($res["place_id"]);
+                $place=$this->placeDetails($res["place_id"]);
+                if($place!==null)
+                    $places_details[]=$place;
             }
         }
 
-        var_dump($places_details);
         $json_id_string = json_encode($array_id);
         $json_places_string = json_encode($places_details);
 
@@ -50,36 +52,58 @@ class PlacesFinder
         file_put_contents($file_id, $json_id_string);
         file_put_contents($file_places,$json_places_string,FILE_APPEND);
 
+        return $places_details;
+
     }
 
     public function placeDetails($id_place){
         $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=".$id_place."&key=".$this->api_key;
         $response = json_decode(file_get_contents ( $url ),true);
-        $place_details=array(
-            'place_name'    =>$response["result"]["name"],
-            'address'       =>$response["result"]["formatted_address"],
-            'latitude'      =>$response["result"]["geometry"]["location"]["lat"],
-            'longitude'     =>$response["result"]["geometry"]["location"]["lng"],
+
+        $filter_name=array(
+            "Domino's","Quick","McDonald's","KFC","Hôtel","Hotel","Pizza","Pizzeria","Buffallo grill","Hippopotamus"
         );
-        if(array_key_exists("formatted_phone_number",$response["result"]))
+
+        if(array_key_exists("formatted_phone_number",$response["result"]) && array_key_exists('rating',$response["result"]) && !preg_match('/\b('.implode('|', $filter_name).')\b/', ucwords(str_replace('-',' ',$response["result"]["name"])))){
+
+            $place_details=array(
+                'place_name'    =>$response["result"]["name"],
+                'address'       =>$response["result"]["formatted_address"],
+                'latitude'      =>$response["result"]["geometry"]["location"]["lat"],
+                'longitude'     =>$response["result"]["geometry"]["location"]["lng"],
+            );
+
             $place_details['telephone']=$response["result"]["formatted_phone_number"];
 
-        if(array_key_exists("website",$response["result"]))
-            $place_details['website']=$response["result"]["website"];
+            if(array_key_exists("website",$response["result"]))
+                $place_details['website']=$response["result"]["website"];
 
-        if(array_key_exists("opening_hours",$response["result"])){
-            if(array_key_exists("weekday_text",$response["result"]["opening_hours"]))
-                $place_details['weekday_text']=$response["result"]["opening_hours"]["weekday_text"];
-            if(array_key_exists("periods",$response["result"]["opening_hours"]))
-                $place_details['periods']=$response["result"]["opening_hours"]["periods"];
+            if(array_key_exists("opening_hours",$response["result"])){
+                if(array_key_exists("weekday_text",$response["result"]["opening_hours"]))
+                    $place_details['weekday_text']=$response["result"]["opening_hours"]["weekday_text"];
+                if(array_key_exists("periods",$response["result"]["opening_hours"]))
+                    $place_details['periods']=$response["result"]["opening_hours"]["periods"];
+            }
+            if(array_key_exists("photos",$response["result"])){
+                $url_photo = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&photoreference=".$response["result"]["photos"][0]["photo_reference"]."&key=".$this->api_key;
+                $location_photo=get_headers( $url_photo ,1);
+                if(array_key_exists("Location",$location_photo))
+                    $place_details['photo_url']=$location_photo["Location"];
+            }
+
+            $this->addResto($place_details);
+
+            return $place_details;
+        }else{
+            return null;
         }
-        $this->addResto($place_details);
 
-        return $place_details;
+
+
     }
 
     public function addResto($details){
-        if(array_key_exists("telephone",$details)) {
+
             $r=$this->manager->getRepository('RRRestaurantBundle:Restaurant')->FindByTelephone(str_replace(' ', '', $details["telephone"]));
 
             if($r===null || empty($r)) {
@@ -101,16 +125,18 @@ class PlacesFinder
                 $Restaurant->setAddress($Address);
                 $Restaurant->setValide(true);
 
-                if (array_key_exists("periods", $details)) {
-                    foreach ($details["periods"] as $period) {
+                if(array_key_exists("photo_url",$details))
+                    $Restaurant->setPhotoUrl($details['photo_url']);
 
-                        $lundi = new Horaire();
-                        $mardi = new Horaire();
-                        $mercredi = new Horaire();
-                        $jeudi = new Horaire();
-                        $vendredi = new Horaire();
-                        $samedi = new Horaire();
-                        $dimanche = new Horaire();
+                if (array_key_exists("periods", $details)) {
+                    $lundi = new Horaire();
+                    $mardi = new Horaire();
+                    $mercredi = new Horaire();
+                    $jeudi = new Horaire();
+                    $vendredi = new Horaire();
+                    $samedi = new Horaire();
+                    $dimanche = new Horaire();
+                    foreach ($details["periods"] as $period) {
 
                         switch ($period["open"]["day"]) {
                             case 0:
@@ -215,7 +241,7 @@ class PlacesFinder
                 // On la persiste
                 $this->manager->persist($Restaurant);
                 $this->manager->flush();
+
             }
-        }
     }
 }

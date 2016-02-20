@@ -7,59 +7,87 @@
 
 {% block content %}
     <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col">
-            {{ form_start(form, {'action': path('rr_data_process') }) }}
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="mdl-grid">
+                {{ form_start(form_map, {'action': path('rr_data_search') }) }}
 
-            <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form) }}</div>
-            <div id="data-adresse" class="search-field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(form.recherche, {'attr': {'class': 'mdl-textfield__input'}}) }}
-                {{ form_label(form.recherche, " ") }}
-                <label class="mdl-textfield__label" for="{{ form.recherche.vars.id }}">Adresse...</label>
+                <div class="mdl-color--red-200 mdl-shadow--2dp">{{ form_errors(form_map) }}</div>
+                <div id="data-adresse" class="search-field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_widget(form_map.recherche, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_label(form_map.recherche, " ") }}
+                    <label class="mdl-textfield__label" for="{{ form_map.recherche.vars.id }}">Adresse...</label>
+                </div>
+                <button id="data-button-form" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+                    <i class="material-icons">map</i>
+                </button>
+
+                <div class="mdl-tooltip mdl-tooltip--large" for="data-button-form">
+                    Position carte
+                </div>
+                {{ form_rest(form_map) }}
+
+                {{ form_end(form_map) }}
             </div>
+            <div class="mdl-grid">
+                {{ form_start(form, {'action': path('rr_data_process') }) }}
+                {{ form_widget(form.radius, {'id':'data-radius-form','attr': {'class': 'mdl-textfield__input','placeholder':'Distance max (m)'}}) }}
+                {{ form_label(form.radius, " ") }}
+                <div class="mdl-tooltip" for="data-radius-form">
+                    Distance max (m)
+                </div>
+                {{ form_widget(form.lat, {'id':'data-lat-form','attr': {'class': 'mdl-textfield__input','placeholder':'Latitude'}}) }}
+                {{ form_label(form.lat, " ") }}
+                <div class="mdl-tooltip" for="data-lat-form">
+                    Latitude
+                </div>
+                {{ form_widget(form.lng, {'id':'data-lng-form','attr': {'class': 'mdl-textfield__input','placeholder':'Longitude'}}) }}
+                {{ form_label(form.lng, " ") }}
+                <div class="mdl-tooltip" for="data-lng-form">
+                    Longitude
+                </div>
+                <button id="data2-button-form" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
+                    <i class="material-icons">file_upload</i>
+                </button>
+
+                <div class="mdl-tooltip mdl-tooltip--large" for="data2-button-form">
+                    Recherche restaurants
+                </div>
+                {{ form_rest(form) }}
+
+                {{ form_end(form) }}
+            </div>
+
         </div>
-        <div class="mdl-cell mdl-cell--4-col">
-            {{ form_widget(form.radius, {'id':'data-radius-form','attr': {'class': 'mdl-textfield__input','placeholder':'Distance max (m)'}}) }}
-            {{ form_label(form.radius, " ") }}
-            <div class="mdl-tooltip" for="data-radius-form">
-                Distance max (m)
-            </div>
-            {{ form_widget(form.lat, {'id':'data-lat-form','attr': {'class': 'mdl-textfield__input','placeholder':'Latitude'}}) }}
-            {{ form_label(form.lat, " ") }}
-            <div class="mdl-tooltip" for="data-lat-form">
-                Latitude
-            </div>
-            {{ form_widget(form.lng, {'id':'data-lng-form','attr': {'class': 'mdl-textfield__input','placeholder':'Longitude'}}) }}
-            {{ form_label(form.lng, " ") }}
-            <div class="mdl-tooltip" for="data-lng-form">
-                Longitude
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col">
-
-
-            <button id="data-button-form" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-color--green-A400">
-                <i class="material-icons">file_upload</i>
-            </button>
-
-            <div class="mdl-tooltip mdl-tooltip--large" for="data-button-form">
-                Valider
-            </div>
-            {{ form_rest(form) }}
-
-            {{ form_end(form) }}
-        </div>
-
-
-    </div>
-    <div class="mdl-grid">
-
-        <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-cell mdl-cell--6-col">
             {% if map is defined and map is not null %}
                 {{ google_map(map) }}
             {% endif %}
         </div>
-        <div class="mdl-cell mdl-cell--5-col">
 
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col" style="height: 400px">
+            {% if places is defined and places is not null and places is not empty %}
+                <h5>{{ places|length }} Restaurants ajoutés:</h5><br>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="overflow: scroll">
+                <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Nom</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for place in places %}
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">{{ place['place_name'] }}</td>
+                            <td>{{ place['address'] }}</td>
+                            <td>{{ place['telephone'] }}</td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+            {% endif %}
         </div>
 
 

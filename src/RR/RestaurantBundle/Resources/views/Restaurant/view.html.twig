@@ -4,10 +4,13 @@
 {% block infos %}
 
                         <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-phone mdl-cell--8-col-tablet mdl-card mdl-shadow--2dp">
-                            <div class="mdl-card__title {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--teal-400 ','mdl-color--green-400','mdl-color--yellow-400']) }}" style="height:150px;{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
-                             background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; {% endif %}">
+                            <div class="mdl-card__title {{ random(['mdl-color--red-A400', 'mdl-color--indigo-A400', 'mdl-color--teal-A400 ','mdl-color--green-A400','mdl-color--yellow-A400']) }}" style="height:150px;{% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                             background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover;
+                            {% elseif restaurant.photoUrl is not null %}
+                             background: url('{{ restaurant.photoUrl }}') center / cover;
+                                {% endif %}">
 
-                                <h2 class="mdl-card__title-text">{{ restaurant.nom }}</h2>
+                                <h2 class="mdl-card__title-text"><button class="mdl-button mdl-button--raised mdl-button--accent">{{ restaurant.nom }}</button></h2>
                                 {% for message in app.session.flashbag.get('notice') %}
                                     <div class="mdl-color--accent mdl-shadow--2dp">{{ message }}</div>
                                 {% endfor %}
@@ -217,13 +220,13 @@
                                             <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
 
 
-                                                <div class="mdl-card__title {{ random(['mdl-color--red-400', 'mdl-color--indigo-400', 'mdl-color--light-green-A400 ','mdl-color--green-400','mdl-color--yellow-400']) }}">
-                                                    {% if commentaire.user.profileImage is defined and commentaire.user.profileImage.imageFile is not null %}
+                                                <div class="mdl-card__title {{ random(['mdl-color--red-A400', 'mdl-color--indigo-A400', 'mdl-color--light-green-A400 ','mdl-color--green-A400','mdl-color--yellow-A400']) }}">
+                                                    {% if commentaire.user.profileImage is defined and commentaire.user.profileImage is not null and commentaire.user.profileImage.imageFile is not null %}
                                                         <div class="logo-profile">
                                                         <img src="{{ asset(vich_uploader_asset(commentaire.user.profileImage,'imageFile')) }}" alt=""/><br/>
                                                         </div>
                                                     {% endif %}
-                                                    <h2 class="mdl-card__title-text">{{ commentaire.user.username }}</h2></div>
+                                                    <h2 class="mdl-card__title-text">{{ commentaire.user.username }}</h2> </div>
                                                 {% if commentaire.noteMoyenne is defined and commentaire.noteMoyenne is not null %}
                                                 <div class="mdl-card__supporting-text">
                                                     <div class="mdl-grid">
@@ -242,6 +245,8 @@
                                                 <div class="mdl-card__actions mdl-card--border">
                                                     <div class="mdl-grid">
                                                             {{ commentaire.texteCommentaire }}
+                                                        <br>
+                                                            {{ commentaire.date|date("d/m/Y") }}
                                                     </div>
                                                 </div>
                                                 <div class="mdl-card__menu">

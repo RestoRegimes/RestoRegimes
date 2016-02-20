@@ -5,7 +5,7 @@ namespace RR\DataBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class SearchType extends AbstractType
+class MapType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -14,9 +14,7 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('radius','integer',array('label'=>"",'required'=>false))
-            ->add('lat',null,array( 'required'=>false,'label'=>" "))
-            ->add('lng',null,array( 'required'=>false,'label'=>" "))
+            ->add('recherche','text')
         ;
     }
     /**
@@ -24,6 +22,6 @@ class SearchType extends AbstractType
      */
     public function getName()
     {
-        return 'rr_databundle_search';
+        return 'rr_databundle_map';
     }
 }

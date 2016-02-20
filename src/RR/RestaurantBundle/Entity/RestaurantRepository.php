@@ -180,12 +180,10 @@ class RestaurantRepository extends EntityRepository
 
         $query
             ->orderBy('distance')
-            // Ainsi que le nombre d'annonce à afficher sur une page
             ->setMaxResults($nbMaxResults)
         ;
 
-        // Enfin, on retourne l'objet Paginator correspondant à la requête construite
-        // (n'oubliez pas le use correspondant en début de fichier)
+
         return $query
             ->getQuery()
             ->getResult()
