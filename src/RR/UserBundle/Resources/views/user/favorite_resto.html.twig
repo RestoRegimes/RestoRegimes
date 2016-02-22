@@ -1,0 +1,135 @@
+{% extends "::layout.html.twig" %}
+
+{% block content %}
+
+    <div class="mdl-grid">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--9-col">
+            <div class="mdl-card__title {{ random(['mdl-color--red-A400', 'mdl-color--indigo-A400', 'mdl-color--light-green-A400 ','mdl-color--green-A400','mdl-color--yellow-A400']) }}"
+            <b>Mes favoris</b>
+            </div>
+        <div class="mdl-card__actions mdl-card--border mdl-grid">
+            {% for restaurant in listRestaurants %}
+                <div id="resto-{{ restaurant.id }}" class="mdl-cell mdl-cell--6-col" style="margin-top: 20px">
+            <div class="mdl-card mdl-shadow--2dp" style="width:100%;min-height:100px;">
+                <div class="mdl-card__title {{ random(['mdl-color--red-A400', 'mdl-color--indigo-A400', 'mdl-color--light-green-A400 ','mdl-color--green-A400','mdl-color--yellow-A400']) }}"
+                        {% if restaurant.image1 is not null and restaurant.image1.imageFile is not null %}
+                    style=" background: url('{{ asset(vich_uploader_asset(restaurant.image1,'imageFile')) }}') center / cover; "
+                {% elseif restaurant.photoUrl is not null %}
+                    style=" background: url('{{ restaurant.photoUrl }}') center / cover; "
+                        {% endif %}>
+                    <a class="mdl-button mdl-button--raised mdl-button--colored" href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}">
+                        {{ restaurant.nom }}
+                    </a>
+
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--8-col">
+                            {{ restaurant.address|address()|raw }}
+
+
+                        </div>
+                        <div class="mdl-cell mdl-cell--4-col">
+                            {% for regime in restaurant.regimes %}
+                                {% if regime.id==1%}<img src="{{ asset('rrcore/images/Iconveg.png') }}">{% endif %}
+                                {% if regime.id==2%}<img src="{{ asset('rrcore/images/Iconvegan.png') }}">{% endif %}
+                                {% if regime.id==3%}<img src="{{ asset('rrcore/images/Icongluten.png') }}">{% endif %}
+                                {% if regime.id==4%}<img src="{{ asset('rrcore/images/Icondiabete.png') }}">{% endif %}
+                                {% if regime.id==5%}<img src="{{ asset('rrcore/images/Iconchol.png') }}">{% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="mdl-card__menu">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="resto-options-{{ restaurant.id }}">
+                        <i class="material-icons">more</i>
+                    </button>
+                    <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="resto-options-{{ restaurant.id }}">
+                        <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Voir le profil</a>
+                        <button class="fav mdl-menu__item" value="{{ restaurant.id }}">Supprimer des favoris</button>
+                    </nav>
+
+                </div>
+            </div>
+            </div>
+
+            {% else %}
+                <b>Aucun Restaurant favori</b>
+            {% endfor %}
+
+        </div>
+        <div class="mdl-card__menu">
+            <button id="fav_button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored yes">
+                <i id="fav_icon" class="material-icons">favorite</i>
+            </button>
+
+        </div>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+<script>
+    function addFav(){
+        var url= "{{ url('rr_core_favori_add', {'id_resto': 'restoid'}) }}",
+                val=$(this).val(),
+                self=$(this);
+        url = url.replace("restoid", val);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            beforeSend: function(){
+                self.unbind('click');
+                self.html("Supprimer des favoris");
+            },
+            success: function(){
+                self.bind('click', removeFav);
+                $('#resto-'+val).css('opacity','1');
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown)
+            {
+                self.bind('click', addFav);
+                self.html("Ajouter aux favoris");
+                alert('Error : ' + errorThrown);
+            }
+        });
+    };
+
+    function removeFav(){
+        var url= "{{ url('rr_core_favori_remove', {'id_resto': 'restoid'}) }}",
+                val=$(this).val(),
+                self=$(this);
+        url = url.replace("restoid", val);
+        $.ajax({
+            type: "POST",
+            url: url,
+            beforeSend: function(){
+                self.unbind('click');
+                self.html("Ajouter aux favoris");
+            },
+            success: function(){
+                self.bind('click', addFav);
+                $('#resto-'+val).css('opacity','0.6');
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown)
+            {
+                self.bind('click', removeFav);
+                self.html("Supprimer des favoris");
+                alert('Error : ' + errorThrown);
+            }
+        });
+    };
+
+    $('.fav').each(function(){
+        $(this).click(removeFav);
+    })
+</script>
+{% endblock %}

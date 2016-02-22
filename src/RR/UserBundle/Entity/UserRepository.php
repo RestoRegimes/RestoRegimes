@@ -30,4 +30,17 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
         // (n'oubliez pas le use correspondant en début de fichier)
         return new Paginator($query, true);
     }
+
+    public function getRestoFavori($iduser){
+        $query = $this->createQueryBuilder('u')
+            ->leftJoin('u.favoris','fav')
+            ->addSelect('fav')
+            ->where('u.id=:iduser')
+            ->setParameter('iduser', $iduser);
+        ;
+
+        return $query
+            ->getQuery()
+            ->getResult();
+    }
 }

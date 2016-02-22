@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="RR\UserBundle\Entity\UserRepository")
  * @UniqueEntity(fields="telephone", message="Ce telephone est deja utilisé.")
  * @ORM\Table(name="user")
  */

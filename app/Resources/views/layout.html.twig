@@ -59,6 +59,9 @@
                     {% if app.user.roles[0]=="ROLE_ADMIN" %}
                         <a class="mdl-menu__item" href="{{ path('sonata_admin_dashboard') }}">interface Admin</a>
                     {% endif %}
+                    {% if app.user.roles[0]=="ROLE_USER" %}
+                        <a class="mdl-menu__item" href="{{ path('user_favorite_resto') }}">Mes favoris</a>
+                    {% endif %}
                     <a class="mdl-menu__item" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                 {% else %}
 

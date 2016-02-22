@@ -63,18 +63,26 @@
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="resto-options-{{ restaurant.id }}">
                                 <i class="material-icons">more</i>
                             </button>
-                                <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="resto-options-{{ restaurant.id }}">
-                                    <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Voir le profil</a>
-                                    {% if app.user is not null and app.user.roles[0]=="ROLE_USER" %}
-                                    <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Ajouter aux favoris</a>
-                                    {% else %}
+                            <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="resto-options-{{ restaurant.id }}">
+                                <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Voir le profil</a>
+                                {% if app.user is not null and app.user.roles[0]=="ROLE_USER" %}
+
+                                        {% if restaurant in app.user.favoris %}
+                                          <button class="fav mdl-menu__item" value="{{ restaurant.id }}">  Supprimer des favoris</button>
+                                        {% else %}
+                                            <button class="unfav mdl-menu__item" value="{{ restaurant.id }}">  Ajouter aux favoris</button>
+                                        {% endif %}
+
+                                {% else %}
                                     <a class="mdl-menu__item" href="{{ path('rr_core_homepage') }}">Ceci est votre restaurant</a>
-                                    {% endif %}
-                                    <a class="mdl-menu__item" href="#">Reporter un probleme </a>
-                                </nav>
+                                {% endif %}
+
+                            </nav>
 
                         </div>
+
                     </div>
+
                     <div style="height: 10px;"></div>
            {% set count=count+1 %}
             {% else %}
@@ -107,34 +115,94 @@
     {{ parent() }}
     <script>
 
-        var page=1;
-        var aP = document.getElementsByClassName("pages");
+            var page=1;
+            var aP = document.getElementsByClassName("pages");
 
-        showPage(page);
-        function showPage(page) {
-            $('.pagination .post:not(#page-'+page+')').hide();
-            $('.pagination .post#page-'+page).show();
-            for( var i=0;i<$('.pagination .post').length;i++){
-                aP[i].style.backgroundColor= 'rgb(220,220,220)';
+            if(aP.length!=0)
+                showPage(page);
+            function showPage(page) {
+                $('.pagination .post:not(#page-'+page+')').hide();
+                $('.pagination .post#page-'+page).show();
+                for( var i=0;i<$('.pagination .post').length;i++){
+                    aP[i].style.backgroundColor= 'rgb(220,220,220)';
+                }
+                aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
             }
-            aP[page-1].style.backgroundColor= 'rgb(0,230,118)';
-        }
-        function prevPage() {
-            if (page == 1) {
-                page = $('.pagination .post').length;
-            } else {
-                page--;
+            function prevPage() {
+                if (page == 1) {
+                    page = $('.pagination .post').length;
+                } else {
+                    page--;
+                }
+                showPage(page);
             }
-            showPage(page);
-        }
 
-        function nextPage() {
-            if (page == $('.pagination .post').length) {
-                page = 1;
-            } else {
-                page++;
+            function nextPage() {
+                if (page == $('.pagination .post').length) {
+                    page = 1;
+                } else {
+                    page++;
+                }
+                showPage(page);
             }
-            showPage(page);
-        }
+
+        function addFav(){
+            var url= "{{ url('rr_core_favori_add', {'id_resto': 'restoid'}) }}",
+                    val=$(this).val(),
+                    self=$(this);
+            url = url.replace("restoid", val);
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                beforeSend: function(){
+                    self.unbind('click');
+                    self.html("Supprimer des favoris");
+                },
+                success: function(){
+                    self.bind('click', removeFav);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    self.bind('click', addFav);
+                    self.html("Ajouter aux favoris");
+                    alert('Error : ' + errorThrown);
+                }
+            });
+        };
+
+        function removeFav(){
+            var url= "{{ url('rr_core_favori_remove', {'id_resto': 'restoid'}) }}",
+                    val=$(this).val(),
+                    self=$(this);
+            url = url.replace("restoid", val);
+            $.ajax({
+                type: "POST",
+                url: url,
+                beforeSend: function(){
+                    self.unbind('click');
+                    self.html("Ajouter aux favoris");
+                },
+                success: function(){
+                    self.bind('click', addFav);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    self.bind('click', removeFav);
+                    self.html("Supprimer des favoris");
+                    alert('Error : ' + errorThrown);
+                }
+            });
+        };
+
+
+        $('.fav').each(function(){
+            $(this).click(removeFav);
+        })
+
+        $('.unfav').each(function(){
+            $(this).click(addFav);
+        })
+
     </script>
 {% endblock %}

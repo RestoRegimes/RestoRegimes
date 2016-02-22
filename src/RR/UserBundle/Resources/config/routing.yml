@@ -1,3 +1,7 @@
 fos_user_registration_registerPro:
     path: /register/pro
     defaults: { _controller: RRUserBundle:ProRegistration:registerPro }
+
+user_favorite_resto:
+    path: /user/favori
+    defaults: { _controller: RRUserBundle:UserContent:showfavori }
