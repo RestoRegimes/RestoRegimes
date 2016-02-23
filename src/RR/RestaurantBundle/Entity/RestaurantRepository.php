@@ -105,6 +105,20 @@ class RestaurantRepository extends EntityRepository
 
     }
 
+    public function getRestoByPro($id_pro)
+    {
+        $query = $this
+            ->createQueryBuilder('r')
+            ->select('r')
+            ->where('r.proprietaire = :idpro')
+            ->setParameter('idpro', $id_pro);
+
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     public function getValidQueryBuilder()
     {
         return $this

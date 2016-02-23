@@ -11,13 +11,13 @@
                                 {% endif %}">
 
                                 <h2 class="mdl-card__title-text"><button class="mdl-button mdl-button--raised mdl-button--accent">{{ restaurant.nom }}</button>
-
-                                    {% for message in app.session.flashbag.get('notice') %}
-                                        <div class="mdl-color--accent mdl-shadow--2dp">{{ message }}</div>
-                                    {% endfor %}
                                 </h2>
 
+
                             </div>
+                            {% for message in app.session.flashbag.get('notice') %}
+                                <div class="mdl-color--accent mdl-shadow--2dp">{{ message }}</div>
+                            {% endfor %}
                             <div class="mdl-card__supporting-text">
                                 <div class="mdl-grid mdl-grid--no-spacing">
                                     <div class="mdl-cell mdl-cell--7-col">

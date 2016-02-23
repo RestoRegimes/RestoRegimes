@@ -110,8 +110,8 @@ class PlacesFinder
                 $Address = new GeocodedAddress();
                 $address = explode(',', $details["address"]);
                 $Address->setStreet($address[0]);
-                $Address->setCity(explode(' ', $address[1])[1]);
-                $Address->setZipCode(explode(' ', $address[1])[0]);
+                $Address->setCity(explode(' ', $address[1])[2]);
+                $Address->setZipCode(explode(' ', $address[1])[1]);
                 $Address->setLatitude($details["latitude"]);
                 $Address->setLongitude($details["longitude"]);
 

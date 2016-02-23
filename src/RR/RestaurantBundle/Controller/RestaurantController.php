@@ -162,7 +162,7 @@ class RestaurantController extends Controller
             // Inutile de persister ici, Doctrine connait déjà notre annonce
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Images bien ajoutées.');
+            $request->getSession()->getFlashBag()->add('notice', 'Images bien modifiées.');
 
             return $this->redirect($this->generateUrl('rr_restaurant_view', array('id' => $restaurant->getId())));
         }
@@ -208,15 +208,10 @@ class RestaurantController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        // On récupère l'annonce $id
+
         $restaurant = $em->getRepository('RRRestaurantBundle:Restaurant')->find($id);
 
-        if (null === $restaurant) {
-            throw new NotFoundHttpException("Le restaurant d'id ".$id." n'existe pas.");
-        }
 
-        // On crée un formulaire vide, qui ne contiendra que le champ CSRF
-        // Cela permet de protéger la suppression de restaurant contre cette faille
         $form = $this->createFormBuilder()->getForm();
 
         if ($form->handleRequest($request)->isValid()) {
@@ -225,7 +220,7 @@ class RestaurantController extends Controller
 
             $request->getSession()->getFlashBag()->add('info', "Le restaurant a bien été supprimée.");
 
-            return $this->redirect($this->generateUrl('rr_restaurant_home'));
+            return $this->redirect($this->generateUrl('user_pro_resto'));
         }
 
         // Si la requête est en GET, on affiche une page de confirmation avant de supprimer

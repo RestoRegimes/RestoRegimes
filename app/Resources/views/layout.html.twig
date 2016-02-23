@@ -54,6 +54,7 @@
 
                     <a class="mdl-menu__item" href="{{ path('fos_user_profile_show') }}">Mon Compte</a>
                     {% if app.user.roles[0]=="ROLE_PRO" %}
+                        <a class="mdl-menu__item" href="{{ path('user_pro_resto') }}">Mes restaurants</a>
                         <a class="mdl-menu__item" href="{{ path('rr_restaurant_add') }}">Ajouter un restaurant</a>
                     {% endif %}
                     {% if app.user.roles[0]=="ROLE_ADMIN" %}

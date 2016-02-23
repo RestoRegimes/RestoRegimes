@@ -5,3 +5,11 @@ fos_user_registration_registerPro:
 user_favorite_resto:
     path: /user/favori
     defaults: { _controller: RRUserBundle:UserContent:showfavori }
+
+user_pro_resto:
+    path: /Restaurant/pro/list
+    defaults: { _controller: RRUserBundle:UserContent:showproresto }
+
+user_delete_account:
+    path: /profile/delete
+    defaults: { _controller: RRUserBundle:UserContent:deleteaccount }

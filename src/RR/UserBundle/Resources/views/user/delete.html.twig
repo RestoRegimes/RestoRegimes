@@ -3,7 +3,7 @@
 {% extends "RRRestaurantBundle::layout.html.twig" %}
 
 {% block title %}
-    Supprimer un restaurant - {{ parent() }}
+    Supprimer compte - {{ parent() }}
 {% endblock %}
 
 {% block fos_user %}
@@ -14,17 +14,18 @@
             <div class="mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-color--red-400">
                     <h4>
-                        Etes-vous certain de vouloir supprimer<br>
-                        le restaurant "{{ restaurant.nom }}" ?
+                        Etes-vous certain de vouloir supprimer votre compte?
                     </h4>
+
                 </div>
+
 
                 <div class="mdl-card__actions mdl-card--border">
                     <div class="mdl-grid">
-                        <a href="{{ path('rr_restaurant_view', {'id': restaurant.id}) }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                            Retour au restaurant
+                        <a href="{{ path('fos_user_profile_show') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                            Retour au profil
                         </a>
-                        <form action="{{ path('rr_restaurant_delete', {'id': restaurant.id}) }}" method="post">
+                        <form action="{{ path('user_delete_account') }}" method="post">
 
                             {# Ceci va générer le champ CSRF #}
                             {{ form_rest(form) }}
@@ -44,6 +45,9 @@
                         </form>
                     </div>
                 </div>
+                {% if app.user.roles[0]=="ROLE_PRO"%}
+                    <p>Attention toutes les données restaurants que vous possedez ne serons pas supprimées de nos bases de données</p>
+                {% endif %}
             </div>
         </div>
         <div class="mdl-layout-spacer"></div>
