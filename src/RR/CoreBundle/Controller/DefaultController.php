@@ -48,8 +48,8 @@ class DefaultController extends Controller
                 'label'    => 'Vegetarien',
                 'required' => false,
             ))
-            ->add('vegetalien', 'checkbox', array(
-                'label'    => 'Vegetalien',
+            ->add('allergies', 'checkbox', array(
+                'label'    => 'Allergies',
                 'required' => false,
             ))
             ->add('gluten', 'checkbox', array(
@@ -81,8 +81,8 @@ class DefaultController extends Controller
                 'label'    => 'Vegetarien',
                 'required' => false,
             ))
-            ->add('vegetalien', 'checkbox', array(
-                'label'    => 'Vegetalien',
+            ->add('allergies', 'checkbox', array(
+                'label'    => 'Allergies',
                 'required' => false,
             ))
             ->add('gluten', 'checkbox', array(

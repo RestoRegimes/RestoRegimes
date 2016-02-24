@@ -42,10 +42,9 @@ var slideshow = (function(window, undefined) {
    * @type {Array}
    */
   var slides = [
-    'rrcore/images/Bg/Bg1.png',
-    'rrcore/images/Bg/Bg2.png',
-    'rrcore/images/Bg/Bg3.png',
-    'rrcore/images/Bg/Bg4.png'
+    'rrcore/images/Bg/Bg1.jpg',
+    'rrcore/images/Bg/Bg2.jpg',
+    'rrcore/images/Bg/Bg3.jpg'
   ];
 
   /**

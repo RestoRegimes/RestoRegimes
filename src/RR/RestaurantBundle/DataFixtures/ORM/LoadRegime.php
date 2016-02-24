@@ -15,7 +15,7 @@ class LoadRegime implements FixtureInterface
         // Liste des noms de Regimes et descriptions à ajouter
         $regimes = array(
             'Vegetarien',
-            'Vegetalien',
+            'Allergies',
             'Sans gluten',
             'Diabetique',
             'Cholesterol'

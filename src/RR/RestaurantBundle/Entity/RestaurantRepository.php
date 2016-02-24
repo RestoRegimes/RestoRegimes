@@ -147,7 +147,7 @@ class RestaurantRepository extends EntityRepository
 
         if($data['vegetarien']==1){
            $query->where('reg.id = 1');
-                if($data['vegetalien']==1){
+                if($data['allergies']==1){
                     $query->orWhere('reg.id = 2');
                 }
                 if($data['gluten']==1){
@@ -159,7 +159,7 @@ class RestaurantRepository extends EntityRepository
                 if($data['Cholesterol']==1){
                     $query->orWhere('reg.id = 5');
                 }
-        }else if($data['vegetalien']==1){
+        }else if($data['allergies']==1){
             $query->where('reg.id = 2');
                 if($data['gluten']==1){
                     $query->orWhere('reg.id = 3');

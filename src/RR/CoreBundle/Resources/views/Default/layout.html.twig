@@ -5,7 +5,24 @@
   Resto'Regimes
 {% endblock %}
 
+{% block loader %}
+    <div class='loading'>
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
+
+
+
     <div class="container">
 
         <div class="content">
@@ -17,10 +34,9 @@
                     <img src="{{ asset('rrcore/images/masks/prism-b.svg') }}">
                     <img src="{{ asset('rrcore/images/masks/prism-c.svg') }}">
                     <!-- photos -->
-                    <img src="{{ asset('rrcore/images/Bg/Bg1.png') }}">
-                    <img src="{{ asset('rrcore/images/Bg/Bg2.png') }}">
-                    <img src="{{ asset('rrcore/images/Bg/Bg3.png') }}">
-                    <img src="{{ asset('rrcore/images/Bg/Bg4.png') }}">
+                    <img src="{{ asset('rrcore/images/Bg/Bg1.jpg') }}">
+                    <img src="{{ asset('rrcore/images/Bg/Bg2.jpg') }}">
+                    <img src="{{ asset('rrcore/images/Bg/Bg3.jpg') }}">
                 </div>
                 <div class="prism-slider">
 
@@ -91,9 +107,10 @@
     {{ parent() }}
     <script src="{{ asset('js/compiled/slider.min.js') }}"></script>
     <script>
-        $('body').hide();
-        $(document).ready(function(){
-            $('body').fadeIn(500);
+        $('#main_body').hide();
+        $(window).load(function(){
+            $('.loading').fadeOut(500).remove();
+            $('#main_body').fadeIn(1500);
 
             var recherche_BTN = $('#recherche_BTN');
 
