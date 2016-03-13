@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="RR\RestaurantBundle\Entity\HoraireRepository")
  */
-class Horaire
+class Horaire implements \JsonSerializable
 {
     /**
      * @var integer
@@ -154,6 +154,16 @@ class Horaire
     public function getFermeture2()
     {
         return $this->fermeture2;
+    }
+
+    public function jsonSerialize()
+    {
+        return array(
+            'ouverture1' => $this->ouverture1,
+            'fermeture1'=>$this->fermeture1,
+            'ouverture2' => $this->ouverture2,
+            'fermeture2'=>$this->fermeture2
+        );
     }
 
 

@@ -1,3 +1,7 @@
+rrapi:
+    resource: "@RRAPIBundle/Resources/config/routing.yml"
+    prefix:   /api
+
 rr_data:
     resource: "@RRDataBundle/Resources/config/routing.yml"
     prefix:   /admin

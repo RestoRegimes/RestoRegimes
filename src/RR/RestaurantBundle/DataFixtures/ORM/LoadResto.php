@@ -20,7 +20,7 @@ class LoadResto implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $vegetarien = $manager->getRepository('RRRestaurantBundle:Regime')->find(1);
-        $vegetalien = $manager->getRepository('RRRestaurantBundle:Regime')->find(2);
+        $allergies = $manager->getRepository('RRRestaurantBundle:Regime')->find(2);
         $gluten = $manager->getRepository('RRRestaurantBundle:Regime')->find(3);
         $diabete = $manager->getRepository('RRRestaurantBundle:Regime')->find(4);
         $cholesterol = $manager->getRepository('RRRestaurantBundle:Regime')->find(5);
@@ -780,7 +780,7 @@ class LoadResto implements FixtureInterface
             $Restaurant->setValide(true);
 
            if($restaurant[31]==1)$Restaurant->addRegime($vegetarien);
-            if($restaurant[32]==1)$Restaurant->addRegime($vegetalien);
+            if($restaurant[32]==1)$Restaurant->addRegime($allergies);
             if($restaurant[33]==1)$Restaurant->addRegime($gluten);
             if($restaurant[34]==1)$Restaurant->addRegime($diabete);
             if($restaurant[35]==1)$Restaurant->addRegime($cholesterol);

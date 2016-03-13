@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
  * @ORM\Entity(repositoryClass="RR\CoreBundle\Entity\CommentaireRepository")
  * @ORM\Table(name="commentaire")
  */
-class Commentaire
+class Commentaire implements \JsonSerializable
 {
     /**
      * @ORM\Id
@@ -345,4 +345,17 @@ class Commentaire
     {
         return $this->date;
     }
+
+    public function jsonSerialize()
+    {
+        return array(
+            'user' => $this->user,
+            'texteCommentaire'=>$this->texteCommentaire,
+            'noteCuisine' => $this->noteCuisine,
+            'noteBesoins'=>$this->noteBesoins,
+            'noteService'=>$this->noteService,
+            'noteMoyenne'=>$this->noteMoyenne
+        );
+    }
+
 }

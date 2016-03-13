@@ -8,15 +8,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-
-
 /**
  * @ORM\Entity(repositoryClass="RR\RestaurantBundle\Entity\RestaurantRepository")
  * @UniqueEntity(fields="telephone", message="Un Restaurant existe déjà avec ces coordonnées.")
  * @UniqueEntity(fields="siret", message="Un Restaurant existe déjà avec ces coordonnées.")
  * @ORM\HasLifecycleCallbacks()
  */
-class Restaurant
+class Restaurant implements \JsonSerializable
 {
     /**
      * @var integer
@@ -43,7 +41,7 @@ class Restaurant
      * @ORM\Column(name="nom", type="string", length=255)
      * @Assert\Length(min=2,minMessage="le nom doit faire au minimum {{ limit }} deux caractères.")
      */
-    private $nom;
+    public $nom;
 
     /**
      * @var integer
@@ -59,6 +57,13 @@ class Restaurant
      * @Assert\Length(max=255, maxMessage="La description doit faire au maximum {{ limit }} caractères.")
      */
     private $description;
+
+    /**
+     * @var string
+     * @ORM\Column(name="website", type="string", length=55,nullable=true)
+     * @Assert\Length(max=55)
+     */
+    private $website;
 
     /**
      * @var integer
@@ -852,5 +857,62 @@ class Restaurant
     public function getPhotoUrl()
     {
         return $this->photoUrl;
+    }
+
+    public function jsonSerialize()
+    {
+        $adresse=array(
+            'code_postal'=>$this->address->getZipCode(),
+            'ville'=>$this->address->getCity(),
+            'rue'=>$this->address->getStreet()
+        );
+
+        return array(
+            'nom' => $this->nom,
+            'telephone'=>$this->telephone,
+            'description'=>$this->description,
+            'address'=>$adresse,
+            'website'=>$this->website,
+            'commentaires'=>$this->getCommentaires()->toArray(),
+            'regimes'=>$this->regimes->toArray(),
+            'photoUrl'=>$this->photoUrl,
+            'lundi'=>$this->lundi,
+            'mardi'=>$this->mardi,
+            'mercredi'=>$this->mercredi,
+            'jeudi'=>$this->jeudi,
+            'vendredi'=>$this->vendredi,
+            'samedi'=>$this->samedi,
+            'dimanche'=>$this->dimanche,
+            'image1'=>$this->image1,
+            'image2'=>$this->image2,
+            'image3'=>$this->image3,
+            'image4'=>$this->image4,
+            'image5'=>$this->image5
+        );
+    }
+
+
+    /**
+     * Set website
+     *
+     * @param string $website
+     *
+     * @return Restaurant
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
+    /**
+     * Get website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
     }
 }

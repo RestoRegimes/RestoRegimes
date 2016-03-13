@@ -1,0 +1,6 @@
+rr_api_resto_search:
+    path:     /{latitude}/{longitude}/{radius}/{vegetarien}/{allergies}/{gluten}/{diabete}/{cholesterol}
+    defaults: { _controller: RRAPIBundle:Default:getrestaurant}
+    methods:  [GET]
+    requirements:
+        _method: GET

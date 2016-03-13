@@ -133,7 +133,6 @@ class RestaurantRepository extends EntityRepository
             ->createQueryBuilder('r')
             ->select('r')
             ->leftJoin('r.regimes','reg')
-            ->addSelect('reg')
             ->leftJoin('r.address','adr')
             ->addSelect('adr')
             ->addSelect('( 6380 * Acos(cos(radians(:lat))' . //haversine formula

@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @Vich\Uploadable
  * @ORM\HasLifecycleCallbacks()
  */
-class RestoImage
+class RestoImage implements \JsonSerializable
 {
     /**
      * @ORM\Id
@@ -156,5 +156,12 @@ class RestoImage
     public function getRestaurant()
     {
         return $this->restaurant;
+    }
+
+    public function jsonSerialize()
+    {
+        return array(
+            'file' => $this->imageFile->getRealPath(),
+        );
     }
 }

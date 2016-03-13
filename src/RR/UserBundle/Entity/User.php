@@ -15,7 +15,7 @@ use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
  * @UniqueEntity(fields="telephone", message="Ce telephone est deja utilisé.")
  * @ORM\Table(name="user")
  */
-class User extends BaseUser
+class User  extends BaseUser implements \JsonSerializable
 {
     /**
      * @ORM\Id
@@ -289,4 +289,14 @@ class User extends BaseUser
     {
         return $this->premium;
     }
+
+    public function jsonSerialize()
+{
+    return array(
+        'username' => $this->username,
+        'profileImage'=>$this->profileImage,
+    );
+}
+
+
 }

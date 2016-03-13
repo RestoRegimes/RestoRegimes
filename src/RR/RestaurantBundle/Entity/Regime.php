@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="RR\RestaurantBundle\Entity\RegimeRepository")
  */
-class Regime
+class Regime implements \JsonSerializable
 {
     /**
      * @var integer
@@ -89,6 +89,13 @@ class Regime
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function jsonSerialize()
+    {
+        return array(
+            'libelle' => $this->libelle
+        );
     }
 
 }
