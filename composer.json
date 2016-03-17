@@ -36,7 +36,8 @@
         "excelwebzone/recaptcha-bundle": "^1.4",
         "hwi/oauth-bundle": "^0.4.0",
         "sonata-project/admin-bundle": "2.3.*",
-        "sonata-project/doctrine-orm-admin-bundle": "2.3.*"
+        "sonata-project/doctrine-orm-admin-bundle": "2.3.*",
+        "lexik/maintenance-bundle": "~2.1"
 
     },
     "require-dev": {
