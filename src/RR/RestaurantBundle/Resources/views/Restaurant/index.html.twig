@@ -43,16 +43,126 @@
                                 <div class="mdl-cell mdl-cell--8-col">
                                     <b>à environ {{ listdistance[loop.index0]|round('1','ceil') }} km</b><br>
                                     {{ restaurant.address|address()|raw }}
-
+                                    {% set day=date("w").timezone_type %}
+                                    Horaires du jour:<br>
+                                    {% if day==1 %}
+                                    {% if restaurant.lundi is not null %}
+                                            {% if restaurant.lundi.ouverture1 is not null and restaurant.lundi.fermeture1 is not null %}
+                                                {{ restaurant.lundi.ouverture1.format("H:i") }}-{{ restaurant.lundi.fermeture1.format("H:i") }}
+                                                {% if restaurant.lundi.ouverture2 is not null and restaurant.lundi.fermeture2 is not null %}
+                                                    / {{ restaurant.lundi.ouverture2.format("H:i") }}-{{ restaurant.lundi.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.lundi.ouverture1 is not null and restaurant.lundi.fermeture2 is not null %}
+                                                {{ restaurant.lundi.ouverture1.format("H:i") }}-{{ restaurant.lundi.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
+                                    {% if day==2 %}
+                                    {% if restaurant.mardi is not null %}
+                                            {% if restaurant.mardi.ouverture1 is not null and restaurant.mardi.fermeture1 is not null %}
+                                                {{ restaurant.mardi.ouverture1.format("H:i") }}-{{ restaurant.mardi.fermeture1.format("H:i") }}
+                                                {% if restaurant.mardi.ouverture2 is not null and restaurant.mardi.fermeture2 is not null %}
+                                                    / {{ restaurant.mardi.ouverture2.format("H:i") }}-{{ restaurant.mardi.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.mardi.ouverture1 is not null and restaurant.mardi.fermeture2 is not null %}
+                                                {{ restaurant.mardi.ouverture1.format("H:i") }}-{{ restaurant.mardi.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
+                                    {% if day==3 %}
+                                    {% if restaurant.mercredi is not null %}
+                                            {% if restaurant.mercredi.ouverture1 is not null and restaurant.mercredi.fermeture1 is not null %}
+                                                {{ restaurant.mercredi.ouverture1.format("H:i") }}-{{ restaurant.mercredi.fermeture1.format("H:i") }}
+                                                {% if restaurant.mercredi.ouverture2 is not null and restaurant.mercredi.fermeture2 is not null %}
+                                                    / {{ restaurant.mercredi.ouverture2.format("H:i") }}-{{ restaurant.mercredi.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.mercredi.ouverture1 is not null and restaurant.mercredi.fermeture2 is not null %}
+                                                {{ restaurant.mercredi.ouverture1.format("H:i") }}-{{ restaurant.mercredi.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
+                                    {% if day==4 %}
+                                    {% if restaurant.jeudi is not null %}
+                                            {% if restaurant.jeudi.ouverture1 is not null and restaurant.jeudi.fermeture1 is not null %}
+                                                {{ restaurant.jeudi.ouverture1.format("H:i") }}-{{ restaurant.jeudi.fermeture1.format("H:i") }}
+                                                {% if restaurant.jeudi.ouverture2 is not null and restaurant.jeudi.fermeture2 is not null %}
+                                                    / {{ restaurant.jeudi.ouverture2.format("H:i") }}-{{ restaurant.jeudi.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.jeudi.ouverture1 is not null and restaurant.jeudi.fermeture2 is not null %}
+                                                {{ restaurant.jeudi.ouverture1.format("H:i") }}-{{ restaurant.jeudi.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
+                                    {% if day==5 %}
+                                    {% if restaurant.vendredi is not null %}
+                                            {% if restaurant.vendredi.ouverture1 is not null and restaurant.vendredi.fermeture1 is not null %}
+                                                {{ restaurant.vendredi.ouverture1.format("H:i") }}-{{ restaurant.vendredi.fermeture1.format("H:i") }}
+                                                {% if restaurant.vendredi.ouverture2 is not null and restaurant.vendredi.fermeture2 is not null %}
+                                                    / {{ restaurant.vendredi.ouverture2.format("H:i") }}-{{ restaurant.vendredi.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.vendredi.ouverture1 is not null and restaurant.vendredi.fermeture2 is not null %}
+                                                {{ restaurant.vendredi.ouverture1.format("H:i") }}-{{ restaurant.vendredi.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
+                                    {% if day==6 %}
+                                    {% if restaurant.samedi is not null %}
+                                            {% if restaurant.samedi.ouverture1 is not null and restaurant.samedi.fermeture1 is not null %}
+                                                {{ restaurant.samedi.ouverture1.format("H:i") }}-{{ restaurant.samedi.fermeture1.format("H:i") }}
+                                                {% if restaurant.samedi.ouverture2 is not null and restaurant.samedi.fermeture2 is not null %}
+                                                    / {{ restaurant.samedi.ouverture2.format("H:i") }}-{{ restaurant.samedi.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.samedi.ouverture1 is not null and restaurant.samedi.fermeture2 is not null %}
+                                                {{ restaurant.samedi.ouverture1.format("H:i") }}-{{ restaurant.samedi.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
+                                    {% if day==0 %}
+                                    {% if restaurant.dimanche is not null %}
+                                            {% if restaurant.dimanche.ouverture1 is not null and restaurant.dimanche.fermeture1 is not null %}
+                                                {{ restaurant.dimanche.ouverture1.format("H:i") }}-{{ restaurant.dimanche.fermeture1.format("H:i") }}
+                                                {% if restaurant.dimanche.ouverture2 is not null and restaurant.dimanche.fermeture2 is not null %}
+                                                    / {{ restaurant.dimanche.ouverture2.format("H:i") }}-{{ restaurant.dimanche.fermeture2.format("H:i") }}
+                                                {% endif %}
+                                            {% elseif restaurant.dimanche.ouverture1 is not null and restaurant.dimanche.fermeture2 is not null %}
+                                                {{ restaurant.dimanche.ouverture1.format("H:i") }}-{{ restaurant.dimanche.fermeture2.format("H:i") }}
+                                            {% else %} fermé {% endif %}
+                                        {% else %} fermé {% endif %}
+                                    {% endif %}
 
                                 </div>
                                 <div class="mdl-cell mdl-cell--4-col">
                                     {% for regime in restaurant.regimes %}
-                                        {% if regime.id==1%}<img src="{{ asset('rrcore/images/Iconveg.png') }}">{% endif %}
-                                        {% if regime.id==2%}<img src="{{ asset('rrcore/images/Iconvegan.png') }}">{% endif %}
-                                        {% if regime.id==3%}<img src="{{ asset('rrcore/images/Icongluten.png') }}">{% endif %}
-                                        {% if regime.id==4%}<img src="{{ asset('rrcore/images/Icondiabete.png') }}">{% endif %}
-                                        {% if regime.id==5%}<img src="{{ asset('rrcore/images/Iconchol.png') }}">{% endif %}
+                                        {% if regime.id==1%}
+                                            <img id="Veg{{ restaurant.id }}" src="{{ asset('rrcore/images/Iconveg.png') }}">
+                                            <div class="mdl-tooltip" for="Veg{{ restaurant.id }}">
+                                                Végetarien
+                                            </div>
+                                        {% endif %}
+                                        {% if regime.id==2%}
+                                            <img id="All{{ restaurant.id }}" src="{{ asset('rrcore/images/Iconvegan.png') }}">
+                                            <div class="mdl-tooltip" for="All{{ restaurant.id }}">
+                                                Allergies
+                                            </div>
+                                        {% endif %}
+                                        {% if regime.id==3%}
+                                            <img id="Glu{{ restaurant.id }}" src="{{ asset('rrcore/images/Icongluten.png') }}">
+                                            <div class="mdl-tooltip" for="Glu{{ restaurant.id }}">
+                                                Sans-Gluten
+                                            </div>
+                                        {% endif %}
+                                        {% if regime.id==4%}
+                                            <img id="Dia{{ restaurant.id }}" src="{{ asset('rrcore/images/Icondiabete.png') }}">
+                                            <div class="mdl-tooltip" for="Dia{{ restaurant.id }}">
+                                                Diabète
+                                            </div>
+                                        {% endif %}
+                                        {% if regime.id==5%}
+                                            <img id="Cho{{ restaurant.id }}" src="{{ asset('rrcore/images/Iconchol.png') }}">
+                                            <div class="mdl-tooltip" for="Cho{{ restaurant.id }}">
+                                                Cholesterol
+                                            </div>
+                                        {% endif %}
                                     {% endfor %}
                                 </div>
                             </div>

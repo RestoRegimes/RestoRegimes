@@ -150,11 +150,36 @@
                                     </div>
                                     <div class="mdl-cell mdl-cell--4-col">
                                         {% for regime in restaurant.regimes %}
-                                            {% if regime.id==1%}<img src="{{ asset('rrcore/images/Iconveg.png') }}">{% endif %}
-                                            {% if regime.id==2%}<img src="{{ asset('rrcore/images/Iconvegan.png') }}">{% endif %}
-                                            {% if regime.id==3%}<img src="{{ asset('rrcore/images/Icongluten.png') }}">{% endif %}
-                                            {% if regime.id==4%}<img src="{{ asset('rrcore/images/Icondiabete.png') }}">{% endif %}
-                                            {% if regime.id==5%}<img src="{{ asset('rrcore/images/Iconchol.png') }}">{% endif %}
+                                            {% if regime.id==1%}
+                                                <img id="Veg{{ restaurant.id }}" src="{{ asset('rrcore/images/Iconveg.png') }}">
+                                                <div class="mdl-tooltip" for="Veg{{ restaurant.id }}">
+                                                    Végetarien
+                                                </div>
+                                            {% endif %}
+                                            {% if regime.id==2%}
+                                                <img id="All{{ restaurant.id }}" src="{{ asset('rrcore/images/Iconvegan.png') }}">
+                                                <div class="mdl-tooltip" for="All{{ restaurant.id }}">
+                                                    Allergies
+                                                </div>
+                                            {% endif %}
+                                            {% if regime.id==3%}
+                                                <img id="Glu{{ restaurant.id }}" src="{{ asset('rrcore/images/Icongluten.png') }}">
+                                                <div class="mdl-tooltip" for="Glu{{ restaurant.id }}">
+                                                    Sans-Gluten
+                                                </div>
+                                            {% endif %}
+                                            {% if regime.id==4%}
+                                                <img id="Dia{{ restaurant.id }}" src="{{ asset('rrcore/images/Icondiabete.png') }}">
+                                                <div class="mdl-tooltip" for="Dia{{ restaurant.id }}">
+                                                    Diabète
+                                                </div>
+                                            {% endif %}
+                                            {% if regime.id==5%}
+                                                <img id="Cho{{ restaurant.id }}" src="{{ asset('rrcore/images/Iconchol.png') }}">
+                                                <div class="mdl-tooltip" for="Cho{{ restaurant.id }}">
+                                                    Cholesterol
+                                                </div>
+                                            {% endif %}
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -298,12 +323,8 @@
                                                         <i class="material-icons">more</i>
                                                     </button>
                                                     <nav class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="button-comm-{{ commentaire.id }}">
-                                                        {% if app.user is defined and app.user is not null and app.user==commentaire.user %}
-                                                            <a class="mdl-menu__item" href="#">Supprimer</a>
-                                                        {% else %}
+
                                                             <a class="mdl-menu__item" href="#">Reporter un probleme</a>
-                                                        {% endif %}
-                                                            <a class="mdl-menu__item" href="#">Partager</a>
 
                                                     </nav>
                                                 </div>
@@ -333,6 +354,7 @@
 {% block javascript %}
     {{ parent() }}
     <script>
+
         var info = $('.info');
         var page=1;
         var fav =false;
@@ -341,7 +363,7 @@
 
         info.hide();
         $(window).load(function(){
-            info.show();
+            info.show(500);
             $('#fav_button.yes').bind('click',removeFav);
             $('#fav_button.no').bind('click',addFav);
 
