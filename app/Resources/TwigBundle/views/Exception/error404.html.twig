@@ -1,4 +1,4 @@
-{% extends '::layout.html.twig' %}
+{% extends '::layout-error.html.twig' %}
 {% block title %}
     Une Erreur est survenue: {{ status_text }}
 {% endblock %}
@@ -15,8 +15,8 @@
                     <h3>Le Serveur a retourné "{{ status_code }} {{ status_text }}".</h3>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                    La page demandée est introuvable. Si l'erreur persiste veuillez contacter le service technique.
-                    axel.perciballi@gmail.com
+                    La page demandée est introuvable.
+                    <button class="mdl-button"> <a href="{{ path('rr_core_homepage') }}"> Revenir à l'accueil </a></button>
                 </div>
 
             </div>

@@ -24,3 +24,5 @@ parameters:
     google_app_id: 1043666664809-agjj6ffq6gkn5pfiee046penl2i76l2s.apps.googleusercontent.com
     google_app_secret: nutlPvbR9z_9h_aPngiCtM8G
     google_api_key : AIzaSyBDdfrLHQdrxWhi_C2jvAsmG9zhLU18dgo
+
+    website-host: localhost
