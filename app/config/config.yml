@@ -146,8 +146,8 @@ bazinga_geocoder:
         google_maps:
             locale:               null
             region:               null
-            use_ssl:              false
-            api_key:              null
+            use_ssl:              true
+            api_key:              "%google_api_key%"
 
 ivory_google_map:
     map:
@@ -236,8 +236,8 @@ vich_uploader:
             delete_on_remove:   true
 
 ewz_recaptcha:
-    public_key:  6LePWhQTAAAAAEw7Djrf-tTiqLOdvfjugaiEd72l
-    private_key: 6LePWhQTAAAAADpkSZeAj2BWj6CD3iU9C5iIi4Dc
+    public_key:  "%recaptcha_public_key%"
+    private_key: "%recaptcha_private_key%"
     locale_key:  %kernel.default_locale%
 
 sonata_block:
@@ -270,7 +270,7 @@ hwi_oauth:
 lexik_maintenance:
     authorized:
         host: %website-host%                                               # Optional. Authorized domain, accepts regexs
-
+        ips: ['127.0.0.1', '172.123.10.14']
     driver:
         ttl: 3600                                                                  # Optional ttl option, can be not set
 
@@ -283,14 +283,14 @@ lexik_maintenance:
 
          # MemCache driver
         class: Lexik\Bundle\MaintenanceBundle\Drivers\MemCacheDriver               # class for MemCache driver
-        options: {key_name: 'maintenance', host: 127.0.0.1, port: 11211}           # need to define a key_name, the host and port
+        options: {key_name: 'maintenance', host: %website-host%, port: 11211}           # need to define a key_name, the host and port
 
         # Database driver:
         class: 'Lexik\Bundle\MaintenanceBundle\Drivers\DatabaseDriver'             # class for database driver
 
 
         # Option 2 : for dsn, you must have a column ttl type datetime in your table.
-        options: {dsn: "mysql:dbname=maintenance;host:localhost", table: maintenance, user: %database_user%, password: %database_password% }  # the dsn configuration, name of table, user/password
+        options: {dsn: "mysql:dbname=maintenance;host:%database_host%", table: maintenance, user: %database_user%, password: %database_password% }  # the dsn configuration, name of table, user/password
 
     #Optional. response code and status of the maintenance page
     response:

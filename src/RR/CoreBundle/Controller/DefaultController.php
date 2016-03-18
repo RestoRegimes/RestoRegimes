@@ -7,6 +7,7 @@ use RR\CoreBundle\Entity\SiteContent;
 use RR\CoreBundle\Form\CommentaireType;
 use RR\CoreBundle\Form\SiteContentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use RR\RestaurantBundle\Entity\Restaurant;
 use Ivory\GoogleMap\Base\Coordinate;
@@ -263,5 +264,19 @@ class DefaultController extends Controller
 
     }
 
+    public function setMaintennanceAction(Request $request, $action){
+        $driver = $this->get('lexik_maintenance.driver.factory')->getDriver();
+        $message = "";
+        if ($action === 'lock') {
+            $message = $driver->getMessageLock($driver->lock());
+        } else {
+            $message = $driver->getMessageUnlock($driver->unlock());
+        }
+
+        $this->get('session')->getFlashBag()->add('maintenance', $message);
+
+        return new RedirectResponse($this->generateUrl('sonata_admin_dashboard'));
+
+    }
 
 }

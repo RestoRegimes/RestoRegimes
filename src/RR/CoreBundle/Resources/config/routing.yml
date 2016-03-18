@@ -30,4 +30,6 @@ rr_core_cgu:
     path: /cgu
     defaults: { _controller:RRCoreBundle:Default:cgu}
 
-
+rr_core_maintenance:
+    path: /maint_on/{action}
+    defaults: { _controller:RRCoreBundle:Default:setMaintennance }

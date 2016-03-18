@@ -239,6 +239,8 @@ file that was distributed with this source code.
                                 {% block side_bar_after_nav %}
                                     <p class="text-center medium" style="border-top: 1px solid #444444; padding-top: 10px"><a href="{{ url('rr_core_homepage') }}" rel="noreferrer" target="_blank">accueil site</a><br><br>
                                     <a href="{{ url('rr_data_homepage') }}" rel="noreferrer" target="_blank">Scanner restaurant</a></p>
+                                    <a href="{{ url('rr_core_maintenance', {'action': "lock"}) }}" rel="noreferrer" >Mettre en maintenance</a></p>
+                                    <a href="{{ url('rr_core_maintenance',{'action': "unlock"}) }}" rel="noreferrer" >Arreter la maintenance</a></p>
                                 {% endblock %}
                             {% endblock sonata_side_nav %}
                         </section>
@@ -289,6 +291,9 @@ file that was distributed with this source code.
 
                                 {% block notice %}
                                     {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
+                                    {% for message in app.session.flashbag.get('maintenance') %}
+                                        <h3 class="sonata-ba-content">{{ message }}</h3>
+                                    {% endfor %}
                                 {% endblock notice %}
 
                                 {% if _preview is not empty %}
