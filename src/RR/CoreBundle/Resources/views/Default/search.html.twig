@@ -120,7 +120,7 @@
 
         function getLocation() {
             if(!click){
-                if (navigator.geolocation) {
+                if (navigator && navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(showPosition);
                     click=true;
                 } else {
