@@ -295,4 +295,4 @@ lexik_maintenance:
     #Optional. response code and status of the maintenance page
     response:
         code: 503
-        status: "Service Temporarily Unavailable"
+        status: "Site en cours de maintenance"

@@ -2,26 +2,99 @@
 {% block title %}
     Une Erreur est survenue: {{ status_text }}
 {% endblock %}
+{% block loader %}
+    <div class='loading'>
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
-    <div class="mdl-grid">
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-cell--8-col mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-color--red-A400">
-                <h2 class="mdl-card__title-text">
-                    Oops! Une Erreur est survenue
-                </h2>
+
+
+
+    <div class="container">
+
+        <div class="content">
+            <!-- Start Demo -->
+
+            <div class="cache">
+                <!-- masks -->
+                <img src="{{ asset('rrcore/images/masks/prism-a.svg') }}">
+                <img src="{{ asset('rrcore/images/masks/prism-b.svg') }}">
+                <img src="{{ asset('rrcore/images/masks/prism-c.svg') }}">
+                <!-- photos -->
+                <img src="{{ asset('rrcore/images/Bg/Bg1.jpg') }}">
+                <img src="{{ asset('rrcore/images/Bg/Bg2.jpg') }}">
+                <img src="{{ asset('rrcore/images/Bg/Bg3.jpg') }}">
             </div>
-            <div class="mdl-card__supporting-text">
-                <h3>Le Serveur a retourné "{{ status_code }} {{ status_text }}".</h3>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                Le site est en maintenance veuillez tenter de vous connecter plus tard.
+            <div class="prism-slider">
 
             </div>
+
+
+            <div class="mdl-grid">
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp card-accueil">
+                    <div class="mdl-card__title ">
+                        <h2 class="mdl-card__title-text">Service bientôt disponible<br> </h2>
+                    </div>
+
+                    <div class="mdl-card__menu">
+                        <ul class="navigation"></ul>
+                    </div>
+                </div>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+
+
+
+
+
+
+
+            <!-- End Demo -->
+
 
         </div>
-        <div class="mdl-layout-spacer"></div>
     </div>
+    <!-- Related demos -->
+
+
+
+{% endblock %}
+{% block footer %}
+    <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo">Resto'Regimes</div>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script src="{{ asset('js/compiled/slider.min.js') }}"></script>
+    <script>
+        $('#main_body').hide();
+        $(window).load(function(){
+            $('.loading').fadeOut(500).remove();
+            $('#main_body').fadeIn(1500);
+
+            var recherche_BTN = $('#recherche_BTN');
+
+            recherche_BTN.bind('click',function(){
+                $('#drawer').addClass('is-visible');
+                $('.mdl-layout__obfuscator').addClass('is-visible');
+            });
+
+        });
+    </script>
 
 {% endblock %}
