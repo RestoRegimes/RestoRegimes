@@ -28,7 +28,8 @@ class PlacesFinder
         $file_id = 'id_places.json';
         $file_places = 'places_details.json';
 
-        $url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location=".$latitude.",".$longitude."&radius=".$radius."&types=".$type;
+        $url = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location=".$latitude.",".$longitude."&radius=".$radius."&types=".$type."&key=".$this->api_key;
+
         $response = file_get_contents( $url );
         $result= json_decode($response,true);
 
